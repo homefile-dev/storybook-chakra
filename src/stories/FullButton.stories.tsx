@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { FullButton } from './FullButton'
+import { FullButton } from '../components/FullButton'
 
 export default {
     title: 'Buttons/FullButton',

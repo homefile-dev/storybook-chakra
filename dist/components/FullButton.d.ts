@@ -1,3 +1,3 @@
 /// <reference types="react" />
-import { IButton } from "./FullButton.interface";
+import { IButton } from "../interfaces/FullButton.interface";
 export declare const FullButton: ({ isDisabled, handleClick, label, size, variant, }: IButton) => JSX.Element;

@@ -1,5 +1,5 @@
 import { Button } from "@chakra-ui/react";
-import { IButton } from "./FullButton.interface";
+import { IButton } from "../interfaces/FullButton.interface";
 
 export const FullButton = ({
   isDisabled = false,
