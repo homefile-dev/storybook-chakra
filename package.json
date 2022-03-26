@@ -1,0 +1,7 @@
+{
+  "name": "storybook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Grasiela Gomes <produtoradama@gmail.com>",
+  "license": "MIT"
+}
