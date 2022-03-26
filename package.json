@@ -10,12 +10,12 @@
     "url": "https://github.com/homefile-dev/storybook-chakra.git"
   },
   "peerDependencies": {
-    "react": ">=16",
-    "typescript": "^>=4.0.0",
     "@chakra-ui/react": ">=1",
     "@emotion/react": "^>=11",
     "@emotion/styled": ">=11",
-    "framer-motion": ">=4"
+    "framer-motion": ">=4",
+    "react": ">=16",
+    "typescript": "^>=4.0.0"
   },
   "release": {
     "branches": [
@@ -43,6 +43,7 @@
     "copyfiles": "^2.4.1",
     "git-commit-msg-linter": "^4.1.1",
     "rimraf": "^3.0.2",
+    "semantic-release": "^19.0.2",
     "typescript": "^4.6.3",
     "webpack": "^5.70.0"
   },
@@ -65,5 +66,13 @@
     "trim-newlines": "^3.0.1",
     "**/trim": "^1.0.0",
     "glob-parent": "^6.0.1"
-  }
+  },
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git"
+  ]
 }
