@@ -9,7 +9,7 @@ export const FullButton = ({
   variant,
 }: IButton) => {
   return (
-    <Button variant={variant} size={size} onClick={handleClick} isDisabled={isDisabled}>
+       <Button variant={variant} size={size} onClick={handleClick} isDisabled={isDisabled}>
       {label}
     </Button>
   );
