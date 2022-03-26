@@ -1,9 +1,10 @@
 {
   "name": "homefile-storybook-chakra",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "Grasiela Gomes <produtoradama@gmail.com>",
   "license": "MIT",
+  "typings": "dist/index.d.ts",
+  "main": "dist/index.js",
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@chakra-ui/storybook-addon": "^1.0.3",
