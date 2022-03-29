@@ -1,5 +1,20 @@
 {
+  "footer": {
+    "copyright": "© 2021 Homefile Inc. Todos os direitos reservados.",
+    "termsLink": "Termos de uso",
+    "privacyLink": "Política de privacidade"
+  },
   "signup": {
-    "title": "Crie sua conta Homefile"
+    "title": "Crie sua conta Homefile",
+    "subtitle": "Crie uma senha forte",
+    "firstName": "Primeiro nome",
+    "lastName": "Último nome",
+    "email": "E-mail",
+    "password": "Senha",
+    "passwordConfirm": "Repita a senha",
+    "terms": "Criando uma conta Homefile você concorda com os nossos",
+    "signupBt": "Criar conta",
+    "signin": "Já possui uma conta Homefile?",
+    "signinBt": "Log in"
   }
 }

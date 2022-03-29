@@ -3,6 +3,7 @@ import {
   Button,
   Center,
   Container,
+  Flex,
   IconButton,
   Input,
   InputGroup,
@@ -70,7 +71,7 @@ export const SignUp = () => {
               <Center px={10} h="4rem">
                 <Text textAlign="center" variant="info" w="100%">
                   {t('signup.terms')}
-                  <a href="https://">{t('signup.termsLink')}</a>
+                  <a href="https://">{t('footer.termsLink')}</a>
                 </Text>
               </Center>
               <Button>{t('signup.signupBt')}</Button>
@@ -87,6 +88,22 @@ export const SignUp = () => {
             </Box>
           </Container>
         </Container>
+        <Flex
+          w="container.footer"
+          mx="auto"
+          my={4}
+          justifyContent="space-between"
+        >
+          <Text variant="label">{t('footer.copyright')}</Text>
+          <Flex gap={2}>
+            <Text variant="label">
+              <a href="https://">{t('footer.termsLink')}</a>
+            </Text>
+            <Text variant="label">
+              <a href="https://">{t('footer.privacyLink')}</a>
+            </Text>
+          </Flex>
+        </Flex>
       </Box>
     </Suspense>
   )

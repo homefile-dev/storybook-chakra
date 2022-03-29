@@ -16,6 +16,11 @@ const Text = {
       fontSize: 'md',
       fontFamily: 'secondary',
     },
+    label: {
+      fontSize: 'sm',
+      fontFamily: 'secondary',
+      color: 'font.secondary',
+    },
   },
   defaultProps: {
     variant: 'body',

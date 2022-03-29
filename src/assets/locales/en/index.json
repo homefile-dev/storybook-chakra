@@ -1,4 +1,10 @@
 {
+  "footer": {
+    "copyright": "© 2021 Homefile Inc. All Rights Reserved.",
+    "termsLink": "Terms of Service",
+    "privacyLink": "Privacy Policy"
+
+  },
   "signup": {
     "title": "Create your Homefile Account",
     "subtitle": "Create a strong password",
@@ -8,7 +14,6 @@
     "password": "Password",
     "passwordConfirm": "Re-enter Password",
     "terms": "By creating an account you agree to the Homefile ",
-    "termsLink": "Terms of Service.",
     "signupBt": "Create Account",
     "signin": "Already have a Homefile account?",
     "signinBt": "Log in"

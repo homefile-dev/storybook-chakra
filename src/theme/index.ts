@@ -1,4 +1,5 @@
 import '@fontsource/assistant'
+import '@fontsource/poppins'
 import { extendTheme } from '@chakra-ui/react'
 import Button from './components/ButtonStyles'
 import Container from './components/ContainerStyles'
@@ -99,8 +100,10 @@ const theme = extendTheme({
       xs: '10rem',
       sm: '20rem',
       md: '30rem',
-      lg: '50rem',
+      lg: '40rem',
+      xl: '50rem',
       full: '100%',
+      footer: '32rem',
     },
     image: {
       logo: '2rem',
