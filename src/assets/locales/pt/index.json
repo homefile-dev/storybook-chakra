@@ -1,6 +1,6 @@
 {
   "footer": {
-    "copyright": "© 2021 Homefile Inc. Todos os direitos reservados.",
+    "copyright": "© 2021 Homefile Inc. Direitos reservados.",
     "termsLink": "Termos de uso",
     "privacyLink": "Política de privacidade"
   },
@@ -12,7 +12,7 @@
     "email": "E-mail",
     "password": "Senha",
     "passwordConfirm": "Repita a senha",
-    "terms": "Criando uma conta Homefile você concorda com os nossos",
+    "terms": "Criando uma conta Homefile você concorda com os nossos ",
     "signupBt": "Criar conta",
     "signin": "Já possui uma conta Homefile?",
     "signinBt": "Log in"
