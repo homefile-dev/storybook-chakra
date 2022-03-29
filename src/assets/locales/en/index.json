@@ -1,0 +1,16 @@
+{
+  "signup": {
+    "title": "Create your Homefile Account",
+    "subtitle": "Create a strong password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "password": "Password",
+    "passwordConfirm": "Re-enter Password",
+    "terms": "By creating an account you agree to the Homefile ",
+    "termsLink": "Terms of Service.",
+    "signupBt": "Create Account",
+    "signin": "Already have a Homefile account?",
+    "signinBt": "Log in"
+  }
+}

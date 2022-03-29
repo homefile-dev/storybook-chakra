@@ -1,58 +1,88 @@
 const Button = {
   baseStyle: {
-    fontFamily: "primaryFont",
-    fontSize: "md",
-    h: "container.xs",
-    fontWeight: "regular",
-    borderRadius: "none",
-    boxShadow: "0 1.5px 3px 0 rgba(0, 0, 0, 0.16)",
-    transition: "all 0.2s ease-in-out",
-    _hover: {
-      borderRadius: "lg",
-      fontWeight: "medium",
-      boxShadow: "none",
-    },
-    _disabled: {
-      filter: "grayscale(100%)",
-      pointerEvents: "none",
+    _focus: {
+      boxShadow: 'none',
     },
   },
   sizes: {
     small: {
-      w: "container.sm",
+      w: 'button.sm',
     },
     medium: {
-      w: "container.md",
+      w: 'button.md',
     },
     large: {
-      w: "container.lg",
+      w: 'button.lg',
     },
     full: {
-      w: "container.full",
+      w: 'button.full',
     },
   },
   variants: {
     primary: {
-      color: "white",
-      backgroundColor: "button.primary",
+      fontSize: 'md',
+      textTransform: 'uppercase',
+      h: 'button.xs',
+      fontWeight: 'regular',
+      borderRadius: 'none',
+      boxShadow: 'base',
+      color: 'white',
+      backgroundColor: 'button.primary',
+      transition: 'all 0.2s ease-in-out',
+      _disabled: {
+        filter: 'grayscale(100%)',
+        pointerEvents: 'none',
+      },
+      _active: {
+        backgroundColor: 'button.primaryHover',
+        borderRadius: 'lg',
+        fontWeight: 'medium',
+        boxShadow: 'none',
+      },
       _hover: {
-        backgroundColor: "button.primaryHover",
+        boxShadow: 'xl',
       },
     },
     secondary: {
-      backgroundColor: "transparent",
-      border: "1px",
-      borderColor: "button.primary",
-      color: "button.primary",
+      fontSize: 'md',
+      textTransform: 'uppercase',
+      h: 'button.xs',
+      fontWeight: 'regular',
+      borderRadius: 'none',
+      boxShadow: 'base',
+      transition: 'all 0.2s ease-in-out',
+      backgroundColor: 'transparent',
+      border: '1px',
+      borderColor: 'button.primary',
+      color: 'button.primary',
+      _active: {
+        backgroundColor: 'button.tertiaryHover',
+        borderRadius: 'lg',
+        fontWeight: 'medium',
+        boxShadow: 'none',
+      },
       _hover: {
-        backgroundColor: "button.secondaryHover",
+        boxShadow: 'lg',
+      },
+    },
+    icon: {
+      color: 'button.icon',
+      backgroundColor: 'transparent',
+      border: 'none',
+      boxShadow: 'none',
+      _hover: {
+        backgroundColor: 'transparent',
+        color: 'button.primary',
+      },
+      _focus: {
+        backgroundColor: 'transparent',
       },
     },
   },
   defaultProps: {
-    size: "medium",
-    variant: "primary",
+    size: 'full',
+    variant: 'primary',
   },
-};
+}
 
-export default Button;
+export default Button

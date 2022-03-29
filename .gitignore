@@ -6,3 +6,6 @@ node_modules
 # production
 /dist
 /storybook-static
+
+# logs
+yarn-error.log

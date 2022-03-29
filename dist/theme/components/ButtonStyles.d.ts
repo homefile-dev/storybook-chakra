@@ -1,20 +1,7 @@
 declare const Button: {
     baseStyle: {
-        fontFamily: string;
-        fontSize: string;
-        h: string;
-        fontWeight: string;
-        borderRadius: string;
-        boxShadow: string;
-        transition: string;
-        _hover: {
-            borderRadius: string;
-            fontWeight: string;
+        _focus: {
             boxShadow: string;
-        };
-        _disabled: {
-            filter: string;
-            pointerEvents: string;
         };
     };
     sizes: {
@@ -33,18 +20,61 @@ declare const Button: {
     };
     variants: {
         primary: {
+            fontSize: string;
+            textTransform: string;
+            h: string;
+            fontWeight: string;
+            borderRadius: string;
+            boxShadow: string;
             color: string;
             backgroundColor: string;
-            _hover: {
+            transition: string;
+            _disabled: {
+                filter: string;
+                pointerEvents: string;
+            };
+            _active: {
                 backgroundColor: string;
+                borderRadius: string;
+                fontWeight: string;
+                boxShadow: string;
+            };
+            _hover: {
+                boxShadow: string;
             };
         };
         secondary: {
+            fontSize: string;
+            textTransform: string;
+            h: string;
+            fontWeight: string;
+            borderRadius: string;
+            boxShadow: string;
+            transition: string;
             backgroundColor: string;
             border: string;
             borderColor: string;
             color: string;
+            _active: {
+                backgroundColor: string;
+                borderRadius: string;
+                fontWeight: string;
+                boxShadow: string;
+            };
             _hover: {
+                boxShadow: string;
+            };
+        };
+        icon: {
+            color: string;
+            backgroundColor: string;
+            border: string;
+            boxShadow: string;
+            _hover: {
+                backgroundColor: string;
+                color: string;
+            };
+            _focus: {
                 backgroundColor: string;
             };
         };
