@@ -17,5 +17,17 @@
     "signupBt": "Create Account",
     "signin": "Already have a Homefile account?",
     "signinBt": "Log in"
+  },
+  "forms": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "password": "Password",
+    "passwordConfirm": "Re-enter Password",
+    "required": "is required",
+    "errorPasswordMatch": "Passwords do not match",
+    "errorPasswordLength": "Password must be at least 6 characters",
+    "errorEmail": "Please enter a valid email",
+    "errorEmailExists": "Email already exists"
   }
 }

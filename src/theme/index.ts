@@ -83,6 +83,9 @@ const theme = extendTheme({
     semibold: 600,
     bold: 700,
   },
+  space: {
+    container: '3rem',
+  },
   sizes: {
     button: {
       xs: '3.4rem',

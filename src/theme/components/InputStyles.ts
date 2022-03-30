@@ -46,6 +46,9 @@ const Input = {
             color: 'white',
           },
         },
+        _invalid: {
+          borderColor: 'pink.500',
+        }
       },
     },
 

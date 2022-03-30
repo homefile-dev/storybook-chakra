@@ -21,6 +21,11 @@ const Text = {
       fontFamily: 'secondary',
       color: 'font.secondary',
     },
+    error: {
+      fontSize: 'xs',
+      fontFamily: 'secondary',
+      color: 'pink.500',
+    },
   },
   defaultProps: {
     variant: 'body',

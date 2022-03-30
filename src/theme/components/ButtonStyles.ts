@@ -56,7 +56,7 @@ const Button = {
       borderColor: 'button.primary',
       color: 'button.primary',
       _active: {
-        backgroundColor: 'button.tertiaryHover',
+        backgroundColor: 'button.secondaryHover',
         borderRadius: 'lg',
         fontWeight: 'medium',
         boxShadow: 'none',
