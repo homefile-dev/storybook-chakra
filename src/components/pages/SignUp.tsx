@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Center,
-  Container,
-  Input,
-  Stack,
-  Text,
-} from '@chakra-ui/react'
+import { Box, Button, Center, Container, Stack, Text } from '@chakra-ui/react'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import Logo from '../Logo'
@@ -25,10 +17,11 @@ import {
 } from '../../helpers/Validations'
 
 export const SignUp = ({
-  termsUrl,
-  privacyUrl,
   handleCreateAccount,
   handleSignIn,
+  privacyUrl,
+  signupError,
+  termsUrl,
 }: ISignUp) => {
   const { t } = useTranslation()
   const { inputs, handleInputChange, isValidated, setIsValidated } = useSignUp()
@@ -44,7 +37,7 @@ export const SignUp = ({
                 errorMessage={t('forms.firstName') + ' ' + t('forms.required')}
                 hasError={isValidated && isEmptyField(inputs.firstName)}
                 id="firstName"
-                placeholder={t('signup.firstName')}
+                placeholder={t('forms.firstName')}
                 value={inputs.firstName}
                 handleChange={(event) => handleInputChange(event)}
               />
@@ -52,7 +45,7 @@ export const SignUp = ({
                 errorMessage={t('forms.lastName') + ' ' + t('forms.required')}
                 hasError={isValidated && isEmptyField(inputs.lastName)}
                 id="lastName"
-                placeholder={t('signup.lastName')}
+                placeholder={t('forms.lastName')}
                 value={inputs.lastName}
                 handleChange={(event) => handleInputChange(event)}
               />
@@ -60,14 +53,18 @@ export const SignUp = ({
                 errorMessage={
                   isEmptyField(inputs.email)
                     ? t('forms.email') + ' ' + t('forms.required')
+                    : signupError
+                    ? t('forms.errorEmailExists')
                     : t('forms.errorEmail')
                 }
                 hasError={
                   isValidated &&
-                  (isEmptyField(inputs.email) || !isValidEmail(inputs.email))
+                  (isEmptyField(inputs.email) ||
+                    !isValidEmail(inputs.email) ||
+                    signupError)
                 }
                 id="email"
-                placeholder={t('signup.email')}
+                placeholder={t('forms.email')}
                 value={inputs.email}
                 handleChange={(event) => handleInputChange(event)}
               />
@@ -86,7 +83,7 @@ export const SignUp = ({
                     !passwordMatch(inputs.password, inputs.confirmPassword))
                 }
                 id="password"
-                placeholder={t('signup.password')}
+                placeholder={t('forms.password')}
                 value={inputs.password}
                 handleChange={(event) => handleInputChange(event)}
               />
@@ -102,7 +99,7 @@ export const SignUp = ({
                     !passwordMatch(inputs.password, inputs.confirmPassword))
                 }
                 id="confirmPassword"
-                placeholder={t('signup.passwordConfirm')}
+                placeholder={t('forms.passwordConfirm')}
                 value={inputs.confirmPassword}
                 handleChange={(event) => handleInputChange(event)}
               />
