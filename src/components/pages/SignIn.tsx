@@ -59,7 +59,7 @@ export const SignIn = ({
                   handleChange={(event) => handleInputChange(event)}
                 />
               </Stack>
-              <Stack spacing={3}>
+              <Stack spacing={4}>
                 <Button
                   onClick={() => {
                     setIsValidated(true)
@@ -73,10 +73,10 @@ export const SignIn = ({
                 >
                   {t('signin.signinBt')}
                 </Button>
-                <Center px={['container.sm', 'container.md', 'container.lg']}>
-                  <Text textAlign="center" variant="info" w="100%">
-                    <a href={termsUrl}>{t('signin.forgotBt')}</a>
-                  </Text>
+                <Center>
+                  <Button onClick={handleForgotPassword} variant="text">
+                    {t('signin.forgotBt')}
+                  </Button>
                 </Center>
               </Stack>
             </Stack>

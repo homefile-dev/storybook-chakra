@@ -78,6 +78,24 @@ const Button = {
         backgroundColor: 'transparent',
       },
     },
+    text: {
+      w: 'button.max',
+      fontFamily: 'secondary',
+      fontSize: 'md',
+      letterSpacing: 'wide',
+      color: 'font.link',
+      backgroundColor: 'transparent',
+      border: 'none',
+      boxShadow: 'none',
+      _hover: {
+        backgroundColor: 'transparent',
+        textDecoration: 'underline',
+        color: 'font.linkHover',
+      },
+      _focus: {
+        backgroundColor: 'transparent',
+      },
+    },
   },
   defaultProps: {
     size: 'full',

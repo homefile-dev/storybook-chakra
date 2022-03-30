@@ -38,6 +38,7 @@ const theme = extendTheme({
       primary: '#464646',
       secondary: '#818181',
       link: '#2488C6',
+      linkHover: '#1D7AB4',
     },
     container: {
       primary: '#DCE8EC',
@@ -61,6 +62,14 @@ const theme = extendTheme({
   fonts: {
     primary: 'Poppins',
     secondary: 'Assistant',
+  },
+  letterSpacings: {
+    tighter: '-0.05em',
+    tight: '-0.025em',
+    normal: '0',
+    wide: '0.025em',
+    wider: '0.05em',
+    widest: '0.1em',
   },
   fontSizes: {
     xs: '0.75rem',
@@ -92,6 +101,8 @@ const theme = extendTheme({
   },
   sizes: {
     button: {
+      max: 'max-content',
+      min: 'min-content',
       xs: '3.4rem',
       sm: '10rem',
       md: '20rem',
