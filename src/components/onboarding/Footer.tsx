@@ -9,7 +9,14 @@ export const Footer = ({
   privacyUrl,
 }: IFooter) => {
   return (
-    <Flex w={["full", "container.footer"]} direction={["column", "row"]} mx="auto" my={4} justifyContent={["center", "space-between"]} alignItems="center">
+    <Flex
+      w={['container.full', 'container.sm', 'container.md']}
+      direction={['column', 'row']}
+      mx="auto"
+      my={4}
+      justifyContent={['center', 'space-between']}
+      alignItems="center"
+    >
       <Text variant="label">{copyright}</Text>
       <Flex gap={2}>
         <Text variant="label">
