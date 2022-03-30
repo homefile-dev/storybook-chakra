@@ -3,19 +3,20 @@
     "copyright": "© 2021 Homefile Inc. All Rights Reserved.",
     "termsLink": "Terms of Service",
     "privacyLink": "Privacy Policy"
-
   },
   "signup": {
     "title": "Create your Homefile Account",
     "subtitle": "Create a strong password",
-    "firstName": "First Name",
-    "lastName": "Last Name",
-    "email": "Email",
-    "password": "Password",
-    "passwordConfirm": "Re-enter Password",
     "terms": "By creating an account you agree to the Homefile ",
     "signupBt": "Create Account",
     "signin": "Already have a Homefile account?",
+    "signinBt": "Log in"
+  },
+  "signin": {
+    "title": "Please Log in",
+    "forgotBt": "Forgot Password?",
+    "signupBt": "Sign up",
+    "signup": "Don’t have a Homefile account?",
     "signinBt": "Log in"
   },
   "forms": {
@@ -28,6 +29,7 @@
     "errorPasswordMatch": "Passwords do not match",
     "errorPasswordLength": "Password must be at least 6 characters",
     "errorEmail": "Please enter a valid email",
-    "errorEmailExists": "Email already exists"
+    "errorEmailExists": "Email already exists",
+    "errorLogin": "Invalid email or password"
   }
 }
