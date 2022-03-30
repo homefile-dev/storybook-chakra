@@ -84,18 +84,18 @@ const theme = extendTheme({
     bold: 700,
   },
   space: {
-    container: '3rem',
+    container: {
+      sm: '1rem',
+      md: '2rem',
+      lg: '3rem',
+    },
   },
   sizes: {
     button: {
       xs: '3.4rem',
-      xsHover: '3.6rem',
       sm: '10rem',
-      smHover: '10.1rem',
       md: '20rem',
-      mdHover: '20.1rem',
       lg: '28rem',
-      lgHover: '28.1rem',
       full: '100%',
     },
     container: {

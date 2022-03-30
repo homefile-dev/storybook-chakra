@@ -35,10 +35,10 @@ export const SignUp = ({
   return (
     <Suspense fallback={<p>Loading...</p>}>
       <Box w="container.full">
-        <Container size="medium">
+        <Container size="onboarding">
           <Logo />
           <PageTitle title={t('signup.title')} />
-          <Box px="container" mb={6}>
+          <Box px={['container.sm', 'container.md', 'container.lg']} mb={6}>
             <Stack spacing={3}>
               <TextInput
                 errorMessage={t('forms.firstName') + ' ' + t('forms.required')}
@@ -106,7 +106,10 @@ export const SignUp = ({
                 value={inputs.confirmPassword}
                 handleChange={(event) => handleInputChange(event)}
               />
-              <Center px="container" h="4rem">
+              <Center
+                px={['container.sm', 'container.md', 'container.lg']}
+                h="4rem"
+              >
                 <Text textAlign="center" variant="info" w="100%">
                   {t('signup.terms')}
                   <a href={termsUrl}>{t('footer.termsLink')}</a>
@@ -121,7 +124,8 @@ export const SignUp = ({
                     isValidEmail(inputs.email) &&
                     isValidPassword(inputs.password) &&
                     passwordMatch(inputs.password, inputs.confirmPassword)
-                  ) handleCreateAccount(inputs)
+                  )
+                    handleCreateAccount(inputs)
                 }}
               >
                 {t('signup.signupBt')}

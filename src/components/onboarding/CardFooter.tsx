@@ -8,7 +8,11 @@ export const CardFooter = ({
 }: ICardFooter) => {
   return (
     <Container variant="secondary" centerContent h="10rem">
-      <Box w="full" px="container" my="auto">
+      <Box
+        w="full"
+        px={['container.sm', 'container.md', 'container.lg']}
+        my="auto"
+      >
         <Text mb={4} textAlign="center" variant="body">
           {title}
         </Text>

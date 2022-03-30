@@ -16,6 +16,9 @@ const Container = {
     full: {
       w: 'container.full',
     },
+    onboarding: {
+      w: ['container.full', 'container.sm', 'container.md'],
+    },
   },
   variants: {
     primary: {
