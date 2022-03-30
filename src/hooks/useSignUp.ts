@@ -6,6 +6,7 @@ export const useSignUp = () => {
   const [isValidated, setIsValidated] = useState(false)
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setIsValidated(false)
     setInputs({
       ...inputs,
       [event.target.id]: event.target.value,
