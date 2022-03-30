@@ -17,7 +17,7 @@ const Text = {
       fontFamily: 'secondary',
     },
     label: {
-      fontSize: 'sm',
+      fontSize: 'xs',
       fontFamily: 'secondary',
       color: 'font.secondary',
     },
