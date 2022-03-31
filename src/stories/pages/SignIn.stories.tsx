@@ -1,4 +1,3 @@
-import { useInterval } from '@chakra-ui/react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
 import { SignIn } from '../../components/pages/SignIn'
