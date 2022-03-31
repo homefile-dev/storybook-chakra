@@ -18,7 +18,7 @@ const Button = {
       w: 'button.full',
     },
     onboarding: {
-      w: ['button.max', 'button.md'],
+      w: ['button.full', 'button.md'],
     },
   },
   variants: {

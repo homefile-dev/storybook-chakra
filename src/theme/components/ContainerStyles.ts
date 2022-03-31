@@ -31,6 +31,9 @@ const Container = {
     secondary: {
       backgroundColor: 'container.secondary',
     },
+    tertiary: {
+      backgroundColor: 'container.tertiary',
+    },
     ghost: {
       backgroundColor: 'transparent',
     },
