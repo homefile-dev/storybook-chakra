@@ -50,7 +50,7 @@ const theme = extendTheme({
       primaryHover: '#1D7AB4',
       secondary: '#F0F8F0',
       secondaryHover: '#DFEFF8',
-      tertiaryHover: '#CBF0BD',
+      tertiaryHover: '#CAE1EF',
       icon: '#BCD1D8',
     },
     input: {
