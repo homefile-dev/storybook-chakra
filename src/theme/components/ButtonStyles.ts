@@ -17,6 +17,9 @@ const Button = {
     full: {
       w: 'button.full',
     },
+    onboarding: {
+      w: ['button.max', 'button.md'],
+    },
   },
   variants: {
     primary: {
@@ -47,6 +50,7 @@ const Button = {
       fontSize: 'md',
       textTransform: 'uppercase',
       h: 'button.xs',
+      px: '1rem',
       fontWeight: 'regular',
       borderRadius: 'none',
       boxShadow: 'base',
@@ -64,6 +68,10 @@ const Button = {
       _hover: {
         backgroundColor: 'button.secondaryHover',
         boxShadow: 'lg',
+      },
+      _disabled: {
+        filter: 'grayscale(100%)',
+        pointerEvents: 'none',
       },
     },
     icon: {

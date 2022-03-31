@@ -19,6 +19,9 @@ const Container = {
     onboarding: {
       w: ['container.full', 'container.sm', 'container.md'],
     },
+    validation: {
+      w: ['container.full', 'container.md', 'container.lg'],
+    },
   },
   variants: {
     primary: {

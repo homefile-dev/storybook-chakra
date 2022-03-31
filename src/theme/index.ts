@@ -97,6 +97,7 @@ const theme = extendTheme({
       sm: '1rem',
       md: '2rem',
       lg: '3rem',
+      xl: '4rem',
     },
   },
   sizes: {
@@ -114,7 +115,7 @@ const theme = extendTheme({
       xs: '10rem',
       sm: '20rem',
       md: '30rem',
-      lg: '40rem',
+      lg: '35rem',
       xl: '50rem',
       full: '100%',
       footer: '32rem',
