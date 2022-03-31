@@ -19,6 +19,17 @@
     "signup": "Don’t have a Homefile account?",
     "signinBt": "Log in"
   },
+  "validation": {
+    "title1": "We just sent a message to ",
+    "title2": " with a link to activate your account.",
+    "alert1": "If you have not received an email, please check your spam folder or",
+    "alert2": "Please do not reply to this email as this is not an active email account.",
+    "resendBt": "Resend Email Verification",
+    "welcome": "Hello",
+    "instruction": "To complete your Homefile registration process, please click on the button below to confirm and activate your account.",
+    "activateBt": "Activate my homefile account",
+    "goodbye": "Your Homefile Crew"
+  },
   "forms": {
     "firstName": "First Name",
     "lastName": "Last Name",
