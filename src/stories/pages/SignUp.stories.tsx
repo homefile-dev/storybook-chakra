@@ -10,14 +10,21 @@ export default {
 
 const Template: ComponentStory<typeof SignUp> = () => {
   const [hasError, setHasError] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   return (
     <SignUp
+      isLoading={isLoading}
       handleCreateAccount={(form: ISignUpForm) => {
-        if (form.email === 'user@user.com') {
-          setHasError(true)
-        } else {
-          setHasError(false)
-        }
+        setHasError(false)
+        setIsLoading(true)
+        setTimeout(() => {
+          if (form.email === 'user@user.com') {
+            setHasError(true)
+            setIsLoading(false)
+          } else {
+            setIsLoading(false)
+          }
+        }, 2000)
       }}
       handleSignIn={() => {}}
       privacyUrl=""

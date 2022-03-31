@@ -4,6 +4,7 @@ export interface ISignInForm {
 }
 
 export interface ISignIn {
+  isLoading: boolean
   handleForgotPassword: () => void
   handleSignIn: (form: ISignInForm) => void
   handleSignUp: () => void

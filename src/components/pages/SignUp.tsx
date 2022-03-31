@@ -15,8 +15,10 @@ import {
   isValidPassword,
   passwordMatch,
 } from '../../helpers/Validations'
+import ButtonLoader from '../loaders/ButtonLoader'
 
 export const SignUp = ({
+  isLoading,
   handleCreateAccount,
   handleSignIn,
   privacyUrl,
@@ -113,6 +115,8 @@ export const SignUp = ({
                 </Text>
               </Center>
               <Button
+                isLoading={isLoading}
+                spinner={<ButtonLoader />}
                 onClick={() => {
                   setIsValidated(true)
                   if (

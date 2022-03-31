@@ -56,12 +56,13 @@ const Button = {
       borderColor: 'button.primary',
       color: 'button.primary',
       _active: {
-        backgroundColor: 'button.secondaryHover',
+        backgroundColor: 'button.tertiaryHover',
         borderRadius: 'lg',
         fontWeight: 'medium',
         boxShadow: 'none',
       },
       _hover: {
+        backgroundColor: 'button.secondaryHover',
         boxShadow: 'lg',
       },
     },
