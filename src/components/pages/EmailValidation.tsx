@@ -59,6 +59,7 @@ export const EmailValidation = ({
         <Center>
           <Button
             mb={10}
+            mx={4}
             variant="secondary"
             onClick={handleResendBt}
             isLoading={isLoading}
