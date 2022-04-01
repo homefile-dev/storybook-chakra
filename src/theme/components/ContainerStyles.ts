@@ -17,10 +17,10 @@ const Container = {
       w: 'container.full',
     },
     onboarding: {
-      w: ['container.full', 'container.sm', 'container.md'],
+      maxW: 'container.md',
     },
     validation: {
-      w: ['container.full', 'container.md', 'container.lg'],
+      maxW: 'container.lg',
     },
   },
   variants: {
