@@ -1,5 +1,5 @@
 export interface ICardFooter {
-  title: string;
+  title?: string;
   buttonLabel: string;
   handleButtonClick: () => void;
 }
