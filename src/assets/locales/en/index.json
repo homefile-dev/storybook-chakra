@@ -19,6 +19,13 @@
     "signup": "Don’t have a Homefile account?",
     "signinBt": "Log in"
   },
+  "reset": {
+    "title": "Reset your Password",
+    "instruction": "We will send instructions to reset your password",
+    "email": "Enter your account email",
+    "resetBt": "Reset Password",
+    "signinBt": "Log in"
+  },
   "validation": {
     "title1": "We just sent a message to ",
     "title2": " with a link to activate your account.",
@@ -42,6 +49,7 @@
     "errorPasswordLength": "Password must be at least 6 characters",
     "errorEmail": "Please enter a valid email",
     "errorEmailExists": "Email already exists",
+    "errorEmailNotActivated": "This email has not an account associated with it",
     "errorLogin": "Invalid email or password"
   },
   "buildingApp": {
