@@ -11,7 +11,7 @@ const Template: ComponentStory<typeof ActivateAccount> = () => {
   const [isLoading, setIsLoading] = useState(false)
   return (
     <ActivateAccount
-      name="Matthews"
+      name="Matthew"
       isLoading={isLoading}
       handleActivateBt={() => {
         setIsLoading(true)

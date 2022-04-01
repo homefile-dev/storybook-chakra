@@ -1,11 +1,9 @@
 import {
   Box,
-  chakra,
   Container,
   Text,
   Center,
   Button,
-  Stack,
 } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 import Logo from '../Logo'
