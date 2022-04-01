@@ -1,5 +1,9 @@
 const Text = {
   variants: {
+    heading: {
+      fontSize: '3xl',
+      color: 'font.primary',
+    },
     title: {
       fontSize: 'lg',
       color: 'font.primary',

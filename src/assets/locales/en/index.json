@@ -43,5 +43,9 @@
     "errorEmail": "Please enter a valid email",
     "errorEmailExists": "Email already exists",
     "errorLogin": "Invalid email or password"
+  },
+  "buildingApp": {
+    "title": "One moment, we’re building your homefile.",
+    "subtitle": "We are connecting to public sources to pull the relevant information about your home into your homefile."
   }
 }
