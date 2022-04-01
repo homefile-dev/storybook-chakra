@@ -15,7 +15,7 @@ export const BuildingApp = () => {
           {t('buildingApp.title')}
         </Text>
         <BeatLoader color="gray" size="8" />
-        <Text variant="info" textAlign="center" w="container.md">
+        <Text variant="info" textAlign="center" maxW="container.md">
           {t('buildingApp.subtitle')}
         </Text>
       </Stack>
