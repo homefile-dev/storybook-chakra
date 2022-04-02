@@ -30,12 +30,12 @@
     "title1": "We just sent a message to ",
     "title2": " with a link to activate your account.",
     "alert1": "If you have not received an email, please check your spam folder or",
-    "resendBt": "Resend Email Verification",
-    "welcome": "Hello ",
+    "resendBt": "Resend Email Verification"
+  },
+  "registration": {
     "instruction": "To complete your Homefile registration process, please click on the button below to confirm and activate your account.",
     "activateBt": "Activate my homefile account",
     "activateBtShort": "Activate account",
-    "signature": "Your Homefile Crew",
     "notReply": "Please do not reply to this email as this is not an active email account."
   },
   "forms": {
@@ -51,6 +51,14 @@
     "errorEmailExists": "Email already exists",
     "errorEmailNotActivated": "This email has not an account associated with it",
     "errorLogin": "Invalid email or password"
+  },
+  "welcome": {
+    "title": "Welcome to Homefile",
+    "greeting": "Hello ",
+    "signature": "Your Homefile Crew",
+    "message": "We are excited to have you on board. We are here to help you get started with Homefile. We prepared a few resources to help you get started. Please click on the video below to start your journey.",
+    "message2": "We hope you enjoy your time with Homefile.",
+    "welcomeBt": "Go to launchpad"
   },
   "buildingApp": {
     "title": "One moment, we’re building your homefile.",
