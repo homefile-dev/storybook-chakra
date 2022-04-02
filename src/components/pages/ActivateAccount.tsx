@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next'
 import Logo from '../Logo'
 import ButtonLoader from '../loaders/ButtonLoader'
 import { IActivateAccount } from '../../interfaces/ActivateAccount.interface'
-import Welcome from '../onboarding/Welcome'
+import WelcomeHeader from '../onboarding/WelcomeHeader'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
 
 export const ActivateAccount = ({
@@ -26,9 +26,9 @@ export const ActivateAccount = ({
           <Logo />
         </Container>
         <Box px={['container.sm', 'container.lg']}>
-          <Welcome
-            description={t('validation.instruction')}
-            greeting={t('validation.welcome')}
+          <WelcomeHeader
+            description={t('registration.instruction')}
+            greeting={t('welcome.greeting')}
             name={name}
           />
           <Center>
@@ -39,17 +39,17 @@ export const ActivateAccount = ({
               size="onboarding"
             >
               {width < 400
-                ? t('validation.activateBtShort')
-                : t('validation.activateBt')}
+                ? t('registration.activateBtShort')
+                : t('registration.activateBt')}
             </Button>
           </Center>
           <Text variant="info" mt="8">
-            {t('validation.signature')}
+            {t('welcome.signature')}
           </Text>
         </Box>
         <Container variant="tertiary" mt="8">
           <Center h="12" px="4">
-            <Text variant="label">{t('validation.notReply')}</Text>
+            <Text variant="label">{t('registration.notReply')}</Text>
           </Center>
         </Container>
       </Container>

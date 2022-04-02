@@ -1,7 +1,7 @@
 import { chakra, Stack, Text } from '@chakra-ui/react'
 import { IWelcome } from '../../interfaces/onboarding/Welcome.interface'
 
-export const Welcome = ({ description, greeting, name }: IWelcome) => {
+export const WelcomeHeader = ({ description, greeting, name }: IWelcome) => {
   return (
     <Stack spacing={3} my={8}>
       <Text variant="info">
@@ -13,4 +13,4 @@ export const Welcome = ({ description, greeting, name }: IWelcome) => {
   )
 }
 
-export default Welcome
+export default WelcomeHeader
