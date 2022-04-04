@@ -1,6 +1,6 @@
 import { Box, Button, Center, Container, Stack, Text } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
-import Logo from '../Logo'
+import Logo from '../onboarding/Logo'
 import Footer from '../onboarding/Footer'
 import { ISignUp } from '../../interfaces/SignUp.interface'
 import PageTitle from '../onboarding/PageTitle'
