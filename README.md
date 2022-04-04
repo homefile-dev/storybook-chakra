@@ -16,7 +16,10 @@
 
     $ yarn start
 
-**Build and deploy**
+**Build Storybook**
 
-    $ yarn build
+    $ yarn build-storybook
 
+Once storybook is builded, change the folder name to docs. The docs folder will be deployed on GitHub Pages.
+
+## Components
