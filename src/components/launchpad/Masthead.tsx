@@ -6,7 +6,6 @@ import {
   Text,
 } from '@chakra-ui/react'
 import { BsChevronDown } from 'react-icons/bs'
-import { VscClose } from 'react-icons/vsc'
 import ImgLogo from '../../assets/images/logo.svg'
 import { UserMenuItems } from '../../helpers/launchpad/MenuItems.helper'
 import IconMenu from './IconMenu'
@@ -32,7 +31,6 @@ export const Masthead = ({ avatarUrl = '', userName }: IMasthead) => {
           />
           <IconMenu
             icon={<CustomIcon type={BsChevronDown} />}
-            iconOnClose={<CustomIcon type={VscClose} />}
             menuItems={UserMenuItems}
           />
         </Flex>
