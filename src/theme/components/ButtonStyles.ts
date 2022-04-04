@@ -87,6 +87,19 @@ const Button = {
         backgroundColor: 'transparent',
       },
     },
+    menuIcon: {
+      color: 'button.menuIcon',
+      backgroundColor: 'transparent',
+      border: 'none',
+      boxShadow: 'none',
+      _hover: {
+        backgroundColor: 'transparent',
+        color: 'button.primary',
+      },
+      _focus: {
+        backgroundColor: 'transparent',
+      },
+    },
     text: {
       w: 'button.max',
       fontFamily: 'secondary',
@@ -103,6 +116,33 @@ const Button = {
       },
       _focus: {
         backgroundColor: 'transparent',
+      },
+    },
+    rightRounded: {
+      fontSize: 'md',
+      textTransform: 'uppercase',
+      h: 'button.xxs',
+      maxW: '4rem',
+      fontWeight: 'regular',
+      borderRightRadius: 'none',
+      borderLeftRadius: 'full',
+      boxShadow: 'base',
+      color: 'transparent',
+      backgroundColor: 'brand.primary',
+      transition: 'all 0.2s ease-in-out',
+      _disabled: {
+        filter: 'grayscale(100%)',
+        pointerEvents: 'none',
+      },
+      _active: {
+        backgroundColor: 'brand.secondary',
+        fontWeight: 'medium',
+        boxShadow: 'none',
+      },
+      _hover: {
+        boxShadow: 'xl',
+        maxW: '10rem',
+        color: 'white',
       },
     },
   },

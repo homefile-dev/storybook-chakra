@@ -12,6 +12,8 @@ const theme = extendTheme({
       'html, body': {
         backgroundColor: 'container.primary',
         fontFamily: 'primary',
+        margin: 0,
+        padding: 0,
       },
       a: {
         color: 'font.link',
@@ -32,7 +34,10 @@ const theme = extendTheme({
   colors: {
     brand: {
       primary: '#6AB528',
-      secondary: '#3F5D25',
+      secondary: '#2C8412',
+    },
+    avatar: {
+      primary: '#60347C',
     },
     font: {
       primary: '#464646',
@@ -52,6 +57,7 @@ const theme = extendTheme({
       secondaryHover: '#DFEFF8',
       tertiaryHover: '#CAE1EF',
       icon: '#BCD1D8',
+      menuIcon: '#464646',
     },
     input: {
       border: '#BCD1D8',
@@ -104,6 +110,7 @@ const theme = extendTheme({
     button: {
       max: 'max-content',
       min: 'min-content',
+      xxs: '2.5rem',
       xs: '3.4rem',
       sm: '10rem',
       md: '20rem',
