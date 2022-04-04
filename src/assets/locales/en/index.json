@@ -54,7 +54,9 @@
   },
   "welcome": {
     "title": "Welcome to Homefile",
+    "launchpad": "Welcome to your Property Launchpad",
     "greeting": "Hello ",
+    "greeting2": "Hi ",
     "signature": "Your Homefile Crew",
     "message": "We are excited to have you on board. We are here to help you get started with Homefile. We prepared a few resources to help you get started. Please click on the video below to start your journey.",
     "message2": "We hope you enjoy your time with Homefile.",
@@ -63,5 +65,20 @@
   "buildingApp": {
     "title": "One moment, we’re building your homefile.",
     "subtitle": "We are connecting to public sources to pull the relevant information about your home into your homefile."
+  },
+  "launchpad": {
+    "viewsBT": "Views",
+    "menu": {
+      "profile": "My profile",
+      "logout": "Logout"
+    }
+  },
+  "myHomes": {
+    "title": "My Homes",
+    "addHome": "Home",
+    "menu": {
+      "settings": "Settings",
+      "help": "Help"
+    }
   }
 }
