@@ -1,5 +1,5 @@
 import { Center, Container, Image } from '@chakra-ui/react'
-import ImgLogo from '../assets/images/logo.svg'
+import ImgLogo from '../../assets/images/logo.svg'
 
 export const Logo = () => {
   return (
