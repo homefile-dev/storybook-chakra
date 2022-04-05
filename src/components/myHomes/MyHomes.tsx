@@ -5,6 +5,7 @@ import { CustomIcon } from '../icons/CustomIcon'
 import ContainerHeader from '../launchpad/ContainerHeader'
 import House from '../../assets/images/house.svg'
 import { MyHomeMenuItems } from '../../helpers/launchpad/MenuItems.helper'
+import MyHomesHeader from './MyHomesHeader'
 
 export const MyHomes = () => {
   return (
@@ -15,6 +16,7 @@ export const MyHomes = () => {
         menuItems={MyHomeMenuItems}
         icon={<CustomIcon type={FiMoreHorizontal} size="8" />}
       />
+      <MyHomesHeader />
     </Container>
   )
 }

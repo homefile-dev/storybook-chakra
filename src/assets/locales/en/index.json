@@ -79,6 +79,11 @@
     "menu": {
       "settings": "Settings",
       "help": "Help"
+    },
+    "select": {
+      "title": "Select option",
+      "option1": "Active homes",
+      "option2": "Inactive homes"
     }
   }
 }
