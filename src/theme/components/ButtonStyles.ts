@@ -123,7 +123,7 @@ const Button = {
       textTransform: 'uppercase',
       h: 'button.xxs',
       maxW: '4rem',
-      fontWeight: 'regular',
+      fontWeight: 'semibold',
       borderRightRadius: 'none',
       borderLeftRadius: 'full',
       boxShadow: 'base',
@@ -136,7 +136,6 @@ const Button = {
       },
       _active: {
         backgroundColor: 'brand.secondary',
-        fontWeight: 'medium',
         boxShadow: 'none',
       },
       _hover: {

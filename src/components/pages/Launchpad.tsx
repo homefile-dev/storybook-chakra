@@ -10,7 +10,7 @@ export const Launchpad = () => {
   return (
     <Box w="full">
       <Masthead userName={userName} />
-      <Header handleViews={() => {}} userName={firstName} />
+      <Header handleViews={() => {}} firstName={firstName} />
       <Grid
         templateColumns={['repeat(1, 1fr)', 'repeat(8, 1fr)']}
         gap="2"

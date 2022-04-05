@@ -5,13 +5,13 @@ import { CustomIcon } from '../icons/CustomIcon'
 import { useState } from 'react'
 import { IHeader } from '../../interfaces/launchpad/Header.interface'
 
-export const Header = ({handleViews, userName}: IHeader) => {
+export const Header = ({ firstName, handleViews }: IHeader) => {
   const [isOver, setIsOver] = useState(false)
   return (
     <Flex justifyContent="space-between" align="center" gap="2" pl="4" py="2">
       <Stack direction={['column', 'row']} spacing="2">
         <Text variant="title" as="b">
-          {`${t('welcome.greeting2')} ${userName},`}
+          {`${t('welcome.greeting2')} ${firstName},`}
         </Text>
         <Text variant="title">{t('welcome.launchpad')}</Text>
       </Stack>

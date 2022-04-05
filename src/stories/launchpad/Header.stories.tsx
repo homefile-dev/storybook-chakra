@@ -7,7 +7,7 @@ export default {
 } as ComponentMeta<typeof Header>
 
 const Template: ComponentStory<typeof Header> = () => {
-  return <Header userName="Adam Lee" handleViews={() => {}} />
+  return <Header firstName="Adam" handleViews={() => {}} />
 }
 
 export const HeaderComponent = Template.bind({})
