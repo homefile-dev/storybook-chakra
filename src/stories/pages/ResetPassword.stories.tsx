@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
 import { ResetPassword } from '../../components/pages/ResetPassword'
-import { IEmailForm } from '../../interfaces/ResetPassword.interface'
+import { IEmailForm } from '../../interfaces/pages/ResetPassword.interface'
 
 export default {
   title: 'Pages/Onboarding',

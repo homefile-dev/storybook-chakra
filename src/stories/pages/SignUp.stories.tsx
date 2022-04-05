@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
 import { SignUp } from '../../components/pages/SignUp'
-import { ISignUpForm } from '../../interfaces/SignUp.interface'
+import { ISignUpForm } from '../../interfaces/pages/SignUp.interface'
 
 export default {
   title: 'Pages/Onboarding',
