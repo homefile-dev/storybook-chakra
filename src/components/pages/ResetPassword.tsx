@@ -7,7 +7,7 @@ import CardFooter from '../onboarding/CardFooter'
 import TextInput from '../onboarding/TextInput'
 import { isEmptyField, isValidEmail } from '../../helpers/Validations'
 import ButtonLoader from '../loaders/ButtonLoader'
-import { IResetPassword } from '../../interfaces/ResetPassword.interface'
+import { IResetPassword } from '../../interfaces/pages/ResetPassword.interface'
 import useResetPassword from '../../hooks/useResetPassword'
 
 export const ResetPassword = ({

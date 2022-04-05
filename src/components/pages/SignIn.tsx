@@ -8,7 +8,7 @@ import PasswordInput from '../onboarding/PasswordInput'
 import useSignIn from '../../hooks/useSignIn'
 import TextInput from '../onboarding/TextInput'
 import { isEmptyField } from '../../helpers/Validations'
-import { ISignIn } from '../../interfaces/SignIn.interface'
+import { ISignIn } from '../../interfaces/pages/SignIn.interface'
 import ButtonLoader from '../loaders/ButtonLoader'
 
 export const SignIn = ({

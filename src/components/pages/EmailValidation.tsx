@@ -8,7 +8,7 @@ import {
   Button,
 } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
-import { IEmailValidation } from '../../interfaces/EmailValidation.interface'
+import { IEmailValidation } from '../../interfaces/pages/EmailValidation.interface'
 import Logo from '../onboarding/Logo'
 import ConfirmationImg from '../../assets/images/confirmation.svg'
 import ButtonLoader from '../loaders/ButtonLoader'
