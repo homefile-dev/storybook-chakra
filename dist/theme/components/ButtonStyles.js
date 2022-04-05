@@ -19,6 +19,9 @@ var Button = {
         full: {
             w: 'button.full',
         },
+        onboarding: {
+            w: ['button.full', 'button.md'],
+        },
     },
     variants: {
         primary: {
@@ -49,6 +52,7 @@ var Button = {
             fontSize: 'md',
             textTransform: 'uppercase',
             h: 'button.xs',
+            px: '1rem',
             fontWeight: 'regular',
             borderRadius: 'none',
             boxShadow: 'base',
@@ -64,7 +68,12 @@ var Button = {
                 boxShadow: 'none',
             },
             _hover: {
+                backgroundColor: 'button.secondaryHover',
                 boxShadow: 'lg',
+            },
+            _disabled: {
+                filter: 'grayscale(100%)',
+                pointerEvents: 'none',
             },
         },
         icon: {
@@ -78,6 +87,89 @@ var Button = {
             },
             _focus: {
                 backgroundColor: 'transparent',
+            },
+        },
+        menuIcon: {
+            color: 'button.menuIcon',
+            backgroundColor: 'transparent',
+            border: 'none',
+            boxShadow: 'none',
+            _hover: {
+                backgroundColor: 'transparent',
+                color: 'button.primary',
+            },
+            _focus: {
+                backgroundColor: 'transparent',
+            },
+        },
+        text: {
+            w: 'button.max',
+            fontFamily: 'secondary',
+            fontSize: 'md',
+            letterSpacing: 'wide',
+            color: 'font.link',
+            backgroundColor: 'transparent',
+            border: 'none',
+            boxShadow: 'none',
+            _hover: {
+                backgroundColor: 'transparent',
+                textDecoration: 'underline',
+                color: 'font.linkHover',
+            },
+            _focus: {
+                backgroundColor: 'transparent',
+            },
+        },
+        leftRounded: {
+            fontSize: 'md',
+            textTransform: 'uppercase',
+            h: 'button.xxs',
+            maxW: '4rem',
+            fontWeight: 'semibold',
+            borderRightRadius: 'none',
+            borderLeftRadius: 'full',
+            boxShadow: 'base',
+            color: 'transparent',
+            backgroundColor: 'brand.primary',
+            transition: 'all 0.2s ease-in-out',
+            _disabled: {
+                filter: 'grayscale(100%)',
+                pointerEvents: 'none',
+            },
+            _active: {
+                backgroundColor: 'brand.secondary',
+                boxShadow: 'none',
+            },
+            _hover: {
+                boxShadow: 'xl',
+                maxW: '10rem',
+                color: 'white',
+            },
+        },
+        rightRounded: {
+            fontSize: 'md',
+            textTransform: 'uppercase',
+            h: 'button.xs',
+            maxW: '4rem',
+            fontWeight: 'semibold',
+            borderRightRadius: 'full',
+            borderLeftRadius: 'none',
+            boxShadow: 'base',
+            color: 'transparent',
+            backgroundColor: 'button.primary',
+            transition: 'all 0.2s ease-in-out',
+            _disabled: {
+                filter: 'grayscale(100%)',
+                pointerEvents: 'none',
+            },
+            _active: {
+                backgroundColor: 'button.primaryHover',
+                boxShadow: 'none',
+            },
+            _hover: {
+                boxShadow: 'xl',
+                maxW: '10rem',
+                color: 'white',
             },
         },
     },

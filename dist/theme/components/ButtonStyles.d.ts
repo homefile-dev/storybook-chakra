@@ -17,6 +17,9 @@ declare const Button: {
         full: {
             w: string;
         };
+        onboarding: {
+            w: string[];
+        };
     };
     variants: {
         primary: {
@@ -47,6 +50,7 @@ declare const Button: {
             fontSize: string;
             textTransform: string;
             h: string;
+            px: string;
             fontWeight: string;
             borderRadius: string;
             boxShadow: string;
@@ -62,7 +66,12 @@ declare const Button: {
                 boxShadow: string;
             };
             _hover: {
+                backgroundColor: string;
                 boxShadow: string;
+            };
+            _disabled: {
+                filter: string;
+                pointerEvents: string;
             };
         };
         icon: {
@@ -76,6 +85,89 @@ declare const Button: {
             };
             _focus: {
                 backgroundColor: string;
+            };
+        };
+        menuIcon: {
+            color: string;
+            backgroundColor: string;
+            border: string;
+            boxShadow: string;
+            _hover: {
+                backgroundColor: string;
+                color: string;
+            };
+            _focus: {
+                backgroundColor: string;
+            };
+        };
+        text: {
+            w: string;
+            fontFamily: string;
+            fontSize: string;
+            letterSpacing: string;
+            color: string;
+            backgroundColor: string;
+            border: string;
+            boxShadow: string;
+            _hover: {
+                backgroundColor: string;
+                textDecoration: string;
+                color: string;
+            };
+            _focus: {
+                backgroundColor: string;
+            };
+        };
+        leftRounded: {
+            fontSize: string;
+            textTransform: string;
+            h: string;
+            maxW: string;
+            fontWeight: string;
+            borderRightRadius: string;
+            borderLeftRadius: string;
+            boxShadow: string;
+            color: string;
+            backgroundColor: string;
+            transition: string;
+            _disabled: {
+                filter: string;
+                pointerEvents: string;
+            };
+            _active: {
+                backgroundColor: string;
+                boxShadow: string;
+            };
+            _hover: {
+                boxShadow: string;
+                maxW: string;
+                color: string;
+            };
+        };
+        rightRounded: {
+            fontSize: string;
+            textTransform: string;
+            h: string;
+            maxW: string;
+            fontWeight: string;
+            borderRightRadius: string;
+            borderLeftRadius: string;
+            boxShadow: string;
+            color: string;
+            backgroundColor: string;
+            transition: string;
+            _disabled: {
+                filter: string;
+                pointerEvents: string;
+            };
+            _active: {
+                backgroundColor: string;
+                boxShadow: string;
+            };
+            _hover: {
+                boxShadow: string;
+                maxW: string;
+                color: string;
             };
         };
     };
