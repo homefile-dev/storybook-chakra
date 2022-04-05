@@ -85,5 +85,9 @@
       "option1": "Active homes",
       "option2": "Inactive homes"
     }
+  },
+  "sendDocument": {
+    "title": "Send Document",
+    "setupBt": "Set Up Document"
   }
 }
