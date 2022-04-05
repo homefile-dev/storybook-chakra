@@ -122,7 +122,7 @@ declare const Button: {
             fontSize: string;
             textTransform: string;
             h: string;
-            maxW: string;
+            pl: string;
             fontWeight: string;
             borderRightRadius: string;
             borderLeftRadius: string;
@@ -140,15 +140,13 @@ declare const Button: {
             };
             _hover: {
                 boxShadow: string;
-                maxW: string;
-                color: string;
             };
         };
         rightRounded: {
             fontSize: string;
             textTransform: string;
             h: string;
-            maxW: string;
+            pr: string;
             fontWeight: string;
             borderRightRadius: string;
             borderLeftRadius: string;
@@ -166,8 +164,6 @@ declare const Button: {
             };
             _hover: {
                 boxShadow: string;
-                maxW: string;
-                color: string;
             };
         };
     };
