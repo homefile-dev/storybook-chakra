@@ -1,6 +1,5 @@
-import { Flex, Text, Image, Select, Button } from '@chakra-ui/react'
+import { Flex, Select, Button } from '@chakra-ui/react'
 import { t } from 'i18next'
-import { useState } from 'react'
 import { HiOutlinePlus } from 'react-icons/hi'
 import { CustomIcon } from '../icons/CustomIcon'
 
@@ -15,7 +14,7 @@ export const MyHomesHeader = () => {
       >
         {t('myHomes.addHome')}
       </Button>
-      <Select placeholder={t('myHomes.select.title')} w="button.md">
+      <Select placeholder={t('myHomes.select.title')} w="input.wSm">
         <option value="option1">{t('myHomes.select.option1')}</option>
         <option value="option2">{t('myHomes.select.option2')}</option>
       </Select>
