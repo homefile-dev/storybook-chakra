@@ -9,7 +9,7 @@ import MyHomesHeader from './MyHomesHeader'
 
 export const MyHomes = () => {
   return (
-    <Container variant="tertiary" minW="full" h="30rem">
+    <Container variant="launchpad" minW="full" h="30rem">
       <ContainerHeader
         title={t('myHomes.title')}
         titleIcon={House}

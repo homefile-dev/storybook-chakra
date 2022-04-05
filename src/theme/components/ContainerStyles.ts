@@ -34,6 +34,10 @@ const Container = {
     tertiary: {
       backgroundColor: 'container.tertiary',
     },
+    launchpad: {
+      backgroundColor: 'container.tertiary',
+      boxShadow: 'base',
+    },
     ghost: {
       backgroundColor: 'transparent',
     },

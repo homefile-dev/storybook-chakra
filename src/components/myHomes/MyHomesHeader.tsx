@@ -5,17 +5,15 @@ import { HiOutlinePlus } from 'react-icons/hi'
 import { CustomIcon } from '../icons/CustomIcon'
 
 export const MyHomesHeader = () => {
-  const [isOver, setIsOver] = useState(false)
   return (
     <Flex justifyContent="space-between" alignItems="start" pr="4" py="4">
       <Button
-        onMouseOver={() => setIsOver(true)}
-        onMouseLeave={() => setIsOver(false)}
+        size="md"
         onClick={() => {}}
         leftIcon={<CustomIcon type={HiOutlinePlus} color="white" size="7" />}
         variant="rightRounded"
       >
-        {isOver ? t('myHomes.addHome') : ''}
+        {t('myHomes.addHome')}
       </Button>
       <Select placeholder={t('myHomes.select.title')} w="button.md">
         <option value="option1">{t('myHomes.select.option1')}</option>
