@@ -1,4 +1,4 @@
-const Input = {
+const Select = {
   sizes: {
     sm: {
       field: {
@@ -48,7 +48,7 @@ const Input = {
         },
         _invalid: {
           borderColor: 'pink.500',
-        }
+        },
       },
     },
   },
@@ -58,4 +58,4 @@ const Input = {
   },
 }
 
-export default Input
+export default Select

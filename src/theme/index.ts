@@ -5,6 +5,7 @@ import Button from './components/ButtonStyles'
 import Container from './components/ContainerStyles'
 import Text from './components/TextStyles'
 import Input from './components/InputStyles'
+import Select from './components/SelectStyles'
 
 const theme = extendTheme({
   styles: {
@@ -30,6 +31,7 @@ const theme = extendTheme({
     Container,
     Text,
     Input,
+    Select,
   },
   colors: {
     brand: {

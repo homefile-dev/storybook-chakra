@@ -20,7 +20,7 @@ export const Header = ({ firstName, handleViews }: IHeader) => {
         onMouseLeave={() => setIsOver(false)}
         onClick={handleViews}
         leftIcon={<CustomIcon type={HiOutlinePlus} color="white" size="7" />}
-        variant="rightRounded"
+        variant="leftRounded"
       >
         {isOver ? t('launchpad.viewsBT') : ''}
       </Button>

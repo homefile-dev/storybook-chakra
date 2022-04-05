@@ -118,7 +118,7 @@ const Button = {
         backgroundColor: 'transparent',
       },
     },
-    rightRounded: {
+    leftRounded: {
       fontSize: 'md',
       textTransform: 'uppercase',
       h: 'button.xxs',
@@ -136,6 +136,32 @@ const Button = {
       },
       _active: {
         backgroundColor: 'brand.secondary',
+        boxShadow: 'none',
+      },
+      _hover: {
+        boxShadow: 'xl',
+        maxW: '10rem',
+        color: 'white',
+      },
+    },
+    rightRounded: {
+      fontSize: 'md',
+      textTransform: 'uppercase',
+      h: 'button.xs',
+      maxW: '4rem',
+      fontWeight: 'semibold',
+      borderRightRadius: 'full',
+      borderLeftRadius: 'none',
+      boxShadow: 'base',
+      color: 'transparent',
+      backgroundColor: 'button.primary',
+      transition: 'all 0.2s ease-in-out',
+      _disabled: {
+        filter: 'grayscale(100%)',
+        pointerEvents: 'none',
+      },
+      _active: {
+        backgroundColor: 'button.primaryHover',
         boxShadow: 'none',
       },
       _hover: {
