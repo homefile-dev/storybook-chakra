@@ -1,5 +1,7 @@
 import { Box, Grid, GridItem } from '@chakra-ui/react'
+import FirstHomeContent from '../firstHome/FirstHomeContent'
 import { Header } from '../launchpad/Header'
+import LeftPanel from '../launchpad/LeftPanel'
 import Masthead from '../launchpad/Masthead'
 import MyHomes from '../myHomes/MyHomes'
 import SendDocument from '../sendDocument/SendDocument'
@@ -10,6 +12,7 @@ export const Launchpad = () => {
   const firstName = userName.split(' ')[0]
   return (
     <Box w="full">
+      <LeftPanel child={<FirstHomeContent />} />
       <Masthead userName={userName} />
       <Header handleViews={() => {}} firstName={firstName} />
       <Grid
