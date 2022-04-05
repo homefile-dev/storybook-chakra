@@ -4,6 +4,10 @@ const Text = {
       fontSize: '3xl',
       color: 'font.primary',
     },
+    heading6: {
+      fontSize: '2xl',
+      color: 'font.primary',
+    },
     title: {
       fontSize: 'lg',
       color: 'font.primary',
