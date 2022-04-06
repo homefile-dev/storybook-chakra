@@ -13,6 +13,17 @@ export const useAddress = () => {
       setComplements([`complement${counter + 1}`, ...complements].reverse())
   }
 
+  const handleDeleteComplements = (complement: string) => {
+    setCounter(counter - 1)
+    if (counter >= 0) {
+      setComplements(complements.filter((item) => item !== complement))
+      setInputs({
+        ...inputs,
+        [complement]: '',
+      })
+    }
+  }
+
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setIsValidated(false)
     setInputs({
@@ -26,6 +37,7 @@ export const useAddress = () => {
     counter,
     handleInputChange,
     handleAddComplements,
+    handleDeleteComplements,
     inputs,
     isValidated,
     setIsValidated,

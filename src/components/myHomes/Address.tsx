@@ -1,4 +1,11 @@
-import { Box, Container, IconButton, InputGroup, Stack } from '@chakra-ui/react'
+import {
+  Box,
+  Center,
+  Container,
+  IconButton,
+  InputGroup,
+  Stack,
+} from '@chakra-ui/react'
 import SectionHeader from '../headers/SectionHeader'
 import HomeAddres from '../../assets/images/home-address.svg'
 import TextInput from '../onboarding/TextInput'
@@ -6,7 +13,9 @@ import { t } from 'i18next'
 import { isEmptyField } from '../../helpers/Validations'
 import useAddress from '../../hooks/myHomes/useAddress'
 import { AddIcon } from '@chakra-ui/icons'
+import { AiOutlineMinus } from 'react-icons/ai'
 import { IAddress } from '../../interfaces/myHomes/Address.interface'
+import { CustomIcon } from '../icons/CustomIcon'
 
 export const Address = () => {
   const {
@@ -14,6 +23,7 @@ export const Address = () => {
     counter,
     handleInputChange,
     handleAddComplements,
+    handleDeleteComplements,
     inputs,
     isValidated,
     setIsValidated,
@@ -21,10 +31,7 @@ export const Address = () => {
   return (
     <Container variant="ghost" p="4">
       <Stack spacing="input.sm">
-        <SectionHeader
-          title={t('myHomes.section1')}
-          titleIcon={HomeAddres}
-        />
+        <SectionHeader title={t('myHomes.section1')} titleIcon={HomeAddres} />
         <InputGroup gap="input.sm">
           <Box w="12rem">
             <TextInput
@@ -59,7 +66,7 @@ export const Address = () => {
         {complements.length > 0 &&
           complements.map((complement, index) => {
             return (
-              <InputGroup key={complement}>
+              <InputGroup key={complement} gap="input.sm">
                 <TextInput
                   errorMessage={
                     t('myHomes.form.complement') +
@@ -75,6 +82,16 @@ export const Address = () => {
                   value={inputs[complement as keyof IAddress]}
                   handleChange={(event) => handleInputChange(event)}
                 />
+                <Center w="3.5rem">
+                  <IconButton
+                    w="2rem"
+                    minH="2rem"
+                    aria-label="Delete address line"
+                    variant="iconOutlined"
+                    icon={<CustomIcon type={AiOutlineMinus} />}
+                    onClick={() => handleDeleteComplements(complement)}
+                  />
+                </Center>
               </InputGroup>
             )
           })}
