@@ -74,6 +74,28 @@ declare const Button: {
                 pointerEvents: string;
             };
         };
+        iconOutlined: {
+            maxW: string;
+            borderRadius: string;
+            boxShadow: string;
+            transition: string;
+            backgroundColor: string;
+            border: string;
+            borderColor: string;
+            color: string;
+            _active: {
+                backgroundColor: string;
+                boxShadow: string;
+            };
+            _hover: {
+                backgroundColor: string;
+                boxShadow: string;
+            };
+            _disabled: {
+                filter: string;
+                pointerEvents: string;
+            };
+        };
         icon: {
             color: string;
             backgroundColor: string;
