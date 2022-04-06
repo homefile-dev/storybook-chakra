@@ -74,6 +74,28 @@ const Button = {
         pointerEvents: 'none',
       },
     },
+    iconOutlined: {
+      maxW: "3rem",
+      borderRadius: 'sm',
+      boxShadow: 'base',
+      transition: 'all 0.2s ease-in-out',
+      backgroundColor: 'transparent',
+      border: '1px',
+      borderColor: 'button.primary',
+      color: 'button.primary',
+      _active: {
+        backgroundColor: 'button.tertiaryHover',
+        boxShadow: 'none',
+      },
+      _hover: {
+        backgroundColor: 'button.secondaryHover',
+        boxShadow: 'lg',
+      },
+      _disabled: {
+        filter: 'grayscale(100%)',
+        pointerEvents: 'none',
+      },
+    },
     icon: {
       color: 'button.icon',
       backgroundColor: 'transparent',

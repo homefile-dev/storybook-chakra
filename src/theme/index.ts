@@ -107,6 +107,9 @@ const theme = extendTheme({
       lg: '3rem',
       xl: '4rem',
     },
+    input: {
+      sm: '0.8rem',
+    }
   },
   sizes: {
     button: {
