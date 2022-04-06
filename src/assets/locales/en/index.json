@@ -76,6 +76,8 @@
   "myHomes": {
     "title": "My Homes",
     "addHome": "Home",
+    "section1": "Home address",
+    "section2": "Relantionship to home",
     "menu": {
       "settings": "Settings",
       "help": "Help"
@@ -84,6 +86,27 @@
       "title": "Select option",
       "option1": "Active homes",
       "option2": "Inactive homes"
+    },
+    "selectRelationship": {
+      "title": "Select relationship",
+      "option1": "I am the Builder",
+      "option2": "I am the Designer",
+      "option3": "I am the Engineer",
+      "option4": "I am the Homeowner"
+    },
+    "firstHome": {
+      "skipBt": "Skip for Now",
+      "title": "Let’s add your first home."
+    },
+    "form": {
+      "zip": "Zip Code",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "complement": "Complement",
+      "required": "is required",
+      "invalid": "is invalid",
+      "projectName": "Create Name or Project Number"
     }
   },
   "sendDocument": {
