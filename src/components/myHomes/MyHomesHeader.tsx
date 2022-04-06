@@ -3,12 +3,12 @@ import { t } from 'i18next'
 import { HiOutlinePlus } from 'react-icons/hi'
 import { CustomIcon } from '../icons/CustomIcon'
 
-export const MyHomesHeader = () => {
+export const MyHomesHeader = ({ handleHomeBt }: { handleHomeBt: () => void }) => {
   return (
     <Flex justifyContent="space-between" alignItems="start" pr="4" py="4">
       <Button
         size="md"
-        onClick={() => {}}
+        onClick={handleHomeBt}
         leftIcon={<CustomIcon type={HiOutlinePlus} color="white" size="7" />}
         variant="rightRounded"
       >

@@ -1,3 +1,5 @@
 export interface ILeftPanel {
-  child: JSX.Element;
+  child: JSX.Element
+  isOpen: boolean
+  onClose: () => void
 }

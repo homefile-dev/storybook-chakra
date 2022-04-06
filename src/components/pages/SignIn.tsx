@@ -29,7 +29,7 @@ export const SignIn = ({
         <PageTitle title={t('signin.title')} />
         <Box px={['container.sm', 'container.md', 'container.lg']} mb={6}>
           <Stack spacing={8}>
-            <Stack spacing={3}>
+            <Stack spacing="input.sm">
               <TextInput
                 errorMessage={
                   loginError

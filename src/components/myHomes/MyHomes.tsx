@@ -2,12 +2,12 @@ import { Container } from '@chakra-ui/react'
 import { t } from 'i18next'
 import { FiMoreHorizontal } from 'react-icons/fi'
 import { CustomIcon } from '../icons/CustomIcon'
-import ContainerHeader from '../launchpad/ContainerHeader'
+import ContainerHeader from '../headers/ContainerHeader'
 import House from '../../assets/images/house.svg'
 import { MyHomeMenuItems } from '../../helpers/launchpad/MenuItems.helper'
 import MyHomesHeader from './MyHomesHeader'
 
-export const MyHomes = () => {
+export const MyHomes = ({ handleHomeBt }: { handleHomeBt: () => void }) => {
   return (
     <Container variant="launchpad" minW="full" minH="30rem">
       <ContainerHeader
@@ -16,7 +16,7 @@ export const MyHomes = () => {
         menuItems={MyHomeMenuItems}
         icon={<CustomIcon type={FiMoreHorizontal} size="8" />}
       />
-      <MyHomesHeader />
+      <MyHomesHeader handleHomeBt={handleHomeBt} />
     </Container>
   )
 }

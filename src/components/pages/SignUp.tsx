@@ -32,7 +32,7 @@ export const SignUp = ({
         <Logo />
         <PageTitle title={t('signup.title')} />
         <Box px={['container.sm', 'container.md', 'container.lg']} mb={6}>
-          <Stack spacing={3}>
+          <Stack spacing="input.sm">
             <TextInput
               errorMessage={t('forms.firstName') + ' ' + t('forms.required')}
               hasError={isValidated && isEmptyField(inputs.firstName)}

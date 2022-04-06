@@ -1,12 +1,7 @@
-import { Drawer, DrawerOverlay, useDisclosure } from "@chakra-ui/react"
-import { useEffect } from "react"
+import { Drawer, DrawerOverlay } from "@chakra-ui/react"
 import { ILeftPanel } from "../../interfaces/launchpad/LeftPanel.interface"
 
-export const LeftPanel = ({ child }: ILeftPanel) => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  useEffect(() => {
-    onOpen()
-    }, [])
+export const LeftPanel = ({ child, isOpen, onClose }: ILeftPanel) => {
   return (
     <Drawer placement="left" onClose={onClose} isOpen={isOpen} size="md">
       <DrawerOverlay />

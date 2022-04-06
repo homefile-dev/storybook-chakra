@@ -2,7 +2,7 @@ import { Box, Button, Container } from '@chakra-ui/react'
 import { t } from 'i18next'
 import { FiMoreHorizontal } from 'react-icons/fi'
 import { CustomIcon } from '../icons/CustomIcon'
-import ContainerHeader from '../launchpad/ContainerHeader'
+import ContainerHeader from '../headers/ContainerHeader'
 import SendDoc from '../../assets/images/send.svg'
 import { MyHomeMenuItems } from '../../helpers/launchpad/MenuItems.helper'
 
