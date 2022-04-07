@@ -6,6 +6,7 @@ module.exports = {
     '@storybook/addon-interactions',
     '@chakra-ui/storybook-addon',
     'storybook-react-i18next',
+    'storybook-axios',
   ],
   framework: '@storybook/react',
 }

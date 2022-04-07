@@ -53,6 +53,7 @@
     "json-loader": "^0.5.7",
     "rimraf": "^3.0.2",
     "semantic-release": "^19.0.2",
+    "storybook-axios": "^1.0.1",
     "storybook-react-i18next": "^1.0.18",
     "typescript": "^4.6.3",
     "webpack": "^5.70.0"
@@ -63,6 +64,7 @@
     "@emotion/styled": "^11.8.1",
     "@fontsource/assistant": "^4.5.8",
     "@fontsource/poppins": "^4.5.5",
+    "axios": "^0.26.1",
     "framer-motion": "^4.1.17",
     "i18next": "^21.6.14",
     "i18next-browser-languagedetector": "^6.1.4",
@@ -70,8 +72,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.16.2",
-    "react-spinners": "^0.11.0",
-    "react-icons": "^3.11.0"
+    "react-icons": "^3.11.0",
+    "react-spinners": "^0.11.0"
   },
   "scripts": {
     "start": "start-storybook -p 6006",
