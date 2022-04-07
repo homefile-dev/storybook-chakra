@@ -1,4 +1,5 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
+import locationApi from '../../apis/locationApi'
 import { AddressForm } from '../../helpers/myHomes/Address.helper'
 
 export const useAddress = () => {
@@ -31,6 +32,21 @@ export const useAddress = () => {
       [event.target.id]: event.target.value,
     })
   }
+
+  const getAddress = async (zipCode: string) => {
+    try {
+      const response = await locationApi.get(`/${zipCode}.json`)
+      console.log(response.data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    if (inputs.zipCode) {
+      getAddress(inputs.zipCode)
+    }
+  }, [inputs.zipCode])
 
   return {
     complements,
