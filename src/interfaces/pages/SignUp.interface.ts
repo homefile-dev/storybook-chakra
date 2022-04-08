@@ -1,9 +1,9 @@
 export interface ISignUpForm {
+  confirmPassword?: string
   email: string
-  confirmPassword: string
   firstName: string
   lastName: string
-  password: string
+  password?: string 
 }
 
 export interface ISignUp {
@@ -13,4 +13,5 @@ export interface ISignUp {
   privacyUrl: string
   signupError: boolean
   termsUrl: string
+  values?: ISignUpForm
 }

@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from 'react'
 import { SignInForm } from '../helpers/SignIn.helper'
+import { ISignInForm } from '../interfaces/pages/SignIn.interface'
 
 export const useSignIn = () => {
   const [inputs, setInputs] = useState(SignInForm)
@@ -13,10 +14,16 @@ export const useSignIn = () => {
     })
   }
 
+  const handleAutoFill = (values: ISignInForm) => {
+    setInputs(values)
+  }
+
   return {
     inputs,
+    handleAutoFill,
     handleInputChange,
     isValidated,
+    setInputs,
     setIsValidated,
   }
 }

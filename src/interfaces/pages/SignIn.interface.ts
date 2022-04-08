@@ -11,4 +11,5 @@ export interface ISignIn {
   loginError: boolean
   privacyUrl: string
   termsUrl: string
+  values?: ISignInForm
 }

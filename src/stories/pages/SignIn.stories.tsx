@@ -31,6 +31,7 @@ const Template: ComponentStory<typeof SignIn> = () => {
       handleSignUp={() => {}}
       handleForgotPassword={() => {}}
       loginError={hasError}
+      values={{ email: 'damaprodutora@gmail.com', password: '123456' }}
     />
   )
 }

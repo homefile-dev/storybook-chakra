@@ -11,6 +11,11 @@ export default {
 const Template: ComponentStory<typeof SignUp> = () => {
   const [hasError, setHasError] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const valuesFilled = {
+    email: 'user@user.com',
+    firstName: 'Adam',
+    lastName: 'Lee',
+  }
   return (
     <SignUp
       isLoading={isLoading}
@@ -30,6 +35,7 @@ const Template: ComponentStory<typeof SignUp> = () => {
       privacyUrl=""
       signupError={hasError}
       termsUrl=""
+      values={valuesFilled}
     />
   )
 }

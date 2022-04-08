@@ -15,6 +15,7 @@ import {
   passwordMatch,
 } from '../../helpers/Validations'
 import ButtonLoader from '../loaders/ButtonLoader'
+import { useEffect } from 'react'
 
 export const SignUp = ({
   isLoading,
@@ -23,9 +24,27 @@ export const SignUp = ({
   privacyUrl,
   signupError,
   termsUrl,
+  values = {
+    email: '',
+    firstName: '',
+    lastName: '',
+    confirmPassword: '',
+    password: '',
+  },
 }: ISignUp) => {
   const { t } = useTranslation()
-  const { inputs, handleInputChange, isValidated, setIsValidated } = useSignUp()
+  const {
+    inputs,
+    handleAutoFill,
+    handleInputChange,
+    isValidated,
+    setIsValidated,
+  } = useSignUp()
+
+  useEffect(() => {
+    handleAutoFill(values)
+  }, [])
+
   return (
     <Box w="container.full">
       <Container size="onboarding">
@@ -38,16 +57,22 @@ export const SignUp = ({
               hasError={isValidated && isEmptyField(inputs.firstName)}
               id="firstName"
               placeholder={t('forms.firstName')}
-              value={inputs.firstName}
-              handleChange={(event) => handleInputChange(event)}
+              value={values.firstName || inputs.firstName}
+              handleChange={(event) => {
+                values.firstName = event.target.value
+                handleInputChange(event)
+              }}
             />
             <TextInput
               errorMessage={t('forms.lastName') + ' ' + t('forms.required')}
               hasError={isValidated && isEmptyField(inputs.lastName)}
               id="lastName"
               placeholder={t('forms.lastName')}
-              value={inputs.lastName}
-              handleChange={(event) => handleInputChange(event)}
+              value={values.lastName || inputs.lastName}
+              handleChange={(event) => {
+                values.lastName = event.target.value
+                handleInputChange(event)
+              }}
             />
             <TextInput
               errorMessage={
@@ -65,15 +90,18 @@ export const SignUp = ({
               }
               id="email"
               placeholder={t('forms.email')}
-              value={inputs.email}
-              handleChange={(event) => handleInputChange(event)}
+              value={values.email || inputs.email}
+              handleChange={(event) => {
+                values.email = event.target.value
+                handleInputChange(event)
+              }}
             />
             <Text textAlign="center" variant="caption">
               {t('signup.subtitle')}
             </Text>
             <PasswordInput
               errorMessage={
-                !isValidPassword(inputs.password)
+                !isValidPassword(inputs.password as string)
                   ? t('forms.errorPasswordLength')
                   : t('forms.errorPasswordMatch')
               }
@@ -84,7 +112,7 @@ export const SignUp = ({
               }
               id="password"
               placeholder={t('forms.password')}
-              value={inputs.password}
+              value={inputs.password || ''}
               handleChange={(event) => handleInputChange(event)}
             />
             <PasswordInput
@@ -100,7 +128,7 @@ export const SignUp = ({
               }
               id="confirmPassword"
               placeholder={t('forms.passwordConfirm')}
-              value={inputs.confirmPassword}
+              value={inputs.confirmPassword || ''}
               handleChange={(event) => handleInputChange(event)}
             />
             <Center

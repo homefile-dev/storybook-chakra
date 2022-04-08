@@ -10,6 +10,7 @@ import TextInput from '../onboarding/TextInput'
 import { isEmptyField } from '../../helpers/Validations'
 import { ISignIn } from '../../interfaces/pages/SignIn.interface'
 import ButtonLoader from '../loaders/ButtonLoader'
+import { useEffect } from 'react'
 
 export const SignIn = ({
   isLoading,
@@ -19,9 +20,21 @@ export const SignIn = ({
   loginError,
   termsUrl,
   privacyUrl,
+  values = { email: '', password: '' },
 }: ISignIn) => {
   const { t } = useTranslation()
-  const { inputs, handleInputChange, isValidated, setIsValidated } = useSignIn()
+  const {
+    inputs,
+    handleAutoFill,
+    handleInputChange,
+    isValidated,
+    setIsValidated,
+  } = useSignIn()
+
+  useEffect(() => {
+    handleAutoFill(values)
+  }, [])
+
   return (
     <Box w="container.full">
       <Container size="onboarding">
@@ -41,8 +54,11 @@ export const SignIn = ({
                 }
                 id="email"
                 placeholder={t('forms.email')}
-                value={inputs.email}
-                handleChange={(event) => handleInputChange(event)}
+                value={values.email || inputs.email}
+                handleChange={(event) => {
+                  values.email = event.target.value
+                  handleInputChange(event)
+                }}
               />
               <PasswordInput
                 errorMessage={
@@ -55,15 +71,18 @@ export const SignIn = ({
                 }
                 id="password"
                 placeholder={t('forms.password')}
-                value={inputs.password}
-                handleChange={(event) => handleInputChange(event)}
+                value={values.password || inputs.password}
+                handleChange={(event) => {
+                  values.password = event.target.value
+                  handleInputChange(event)
+                }}
               />
             </Stack>
             <Stack spacing={4}>
               <Button
                 isLoading={isLoading}
                 spinner={<ButtonLoader />}
-                onClick={() => {
+                onClick={async () => {
                   setIsValidated(true)
                   if (
                     !isEmptyField(inputs.email) &&
