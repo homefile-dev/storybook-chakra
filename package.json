@@ -10,8 +10,8 @@
     "url": "https://github.com/homefile-dev/storybook-chakra.git"
   },
   "peerDependencies": {
-    "@chakra-ui/react": ">=1",
     "@chakra-ui/icons": ">=1",
+    "@chakra-ui/react": ">=1",
     "@emotion/react": "^>=11",
     "@emotion/styled": ">=11",
     "@fontsource/assistant": ">=4",
@@ -49,6 +49,7 @@
     "babel-loader": "^8.2.4",
     "clean-webpack-plugin": "^4.0.0",
     "copyfiles": "^2.4.1",
+    "dotenv-webpack": "^7.1.0",
     "git-commit-msg-linter": "^4.1.1",
     "husky": "^7.0.0",
     "json-loader": "^0.5.7",

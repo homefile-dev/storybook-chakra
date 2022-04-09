@@ -39,5 +39,11 @@ module.exports = {
       },
     ],
   },
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new Dotenv({
+      safe: true, 
+      systemvars: true,
+    }),
+  ],
 }
