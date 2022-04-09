@@ -14,10 +14,13 @@ import { isEmptyField } from '../../helpers/Validations'
 import useAddress from '../../hooks/myHomes/useAddress'
 import { AddIcon } from '@chakra-ui/icons'
 import { AiOutlineMinus } from 'react-icons/ai'
-import { IAddress } from '../../interfaces/myHomes/Address.interface'
+import {
+  IAddress,
+  IAddressForm,
+} from '../../interfaces/myHomes/Address.interface'
 import { CustomIcon } from '../icons/CustomIcon'
 
-export const Address = () => {
+export const Address = ({ isValidated }: IAddress) => {
   const {
     complements,
     counter,
@@ -25,8 +28,6 @@ export const Address = () => {
     handleAddComplements,
     handleDeleteComplements,
     inputs,
-    isValidated,
-    setIsValidated,
   } = useAddress()
   return (
     <Container variant="ghost" p="4">
@@ -75,11 +76,11 @@ export const Address = () => {
                   }
                   hasError={
                     isValidated &&
-                    isEmptyField(inputs[complement as keyof IAddress])
+                    isEmptyField(inputs[complement as keyof IAddressForm])
                   }
                   id={complement}
                   placeholder={`${t('myHomes.form.complement')} ${index + 1}`}
-                  value={inputs[complement as keyof IAddress]}
+                  value={inputs[complement as keyof IAddressForm]}
                   handleChange={(event) => handleInputChange(event)}
                 />
                 <Center w="3.5rem">

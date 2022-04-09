@@ -6,7 +6,6 @@ import { ILocationApi } from '../../interfaces/apis/LocationApi.interface'
 
 export const useAddress = () => {
   const [inputs, setInputs] = useState(AddressForm)
-  const [isValidated, setIsValidated] = useState(false)
   const [counter, setCounter] = useState(0)
   const [complements, setComplements] = useState<string[]>([])
 
@@ -28,7 +27,6 @@ export const useAddress = () => {
   }
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setIsValidated(false)
     setInputs({
       ...inputs,
       [event.target.id]: event.target.value,
@@ -69,8 +67,6 @@ export const useAddress = () => {
     handleAddComplements,
     handleDeleteComplements,
     inputs,
-    isValidated,
-    setIsValidated,
   }
 }
 

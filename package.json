@@ -20,7 +20,8 @@
     "i18next": ">=21",
     "i18next-browser-languagedetector": ">=6",
     "react": ">=16",
-    "react-i18next": ">=11"
+    "react-i18next": ">=11",
+    "axios": ">=0"
   },
   "release": {
     "branches": [

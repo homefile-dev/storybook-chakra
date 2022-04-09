@@ -17,7 +17,7 @@ export const Launchpad = () => {
   return (
     <Box w="full">
       <LeftPanel
-        child={
+        children={
           <FirstHomeContent
             handleSkipClick={onClose}
             userFirstName={firstName}

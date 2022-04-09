@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Container,
   DrawerBody,
   DrawerContent,
@@ -7,6 +8,7 @@ import {
   DrawerHeader,
   Select,
   Stack,
+  useDisclosure,
 } from '@chakra-ui/react'
 import { t } from 'i18next'
 import { IFirstHomeContent } from '../../../interfaces/myHomes/FirstHomeContent.interface'
@@ -17,24 +19,33 @@ import RelationshipHome from '../../../assets/images/relationship-home.svg'
 import TextInput from '../../onboarding/TextInput'
 import useFirstHomeContent from '../../../hooks/myHomes/useFirstHomeContent'
 import { isEmptyField } from '../../../helpers/Validations'
+import { FooterDrawer } from '../../footers/FooterDrawer'
+import { useEffect } from 'react'
 
 export const FirstHomeContent = ({
   handleSkipClick,
   userFirstName,
 }: IFirstHomeContent) => {
-  const { handleInputChange, inputs, isValidated, options, setIsValidated } = useFirstHomeContent()
+  const { handleInputChange, inputs, isValidated, options, setIsValidated } =
+    useFirstHomeContent()
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
+  setTimeout(() => {
+    onOpen()
+  }, 1000)
+
   return (
-    <DrawerContent>
+    <DrawerContent bg="container.tertiary">
       <DrawerHeader p="0">
         <FirstHomeHeader
           firstName={userFirstName}
           handleClick={handleSkipClick}
         />
       </DrawerHeader>
-      <DrawerBody p="0">
-        <Container variant="tertiary" h="full">
+      <DrawerBody p="0" mb="6rem">
+        <Container variant="ghost" h="full">
           <Box bg="white" py="2">
-            <Address />
+            <Address isValidated={isValidated} />
           </Box>
           <Box py="6" px="input.sm">
             <Stack spacing="input.sm">
@@ -61,6 +72,17 @@ export const FirstHomeContent = ({
           </Box>
         </Container>
       </DrawerBody>
+      <DrawerFooter>
+        <FooterDrawer
+          children={
+            <Button variant="secondary" size="medium">
+              {t('myHomes.addHome')}
+            </Button>
+          }
+          isOpen={isOpen}
+          onClose={onClose}
+        />
+      </DrawerFooter>
     </DrawerContent>
   )
 }

@@ -41,6 +41,11 @@ const Container = {
     ghost: {
       backgroundColor: 'transparent',
     },
+    footer: {
+      backgroundColor: 'white',
+      boxShadow: '2xl',
+      borderTopRadius: 'xl',
+    },
   },
   defaultProps: {
     size: 'full',

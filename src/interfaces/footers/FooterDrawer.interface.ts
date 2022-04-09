@@ -1,6 +1,6 @@
-import { ReactElement } from "react"
+import { ReactElement } from "react";
 
-export interface ILeftPanel {
+export interface IFooterDrawer {
   children: ReactElement | ReactElement[]
   isOpen: boolean
   onClose: () => void
