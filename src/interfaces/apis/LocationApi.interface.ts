@@ -3,8 +3,8 @@ export interface ILocationApi {
     {
       context: [
         {
-          id: string;
-          text: "Manhattan"
+          id: string
+          text: string
         }
       ]
     }

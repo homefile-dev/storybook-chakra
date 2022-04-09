@@ -1,6 +1,8 @@
+import { AxiosResponse } from 'axios'
 import { ChangeEvent, useEffect, useState } from 'react'
 import locationApi from '../../apis/locationApi'
 import { AddressForm } from '../../helpers/myHomes/Address.helper'
+import { ILocationApi } from '../../interfaces/apis/LocationApi.interface'
 
 export const useAddress = () => {
   const [inputs, setInputs] = useState(AddressForm)
@@ -35,15 +37,27 @@ export const useAddress = () => {
 
   const getAddress = async (zipCode: string) => {
     try {
-      const response = await locationApi.get(`/${zipCode}.json`)
-      console.log(response.data)
+      const {
+        data: { features },
+      }: AxiosResponse<ILocationApi> = await locationApi.get(`/${zipCode}.json`)
+      const city =
+        features[0].context.find((item) => item.id.split('.')[0] === 'place')
+          ?.text || ''
+      const state =
+        features[0].context.find((item) => item.id.split('.')[0] === 'region')
+          ?.text || ''
+      setInputs({
+        ...inputs,
+        city,
+        state,
+      })
     } catch (err) {
       console.log(err)
     }
   }
 
   useEffect(() => {
-    if (inputs.zipCode) {
+    if (inputs.zipCode.length === 5) {
       getAddress(inputs.zipCode)
     }
   }, [inputs.zipCode])
