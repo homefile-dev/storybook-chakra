@@ -8,7 +8,7 @@ import {
   Text,
 } from '@chakra-ui/react'
 import { useState } from 'react'
-import { IInput } from '../../interfaces/onboarding/Input.interface'
+import { IInput } from '../../interfaces/inputs/Input.interface'
 
 export const PasswordInput = ({
   errorMessage,

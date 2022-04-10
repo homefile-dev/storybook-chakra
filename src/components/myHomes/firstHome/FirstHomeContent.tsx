@@ -16,11 +16,10 @@ import SectionHeader from '../../headers/SectionHeader'
 import Address from '../Address'
 import FirstHomeHeader from './FirstHomeHeader'
 import RelationshipHome from '../../../assets/images/relationship-home.svg'
-import TextInput from '../../onboarding/TextInput'
+import TextInput from '../../inputs/TextInput'
 import useFirstHomeContent from '../../../hooks/myHomes/useFirstHomeContent'
 import { isEmptyField } from '../../../helpers/Validations'
 import { FooterDrawer } from '../../footers/FooterDrawer'
-import { useEffect } from 'react'
 
 export const FirstHomeContent = ({
   handleSkipClick,

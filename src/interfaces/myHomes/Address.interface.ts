@@ -1,8 +1,8 @@
 export interface IAddressForm {
   address: string
+  address1: string
+  address2: string
   city: string
-  complement1: string
-  complement2: string
   state: string
   zipCode: string
 }

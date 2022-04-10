@@ -41,14 +41,14 @@ const Input = {
           transition: 'background-color 5000s ease-in-out 0s',
         },
         _disabled: {
-          bg: 'input.border',
-          _placeholder: {
-            color: 'white',
+          bg: 'container.tertiary',
+          _hover: {
+            borderColor: 'input.border',
           },
         },
         _invalid: {
           borderColor: 'pink.500',
-        }
+        },
       },
     },
   },

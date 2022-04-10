@@ -1,4 +1,5 @@
 import { AxiosResponse } from 'axios'
+import { t } from 'i18next'
 import { ChangeEvent, useEffect, useState } from 'react'
 import locationApi from '../../apis/locationApi'
 import { AddressForm } from '../../helpers/myHomes/Address.helper'
@@ -8,11 +9,12 @@ export const useAddress = () => {
   const [inputs, setInputs] = useState(AddressForm)
   const [counter, setCounter] = useState(0)
   const [complements, setComplements] = useState<string[]>([])
+  const label = t('myHomes.form.address')
 
   const handleAddComplements = () => {
     setCounter(counter + 1)
     counter < 2 &&
-      setComplements([`complement${counter + 1}`, ...complements].reverse())
+      setComplements([`${label}${counter + 1}`, ...complements].reverse())
   }
 
   const handleDeleteComplements = (complement: string) => {

@@ -1,5 +1,4 @@
 import {
-  Box,
   Center,
   Container,
   IconButton,
@@ -8,7 +7,7 @@ import {
 } from '@chakra-ui/react'
 import SectionHeader from '../headers/SectionHeader'
 import HomeAddres from '../../assets/images/home-address.svg'
-import TextInput from '../onboarding/TextInput'
+import TextInput from '../inputs/TextInput'
 import { t } from 'i18next'
 import { isEmptyField } from '../../helpers/Validations'
 import useAddress from '../../hooks/myHomes/useAddress'
@@ -34,18 +33,40 @@ export const Address = ({ isValidated }: IAddress) => {
       <Stack spacing="input.sm">
         <SectionHeader title={t('myHomes.section1')} titleIcon={HomeAddres} />
         <InputGroup gap="input.sm">
-          <Box w="12rem">
-            <TextInput
-              errorMessage={
-                t('myHomes.form.zip') + ' ' + t('myHomes.form.required')
-              }
-              hasError={isValidated && isEmptyField(inputs.zipCode)}
-              id="zipCode"
-              placeholder={t('myHomes.form.zip')}
-              value={inputs.zipCode}
-              handleChange={(event) => handleInputChange(event)}
-            />
-          </Box>
+          <TextInput
+            errorMessage={
+              t('myHomes.form.zip') + ' ' + t('myHomes.form.required')
+            }
+            hasError={isValidated && isEmptyField(inputs.zipCode)}
+            id="zipCode"
+            placeholder={t('myHomes.form.zip')}
+            value={inputs.zipCode}
+            handleChange={(event) => handleInputChange(event)}
+          />
+          <TextInput
+            errorMessage={
+              t('myHomes.form.city') + ' ' + t('myHomes.form.required')
+            }
+            hasError={isValidated && isEmptyField(inputs.city)}
+            id="city"
+            placeholder={t('myHomes.form.city')}
+            value={inputs.city}
+            handleChange={(event) => handleInputChange(event)}
+            isDisabled
+          />
+          <TextInput
+            errorMessage={
+              t('myHomes.form.state') + ' ' + t('myHomes.form.required')
+            }
+            hasError={isValidated && isEmptyField(inputs.state)}
+            id="state"
+            placeholder={t('myHomes.form.state')}
+            value={inputs.state}
+            handleChange={(event) => handleInputChange(event)}
+            isDisabled
+          />
+        </InputGroup>
+        <InputGroup gap="input.sm">
           <TextInput
             errorMessage={
               t('myHomes.form.address') + ' ' + t('myHomes.form.required')
@@ -69,17 +90,8 @@ export const Address = ({ isValidated }: IAddress) => {
             return (
               <InputGroup key={complement} gap="input.sm">
                 <TextInput
-                  errorMessage={
-                    t('myHomes.form.complement') +
-                    ' ' +
-                    t('myHomes.form.required')
-                  }
-                  hasError={
-                    isValidated &&
-                    isEmptyField(inputs[complement as keyof IAddressForm])
-                  }
                   id={complement}
-                  placeholder={`${t('myHomes.form.complement')} ${index + 1}`}
+                  placeholder={`${t('myHomes.form.address')} ${index + 1}`}
                   value={inputs[complement as keyof IAddressForm]}
                   handleChange={(event) => handleInputChange(event)}
                 />
@@ -96,28 +108,6 @@ export const Address = ({ isValidated }: IAddress) => {
               </InputGroup>
             )
           })}
-        <InputGroup gap="input.sm">
-          <TextInput
-            errorMessage={
-              t('myHomes.form.city') + ' ' + t('myHomes.form.required')
-            }
-            hasError={isValidated && isEmptyField(inputs.city)}
-            id="city"
-            placeholder={t('myHomes.form.city')}
-            value={inputs.city}
-            handleChange={(event) => handleInputChange(event)}
-          />
-          <TextInput
-            errorMessage={
-              t('myHomes.form.state') + ' ' + t('myHomes.form.required')
-            }
-            hasError={isValidated && isEmptyField(inputs.state)}
-            id="state"
-            placeholder={t('myHomes.form.state')}
-            value={inputs.state}
-            handleChange={(event) => handleInputChange(event)}
-          />
-        </InputGroup>
       </Stack>
     </Container>
   )
