@@ -25,8 +25,14 @@ export const FirstHomeContent = ({
   handleSkipClick,
   userFirstName,
 }: IFirstHomeContent) => {
-  const { handleInputChange, inputs, isValidated, options, setIsValidated } =
-    useFirstHomeContent()
+  const {
+    handleInputChange,
+    handleSelectChange,
+    inputs,
+    isValidated,
+    options,
+    setIsValidated,
+  } = useFirstHomeContent()
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   setTimeout(() => {
@@ -52,7 +58,11 @@ export const FirstHomeContent = ({
                 title={t('myHomes.section2')}
                 titleIcon={RelationshipHome}
               />
-              <Select placeholder={t('myHomes.selectRelationship.title')}>
+              <Select
+                placeholder={t('myHomes.selectRelationship.title')}
+                onChange={handleSelectChange}
+                value={inputs.relationship}
+              >
                 {options.map((option) => (
                   <option key={option} value={option}>
                     {t(`myHomes.selectRelationship.${option}`)}
@@ -61,11 +71,11 @@ export const FirstHomeContent = ({
               </Select>
               <TextInput
                 errorMessage={'This field ' + t('myHomes.form.required')}
-                hasError={isValidated && isEmptyField(inputs.projectName)}
+                hasError={isValidated && isEmptyField(inputs.projectIdentifier)}
                 id="projectName"
                 placeholder={t('myHomes.form.projectName')}
                 handleChange={(event) => handleInputChange(event)}
-                value={inputs.projectName}
+                value={inputs.projectIdentifier}
               />
             </Stack>
           </Box>
@@ -74,7 +84,7 @@ export const FirstHomeContent = ({
       <DrawerFooter>
         <FooterDrawer
           children={
-            <Button variant="secondary" size="medium">
+            <Button variant="secondary" size="medium" onClick={() => {}}>
               {t('myHomes.addHome')}
             </Button>
           }

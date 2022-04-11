@@ -1,21 +1,40 @@
 import { ChangeEvent, useState } from 'react'
+import { subscribeKey } from 'valtio/utils'
+import { firstHomeProxy } from '../../proxies/firstHome.proxy'
 
 export const useFirstHouseContent = () => {
   const [inputs, setInputs] = useState({
-    projectName: '',
+    projectIdentifier: '',
+    relationship: '',
   })
   const [isValidated, setIsValidated] = useState(false)
-  const options = ["option1", "option2", "option3", "option4"];
+  const options = ['option1', 'option2', 'option3', 'option4']
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setIsValidated(false)
     setInputs({
-      projectName: event.target.value,
+      ...inputs,
+      projectIdentifier: event.target.value,
+    })
+    subscribeKey(firstHomeProxy, 'projectIdentifier', () => {
+      firstHomeProxy.projectIdentifier = event.target.value
+    })
+  }
+
+  const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    setIsValidated(false)
+    setInputs({
+      ...inputs,
+      relationship: event.target.value,
+    })
+    subscribeKey(firstHomeProxy, 'relationship', () => {
+      firstHomeProxy.relationship = event.target.value
     })
   }
 
   return {
     handleInputChange,
+    handleSelectChange,
     inputs,
     isValidated,
     options,

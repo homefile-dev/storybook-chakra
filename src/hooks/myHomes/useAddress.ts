@@ -1,15 +1,26 @@
 import { AxiosResponse } from 'axios'
+import { subscribe } from 'valtio'
 import { t } from 'i18next'
 import { ChangeEvent, useEffect, useState } from 'react'
 import locationApi from '../../apis/locationApi'
 import { AddressForm } from '../../helpers/myHomes/Address.helper'
 import { ILocationApi } from '../../interfaces/apis/LocationApi.interface'
+import { firstHomeProxy } from '../../proxies/firstHome.proxy'
 
 export const useAddress = () => {
   const [inputs, setInputs] = useState(AddressForm)
   const [counter, setCounter] = useState(0)
   const [complements, setComplements] = useState<string[]>([])
   const label = t('myHomes.form.address')
+  const unsubscribe = subscribe(firstHomeProxy, () => {
+    firstHomeProxy.zipCode = inputs.zipCode
+    firstHomeProxy.address = inputs.address
+    firstHomeProxy.address1 = inputs.address1
+    firstHomeProxy.address2 = inputs.address2
+    firstHomeProxy.city = inputs.city
+    firstHomeProxy.state = inputs.state
+  })
+  unsubscribe()
 
   const handleAddComplements = () => {
     setCounter(counter + 1)
