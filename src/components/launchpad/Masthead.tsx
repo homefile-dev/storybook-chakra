@@ -1,19 +1,16 @@
-import {
-  Avatar,
-  Container,
-  Flex,
-  Image,
-  Text,
-} from '@chakra-ui/react'
+import { Avatar, Container, Flex, Image, Text } from '@chakra-ui/react'
 import { BsChevronDown } from 'react-icons/bs'
 import ImgLogo from '../../assets/images/logo.svg'
-import { UserMenuItems } from '../../helpers/launchpad/MenuItems.helper'
 import IconMenu from './IconMenu'
 import { CustomIcon } from '../icons/CustomIcon'
 import { IMasthead } from '../../interfaces/launchpad/Masthead.interface'
 import { t } from 'i18next'
 
-export const Masthead = ({ avatarUrl = '', userName }: IMasthead) => {
+export const Masthead = ({
+  avatarUrl = '',
+  menuItems,
+  userName,
+}: IMasthead) => {
   const firstName = userName?.split(' ')[0]
   return (
     <Container minW="container.full">
@@ -31,7 +28,7 @@ export const Masthead = ({ avatarUrl = '', userName }: IMasthead) => {
           />
           <IconMenu
             icon={<CustomIcon type={BsChevronDown} />}
-            menuItems={UserMenuItems}
+            menuItems={menuItems}
           />
         </Flex>
       </Flex>

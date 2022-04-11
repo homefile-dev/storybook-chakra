@@ -1,4 +1,5 @@
-interface IMenuItem {
+export interface IMenuItem {
+  handleClick: () => void
   label: string
 }
 

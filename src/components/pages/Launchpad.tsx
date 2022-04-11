@@ -6,6 +6,7 @@ import LeftPanel from '../launchpad/LeftPanel'
 import Masthead from '../launchpad/Masthead'
 import MyHomes from '../myHomes/MyHomes'
 import SendDocument from '../sendDocument/SendDocument'
+import { UserMenuItems } from '../../helpers/launchpad/MenuItems.helper'
 
 export const Launchpad = () => {
   const userName = 'Adam Lee'
@@ -26,7 +27,7 @@ export const Launchpad = () => {
         isOpen={isOpen}
         onClose={onClose}
       />
-      <Masthead userName={userName} />
+      <Masthead userName={userName} menuItems={UserMenuItems} />
       <Header handleViews={() => {}} firstName={firstName} />
       <Grid
         templateColumns={['repeat(1, 1fr)', 'repeat(10, 1fr)']}
