@@ -29,7 +29,7 @@ export const SignIn = ({
 
   useEffect(() => {
     handleAutoFill(values)
-  }, [])
+  }, [values])
 
   return (
     <Box w="container.full">
