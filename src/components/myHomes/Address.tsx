@@ -10,7 +10,7 @@ import HomeAddres from '../../assets/images/home-address.svg'
 import TextInput from '../inputs/TextInput'
 import { t } from 'i18next'
 import { isEmptyField } from '../../helpers/Validations'
-import useAddress from '../../hooks/myHomes/useAddress'
+import useAddress from '../../hooks/myHomes/useFirstHomeAddress'
 import { AddIcon } from '@chakra-ui/icons'
 import { AiOutlineMinus } from 'react-icons/ai'
 import {
@@ -19,15 +19,16 @@ import {
 } from '../../interfaces/myHomes/Address.interface'
 import { CustomIcon } from '../icons/CustomIcon'
 
-export const Address = ({ isValidated }: IAddress) => {
-  const {
-    complements,
-    counter,
-    handleInputChange,
-    handleAddComplements,
-    handleDeleteComplements,
-    inputs,
-  } = useAddress()
+export const Address = ({
+  complements,
+  counter,
+  handleInputChange,
+  handleAddComplements,
+  handleDeleteComplements,
+  inputs,
+  isValidated,
+}: IAddress) => {
+
   return (
     <Container variant="ghost" p="4">
       <Stack spacing="input.sm">
@@ -49,6 +50,7 @@ export const Address = ({ isValidated }: IAddress) => {
             icon={<AddIcon w="5" h="5" />}
             onClick={() => handleAddComplements()}
             isDisabled={counter === 2}
+            maxH="input.md"
           />
         </InputGroup>
         {complements.length > 0 &&
@@ -86,10 +88,6 @@ export const Address = ({ isValidated }: IAddress) => {
             handleChange={(event) => handleInputChange(event)}
           />
           <TextInput
-            errorMessage={
-              t('myHomes.form.city') + ' ' + t('myHomes.form.required')
-            }
-            hasError={isValidated && isEmptyField(inputs.city)}
             id="city"
             placeholder={t('myHomes.form.city')}
             value={inputs.city}
@@ -97,10 +95,6 @@ export const Address = ({ isValidated }: IAddress) => {
             isDisabled
           />
           <TextInput
-            errorMessage={
-              t('myHomes.form.state') + ' ' + t('myHomes.form.required')
-            }
-            hasError={isValidated && isEmptyField(inputs.state)}
             id="state"
             placeholder={t('myHomes.form.state')}
             value={inputs.state}

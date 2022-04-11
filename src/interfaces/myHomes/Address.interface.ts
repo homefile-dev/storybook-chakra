@@ -1,3 +1,5 @@
+import { ChangeEvent } from "react"
+
 export interface IAddressForm {
   address: string
   address1: string
@@ -8,5 +10,11 @@ export interface IAddressForm {
 }
 
 export interface IAddress {
+  complements: string[]
+  counter: number
+  handleInputChange: (event: ChangeEvent<HTMLInputElement>) => void
+  handleAddComplements: () => void
+  handleDeleteComplements: (complement: string) => void
+  inputs: IAddressForm
   isValidated: boolean
 }

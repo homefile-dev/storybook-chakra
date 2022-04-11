@@ -22,6 +22,7 @@ export const Launchpad = () => {
           <FirstHomeContent
             handleSkipClick={onClose}
             userFirstName={firstName}
+            handleCreateHomeClick={(form) => console.log(form)}
           />
         }
         isOpen={isOpen}

@@ -6,6 +6,7 @@ import {
   DrawerContent,
   DrawerFooter,
   DrawerHeader,
+  FormControl,
   Select,
   Stack,
   useDisclosure,
@@ -20,8 +21,11 @@ import TextInput from '../../inputs/TextInput'
 import useFirstHomeContent from '../../../hooks/myHomes/useFirstHomeContent'
 import { isEmptyField } from '../../../helpers/Validations'
 import { FooterDrawer } from '../../footers/FooterDrawer'
+import { firstHomeProxy } from '../../../proxies/firstHome.proxy'
+import useFirstHomeAddress from '../../../hooks/myHomes/useFirstHomeAddress'
 
 export const FirstHomeContent = ({
+  handleCreateHomeClick,
   handleSkipClick,
   userFirstName,
 }: IFirstHomeContent) => {
@@ -33,6 +37,16 @@ export const FirstHomeContent = ({
     options,
     setIsValidated,
   } = useFirstHomeContent()
+
+  const {
+    addressInputs,
+    complements,
+    counter,
+    handleAddComplements,
+    handleAddressInputChange,
+    handleDeleteComplements,
+  } = useFirstHomeAddress()
+
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   setTimeout(() => {
@@ -50,7 +64,15 @@ export const FirstHomeContent = ({
       <DrawerBody p="0" mb="6rem">
         <Container variant="ghost" h="full">
           <Box bg="white" py="2">
-            <Address isValidated={isValidated} />
+            <Address
+              isValidated={isValidated}
+              complements={complements}
+              counter={counter}
+              handleInputChange={handleAddressInputChange}
+              handleAddComplements={handleAddComplements}
+              handleDeleteComplements={handleDeleteComplements}
+              inputs={addressInputs}
+            />
           </Box>
           <Box py="6" px="input.sm">
             <Stack spacing="input.sm">
@@ -58,17 +80,26 @@ export const FirstHomeContent = ({
                 title={t('myHomes.section2')}
                 titleIcon={RelationshipHome}
               />
-              <Select
-                placeholder={t('myHomes.selectRelationship.title')}
-                onChange={handleSelectChange}
-                value={inputs.relationship}
+              <FormControl
+                isInvalid={isValidated && isEmptyField(inputs.relationship)}
               >
-                {options.map((option) => (
-                  <option key={option} value={option}>
-                    {t(`myHomes.selectRelationship.${option}`)}
-                  </option>
-                ))}
-              </Select>
+                <Select
+                  placeholder={t('myHomes.selectRelationship.title')}
+                  onChange={handleSelectChange}
+                  value={inputs.relationship}
+                >
+                  {options.map((option) => (
+                    <option
+                      key={option}
+                      value={
+                        t(`myHomes.selectRelationship.${option}`) as string
+                      }
+                    >
+                      {t(`myHomes.selectRelationship.${option}`)}
+                    </option>
+                  ))}
+                </Select>
+              </FormControl>
               <TextInput
                 errorMessage={'This field ' + t('myHomes.form.required')}
                 hasError={isValidated && isEmptyField(inputs.projectIdentifier)}
@@ -84,7 +115,21 @@ export const FirstHomeContent = ({
       <DrawerFooter>
         <FooterDrawer
           children={
-            <Button variant="secondary" size="medium" onClick={() => {}}>
+            <Button
+              variant="secondary"
+              size="medium"
+              onClick={() => {
+                setIsValidated(true)
+                if (
+                  !isEmptyField(addressInputs.address) &&
+                  !isEmptyField(addressInputs.zipCode) &&
+                  !isEmptyField(inputs.projectIdentifier) &&
+                  !isEmptyField(inputs.relationship)
+                ) {
+                  handleCreateHomeClick(firstHomeProxy)
+                }
+              }}
+            >
               {t('myHomes.addHome')}
             </Button>
           }

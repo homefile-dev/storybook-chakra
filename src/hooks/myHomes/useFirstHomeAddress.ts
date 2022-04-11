@@ -1,26 +1,16 @@
 import { AxiosResponse } from 'axios'
-import { subscribe } from 'valtio'
-import { t } from 'i18next'
 import { ChangeEvent, useEffect, useState } from 'react'
 import locationApi from '../../apis/locationApi'
 import { AddressForm } from '../../helpers/myHomes/Address.helper'
 import { ILocationApi } from '../../interfaces/apis/LocationApi.interface'
+import { IFirstHome } from '../../interfaces/myHomes/FirstHome.interface'
 import { firstHomeProxy } from '../../proxies/firstHome.proxy'
 
-export const useAddress = () => {
-  const [inputs, setInputs] = useState(AddressForm)
+export const useFirstHomeAddress = () => {
+  const [addressInputs, setAddressInputs] = useState(AddressForm)
   const [counter, setCounter] = useState(0)
   const [complements, setComplements] = useState<string[]>([])
-  const label = t('myHomes.form.address')
-  const unsubscribe = subscribe(firstHomeProxy, () => {
-    firstHomeProxy.zipCode = inputs.zipCode
-    firstHomeProxy.address = inputs.address
-    firstHomeProxy.address1 = inputs.address1
-    firstHomeProxy.address2 = inputs.address2
-    firstHomeProxy.city = inputs.city
-    firstHomeProxy.state = inputs.state
-  })
-  unsubscribe()
+  const label = 'address'
 
   const handleAddComplements = () => {
     setCounter(counter + 1)
@@ -32,18 +22,20 @@ export const useAddress = () => {
     setCounter(counter - 1)
     if (counter >= 0) {
       setComplements(complements.filter((item) => item !== complement))
-      setInputs({
-        ...inputs,
+      setAddressInputs({
+        ...addressInputs,
         [complement]: '',
       })
+      firstHomeProxy[complement as keyof IFirstHome] = ''
     }
   }
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputs({
-      ...inputs,
+  const handleAddressInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setAddressInputs({
+      ...addressInputs,
       [event.target.id]: event.target.value,
     })
+    firstHomeProxy[event.target.id as keyof IFirstHome] = event.target.value
   }
 
   const getAddress = async (zipCode: string) => {
@@ -57,30 +49,33 @@ export const useAddress = () => {
       const state =
         features[0].context.find((item) => item.id.split('.')[0] === 'region')
           ?.text || ''
-      setInputs({
-        ...inputs,
+      setAddressInputs({
+        ...addressInputs,
         city,
         state,
       })
+      firstHomeProxy.city = city
+      firstHomeProxy.state = state
     } catch (err) {
       console.log(err)
     }
   }
 
   useEffect(() => {
-    if (inputs.zipCode.length === 5) {
-      getAddress(inputs.zipCode)
+    if (addressInputs.zipCode.length === 5) {
+      getAddress(addressInputs.zipCode)
+      firstHomeProxy.zipCode = addressInputs.zipCode
     }
-  }, [inputs.zipCode])
+  }, [addressInputs.zipCode])
 
   return {
     complements,
     counter,
-    handleInputChange,
+    handleAddressInputChange,
     handleAddComplements,
     handleDeleteComplements,
-    inputs,
+    addressInputs,
   }
 }
 
-export default useAddress
+export default useFirstHomeAddress

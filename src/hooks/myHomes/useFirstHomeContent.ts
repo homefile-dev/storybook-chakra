@@ -1,5 +1,4 @@
 import { ChangeEvent, useState } from 'react'
-import { subscribeKey } from 'valtio/utils'
 import { firstHomeProxy } from '../../proxies/firstHome.proxy'
 
 export const useFirstHouseContent = () => {
@@ -16,9 +15,7 @@ export const useFirstHouseContent = () => {
       ...inputs,
       projectIdentifier: event.target.value,
     })
-    subscribeKey(firstHomeProxy, 'projectIdentifier', () => {
-      firstHomeProxy.projectIdentifier = event.target.value
-    })
+    firstHomeProxy.projectIdentifier = event.target.value
   }
 
   const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -27,9 +24,7 @@ export const useFirstHouseContent = () => {
       ...inputs,
       relationship: event.target.value,
     })
-    subscribeKey(firstHomeProxy, 'relationship', () => {
-      firstHomeProxy.relationship = event.target.value
-    })
+    firstHomeProxy.relationship = event.target.value
   }
 
   return {
