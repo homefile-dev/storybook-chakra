@@ -35,40 +35,6 @@ export const Address = ({ isValidated }: IAddress) => {
         <InputGroup gap="input.sm">
           <TextInput
             errorMessage={
-              t('myHomes.form.zip') + ' ' + t('myHomes.form.required')
-            }
-            hasError={isValidated && isEmptyField(inputs.zipCode)}
-            id="zipCode"
-            placeholder={t('myHomes.form.zip')}
-            value={inputs.zipCode}
-            handleChange={(event) => handleInputChange(event)}
-          />
-          <TextInput
-            errorMessage={
-              t('myHomes.form.city') + ' ' + t('myHomes.form.required')
-            }
-            hasError={isValidated && isEmptyField(inputs.city)}
-            id="city"
-            placeholder={t('myHomes.form.city')}
-            value={inputs.city}
-            handleChange={(event) => handleInputChange(event)}
-            isDisabled
-          />
-          <TextInput
-            errorMessage={
-              t('myHomes.form.state') + ' ' + t('myHomes.form.required')
-            }
-            hasError={isValidated && isEmptyField(inputs.state)}
-            id="state"
-            placeholder={t('myHomes.form.state')}
-            value={inputs.state}
-            handleChange={(event) => handleInputChange(event)}
-            isDisabled
-          />
-        </InputGroup>
-        <InputGroup gap="input.sm">
-          <TextInput
-            errorMessage={
               t('myHomes.form.address') + ' ' + t('myHomes.form.required')
             }
             hasError={isValidated && isEmptyField(inputs.address)}
@@ -108,6 +74,40 @@ export const Address = ({ isValidated }: IAddress) => {
               </InputGroup>
             )
           })}
+        <InputGroup gap="input.sm">
+          <TextInput
+            errorMessage={
+              t('myHomes.form.zip') + ' ' + t('myHomes.form.required')
+            }
+            hasError={isValidated && isEmptyField(inputs.zipCode)}
+            id="zipCode"
+            placeholder={t('myHomes.form.zip')}
+            value={inputs.zipCode}
+            handleChange={(event) => handleInputChange(event)}
+          />
+          <TextInput
+            errorMessage={
+              t('myHomes.form.city') + ' ' + t('myHomes.form.required')
+            }
+            hasError={isValidated && isEmptyField(inputs.city)}
+            id="city"
+            placeholder={t('myHomes.form.city')}
+            value={inputs.city}
+            handleChange={(event) => handleInputChange(event)}
+            isDisabled
+          />
+          <TextInput
+            errorMessage={
+              t('myHomes.form.state') + ' ' + t('myHomes.form.required')
+            }
+            hasError={isValidated && isEmptyField(inputs.state)}
+            id="state"
+            placeholder={t('myHomes.form.state')}
+            value={inputs.state}
+            handleChange={(event) => handleInputChange(event)}
+            isDisabled
+          />
+        </InputGroup>
       </Stack>
     </Container>
   )
