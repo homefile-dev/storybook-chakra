@@ -16,12 +16,12 @@
     "@emotion/styled": ">=11",
     "@fontsource/assistant": ">=4",
     "@fontsource/poppins": ">=4",
+    "axios": ">=0",
     "framer-motion": ">=4",
     "i18next": ">=21",
     "i18next-browser-languagedetector": ">=6",
     "react": ">=16",
-    "react-i18next": ">=11",
-    "axios": ">=0"
+    "react-i18next": ">=11"
   },
   "release": {
     "branches": [
@@ -76,7 +76,8 @@
     "react-dom": "^17.0.2",
     "react-i18next": "^11.16.2",
     "react-icons": "^3.11.0",
-    "react-spinners": "^0.11.0"
+    "react-spinners": "^0.11.0",
+    "valtio": "^1.5.2"
   },
   "scripts": {
     "start": "start-storybook -p 6006",
