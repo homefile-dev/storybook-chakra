@@ -10,7 +10,6 @@ import HomeAddres from '../../assets/images/home-address.svg'
 import TextInput from '../inputs/TextInput'
 import { t } from 'i18next'
 import { isEmptyField } from '../../helpers/Validations'
-import useAddress from '../../hooks/myHomes/useFirstHomeAddress'
 import { AddIcon } from '@chakra-ui/icons'
 import { AiOutlineMinus } from 'react-icons/ai'
 import {
@@ -26,6 +25,7 @@ export const Address = ({
   handleAddComplements,
   handleDeleteComplements,
   inputs,
+  isDisabled = true,
   isValidated,
 }: IAddress) => {
 
@@ -92,14 +92,14 @@ export const Address = ({
             placeholder={t('myHomes.form.city')}
             value={inputs.city}
             handleChange={(event) => handleInputChange(event)}
-            isDisabled
+            isDisabled={isDisabled}
           />
           <TextInput
             id="state"
             placeholder={t('myHomes.form.state')}
             value={inputs.state}
             handleChange={(event) => handleInputChange(event)}
-            isDisabled
+            isDisabled={isDisabled}
           />
         </InputGroup>
       </Stack>

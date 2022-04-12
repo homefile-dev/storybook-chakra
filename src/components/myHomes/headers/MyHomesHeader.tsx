@@ -1,7 +1,7 @@
 import { Flex, Select, Button } from '@chakra-ui/react'
 import { t } from 'i18next'
 import { HiOutlinePlus } from 'react-icons/hi'
-import { CustomIcon } from '../icons/CustomIcon'
+import { CustomIcon } from '../../icons/CustomIcon'
 
 export const MyHomesHeader = ({ handleHomeBt }: { handleHomeBt: () => void }) => {
   return (

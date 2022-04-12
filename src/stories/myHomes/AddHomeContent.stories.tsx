@@ -1,27 +1,30 @@
 import { Drawer, useDisclosure } from '@chakra-ui/react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useEffect } from 'react'
-import FirstHomeContent from '../../components/myHomes/firstHome/FirstHomeContent'
+import AddHomeContent from '../../components/myHomes/AddHomeContent'
+import { formValues } from '../../helpers/myHomes/AddHome.helper'
 
 export default {
   title: 'Components/MyHomes',
-  component: FirstHomeContent,
-} as ComponentMeta<typeof FirstHomeContent>
+  component: AddHomeContent,
+} as ComponentMeta<typeof AddHomeContent>
 
-const Template: ComponentStory<typeof FirstHomeContent> = () => {
+const Template: ComponentStory<typeof AddHomeContent> = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   useEffect(() => {
     onOpen()
   }, [])
+
   return (
     <Drawer placement="left" onClose={onClose} isOpen={isOpen} size="md">
-      <FirstHomeContent
+      <AddHomeContent
         handleCreateHomeClick={() => {}}
         handleSkipClick={() => onClose()}
         userFirstName="Adam"
+        values={formValues}
       />
     </Drawer>
   )
 }
 
-export const FirstHomeContentComponent = Template.bind({})
+export const AddHomeContentComponent = Template.bind({})

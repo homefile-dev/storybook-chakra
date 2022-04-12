@@ -1,4 +1,4 @@
 export interface ISectionHeader {
-  title: string
-  titleIcon: string
+  title?: string
+  titleIcon?: string
 }

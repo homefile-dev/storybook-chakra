@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Box, Grid, GridItem, useDisclosure } from '@chakra-ui/react'
-import FirstHomeContent from '../myHomes/firstHome/FirstHomeContent'
+import AddHomeContent from '../myHomes/AddHomeContent'
 import { Header } from '../launchpad/Header'
 import LeftPanel from '../launchpad/LeftPanel'
 import Masthead from '../launchpad/Masthead'
@@ -19,10 +19,11 @@ export const Launchpad = () => {
     <Box w="full">
       <LeftPanel
         children={
-          <FirstHomeContent
+          <AddHomeContent
             handleSkipClick={onClose}
             userFirstName={firstName}
             handleCreateHomeClick={(form) => console.log(form)}
+            isFirstHome
           />
         }
         isOpen={isOpen}

@@ -1,14 +1,13 @@
 import { proxy } from 'valtio'
-import { IFirstHome } from '../interfaces/myHomes/FirstHome.interface'
+import { IHomeForm } from '../interfaces/myHomes/Home.interface'
 
 
-export const firstHomeProxy = proxy<IFirstHome>({
-  address:  '',
+export const firstHomeProxy = proxy<IHomeForm>({
+  address: '',
   address1: '',
   address2: '',
-  city:  '',
+  city: '',
   state: '',
   zipCode: '',
   projectIdentifier: '',
-  relationship: ''
 })

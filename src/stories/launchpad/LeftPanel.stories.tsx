@@ -1,7 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import LeftPanel from '../../components/launchpad/LeftPanel'
-import FirstHomeContent from '../../components/myHomes/firstHome/FirstHomeContent'
-import { IFirstHome } from '../../interfaces/myHomes/FirstHome.interface'
+import AddHomeContent from '../../components/myHomes/AddHomeContent'
+import { formValues } from '../../helpers/myHomes/AddHome.helper'
+import { IHomeForm } from '../../interfaces/myHomes/Home.interface'
 
 export default {
   title: 'Components/Launchpad',
@@ -12,10 +13,11 @@ const Template: ComponentStory<typeof LeftPanel> = () => {
   return (
     <LeftPanel
       children={
-        <FirstHomeContent
-          handleCreateHomeClick={(form: IFirstHome) => {}}
+        <AddHomeContent
+          handleCreateHomeClick={(form: IHomeForm) => {}}
           handleSkipClick={() => {}}
-          userFirstName='Adam'
+          userFirstName="Adam"
+          values={formValues}
         />
       }
       isOpen

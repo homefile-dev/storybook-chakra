@@ -76,8 +76,9 @@
   "myHomes": {
     "title": "My Homes",
     "addHome": "Home",
+    "saveBt": "Save",
     "section1": "Home address",
-    "section2": "Relationship to home",
+    "section2": "Name Home/Project",
     "menu": {
       "settings": "Settings",
       "help": "Help"
@@ -97,6 +98,10 @@
     "firstHome": {
       "skipBt": "Skip for Now",
       "title": "Let’s add your first home."
+    },
+    "newHome": {
+      "title": "Add Home",
+      "btAria": "close"
     },
     "form": {
       "zip": "Zip Code",

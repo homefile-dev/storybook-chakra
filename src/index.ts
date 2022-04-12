@@ -7,5 +7,5 @@ export {
   Launchpad,
 } from './components/pages'
 export { Header, Masthead, LeftPanel } from './components/launchpad'
-export { FirstHomeContent } from "./components/myHomes/firstHome/FirstHomeContent"
+export { AddHomeContent } from './components/myHomes/AddHomeContent'
 

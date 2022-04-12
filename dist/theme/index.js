@@ -55,6 +55,7 @@ var theme = (0, react_1.extendTheme)({
             primary: '#DCE8EC',
             secondary: '#F0F8F0',
             tertiary: '#F4F7F8',
+            neutralBlue: '#E9EDEF',
         },
         button: {
             primary: '#2488C6',
@@ -113,7 +114,10 @@ var theme = (0, react_1.extendTheme)({
         },
         input: {
             sm: '0.8rem',
-        }
+        },
+        grid: {
+            sm: '0.6rem',
+        },
     },
     sizes: {
         button: {

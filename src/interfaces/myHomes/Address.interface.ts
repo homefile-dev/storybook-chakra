@@ -16,5 +16,6 @@ export interface IAddress {
   handleAddComplements: () => void
   handleDeleteComplements: (complement: string) => void
   inputs: IAddressForm
+  isDisabled?: boolean
   isValidated: boolean
 }
