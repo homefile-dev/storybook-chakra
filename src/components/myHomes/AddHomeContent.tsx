@@ -73,7 +73,7 @@ export const AddHomeContent = ({
             handleClick={handleSkipClick}
           />
         ) : (
-          <NewHomeHeader />
+          <NewHomeHeader handleCloseButton={handleSkipClick} />
         )}
       </DrawerHeader>
       <DrawerBody p="0" mb="6rem">

@@ -19,7 +19,7 @@ const Template: ComponentStory<typeof AddHomeContent> = () => {
     <Drawer placement="left" onClose={onClose} isOpen={isOpen} size="md">
       <AddHomeContent
         handleCreateHomeClick={() => {}}
-        handleSkipClick={() => onClose()}
+        handleSkipClick={onClose}
         userFirstName="Adam"
         values={formValues}
       />
