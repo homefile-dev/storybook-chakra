@@ -29,6 +29,10 @@ const Text = {
       fontFamily: 'secondary',
       color: 'font.secondary',
     },
+    home: {
+      fontSize: 'sm',
+      fontFamily: 'secondary',
+    },
     error: {
       fontSize: 'xs',
       fontFamily: 'secondary',

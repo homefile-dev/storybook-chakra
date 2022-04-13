@@ -1,12 +1,10 @@
 import { useEffect } from 'react'
 import { Box, Grid, GridItem, useDisclosure } from '@chakra-ui/react'
-import AddHomeContent from '../myHomes/AddHomeContent'
-import { Header } from '../launchpad/Header'
-import LeftPanel from '../launchpad/LeftPanel'
-import Masthead from '../launchpad/Masthead'
-import MyHomes from '../myHomes/MyHomes'
+import { AddHomeContent, MyHomes } from '../myHomes'
+import { Header, LeftPanel, Masthead } from '../launchpad'
 import SendDocument from '../sendDocument/SendDocument'
-import { UserMenuItems } from '../../helpers/launchpad/MenuItems.helper'
+import { MyHomeMenuItems, UserMenuItems } from '../../helpers/launchpad/MenuItems.helper'
+import { HomeCards, MyHomeFilters } from '../../helpers/myHomes'
 
 export const Launchpad = () => {
   const userName = 'Adam Lee'
@@ -38,7 +36,15 @@ export const Launchpad = () => {
         px="4"
       >
         <GridItem colSpan={[1, 7]} w="full">
-          <MyHomes handleHomeBt={onOpen} />
+          <MyHomes
+            cardFilters={MyHomeFilters}
+            cardList={HomeCards}
+            handleCardClick={(id) => {
+              console.log(id)
+            }}
+            handleNewHomeClick={onOpen}
+            headerMenuItems={MyHomeMenuItems}
+          />
         </GridItem>
         <GridItem colSpan={[1, 3]} w="full">
           <SendDocument />

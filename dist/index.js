@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AddHomeContent = exports.LeftPanel = exports.Masthead = exports.Header = exports.Launchpad = exports.EmailValidation = exports.ActivateAccount = exports.ResetPassword = exports.SignIn = exports.SignUp = void 0;
+exports.MyHomes = exports.AddHomeContent = exports.LeftPanel = exports.Masthead = exports.Header = exports.Launchpad = exports.EmailValidation = exports.ActivateAccount = exports.ResetPassword = exports.SignIn = exports.SignUp = void 0;
 var pages_1 = require("./components/pages");
 Object.defineProperty(exports, "SignUp", { enumerable: true, get: function () { return pages_1.SignUp; } });
 Object.defineProperty(exports, "SignIn", { enumerable: true, get: function () { return pages_1.SignIn; } });
@@ -12,5 +12,6 @@ var launchpad_1 = require("./components/launchpad");
 Object.defineProperty(exports, "Header", { enumerable: true, get: function () { return launchpad_1.Header; } });
 Object.defineProperty(exports, "Masthead", { enumerable: true, get: function () { return launchpad_1.Masthead; } });
 Object.defineProperty(exports, "LeftPanel", { enumerable: true, get: function () { return launchpad_1.LeftPanel; } });
-var AddHomeContent_1 = require("./components/myHomes/AddHomeContent");
-Object.defineProperty(exports, "AddHomeContent", { enumerable: true, get: function () { return AddHomeContent_1.AddHomeContent; } });
+var myHomes_1 = require("./components/myHomes");
+Object.defineProperty(exports, "AddHomeContent", { enumerable: true, get: function () { return myHomes_1.AddHomeContent; } });
+Object.defineProperty(exports, "MyHomes", { enumerable: true, get: function () { return myHomes_1.MyHomes; } });

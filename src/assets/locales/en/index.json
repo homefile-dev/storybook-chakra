@@ -117,5 +117,8 @@
   "sendDocument": {
     "title": "Send Document",
     "setupBt": "Set Up Document"
+  },
+  "images": {
+    "altImage": "image"
   }
 }
