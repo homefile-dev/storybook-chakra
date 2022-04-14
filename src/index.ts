@@ -1,3 +1,4 @@
+export { FooterDrawer } from './components/footers/FooterDrawer'
 export {
   SignUp,
   SignIn,
@@ -7,5 +8,9 @@ export {
   Launchpad,
 } from './components/pages'
 export { Header, Masthead, LeftPanel } from './components/launchpad'
-export { AddHomeContent, MyHomes, Address, NewHomeHeader } from './components/myHomes'
-
+export {
+  AddHomeContent,
+  MyHomes,
+  Address,
+  HomePanelHeader,
+} from './components/myHomes'

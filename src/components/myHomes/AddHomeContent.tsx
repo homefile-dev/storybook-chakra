@@ -21,7 +21,7 @@ import { isEmptyField } from '../../helpers/Validations'
 import { FooterDrawer } from '../footers/FooterDrawer'
 import { firstHomeProxy } from '../../proxies/firstHome.proxy'
 import useHomeAddress from '../../hooks/myHomes/useHomeAddress'
-import NewHomeHeader from './headers/NewHomeHeader'
+import NewHomeHeader from './headers/HomePanelHeader'
 import { useEffect } from 'react'
 
 export const AddHomeContent = ({
@@ -130,7 +130,6 @@ export const AddHomeContent = ({
             </Button>
           }
           isOpen={isOpen}
-          onClose={onClose}
         />
       </DrawerFooter>
     </DrawerContent>

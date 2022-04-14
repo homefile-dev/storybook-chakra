@@ -103,6 +103,9 @@
       "title": "Add Home",
       "btAria": "close"
     },
+    "details": {
+      "header": "New Homefile"
+    },
     "form": {
       "zip": "Zip Code",
       "address": "Address",

@@ -36,7 +36,7 @@ export const MyHomes = ({
       >
         {cardList &&
           cardList.map(({ address, active, _id, image, name }) => (
-            <Container>
+            <Container key={_id}>
               <ContainerHeader
                 menuItems={cardMenuItems}
                 icon={<CustomIcon type={FiMoreHorizontal} size="5" />}
