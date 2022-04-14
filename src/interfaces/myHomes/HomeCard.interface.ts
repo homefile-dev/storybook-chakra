@@ -1,12 +1,18 @@
-import { IMenuItem } from "../launchpad/IconMenu.interface"
+interface IHomeAddress {
+  city: string
+  state: string
+  street: string
+  zip: string
+}
+
+export interface IImage {
+  Location: string
+}
 
 export interface IHomeCard {
-  address: string
-  cardMenuItems?: IMenuItem[]
-  city: string
-  handleCardClick: (cardId: string | number) => void
-  id: string | number
-  imageUrl: string
-  state: string
-  title: string
+  address: IHomeAddress
+  active: boolean
+  _id: string
+  image?: IImage | null
+  name: string
 }

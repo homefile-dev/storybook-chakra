@@ -6,15 +6,16 @@ import ContainerHeader from '../headers/ContainerHeader'
 import House from '../../assets/images/house.svg'
 import MyHomesHeader from './headers/MyHomesHeader'
 import HomeCard from './HomeCard'
-import { IMyHome } from '../../interfaces/myHomes/MyHome.interface'
+import { IMyHomes } from '../../interfaces/myHomes/MyHomes.interface'
 
 export const MyHomes = ({
   cardFilters,
   cardList,
+  cardMenuItems = [],
   handleCardClick,
   handleNewHomeClick,
   headerMenuItems,
-}: IMyHome) => {
+}: IMyHomes) => {
   return (
     <Container variant="launchpad" minW="full" pb="3rem">
       <ContainerHeader
@@ -27,24 +28,38 @@ export const MyHomes = ({
         cardFilters={cardFilters}
         handleNewHomeClick={handleNewHomeClick}
       />
-      <SimpleGrid columns={[1, 2, null, 4, 5]} spacing="grid.sm" px="4">
+      <SimpleGrid
+        columns={[1, 2, null, 4, 5]}
+        spacing="grid.sm"
+        px="4"
+        alignItems="start"
+      >
         {cardList &&
-          cardList.map(
-            ({ address, cardMenuItems, city, id, imageUrl, title, state }) => (
-              <Box key={id}>
+          cardList.map(({ address, active, _id, image, name }) => (
+            <Container>
+              <ContainerHeader
+                menuItems={cardMenuItems}
+                icon={<CustomIcon type={FiMoreHorizontal} size="5" />}
+                isThin
+              />
+              <Box
+                key={_id}
+                as="button"
+                textAlign="left"
+                onClick={() => {
+                  handleCardClick(_id)
+                }}
+              >
                 <HomeCard
                   address={address}
-                  cardMenuItems={cardMenuItems}
-                  city={city}
-                  handleCardClick={handleCardClick}
-                  id={id}
-                  imageUrl={imageUrl}
-                  title={title}
-                  state={state}
+                  image={image}
+                  name={name}
+                  active={active}
+                  _id={_id}
                 />
               </Box>
-            )
-          )}
+            </Container>
+          ))}
       </SimpleGrid>
     </Container>
   )

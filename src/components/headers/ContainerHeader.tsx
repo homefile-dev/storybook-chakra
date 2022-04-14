@@ -13,7 +13,7 @@ export const ContainerHeader = ({
     justifyContent="space-between"
     bg="white"
     align="center"
-    p={isThin ? '2' : '4'}
+    p={isThin ? '1.5' : '4'}
   >
     <Flex gap="2" w="full">
       {titleIcon && <Image src={titleIcon} />}

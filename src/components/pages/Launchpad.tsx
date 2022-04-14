@@ -5,6 +5,7 @@ import { Header, LeftPanel, Masthead } from '../launchpad'
 import SendDocument from '../sendDocument/SendDocument'
 import { MyHomeMenuItems, UserMenuItems } from '../../helpers/launchpad/MenuItems.helper'
 import { HomeCards, MyHomeFilters } from '../../helpers/myHomes'
+import { MenuItems } from '../../helpers/myHomes/HomeCard.helper'
 
 export const Launchpad = () => {
   const userName = 'Adam Lee'
@@ -39,6 +40,7 @@ export const Launchpad = () => {
           <MyHomes
             cardFilters={MyHomeFilters}
             cardList={HomeCards}
+            cardMenuItems={MenuItems}
             handleCardClick={(id) => {
               console.log(id)
             }}
