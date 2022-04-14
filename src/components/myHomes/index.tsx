@@ -1,5 +1,5 @@
-export * from "./AddHomeContent"
-export * from "./Address"
-export * from "./HomeCard"
-export * from "./MyHomes"
-export * from "./headers/NewHomeHeader"
+export { AddHomeContent } from './AddHomeContent'
+export { Address } from './Address'
+export { HomeCard } from './HomeCard'
+export { MyHomes } from './MyHomes'
+export { NewHomeHeader } from './headers/NewHomeHeader'
