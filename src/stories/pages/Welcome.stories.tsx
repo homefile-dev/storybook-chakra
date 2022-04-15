@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import Welcome from '../../components/pages/Welcome'
 
@@ -8,11 +9,13 @@ export default {
 
 const Template: ComponentStory<typeof Welcome> = () => {
   return (
-    <Welcome
-      name="Sam"
-      handleClick={() => {}}
-      videoUrl="https://www.youtube.com/embed/rkt_YtZYRDI"
-    />
+    <Box>
+      <Welcome
+        name="Sam"
+        handleClick={() => {}}
+        videoUrl="https://www.youtube.com/embed/rkt_YtZYRDI"
+      />
+    </Box>
   )
 }
 

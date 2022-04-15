@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
 import EmailValidation from '../../components/pages/EmailValidation'
@@ -10,16 +11,18 @@ export default {
 const Template: ComponentStory<typeof EmailValidation> = () => {
   const [isLoading, setIsLoading] = useState(false)
   return (
-    <EmailValidation
-      email="user@user.com.br"
-      isLoading={isLoading}
-      handleResendBt={() => {
-        setIsLoading(true)
-        setTimeout(() => {
-          setIsLoading(false)
-        }, 2000)
-      }}
-    />
+    <Box>
+      <EmailValidation
+        email="user@user.com.br"
+        isLoading={isLoading}
+        handleResendBt={() => {
+          setIsLoading(true)
+          setTimeout(() => {
+            setIsLoading(false)
+          }, 2000)
+        }}
+      />
+    </Box>
   )
 }
 

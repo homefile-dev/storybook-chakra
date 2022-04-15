@@ -4,8 +4,6 @@ import {
   Box,
   Flex,
   Text,
-  Center,
-  AspectRatio,
 } from '@chakra-ui/react'
 import { t } from 'i18next'
 import ImageDefault from '../../assets/images/image-default.jpg'

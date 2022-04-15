@@ -35,7 +35,7 @@ export const MyHomes = ({
         alignItems="start"
       >
         {cardList &&
-          cardList.map(({ address, active, _id, image, name }) => (
+          cardList?.map(({ address, active, _id, image, name }) => (
             <Container key={_id}>
               <ContainerHeader
                 menuItems={cardMenuItems}
@@ -46,8 +46,12 @@ export const MyHomes = ({
                 key={_id}
                 as="button"
                 textAlign="left"
+                transition="all 0.3s ease-in-out"
                 onClick={() => {
                   handleCardClick(_id)
+                }}
+                _hover={{
+                  boxShadow: 'xl',
                 }}
               >
                 <HomeCard

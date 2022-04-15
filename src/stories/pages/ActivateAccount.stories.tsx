@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
 import ActivateAccount from '../../components/pages/ActivateAccount'
@@ -10,16 +11,18 @@ export default {
 const Template: ComponentStory<typeof ActivateAccount> = () => {
   const [isLoading, setIsLoading] = useState(false)
   return (
-    <ActivateAccount
-      name="Matthew"
-      isLoading={isLoading}
-      handleActivateBt={() => {
-        setIsLoading(true)
-        setTimeout(() => {
-          setIsLoading(false)
-        }, 2000)
-      }}
-    />
+    <Box>
+      <ActivateAccount
+        name="Matthew"
+        isLoading={isLoading}
+        handleActivateBt={() => {
+          setIsLoading(true)
+          setTimeout(() => {
+            setIsLoading(false)
+          }, 2000)
+        }}
+      />
+    </Box>
   )
 }
 

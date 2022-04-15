@@ -27,12 +27,18 @@ export const Address = ({
   inputs,
   isDisabled = true,
   isValidated,
+  leftElement = null,
+  title = t('myHomes.section1'),
+  titleIcon = HomeAddres,
 }: IAddress) => {
-
   return (
     <Container variant="ghost" p="4">
       <Stack spacing="input.sm">
-        <SectionHeader title={t('myHomes.section1')} titleIcon={HomeAddres} />
+        <SectionHeader
+          title={title}
+          titleIcon={titleIcon}
+          leftElement={leftElement}
+        />
         <InputGroup gap="input.sm">
           <TextInput
             errorMessage={

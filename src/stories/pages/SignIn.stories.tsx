@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
 import { SignIn } from '../../components/pages/SignIn'
@@ -12,27 +13,32 @@ const Template: ComponentStory<typeof SignIn> = () => {
   const [hasError, setHasError] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   return (
-    <SignIn
-      isLoading={isLoading}
-      termsUrl=""
-      privacyUrl=""
-      handleSignIn={(form: ISignInForm) => {
-        setHasError(false)
-        setIsLoading(true)
-        setTimeout(() => {
-          if (form.email !== 'user@user.com' || form.password !== 'password') {
-            setHasError(true)
-            setIsLoading(false)
-          } else {
-            setIsLoading(false)
-          }
-        }, 2000)
-      }}
-      handleSignUp={() => {}}
-      handleForgotPassword={() => {}}
-      loginError={hasError}
-      values={{ email: 'damaprodutora@gmail.com', password: '123456' }}
-    />
+    <Box>
+      <SignIn
+        isLoading={isLoading}
+        termsUrl=""
+        privacyUrl=""
+        handleSignIn={(form: ISignInForm) => {
+          setHasError(false)
+          setIsLoading(true)
+          setTimeout(() => {
+            if (
+              form.email !== 'user@user.com' ||
+              form.password !== 'password'
+            ) {
+              setHasError(true)
+              setIsLoading(false)
+            } else {
+              setIsLoading(false)
+            }
+          }, 2000)
+        }}
+        handleSignUp={() => {}}
+        handleForgotPassword={() => {}}
+        loginError={hasError}
+        values={{ email: 'damaprodutora@gmail.com', password: '123456' }}
+      />
+    </Box>
   )
 }
 
