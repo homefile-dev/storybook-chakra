@@ -45,7 +45,7 @@ export const Address = ({
               t('myHomes.form.address') + ' ' + t('myHomes.form.required')
             }
             hasError={isValidated && isEmptyField(inputs.street)}
-            id="address"
+            id="street"
             placeholder={t('myHomes.form.address')}
             value={inputs.street}
             handleChange={(event) => handleInputChange(event)}
