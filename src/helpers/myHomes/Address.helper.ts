@@ -1,8 +1,8 @@
 export const AddressForm = {
-  address: '',
-  address1: '',
-  address2: '',
+  apartmentNumber: '',
   city: '',
+  obs: '',
   state: '',
-  zipCode: '',
+  street: '',
+  zip: '',
 }

@@ -52,7 +52,7 @@ export const AddHomeContent = ({
   useEffect(() => {
     if (values) {
       handleAddressAutoFill(values)
-      setProjectIdentifier(values?.projectIdentifier)
+      setProjectIdentifier(values?.name)
     }
   }, [values])
 
@@ -104,7 +104,7 @@ export const AddHomeContent = ({
                 id="projectName"
                 placeholder={t('myHomes.form.projectName')}
                 handleChange={(event) => handleInputChange(event)}
-                value={values?.projectIdentifier || projectIdentifier}
+                value={values?.name || projectIdentifier}
               />
             </Stack>
           </Box>
@@ -118,8 +118,8 @@ export const AddHomeContent = ({
               onClick={() => {
                 setIsValidated(true)
                 if (
-                  !isEmptyField(addressInputs.address) &&
-                  !isEmptyField(addressInputs.zipCode) &&
+                  !isEmptyField(addressInputs.street) &&
+                  !isEmptyField(addressInputs.zip) &&
                   !isEmptyField(projectIdentifier)
                 ) {
                   handleCreateHomeClick(firstHomeProxy)

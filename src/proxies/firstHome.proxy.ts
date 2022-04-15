@@ -3,11 +3,11 @@ import { IHomeForm } from '../interfaces/myHomes/Home.interface'
 
 
 export const firstHomeProxy = proxy<IHomeForm>({
-  address: '',
-  address1: '',
-  address2: '',
+  apartmentNumber: '',
   city: '',
+  name: '',
   state: '',
-  zipCode: '',
-  projectIdentifier: '',
+  obs: '',
+  street: '',
+  zip: '',
 })

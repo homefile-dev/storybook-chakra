@@ -18,7 +18,7 @@ const Template: ComponentStory<typeof AddHomeContent> = () => {
   return (
     <Drawer placement="left" onClose={onClose} isOpen={isOpen} size="md">
       <AddHomeContent
-        handleCreateHomeClick={() => {}}
+        handleCreateHomeClick={(form) => form}
         handleSkipClick={onClose}
         userFirstName="Adam"
         values={formValues}

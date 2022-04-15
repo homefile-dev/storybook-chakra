@@ -1,9 +1,9 @@
 export const formValues = {
-  address: '1000 5th Ave',
-  address1: 'Manhattan',
-  address2: '',
+  apartmentNumber: '1000',
   city: 'New York City',
-  projectIdentifier: 'Museum',
+  name: 'Museum',
+  obs: 'Manhattan',
   state: 'NY',
-  zipCode: '10028',
+  street: ' 5th Ave',
+  zip: '10028',
 }

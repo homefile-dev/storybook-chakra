@@ -8,7 +8,7 @@ export const useAddHouseContent = () => {
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setIsValidated(false)
     setProjectIdentifier(event.target.value)
-    firstHomeProxy.projectIdentifier = event.target.value
+    firstHomeProxy.name = event.target.value
   }
 
   return {

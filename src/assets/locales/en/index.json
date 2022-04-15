@@ -111,8 +111,8 @@
       "address": "Address",
       "city": "City",
       "state": "State",
-      "complement1": "Apartment, Suite, Unit, Building, Floor, etc.",
-      "complement2": "Additional information",
+      "apartmentNumber": "Apartment, Suite, Unit, Building, Floor, etc.",
+      "obs": "Additional information",
       "required": "is required",
       "invalid": "is invalid",
       "projectName": "Create Name or Project Number"

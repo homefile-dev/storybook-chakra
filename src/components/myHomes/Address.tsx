@@ -44,20 +44,17 @@ export const Address = ({
             errorMessage={
               t('myHomes.form.address') + ' ' + t('myHomes.form.required')
             }
-            hasError={isValidated && isEmptyField(inputs.address)}
+            hasError={isValidated && isEmptyField(inputs.street)}
             id="address"
             placeholder={t('myHomes.form.address')}
-            value={inputs.address}
+            value={inputs.street}
             handleChange={(event) => handleInputChange(event)}
           />
           <IconButton
             aria-label="Add new address line"
             variant="iconOutlined"
             icon={<AddIcon w="5" h="5" />}
-            onClick={() => {
-              handleAddComplements()
-              console.log(`lista: ${complements}`)
-            }}
+            onClick={() => handleAddComplements()}
             isDisabled={counter === 2}
             maxH="input.md"
           />
@@ -65,10 +62,10 @@ export const Address = ({
         {complements.length > 0 &&
           complements.map((complement) => {
             return (
-              <InputGroup key={`address: ${complement}`} gap="input.sm">
+              <InputGroup key={complement} gap="input.sm">
                 <TextInput
                   id={complement}
-                  placeholder={t(`myHomes.form.complement${complement}`)}
+                  placeholder={t(`myHomes.form.${complement}`)}
                   value={inputs[complement as keyof IAddressForm]}
                   handleChange={(event) => handleInputChange(event)}
                 />
@@ -90,10 +87,10 @@ export const Address = ({
             errorMessage={
               t('myHomes.form.zip') + ' ' + t('myHomes.form.required')
             }
-            hasError={isValidated && isEmptyField(inputs.zipCode)}
-            id="zipCode"
+            hasError={isValidated && isEmptyField(inputs.zip)}
+            id="zip"
             placeholder={t('myHomes.form.zip')}
-            value={inputs.zipCode}
+            value={inputs.zip}
             handleChange={(event) => handleInputChange(event)}
           />
           <TextInput

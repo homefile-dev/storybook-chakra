@@ -2,12 +2,12 @@ import { ChangeEvent } from "react"
 import { ISectionHeader } from "../headers/SectionHeader.inteface"
 
 export interface IAddressForm {
-  address: string
-  address1: string
-  address2: string
+  apartmentNumber: string
   city: string
+  obs: string
+  street: string
   state: string
-  zipCode: string
+  zip: string
 }
 
 export interface IAddress extends ISectionHeader {

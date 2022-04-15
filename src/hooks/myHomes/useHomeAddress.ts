@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 import { AddressForm } from '../../helpers/myHomes/Address.helper'
 import { IAddressForm } from '../../interfaces/myHomes/Address.interface'
 import { IHomeForm } from '../../interfaces/myHomes/Home.interface'
@@ -8,16 +8,16 @@ export const useHomeAddress = () => {
   const [addressInputs, setAddressInputs] = useState(AddressForm)
   const [counter, setCounter] = useState(0)
   const [complements, setComplements] = useState<string[]>([])
+  const keys = ['apartmentNumber', 'obs']
 
   const handleAddComplements = () => {
     setCounter((counter) => counter + 1)
     if (counter < 2) {
-      setComplements([`${counter + 1}`, ...complements].reverse())
+      setComplements([keys[counter], ...complements].reverse())
     }
   }
 
   const handleDeleteComplements = (complement: string) => {
-    console.log(`deletou: ${complement}`)
     setCounter(counter - 1)
     if (counter >= 0) {
       setComplements(complements.filter((item) => item !== complement))
@@ -45,10 +45,18 @@ export const useHomeAddress = () => {
           values[key as keyof IAddressForm]
       })
       setComplements(() => {
-        if (values.address1 !== '' && values.address2 !== '')
-          return ['address1', 'address2']
-        if (values.address1 !== '') return ['address1']
-        if (values.address2 !== '') return ['address2']
+        if (values.apartmentNumber !== '' && values.obs !== '') {
+          setCounter(2)
+          return ['apartmentNumber', 'obs']
+        }
+        if (values.apartmentNumber !== '') {
+          setCounter(1)
+          return ['apartmentNumber']
+        }
+        if (values.obs !== '') {
+          setCounter(1)
+          return ['obs']
+        }
         return []
       })
     }
