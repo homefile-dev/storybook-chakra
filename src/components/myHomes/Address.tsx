@@ -54,18 +54,21 @@ export const Address = ({
             aria-label="Add new address line"
             variant="iconOutlined"
             icon={<AddIcon w="5" h="5" />}
-            onClick={() => handleAddComplements()}
+            onClick={() => {
+              handleAddComplements()
+              console.log(`lista: ${complements}`)
+            }}
             isDisabled={counter === 2}
             maxH="input.md"
           />
         </InputGroup>
         {complements.length > 0 &&
-          complements.map((complement, index) => {
+          complements.map((complement) => {
             return (
-              <InputGroup key={complement} gap="input.sm">
+              <InputGroup key={`address: ${complement}`} gap="input.sm">
                 <TextInput
                   id={complement}
-                  placeholder={`${t('myHomes.form.address')} ${index + 1}`}
+                  placeholder={t(`myHomes.form.complement${complement}`)}
                   value={inputs[complement as keyof IAddressForm]}
                   handleChange={(event) => handleInputChange(event)}
                 />

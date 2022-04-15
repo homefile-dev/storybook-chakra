@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { AddressForm } from '../../helpers/myHomes/Address.helper'
 import { IAddressForm } from '../../interfaces/myHomes/Address.interface'
 import { IHomeForm } from '../../interfaces/myHomes/Home.interface'
@@ -8,15 +8,16 @@ export const useHomeAddress = () => {
   const [addressInputs, setAddressInputs] = useState(AddressForm)
   const [counter, setCounter] = useState(0)
   const [complements, setComplements] = useState<string[]>([])
-  const label = 'address'
 
   const handleAddComplements = () => {
-    setCounter(counter + 1)
-    counter < 2 &&
-      setComplements([`${label}${counter + 1}`, ...complements].reverse())
+    setCounter((counter) => counter + 1)
+    if (counter < 2) {
+      setComplements([`${counter + 1}`, ...complements].reverse())
+    }
   }
 
   const handleDeleteComplements = (complement: string) => {
+    console.log(`deletou: ${complement}`)
     setCounter(counter - 1)
     if (counter >= 0) {
       setComplements(complements.filter((item) => item !== complement))
