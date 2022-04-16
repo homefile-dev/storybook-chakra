@@ -1,4 +1,4 @@
-import { Image, Stack, Box, Flex, Text } from '@chakra-ui/react'
+import { Image, Stack, Box, Flex, Text, Center } from '@chakra-ui/react'
 import { t } from 'i18next'
 import ImageDefault from '../../assets/images/image-default.jpg'
 import { IHomeCard } from '../../interfaces/myHomes/HomeCard.interface'
@@ -10,14 +10,14 @@ export const HomeCard = ({
 }: IHomeCard) => {
   return (
     <>
-      <Box maxH="7rem" overflow="hidden">
+      <Center h="8rem" bg="container.neutralBlue" overflow="hidden">
         <Image
           src={image?.Location || ImageDefault}
           alt={`${name} ${t('images.altImage')}`}
-          objectFit="cover"
-          minH="7rem"
+          width="100%"
         />
-      </Box>
+      </Center>
+
       <Stack px="2" my="4">
         <Text textTransform="uppercase">{name}</Text>
         <Box>
