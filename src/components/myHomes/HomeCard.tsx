@@ -10,12 +10,12 @@ export const HomeCard = ({
 }: IHomeCard) => {
   return (
     <>
-      <Box maxH={['16rem', null, null, '10rem']} overflow="hidden">
+      <Box maxH="12rem" overflow="hidden">
         <Image
           src={image?.Location || ImageDefault}
           alt={`${name} ${t('images.altImage')}`}
-          fit="cover"
-          boxSize="100%"
+          objectFit="cover"
+          minH='12rem'
         />
       </Box>
       <Stack px="2" my="4">
