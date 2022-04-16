@@ -10,12 +10,12 @@ export const HomeCard = ({
 }: IHomeCard) => {
   return (
     <>
-      <Box maxH="12rem" overflow="hidden">
+      <Box maxH="7rem" overflow="hidden">
         <Image
           src={image?.Location || ImageDefault}
           alt={`${name} ${t('images.altImage')}`}
           objectFit="cover"
-          minH='12rem'
+          minH="7rem"
         />
       </Box>
       <Stack px="2" my="4">
@@ -25,8 +25,10 @@ export const HomeCard = ({
           <Flex gap="1" mt="-1.5">
             <Text variant="home">{`${city},`}</Text>
             <Text variant="home">{state}</Text>
-            <Text variant="home">{zip}</Text>
           </Flex>
+          <Text variant="home" mt="-1.5">
+            {zip}
+          </Text>
         </Box>
       </Stack>
     </>

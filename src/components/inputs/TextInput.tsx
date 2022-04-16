@@ -8,7 +8,7 @@ export const TextInput = ({
   handleChange,
   hasError,
   placeholder,
-  value,
+  value = "",
 }: IInput) => {
   return (
     <FormControl isInvalid={hasError}>

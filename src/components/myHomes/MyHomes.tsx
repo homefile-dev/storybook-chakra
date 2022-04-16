@@ -29,7 +29,7 @@ export const MyHomes = ({
         handleNewHomeClick={handleNewHomeClick}
       />
       <SimpleGrid
-        columns={[1, 2, null, 4, 5]}
+        columns={[1, 2, 3, 4]}
         spacing="grid.sm"
         px="4"
         alignItems="start"

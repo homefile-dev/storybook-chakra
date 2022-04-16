@@ -16,7 +16,7 @@ export const PasswordInput = ({
   handleChange,
   hasError,
   placeholder,
-  value,
+  value = "",
 }: IInput) => {
   const [show, setShow] = useState(false)
   const handleClick = () => setShow(!show)
