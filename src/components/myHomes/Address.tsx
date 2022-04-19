@@ -72,7 +72,7 @@ export const Address = ({
                 <Center w="3.5rem">
                   <IconButton
                     w="2rem"
-                    minH="2rem"
+                    h="button.xs"
                     aria-label="Delete address line"
                     variant="iconOutlined"
                     icon={<CustomIcon type={AiOutlineMinus} />}

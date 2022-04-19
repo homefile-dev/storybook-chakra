@@ -7,6 +7,7 @@ import House from '../../assets/images/house.svg'
 import MyHomesHeader from './headers/MyHomesHeader'
 import HomeCard from './HomeCard'
 import { IMyHomes } from '../../interfaces/myHomes/MyHomes.interface'
+import useWindowDimensions from '../../hooks/useWindowDimensions'
 
 export const MyHomes = ({
   cardFilters,
@@ -16,6 +17,8 @@ export const MyHomes = ({
   handleNewHomeClick,
   headerMenuItems,
 }: IMyHomes) => {
+  const { width } = useWindowDimensions()
+  const isSmallMobile = width < 400
   return (
     <Container variant="launchpad" minW="full" pb="3rem">
       <ContainerHeader
@@ -29,7 +32,7 @@ export const MyHomes = ({
         handleNewHomeClick={handleNewHomeClick}
       />
       <SimpleGrid
-        columns={[1, 2, 3, 4, 5]}
+        columns={[isSmallMobile ? 1 : 2, 2, 3, 4, 5]}
         spacing="grid.sm"
         px="4"
         alignItems="start"
