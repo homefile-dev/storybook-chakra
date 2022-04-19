@@ -8,12 +8,11 @@ import { IconMenu } from '../launchpad'
 
 export const ProjectList = ({
   handleProjectClick,
-  key = '',
   menuItems,
   title,
 }: IProjectList) => {
   return (
-    <Container variant="list" p="4" key={key}>
+    <Container variant="list" p="4" key={title}>
       <Flex justify="space-between">
         <Box as="button" onClick={handleProjectClick}>
           <Flex alignItems="center" gap="3">
