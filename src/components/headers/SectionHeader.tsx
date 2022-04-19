@@ -3,7 +3,7 @@ import { ISectionHeader } from '../../interfaces/headers/SectionHeader.inteface'
 
 export const SectionHeader = ({
   leftElement = null,
-  title,
+  title = "",
   titleIcon,
 }: ISectionHeader) => (
   <Flex justify="space-between">
