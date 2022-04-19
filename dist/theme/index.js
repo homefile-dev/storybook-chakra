@@ -148,6 +148,7 @@ var theme = (0, react_1.extendTheme)({
             md: '3rem',
             lg: '4rem',
             xl: '5rem',
+            wXs: '10rem',
             wSm: '16rem',
             wMd: '22rem',
         },

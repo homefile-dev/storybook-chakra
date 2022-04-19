@@ -170,7 +170,7 @@ var Button = {
             fontSize: 'md',
             textTransform: 'uppercase',
             h: 'button.xs',
-            pr: '4rem',
+            pr: '3rem',
             fontWeight: 'semibold',
             borderRightRadius: 'full',
             borderLeftRadius: 'none',
