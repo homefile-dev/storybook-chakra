@@ -48,7 +48,8 @@ const Container = {
     },
     list: {
       backgroundColor: 'white',
-      borderColor: 'button.menuIcon',
+      border: '1px solid',
+      borderColor: 'input.border',
       transition: 'all 0.2s ease-in-out',
       _hover: {
         backgroundColor: 'container.secondary',

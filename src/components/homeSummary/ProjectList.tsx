@@ -6,9 +6,14 @@ import { IProjectList } from '../../interfaces/homeSummary/ProjectList.interface
 import { CustomIcon } from '../icons/CustomIcon'
 import { IconMenu } from '../launchpad'
 
-export const ProjectList = ({ handleProjectClick, menuItems, title }: IProjectList) => {
+export const ProjectList = ({
+  handleProjectClick,
+  key = '',
+  menuItems,
+  title,
+}: IProjectList) => {
   return (
-    <Container variant="list" p="4">
+    <Container variant="list" p="4" key={key}>
       <Flex justify="space-between">
         <Box as="button" onClick={handleProjectClick}>
           <Flex alignItems="center" gap="3">
