@@ -16,3 +16,4 @@ export {
 } from './components/myHomes'
 export { PasswordInput, TextInput } from './components/inputs'
 export { ProjectList } from './components/homeSummary/ProjectList'
+export { BackHeader } from './components/headers/BackHeader'

@@ -1,88 +1,73 @@
 {
+  "buildingApp": {
+    "subtitle": "We are connecting to public sources to pull the relevant information about your home into your homefile.",
+    "title": "One moment, we’re building your homefile."
+  },
   "footer": {
     "copyright": "© 2021 Homefile Inc. All Rights Reserved.",
     "termsLink": "Terms of Service",
     "privacyLink": "Privacy Policy"
   },
-  "signup": {
-    "title": "Create your Homefile Account",
-    "subtitle": "Create a strong password",
-    "terms": "By creating an account you agree to the Homefile ",
-    "signupBt": "Create Account",
-    "signin": "Already have a Homefile account?",
-    "signinBt": "Log in"
-  },
-  "signin": {
-    "title": "Please Log in",
-    "forgotBt": "Forgot Password?",
-    "signupBt": "Sign up",
-    "signup": "Don’t have a Homefile account?",
-    "signinBt": "Log in"
-  },
-  "reset": {
-    "title": "Reset your Password",
-    "instruction": "We will send instructions to reset your password",
-    "email": "Enter your account email",
-    "resetBt": "Reset Password",
-    "signinBt": "Log in"
-  },
-  "validation": {
-    "title1": "We just sent a message to ",
-    "title2": " with a link to activate your account.",
-    "alert1": "If you have not received an email, please check your spam folder or",
-    "resendBt": "Resend Email Verification"
-  },
-  "registration": {
-    "instruction": "To complete your Homefile registration process, please click on the button below to confirm and activate your account.",
-    "activateBt": "Activate my homefile account",
-    "activateBtShort": "Activate account",
-    "notReply": "Please do not reply to this email as this is not an active email account."
-  },
   "forms": {
-    "firstName": "First Name",
-    "lastName": "Last Name",
     "email": "Email",
-    "password": "Password",
-    "passwordConfirm": "Re-enter Password",
-    "required": "is required",
-    "errorPasswordMatch": "Passwords do not match",
-    "errorPasswordLength": "Password must be at least 6 characters",
     "errorEmail": "Please enter a valid email",
     "errorEmailExists": "Email already exists",
     "errorEmailNotActivated": "This email has not an account associated with it",
-    "errorLogin": "Invalid email or password"
+    "errorLogin": "Invalid email or password",
+    "errorPasswordLength": "Password must be at least 6 characters",
+    "errorPasswordMatch": "Passwords do not match",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "password": "Password",
+    "passwordConfirm": "Re-enter Password",
+    "required": "is required",
+    "return": "Back"
   },
-  "welcome": {
-    "title": "Welcome to Homefile",
-    "launchpad": "Welcome to your Property Launchpad",
-    "greeting": "Hello ",
-    "greeting2": "Hi ",
-    "signature": "Your Homefile Crew",
-    "message": "We are excited to have you on board. We are here to help you get started with Homefile. We prepared a few resources to help you get started. Please click on the video below to start your journey.",
-    "message2": "We hope you enjoy your time with Homefile.",
-    "welcomeBt": "Go to launchpad"
+  "homeSummary": {
+    "altFolderIcon": "folder"
   },
-  "buildingApp": {
-    "title": "One moment, we’re building your homefile.",
-    "subtitle": "We are connecting to public sources to pull the relevant information about your home into your homefile."
+  "images": {
+    "altImage": "image"
   },
   "launchpad": {
-    "viewsBT": "Views",
     "menu": {
       "profile": "My profile",
-      "logout": "Logout"
-    }
+      "logout": "Lo,gout"
+    },
+    "viewsBT": "Views"
   },
   "myHomes": {
-    "title": "My Homes",
     "addHome": "Home",
-    "saveBt": "Save",
-    "section1": "Home address",
-    "section2": "Name Home/Project",
+    "details": {
+      "header": "Homefile Summary"
+    },
+    "firstHome": {
+      "skipBt": "Skip for Now",
+      "title": "Let’s add your first home."
+    },
+    "form": {
+      "zip": "Zip Code",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "apartmentNumber": "Apartment, Suite, Unit, Building, Floor, etc.",
+      "obs": "Additional information",
+      "required": "is required",
+      "invalid": "is invalid",
+      "projectName": "Create Name or Project Number"
+    },
     "menu": {
       "settings": "Settings",
       "help": "Help"
     },
+    "newHome": {
+      "title": "Add Home",
+      "btAria": "close"
+    },
+
+    "saveBt": "Save",
+    "section1": "Home address",
+    "section2": "Name Home/Project",
     "select": {
       "title": "Select option",
       "option1": "Active homes",
@@ -95,37 +80,54 @@
       "option3": "I am the Engineer",
       "option4": "I am the Homeowner"
     },
-    "firstHome": {
-      "skipBt": "Skip for Now",
-      "title": "Let’s add your first home."
-    },
-    "newHome": {
-      "title": "Add Home",
-      "btAria": "close"
-    },
-    "details": {
-      "header": "Homefile Summary"
-    },
-    "form": {
-      "zip": "Zip Code",
-      "address": "Address",
-      "city": "City",
-      "state": "State",
-      "apartmentNumber": "Apartment, Suite, Unit, Building, Floor, etc.",
-      "obs": "Additional information",
-      "required": "is required",
-      "invalid": "is invalid",
-      "projectName": "Create Name or Project Number"
-    }
+    "title": "My Homes"
+  },
+  "registration": {
+    "activateBt": "Activate my homefile account",
+    "activateBtShort": "Activate account",
+    "instruction": "To complete your Homefile registration process, please click on the button below to confirm and activate your account.",
+    "notReply": "Please do not reply to this email as this is not an active email account."
+  },
+  "reset": {
+    "email": "Enter your account email",
+    "instruction": "We will send instructions to reset your password",
+    "resetBt": "Reset Password",
+    "signinBt": "Log in",
+    "title": "Reset your Password"
   },
   "sendDocument": {
-    "title": "Send Document",
-    "setupBt": "Set Up Document"
+    "setupBt": "Set Up Document",
+    "title": "Send Document"
   },
-  "images": {
-    "altImage": "image"
+  "signin": {
+    "forgotBt": "Forgot Password?",
+    "title": "Please Log in",
+    "signinBt": "Log in",
+    "signupBt": "Sign up",
+    "signup": "Don’t have a Homefile account?"
   },
-  "homeSummary": {
-    "altFolderIcon": "folder"
+  "signup": {
+    "signin": "Already have a Homefile account?",
+    "signinBt": "Log in",
+    "signupBt": "Create Account",
+    "subtitle": "Create a strong password",
+    "terms": "By creating an account you agree to the Homefile ",
+    "title": "Create your Homefile Account"
+  },
+  "welcome": {
+    "greeting": "Hello ",
+    "greeting2": "Hi ",
+    "launchpad": "Welcome to your Property Launchpad",
+    "message": "We are excited to have you on board. We are here to help you get started with Homefile. We prepared a few resources to help you get started. Please click on the video below to start your journey.",
+    "message2": "We hope you enjoy your time with Homefile.",
+    "signature": "Your Homefile Crew",
+    "title": "Welcome to Homefile",
+    "welcomeBt": "Go to launchpad"
+  },
+  "validation": {
+    "alert1": "If you have not received an email, please check your spam folder or",
+    "resendBt": "Resend Email Verification",
+    "title1": "We just sent a message to ",
+    "title2": " with a link to activate your account."
   }
 }
