@@ -12,7 +12,7 @@ export const ProjectList = ({
   title,
 }: IProjectList) => {
   return (
-    <Container variant="list" p="4" key={title}>
+    <Container variant="list" p="4">
       <Flex justify="space-between">
         <Box as="button" onClick={handleProjectClick}>
           <Flex alignItems="center" gap="3">
