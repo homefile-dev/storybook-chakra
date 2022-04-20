@@ -8,7 +8,7 @@ import {
   Badge,
 } from '@chakra-ui/react'
 import { t } from 'i18next'
-import MapIcon from '../../assets/images/map.svg'
+import ProgressReport from '../../assets/images/progress-report.svg'
 import { IUpdateList } from '../../interfaces/homeSummary/UpdateList.interface'
 
 export const UpdateList = ({
@@ -45,7 +45,7 @@ export const UpdateList = ({
               </Text>
             </Box>
             <Image
-              src={MapIcon}
+              src={ProgressReport}
               alt={`${projectName} ${t('homeSummary.altFolderIcon')}`}
               h="2.5rem"
               w="auto"

@@ -15,7 +15,7 @@ export {
   HomePanelHeader,
 } from './components/myHomes'
 export { PasswordInput, TextInput } from './components/inputs'
-export { ProjectList, UpdateList } from './components/homeSummary'
+export { ProjectList, UpdateList, DocumentMenu } from './components/homeSummary'
 export {
   BackHeader,
   SectionHeader,

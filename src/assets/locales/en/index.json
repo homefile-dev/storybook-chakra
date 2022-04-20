@@ -31,7 +31,8 @@
     }
   },
   "images": {
-    "altImage": "image"
+    "altImage": "image",
+    "altIcon": "icon"
   },
   "launchpad": {
     "menu": {

@@ -75,7 +75,7 @@ const Button = {
       },
     },
     iconOutlined: {
-      maxW: "3rem",
+      maxW: '3rem',
       borderRadius: 'sm',
       boxShadow: 'base',
       transition: 'all 0.2s ease-in-out',
@@ -182,6 +182,30 @@ const Button = {
       },
       _active: {
         backgroundColor: 'button.primaryHover',
+        boxShadow: 'none',
+      },
+      _hover: {
+        boxShadow: 'xl',
+      },
+    },
+    menu: {
+      fontSize: 'md',
+      textTransform: 'uppercase',
+      h: 'button.xs',
+      fontWeight: 'regular',
+      borderRadius: 'none',
+      boxShadow: 'base',
+      color: 'white',
+      backgroundColor: 'button.primary',
+      transition: 'all 0.2s ease-in-out',
+      _disabled: {
+        filter: 'grayscale(100%)',
+        pointerEvents: 'none',
+      },
+      _active: {
+        backgroundColor: 'button.primaryHover',
+        borderTopRadius: 'md',
+        fontWeight: 'medium',
         boxShadow: 'none',
       },
       _hover: {
