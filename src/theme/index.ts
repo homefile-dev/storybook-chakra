@@ -52,6 +52,8 @@ const theme = extendTheme({
       secondary: '#F0F8F0',
       tertiary: '#F4F7F8',
       neutralBlue: '#E9EDEF',
+      neutral: '#ADB6BA',
+      warning: '#F8AD20',
     },
     button: {
       primary: '#2488C6',

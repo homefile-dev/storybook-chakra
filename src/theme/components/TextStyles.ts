@@ -33,6 +33,9 @@ const Text = {
       fontSize: 'sm',
       fontFamily: 'secondary',
     },
+    report: {
+      fontSize: 'xs',
+    },
     error: {
       fontSize: 'xs',
       fontFamily: 'secondary',

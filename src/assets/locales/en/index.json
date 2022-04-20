@@ -24,7 +24,11 @@
     "return": "Back"
   },
   "homeSummary": {
-    "altFolderIcon": "folder"
+    "altFolderIcon": "folder",
+    "report": {
+      "opened": "Opened",
+      "unopened": "Unopened"
+    }
   },
   "images": {
     "altImage": "image"

@@ -19,4 +19,4 @@ const Template: ComponentStory<typeof ProjectList> = () => {
   )
 }
 
-export const MastheadComponent = Template.bind({})
+export const ProjectListComponent = Template.bind({})
