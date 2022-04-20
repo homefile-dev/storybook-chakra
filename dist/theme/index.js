@@ -57,9 +57,10 @@ var theme = (0, react_1.extendTheme)({
             tertiary: '#F4F7F8',
             neutralBlue: '#E9EDEF',
             neutral: '#ADB6BA',
-            warning: '#F8AD20',
+            warning: '#F8AD20'
         },
         button: {
+            "primary-300": '#409FD8',
             primary: '#2488C6',
             primaryHover: '#1D7AB4',
             secondary: '#F0F8F0',

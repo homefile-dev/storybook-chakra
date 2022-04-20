@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TabsHeader = exports.ContainerHeader = exports.SectionHeader = exports.BackHeader = exports.UpdateList = exports.ProjectList = exports.TextInput = exports.PasswordInput = exports.HomePanelHeader = exports.Address = exports.MyHomes = exports.AddHomeContent = exports.LeftPanel = exports.Masthead = exports.Header = exports.Launchpad = exports.EmailValidation = exports.ActivateAccount = exports.ResetPassword = exports.SignIn = exports.SignUp = exports.FooterDrawer = void 0;
+exports.TabsHeader = exports.ContainerHeader = exports.SectionHeader = exports.BackHeader = exports.DocumentMenu = exports.UpdateList = exports.ProjectList = exports.TextInput = exports.PasswordInput = exports.HomePanelHeader = exports.Address = exports.MyHomes = exports.AddHomeContent = exports.LeftPanel = exports.Masthead = exports.Header = exports.Launchpad = exports.EmailValidation = exports.ActivateAccount = exports.ResetPassword = exports.SignIn = exports.SignUp = exports.FooterDrawer = void 0;
 var FooterDrawer_1 = require("./components/footers/FooterDrawer");
 Object.defineProperty(exports, "FooterDrawer", { enumerable: true, get: function () { return FooterDrawer_1.FooterDrawer; } });
 var pages_1 = require("./components/pages");
@@ -25,6 +25,7 @@ Object.defineProperty(exports, "TextInput", { enumerable: true, get: function ()
 var homeSummary_1 = require("./components/homeSummary");
 Object.defineProperty(exports, "ProjectList", { enumerable: true, get: function () { return homeSummary_1.ProjectList; } });
 Object.defineProperty(exports, "UpdateList", { enumerable: true, get: function () { return homeSummary_1.UpdateList; } });
+Object.defineProperty(exports, "DocumentMenu", { enumerable: true, get: function () { return homeSummary_1.DocumentMenu; } });
 var headers_1 = require("./components/headers");
 Object.defineProperty(exports, "BackHeader", { enumerable: true, get: function () { return headers_1.BackHeader; } });
 Object.defineProperty(exports, "SectionHeader", { enumerable: true, get: function () { return headers_1.SectionHeader; } });

@@ -188,6 +188,30 @@ declare const Button: {
                 boxShadow: string;
             };
         };
+        menu: {
+            fontSize: string;
+            textTransform: string;
+            h: string;
+            fontWeight: string;
+            borderRadius: string;
+            boxShadow: string;
+            color: string;
+            backgroundColor: string;
+            transition: string;
+            _disabled: {
+                filter: string;
+                pointerEvents: string;
+            };
+            _active: {
+                backgroundColor: string;
+                borderTopRadius: string;
+                fontWeight: string;
+                boxShadow: string;
+            };
+            _hover: {
+                boxShadow: string;
+            };
+        };
     };
     defaultProps: {
         size: string;
