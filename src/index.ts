@@ -6,6 +6,8 @@ export {
   ActivateAccount,
   EmailValidation,
   Launchpad,
+  NewPassword,
+  ResendResetPassword,
 } from './components/pages'
 export { Header, Masthead, LeftPanel } from './components/launchpad'
 export {
