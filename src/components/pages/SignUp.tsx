@@ -2,7 +2,7 @@ import { Box, Button, Center, Container, Stack, Text } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 import { Logo, Footer, CardFooter, PageTitle } from '../onboarding'
 import { ISignUp } from '../../interfaces/pages/SignUp.interface'
-import {PasswordInput, TextInput} from '../inputs'
+import { PasswordInput, TextInput } from '../inputs'
 import useSignUp from '../../hooks/useSignUp'
 import {
   isEmptyField,
@@ -17,9 +17,7 @@ export const SignUp = ({
   isLoading,
   handleCreateAccount,
   handleSignIn,
-  privacyUrl,
   signupError,
-  termsUrl,
   values = {
     email: '',
     firstName: '',
@@ -133,7 +131,7 @@ export const SignUp = ({
             >
               <Text textAlign="center" variant="info" w="100%">
                 {t('signup.terms')}
-                <a href={termsUrl}>{t('footer.termsLink')}</a>
+                <a target="_blank" href={t('footer.termsUrl')}>{t('footer.termsLink')}</a>
               </Text>
             </Center>
             <Button
@@ -161,13 +159,7 @@ export const SignUp = ({
           handleButtonClick={handleSignIn}
         />
       </Container>
-      <Footer
-        copyright={t('footer.copyright')}
-        termsText={t('footer.termsLink')}
-        termsUrl={termsUrl}
-        privacyText={t('footer.privacyLink')}
-        privacyUrl={privacyUrl}
-      />
+      <Footer />
     </Box>
   )
 }

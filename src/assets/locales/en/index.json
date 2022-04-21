@@ -5,8 +5,10 @@
   },
   "footer": {
     "copyright": "© 2021 Homefile Inc. All Rights Reserved.",
+    "privacyLink": "Privacy Policy",
+    "privacyUrl": "https://www.homefile.com/privacy-policy",
     "termsLink": "Terms of Service",
-    "privacyLink": "Privacy Policy"
+    "termsUrl": "https://www.homefile.com/terms-of-service"
   },
   "forms": {
     "email": "Email",
@@ -87,6 +89,11 @@
     },
     "title": "My Homes"
   },
+  "newPassword": {
+    "confirm": "Confirm Password",
+    "create": "Create Password",
+    "title": "Enter your password below." 
+  },
   "registration": {
     "activateBt": "Activate my homefile account",
     "activateBtShort": "Activate account",
@@ -132,7 +139,9 @@
   "validation": {
     "alert1": "If you have not received an email, please check your spam folder or",
     "resendBt": "Resend Email Verification",
+    "resendResetBt": "Resend Reset Password Link",
     "title1": "We just sent a message to ",
-    "title2": " with a link to activate your account."
+    "title2": " with a link to activate your account.",
+    "title3": "to reset your password."
   }
 }

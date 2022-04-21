@@ -10,8 +10,6 @@ export interface ISignUp {
   isLoading: boolean
   handleCreateAccount: (form: ISignUpForm) => void
   handleSignIn: () => void
-  privacyUrl: string
   signupError: boolean
-  termsUrl: string
   values?: ISignUpForm
 }

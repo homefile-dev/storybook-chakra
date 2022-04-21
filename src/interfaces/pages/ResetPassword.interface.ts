@@ -3,10 +3,8 @@ export interface IEmailForm {
 }
 
 export interface IResetPassword {
-  isLoading: boolean
   handleSignIn: () => void
   handleReset: (form: IEmailForm) => void
+  isLoading: boolean
   resetError: boolean
-  privacyUrl: string
-  termsUrl: string
 }

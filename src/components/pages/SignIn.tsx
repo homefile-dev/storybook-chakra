@@ -14,8 +14,6 @@ export const SignIn = ({
   handleSignIn,
   handleSignUp,
   loginError,
-  termsUrl,
-  privacyUrl,
   values = { email: '', password: '' },
 }: ISignIn) => {
   const { t } = useTranslation()
@@ -104,13 +102,7 @@ export const SignIn = ({
           handleButtonClick={handleSignUp}
         />
       </Container>
-      <Footer
-        copyright={t('footer.copyright')}
-        termsText={t('footer.termsLink')}
-        termsUrl={termsUrl}
-        privacyText={t('footer.privacyLink')}
-        privacyUrl={privacyUrl}
-      />
+      <Footer />
     </Box>
   )
 }

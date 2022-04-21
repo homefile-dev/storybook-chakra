@@ -9,7 +9,5 @@ export interface ISignIn {
   handleSignIn: (form: ISignInForm) => void
   handleSignUp: () => void
   loginError: boolean
-  privacyUrl: string
-  termsUrl: string
   values?: ISignInForm
 }

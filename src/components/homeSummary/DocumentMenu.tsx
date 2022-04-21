@@ -41,7 +41,17 @@ export const DocumentMenu = ({ documents, title }: IDocumentList) => {
           <MenuList borderTopRadius="0" boxShadow="lg">
             {documents &&
               documents.map(({ handleClick, icon, label }) => (
-                <MenuItem minH="3rem" onClick={handleClick} key={label}>
+                <MenuItem
+                  minH="3rem"
+                  onClick={handleClick}
+                  key={label}
+                  _hover={{
+                    bg: 'container.secondary',
+                  }}
+                  _focus={{
+                    bg: 'container.secondary',
+                  }}
+                >
                   <Image
                     boxSize="2rem"
                     src={icon}

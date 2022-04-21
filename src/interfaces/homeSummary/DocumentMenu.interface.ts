@@ -1,3 +1,5 @@
+import { ReactElement } from "react"
+
 interface IDocumentItem {
   handleClick: () => void
   icon: string

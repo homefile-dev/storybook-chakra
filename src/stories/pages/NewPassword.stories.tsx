@@ -1,26 +1,27 @@
 import { Box } from '@chakra-ui/react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
-import { ResetPassword } from '../../components/pages/ResetPassword'
-import { IEmailForm } from '../../interfaces/pages/ResetPassword.interface'
+import { NewPassword } from '../../components/pages/NewPassword'
+import { INewPasswordForm } from '../../interfaces/pages/NewPassword.interface'
 
 export default {
   title: 'Pages/Onboarding',
-  component: ResetPassword,
-} as ComponentMeta<typeof ResetPassword>
+  component: NewPassword,
+} as ComponentMeta<typeof NewPassword>
 
-const Template: ComponentStory<typeof ResetPassword> = () => {
+const Template: ComponentStory<typeof NewPassword> = () => {
   const [hasError, setHasError] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   return (
     <Box>
-      <ResetPassword
+      <NewPassword
         isLoading={isLoading}
-        handleReset={(form: IEmailForm) => {
+        userEmail="user@user.com"
+        handleReset={(form: INewPasswordForm) => {
           setHasError(false)
           setIsLoading(true)
           setTimeout(() => {
-            if (form.email !== 'user@user.com') {
+            if (form.password !== form.confirmPassword) {
               setHasError(true)
               setIsLoading(false)
             } else {
@@ -28,11 +29,9 @@ const Template: ComponentStory<typeof ResetPassword> = () => {
             }
           }, 2000)
         }}
-        handleSignIn={() => {}}
-        resetError={hasError}
       />
     </Box>
   )
 }
 
-export const ResetPasswordPage = Template.bind({})
+export const NewPasswordPage = Template.bind({})

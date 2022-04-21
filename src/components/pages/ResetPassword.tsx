@@ -12,8 +12,6 @@ export const ResetPassword = ({
   handleReset,
   handleSignIn,
   resetError,
-  termsUrl,
-  privacyUrl,
 }: IResetPassword) => {
   const { t } = useTranslation()
   const { inputs, handleInputChange, isValidated, setIsValidated } =
@@ -73,13 +71,7 @@ export const ResetPassword = ({
           handleButtonClick={handleSignIn}
         />
       </Container>
-      <Footer
-        copyright={t('footer.copyright')}
-        termsText={t('footer.termsLink')}
-        termsUrl={termsUrl}
-        privacyText={t('footer.privacyLink')}
-        privacyUrl={privacyUrl}
-      />
+      <Footer />
     </Box>
   )
 }

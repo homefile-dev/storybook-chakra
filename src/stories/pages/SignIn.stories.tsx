@@ -16,8 +16,6 @@ const Template: ComponentStory<typeof SignIn> = () => {
     <Box>
       <SignIn
         isLoading={isLoading}
-        termsUrl=""
-        privacyUrl=""
         handleSignIn={(form: ISignInForm) => {
           setHasError(false)
           setIsLoading(true)

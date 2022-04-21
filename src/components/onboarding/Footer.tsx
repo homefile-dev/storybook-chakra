@@ -1,13 +1,7 @@
 import { Flex, Text } from '@chakra-ui/react'
-import { IFooter } from '../../interfaces/onboarding/Footer.interface'
+import { t } from 'i18next'
 
-export const Footer = ({
-  copyright,
-  termsText,
-  termsUrl,
-  privacyText,
-  privacyUrl,
-}: IFooter) => {
+export const Footer = () => {
   return (
     <Flex
       w={['container.full', 'container.sm', 'container.md']}
@@ -17,13 +11,17 @@ export const Footer = ({
       justifyContent={['center', 'space-between']}
       alignItems="center"
     >
-      <Text variant="label">{copyright}</Text>
+      <Text variant="label">{t('footer.copyright')}</Text>
       <Flex gap={2}>
         <Text variant="label">
-          <a href={termsUrl}>{termsText}</a>
+          <a target="_blank" href={t('footer.termsUrl')}>
+            {t('footer.termsLink')}
+          </a>
         </Text>
         <Text variant="label">
-          <a href={privacyUrl}>{privacyText}</a>
+          <a target="_blank" href={t('footer.privacyUrl')}>
+            {t('footer.privacyLink')}
+          </a>
         </Text>
       </Flex>
     </Flex>

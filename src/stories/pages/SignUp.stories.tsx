@@ -34,9 +34,7 @@ const Template: ComponentStory<typeof SignUp> = () => {
           }, 2000)
         }}
         handleSignIn={() => {}}
-        privacyUrl=""
         signupError={hasError}
-        termsUrl=""
         values={valuesFilled}
       />
     </Box>
