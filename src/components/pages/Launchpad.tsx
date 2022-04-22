@@ -29,27 +29,29 @@ export const Launchpad = () => {
         onClose={onClose}
       />
       <Masthead userName={userName} menuItems={UserMenuItems} />
-      <Header handleViews={() => {}} firstName={firstName} />
-      <Grid
-        templateColumns={['repeat(1, 1fr)', 'repeat(10, 1fr)']}
-        gap="base"
-        w="full"
-        px="base"
-      >
-        <GridItem colSpan={[1, 7]} w="full">
-          <MyHomes
-            cardFilters={MyHomeFilters}
-            cardList={HomeCards}
-            cardMenuItems={MenuItems}
-            handleCardClick={(id) => id}
-            handleNewHomeClick={onOpen}
-            headerMenuItems={MyHomeMenuItems}
-          />
-        </GridItem>
-        <GridItem colSpan={[1, 3]} w="full">
-          <SendDocument />
-        </GridItem>
-      </Grid>
+      <Box px="base">
+        <Header handleViews={() => {}} firstName={firstName} />
+        <Grid
+          templateColumns={['repeat(1, 1fr)', 'repeat(10, 1fr)']}
+          gap="base"
+          w="full"
+          px="base"
+        >
+          <GridItem colSpan={[1, 7]} w="full">
+            <MyHomes
+              cardFilters={MyHomeFilters}
+              cardList={HomeCards}
+              cardMenuItems={MenuItems}
+              handleCardClick={(id) => id}
+              handleNewHomeClick={onOpen}
+              headerMenuItems={MyHomeMenuItems}
+            />
+          </GridItem>
+          <GridItem colSpan={[1, 3]} w="full">
+            <SendDocument />
+          </GridItem>
+        </Grid>
+      </Box>
     </Box>
   )
 }

@@ -109,6 +109,7 @@ var theme = (0, react_1.extendTheme)({
         bold: 700,
     },
     space: {
+        base: '0.8125rem',
         container: {
             sm: '1rem',
             md: '2rem',

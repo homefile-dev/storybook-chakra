@@ -34,7 +34,7 @@ export const MyHomes = ({
       <SimpleGrid
         columns={[isSmallMobile ? 1 : 2, 2, 3, 4, 5]}
         spacing="base"
-        px="4"
+        px="base"
         alignItems="start"
       >
         {cardList &&

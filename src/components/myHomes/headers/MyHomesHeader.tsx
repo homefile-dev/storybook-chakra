@@ -21,7 +21,7 @@ export const MyHomesHeader = ({
   const { width } = useWindowDimensions()
   const isMobile = width < 460
   return (
-    <Flex justifyContent="space-between" alignItems="start" pr="4" py="4">
+    <Flex justifyContent="space-between" alignItems="start" pr="base" py="4">
       <Button
         size="md"
         onClick={handleNewHomeClick}
