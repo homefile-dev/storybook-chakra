@@ -11,7 +11,7 @@ import useWindowDimensions from '../../hooks/useWindowDimensions'
 
 export const MyHomes = ({
   cardFilters,
-  cardList,
+  cardList = [],
   cardMenuItems = [],
   handleCardClick,
   handleNewHomeClick,
@@ -33,7 +33,7 @@ export const MyHomes = ({
       />
       <SimpleGrid
         columns={[isSmallMobile ? 1 : 2, 2, 3, 4, 5]}
-        spacing="grid.sm"
+        spacing="base"
         px="4"
         alignItems="start"
       >

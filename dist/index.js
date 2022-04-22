@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TabsHeader = exports.ContainerHeader = exports.SectionHeader = exports.BackHeader = exports.DocumentMenu = exports.UpdateList = exports.ProjectList = exports.TextInput = exports.PasswordInput = exports.HomePanelHeader = exports.Address = exports.MyHomes = exports.AddHomeContent = exports.LeftPanel = exports.Masthead = exports.Header = exports.Launchpad = exports.EmailValidation = exports.ActivateAccount = exports.ResetPassword = exports.SignIn = exports.SignUp = exports.FooterDrawer = void 0;
+exports.TabsHeader = exports.ContainerHeader = exports.SectionHeader = exports.BackHeader = exports.DocumentMenu = exports.UpdateList = exports.ProjectList = exports.TextInput = exports.PasswordInput = exports.HomePanelHeader = exports.Address = exports.MyHomes = exports.AddHomeContent = exports.LeftPanel = exports.Masthead = exports.Header = exports.ResendResetPassword = exports.NewPassword = exports.Launchpad = exports.EmailValidation = exports.ActivateAccount = exports.ResetPassword = exports.SignIn = exports.SignUp = exports.FooterDrawer = void 0;
 var FooterDrawer_1 = require("./components/footers/FooterDrawer");
 Object.defineProperty(exports, "FooterDrawer", { enumerable: true, get: function () { return FooterDrawer_1.FooterDrawer; } });
 var pages_1 = require("./components/pages");
@@ -10,6 +10,8 @@ Object.defineProperty(exports, "ResetPassword", { enumerable: true, get: functio
 Object.defineProperty(exports, "ActivateAccount", { enumerable: true, get: function () { return pages_1.ActivateAccount; } });
 Object.defineProperty(exports, "EmailValidation", { enumerable: true, get: function () { return pages_1.EmailValidation; } });
 Object.defineProperty(exports, "Launchpad", { enumerable: true, get: function () { return pages_1.Launchpad; } });
+Object.defineProperty(exports, "NewPassword", { enumerable: true, get: function () { return pages_1.NewPassword; } });
+Object.defineProperty(exports, "ResendResetPassword", { enumerable: true, get: function () { return pages_1.ResendResetPassword; } });
 var launchpad_1 = require("./components/launchpad");
 Object.defineProperty(exports, "Header", { enumerable: true, get: function () { return launchpad_1.Header; } });
 Object.defineProperty(exports, "Masthead", { enumerable: true, get: function () { return launchpad_1.Masthead; } });

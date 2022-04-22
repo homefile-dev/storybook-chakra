@@ -19,7 +19,16 @@ export const IconMenu = ({ icon, menuItems }: IIconMenu) => {
       />
       <MenuList>
         {menuItems.map(({ handleClick, label }) => (
-          <MenuItem key={label} onClick={handleClick}>
+          <MenuItem
+            key={label}
+            onClick={handleClick}
+            _hover={{
+              bg: 'container.secondary',
+            }}
+            _focus={{
+              bg: 'container.secondary',
+            }}
+          >
             {label}
           </MenuItem>
         ))}

@@ -32,18 +32,16 @@ export const Launchpad = () => {
       <Header handleViews={() => {}} firstName={firstName} />
       <Grid
         templateColumns={['repeat(1, 1fr)', 'repeat(10, 1fr)']}
-        gap="2"
+        gap="base"
         w="full"
-        px="4"
+        px="base"
       >
         <GridItem colSpan={[1, 7]} w="full">
           <MyHomes
             cardFilters={MyHomeFilters}
             cardList={HomeCards}
             cardMenuItems={MenuItems}
-            handleCardClick={(id) => {
-              console.log(id)
-            }}
+            handleCardClick={(id) => id}
             handleNewHomeClick={onOpen}
             headerMenuItems={MyHomeMenuItems}
           />

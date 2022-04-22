@@ -53,7 +53,17 @@ export const MyHomesHeader = ({
         <MenuList>
           {cardFilters &&
             cardFilters.map(({ label, handleClick }) => (
-              <MenuItem key={label} onClick={handleClick} value={label}>
+              <MenuItem
+                key={label}
+                onClick={handleClick}
+                value={label}
+                _hover={{
+                  bg: 'container.secondary',
+                }}
+                _focus={{
+                  bg: 'container.secondary',
+                }}
+              >
                 {label}
               </MenuItem>
             ))}

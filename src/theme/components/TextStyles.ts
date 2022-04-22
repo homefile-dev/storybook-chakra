@@ -12,6 +12,11 @@ const Text = {
       fontSize: 'lg',
       color: 'font.primary',
     },
+    titleBolder: {
+      fontSize: 'lg',
+      color: 'font.primary',
+      fontWeight: 'semibold',
+    },
     body: {
       fontSize: 'md',
       color: 'font.primary',

@@ -4,7 +4,7 @@ import { t } from 'i18next'
 import { CustomIcon } from '../icons/CustomIcon'
 import { IHeader } from '../../interfaces/launchpad/Header.interface'
 
-export const Header = ({ firstName, handleViews }: IHeader) => {
+export const HeaderWithView = ({ firstName, handleViews }: IHeader) => {
   return (
     <Flex justifyContent="space-between" align="center" gap="2" pl="4" py="2">
       <Stack direction={['column', 'row']} spacing="2">
@@ -21,6 +21,20 @@ export const Header = ({ firstName, handleViews }: IHeader) => {
       >
         {t('launchpad.viewsBT')}
       </Button>
+    </Flex>
+  )
+}
+
+export const Header = ({ firstName }: IHeader) => {
+  return (
+    <Flex justifyContent="space-between" align="center" gap="2" pl="4" py="4">
+      <Stack direction={['column', 'row']} spacing="2">
+        <Text variant="titleBolder">
+          {`${t('welcome.greeting2')} ${firstName},`}
+        </Text>
+        <Text variant="title">{t('welcome.launchpad')}</Text>
+      </Stack>
+      <></>
     </Flex>
   )
 }
