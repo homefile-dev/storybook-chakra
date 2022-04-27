@@ -3,12 +3,27 @@
     "subtitle": "We are connecting to public sources to pull the relevant information about your home into your homefile.",
     "title": "One moment, we’re building your homefile."
   },
+  "createDocument": {
+    "tabs": {
+      "tab1": "Detail",
+      "tab2": "Images & Media",
+      "tab3": "Recipients",
+      "tab4": "Last Report"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "save": "Save",
+      "saveDraft": "Save Draft",
+      "preview": "Preview"
+    },
+    "title": "Create Document"
+  },
   "footer": {
     "copyright": "© 2021 Homefile Inc. All Rights Reserved.",
     "privacyLink": "Privacy Policy",
-    "privacyUrl": "https://www.homefile.com/privacy-policy",
+    "privacyUrl": "https://homefile.cloud/privacy",
     "termsLink": "Terms of Service",
-    "termsUrl": "https://www.homefile.com/terms-of-service"
+    "termsUrl": "https://homefile.cloud/terms"
   },
   "forms": {
     "email": "Email",
@@ -92,7 +107,7 @@
   "newPassword": {
     "confirm": "Confirm Password",
     "create": "Create Password",
-    "title": "Enter your password below." 
+    "title": "Enter your password below."
   },
   "registration": {
     "activateBt": "Activate my homefile account",
@@ -106,6 +121,10 @@
     "resetBt": "Reset Password",
     "signinBt": "Log in",
     "title": "Reset your Password"
+  },
+  "sendCommunication": {
+    "btLabel": "Document",
+    "title": "Send Communication"
   },
   "sendDocument": {
     "setupBt": "Set Up Document",

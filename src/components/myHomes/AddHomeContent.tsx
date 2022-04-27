@@ -21,7 +21,8 @@ import { isEmptyField } from '../../helpers/Validations'
 import { FooterDrawer } from '../footers/FooterDrawer'
 import { firstHomeProxy } from '../../proxies/firstHome.proxy'
 import useHomeAddress from '../../hooks/myHomes/useHomeAddress'
-import NewHomeHeader from './headers/HomePanelHeader'
+import NewHomeHeader from '../headers/PanelHeader'
+import House from '../../assets/images/house.svg'
 import { useEffect } from 'react'
 
 export const AddHomeContent = ({
@@ -73,7 +74,11 @@ export const AddHomeContent = ({
             handleClick={handleSkipClick}
           />
         ) : (
-          <NewHomeHeader handleCloseButton={handleSkipClick} />
+          <NewHomeHeader
+            handleCloseButton={handleSkipClick}
+            title={t('myHomes.newHome.title')}
+            icon={House}
+          />
         )}
       </DrawerHeader>
       <DrawerBody p="0" mb="6rem">

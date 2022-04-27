@@ -14,7 +14,6 @@ export {
   AddHomeContent,
   MyHomes,
   Address,
-  HomePanelHeader,
 } from './components/myHomes'
 export { PasswordInput, TextInput } from './components/inputs'
 export { ProjectList, UpdateList, DocumentMenu } from './components/homeSummary'
@@ -23,4 +22,5 @@ export {
   SectionHeader,
   ContainerHeader,
   TabsHeader,
+  PanelHeader,
 } from './components/headers'

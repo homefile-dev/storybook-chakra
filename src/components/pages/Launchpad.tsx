@@ -2,35 +2,55 @@ import { useEffect } from 'react'
 import { Box, Grid, GridItem, useDisclosure } from '@chakra-ui/react'
 import { AddHomeContent, MyHomes } from '../myHomes'
 import { Header, LeftPanel, Masthead } from '../launchpad'
-import SendDocument from '../sendDocument/SendDocument'
-import { MyHomeMenuItems, UserMenuItems } from '../../helpers/launchpad/MenuItems.helper'
+import {
+  MyHomeMenuItems,
+  UserMenuItems,
+} from '../../helpers/launchpad/MenuItems.helper'
 import { HomeCards, MyHomeFilters } from '../../helpers/myHomes'
 import { MenuItems } from '../../helpers/myHomes/HomeCard.helper'
+import RightPanel from '../launchpad/RightPanel'
+import SendCommunication from '../sendCommunication/SendCommunication'
+import CreateDocumentContent from '../sendCommunication/CreateDocumentContent'
 
 export const Launchpad = () => {
   const userName = 'Adam Lee'
   const firstName = userName.split(' ')[0]
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const {
+    isOpen: isLeftOpen,
+    onOpen: onLeftOpen,
+    onClose: onLeftClose,
+  } = useDisclosure()
+  const {
+    isOpen: isRightOpen,
+    onOpen: onRightOpen,
+    onClose: onRightClose,
+  } = useDisclosure()
   useEffect(() => {
-    onOpen()
+    onLeftOpen()
   }, [])
   return (
     <Box w="full">
       <LeftPanel
         children={
           <AddHomeContent
-            handleSkipClick={onClose}
+            handleSkipClick={onLeftClose}
             userFirstName={firstName}
             handleCreateHomeClick={(form) => console.log(form)}
             isFirstHome
           />
         }
-        isOpen={isOpen}
-        onClose={onClose}
+        isOpen={isLeftOpen}
+        onClose={onLeftOpen}
+      />
+      <RightPanel
+        children={<CreateDocumentContent />}
+        isOpen={isRightOpen}
+        onClose={onRightClose}
+        size="lg"
       />
       <Masthead userName={userName} menuItems={UserMenuItems} />
       <Box px="base">
-        <Header handleViews={() => {}} firstName={firstName} />
+        <Header firstName={firstName} />
         <Grid
           templateColumns={['repeat(1, 1fr)', 'repeat(10, 1fr)']}
           gap="base"
@@ -43,12 +63,12 @@ export const Launchpad = () => {
               cardList={HomeCards}
               cardMenuItems={MenuItems}
               handleCardClick={(id) => id}
-              handleNewHomeClick={onOpen}
+              handleNewHomeClick={onLeftOpen}
               headerMenuItems={MyHomeMenuItems}
             />
           </GridItem>
           <GridItem colSpan={[1, 3]} w="full">
-            <SendDocument />
+            <SendCommunication handleBtClick={onRightOpen} />
           </GridItem>
         </Grid>
       </Box>

@@ -10,8 +10,8 @@ export const TabsHeader = ({ tabList }: ITabsHeader) => {
             key={label}
             textTransform="uppercase"
             fontWeight="bold"
-            fontSize="md"
-            fontFamily="secondary"
+            fontSize="xs"
+            fontFamily="primary"
             color="font.link"
             _hover={{ cursor: 'pointer' }}
             _focus={{ outline: 'none' }}

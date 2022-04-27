@@ -51,6 +51,21 @@ const Input = {
         },
       },
     },
+    date: {
+      field: {
+        fontFamily: 'primary',
+        padding: 0,
+        margin: 0,
+        border: 'none',
+        bg: 'transparent',
+        color: 'font.link',
+        fontSize: 'sm',
+        cursor: 'pointer',
+        _placeholder: {
+          color: 'font.link',
+        },
+      },
+    },
   },
   defaultProps: {
     size: 'md',

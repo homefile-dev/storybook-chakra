@@ -67,6 +67,7 @@
     "@emotion/styled": "^11.8.1",
     "@fontsource/assistant": "^4.5.8",
     "@fontsource/poppins": "^4.5.5",
+    "@hassanmojab/react-modern-calendar-datepicker": "^3.1.7",
     "axios": "^0.26.1",
     "framer-motion": "^4.1.17",
     "i18next": "^21.6.14",
@@ -76,6 +77,7 @@
     "react-dom": "^17.0.2",
     "react-i18next": "^11.16.2",
     "react-icons": "^3.11.0",
+    "react-modern-calendar-datepicker": "^3.1.6",
     "react-spinners": "^0.11.0",
     "valtio": "^1.5.2"
   },
