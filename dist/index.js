@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PanelHeader = exports.TabsHeader = exports.ContainerHeader = exports.SectionHeader = exports.BackHeader = exports.DocumentMenu = exports.UpdateList = exports.ProjectList = exports.TextInput = exports.PasswordInput = exports.Address = exports.MyHomes = exports.AddHomeContent = exports.LeftPanel = exports.Masthead = exports.Header = exports.ResendResetPassword = exports.NewPassword = exports.Launchpad = exports.EmailValidation = exports.ActivateAccount = exports.ResetPassword = exports.SignIn = exports.SignUp = exports.FooterDrawer = void 0;
+exports.SendCommunication = exports.PanelHeader = exports.TabsHeader = exports.ContainerHeader = exports.SectionHeader = exports.BackHeader = exports.DocumentMenu = exports.UpdateList = exports.ProjectList = exports.TextInput = exports.PasswordInput = exports.Address = exports.MyHomes = exports.AddHomeContent = exports.LeftPanel = exports.Masthead = exports.Header = exports.ResendResetPassword = exports.NewPassword = exports.Launchpad = exports.EmailValidation = exports.ActivateAccount = exports.ResetPassword = exports.SignIn = exports.SignUp = exports.FooterDrawer = void 0;
 var FooterDrawer_1 = require("./components/footers/FooterDrawer");
 Object.defineProperty(exports, "FooterDrawer", { enumerable: true, get: function () { return FooterDrawer_1.FooterDrawer; } });
 var pages_1 = require("./components/pages");
@@ -33,3 +33,5 @@ Object.defineProperty(exports, "SectionHeader", { enumerable: true, get: functio
 Object.defineProperty(exports, "ContainerHeader", { enumerable: true, get: function () { return headers_1.ContainerHeader; } });
 Object.defineProperty(exports, "TabsHeader", { enumerable: true, get: function () { return headers_1.TabsHeader; } });
 Object.defineProperty(exports, "PanelHeader", { enumerable: true, get: function () { return headers_1.PanelHeader; } });
+var SendCommunication_1 = require("./components/sendCommunication/SendCommunication");
+Object.defineProperty(exports, "SendCommunication", { enumerable: true, get: function () { return SendCommunication_1.SendCommunication; } });

@@ -11,7 +11,8 @@ import { MenuItems } from '../../helpers/myHomes/HomeCard.helper'
 import RightPanel from '../launchpad/RightPanel'
 import SendCommunication from '../sendCommunication/SendCommunication'
 import CreateDocumentContent from '../sendCommunication/CreateDocumentContent'
-import { documents } from '../../helpers/homeSummary/DocumentList.helper'
+import { t } from 'i18next'
+import { Document, Proposal, ProgressReport } from '../../assets/images'
 
 export const Launchpad = () => {
   const userName = 'Adam Lee'
@@ -26,6 +27,25 @@ export const Launchpad = () => {
     onOpen: onRightOpen,
     onClose: onRightClose,
   } = useDisclosure()
+  const documents = [
+    {
+      label: t('createDocument.menuItems.proposal'),
+      icon: Proposal,
+      active: false,
+      onClick: () => {},
+    },
+    {
+      label: t('createDocument.menuItems.progressReport'),
+      icon: ProgressReport,
+      active: false,
+      onClick: () => {},
+    },
+    {
+      label: t('createDocument.menuItems.publicTemplate'),
+      icon: Document,
+      onClick: onRightOpen,
+    },
+  ]
   useEffect(() => {
     onLeftOpen()
   }, [])
@@ -44,7 +64,7 @@ export const Launchpad = () => {
         onClose={onLeftOpen}
       />
       <RightPanel
-        children={<CreateDocumentContent />}
+        children={<CreateDocumentContent onCloseButton={onRightClose} />}
         isOpen={isRightOpen}
         onClose={onRightClose}
         size="lg"
@@ -69,7 +89,7 @@ export const Launchpad = () => {
             />
           </GridItem>
           <GridItem colSpan={[1, 3]} w="full">
-            <SendCommunication documentList={documents}  />
+            <SendCommunication documentList={documents} />
           </GridItem>
         </Grid>
       </Box>

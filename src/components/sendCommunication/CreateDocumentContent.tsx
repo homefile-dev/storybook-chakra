@@ -1,18 +1,21 @@
 import { DrawerBody, DrawerContent, DrawerHeader } from '@chakra-ui/react'
 import { PanelHeader, TabsHeader } from '../headers'
-import Report from '../../assets/images/progress-report.svg'
+import { ProgressReport } from '../../assets/images'
 import { t } from 'i18next'
-import { useState } from 'react'
 import CreateDocumentHeader from './CreateDocumentHeader'
 import { createDocList } from '../../helpers/headers/TabHeader.helper'
 
-export const CreateDocumentContent = () => {
+export const CreateDocumentContent = ({
+  onCloseButton,
+}: {
+  onCloseButton: () => void
+}) => {
   return (
     <DrawerContent bg="container.tertiary">
       <DrawerHeader p="0">
         <PanelHeader
-          handleCloseButton={() => {}}
-          icon={Report}
+          handleCloseButton={onCloseButton}
+          icon={ProgressReport}
           title={t('createDocument.title')}
         />
       </DrawerHeader>

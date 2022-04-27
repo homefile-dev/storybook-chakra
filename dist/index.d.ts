@@ -5,3 +5,4 @@ export { AddHomeContent, MyHomes, Address, } from './components/myHomes';
 export { PasswordInput, TextInput } from './components/inputs';
 export { ProjectList, UpdateList, DocumentMenu } from './components/homeSummary';
 export { BackHeader, SectionHeader, ContainerHeader, TabsHeader, PanelHeader, } from './components/headers';
+export { SendCommunication } from './components/sendCommunication/SendCommunication';
