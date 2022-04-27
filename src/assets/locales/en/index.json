@@ -16,6 +16,11 @@
       "saveDraft": "Save Draft",
       "preview": "Preview"
     },
+    "menuItems": {
+      "publicTemplate": "Public Template",
+      "progressReport": "Progress Report",
+      "proposal": "Proposal"
+    },
     "title": "Create Document"
   },
   "footer": {

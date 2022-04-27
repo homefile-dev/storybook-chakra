@@ -5,5 +5,5 @@ export interface IMenuItem {
 
 export interface IIconMenu {
   icon: JSX.Element
-  menuItems: IMenuItem[]
+  menuItems?: IMenuItem[]
 }

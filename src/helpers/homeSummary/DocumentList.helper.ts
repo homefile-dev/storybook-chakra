@@ -1,21 +1,22 @@
-import ReportIcon from '../../assets/images/progress-report.svg'
-import ProposalIcon from '../../assets/images/proposal.svg'
-import MessageIcon from '../../assets/images/message.svg'
+import { t } from 'i18next'
+import { Document, Proposal, ProgressReport } from '../../assets/images'
 
 export const documents = [
   {
-    label: 'Proposal',
-    icon: ProposalIcon,
-    handleClick: () => {},
+    label: t('createDocument.menuItems.proposal'),
+    icon: Proposal,
+    active: false,
+    onClick: () => {},
   },
   {
-    label: 'Progress Report',
-    icon: ReportIcon,
-    handleClick: () => {},
+    label: t('createDocument.menuItems.progressReport'),
+    icon: ProgressReport,
+    active: false,
+    onClick: () => {},
   },
   {
-    label: 'Message',
-    icon: MessageIcon,
-    handleClick: () => {},
+    label: t('createDocument.menuItems.publicTemplate'),
+    icon: Document,
+    onClick: () => {},
   },
 ]

@@ -1,8 +1,9 @@
 import { ReactElement } from "react"
 
-interface IDocumentItem {
-  handleClick: () => void
+export interface IDocumentItem {
+  onClick: () => void
   icon: string
+  active?: boolean
   label: string
 }
 export interface IDocumentList {

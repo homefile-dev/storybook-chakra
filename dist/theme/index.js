@@ -148,7 +148,7 @@ var theme = (0, react_1.extendTheme)({
             logo: '2rem',
         },
         input: {
-            sm: '2rem',
+            sm: '2.25rem',
             md: '3rem',
             lg: '4rem',
             xl: '5rem',

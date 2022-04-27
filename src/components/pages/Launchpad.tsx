@@ -11,6 +11,7 @@ import { MenuItems } from '../../helpers/myHomes/HomeCard.helper'
 import RightPanel from '../launchpad/RightPanel'
 import SendCommunication from '../sendCommunication/SendCommunication'
 import CreateDocumentContent from '../sendCommunication/CreateDocumentContent'
+import { documents } from '../../helpers/homeSummary/DocumentList.helper'
 
 export const Launchpad = () => {
   const userName = 'Adam Lee'
@@ -68,7 +69,7 @@ export const Launchpad = () => {
             />
           </GridItem>
           <GridItem colSpan={[1, 3]} w="full">
-            <SendCommunication handleBtClick={onRightOpen} />
+            <SendCommunication documentList={documents}  />
           </GridItem>
         </Grid>
       </Box>

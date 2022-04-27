@@ -24,3 +24,4 @@ export {
   TabsHeader,
   PanelHeader,
 } from './components/headers'
+export { SendCommunication } from './components/sendCommunication/SendCommunication'

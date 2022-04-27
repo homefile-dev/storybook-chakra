@@ -40,10 +40,11 @@ export const DocumentMenu = ({ documents, title }: IDocumentList) => {
           </MenuButton>
           <MenuList borderTopRadius="0" boxShadow="lg">
             {documents &&
-              documents.map(({ handleClick, icon, label }) => (
+              documents.map(({ onClick, icon, active = true, label }) => (
                 <MenuItem
                   minH="3rem"
-                  onClick={handleClick}
+                  onClick={onClick}
+                  isDisabled={!active}
                   key={label}
                   _hover={{
                     bg: 'container.secondary',

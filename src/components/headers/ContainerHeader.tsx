@@ -19,7 +19,7 @@ export const ContainerHeader = ({
       {titleIcon && <Image src={titleIcon} />}
       {title && <Text>{title}</Text>}
     </Flex>
-    <IconMenu icon={icon} menuItems={menuItems} />
+    {menuItems ? <IconMenu icon={icon} menuItems={menuItems} /> : <></>}
   </Flex>
 )
 

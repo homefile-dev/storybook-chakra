@@ -18,7 +18,7 @@ export const IconMenu = ({ icon, menuItems }: IIconMenu) => {
         w="fit-content"
       />
       <MenuList>
-        {menuItems.map(({ handleClick, label }) => (
+        {menuItems?.map(({ handleClick, label }) => (
           <MenuItem
             key={label}
             onClick={handleClick}
