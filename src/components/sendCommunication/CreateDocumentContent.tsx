@@ -5,6 +5,8 @@ import { t } from 'i18next'
 import CreateDocumentHeader from './CreateDocumentHeader'
 import { createDocList } from '../../helpers/headers/TabHeader.helper'
 import { ICreateDocumentContent } from '../../interfaces/sendCommunication/CreateDocumentContent.interface'
+import DocumentNameHeader from './DocumentNameHeader'
+import { useState } from 'react'
 
 export const CreateDocumentContent = ({
   handleDateRange,
@@ -13,6 +15,9 @@ export const CreateDocumentContent = ({
   initialHome = null,
   onCloseButton,
 }: ICreateDocumentContent) => {
+  const [projectName, setProjectName] = useState(
+    'Progress Report  - Jan 12-16 2022'
+  )
   return (
     <DrawerContent bg="container.tertiary">
       <DrawerHeader p="0">
@@ -30,6 +35,12 @@ export const CreateDocumentContent = ({
           }
           homes={homes}
           initialHome={initialHome}
+        />
+        <DocumentNameHeader
+          handleChange={(event) => {
+            setProjectName(event.target.value)
+          }}
+          value={projectName}
         />
         <TabsHeader tabList={createDocList} />
       </DrawerBody>

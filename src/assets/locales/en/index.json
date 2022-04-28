@@ -134,7 +134,8 @@
       "selectHome": "Select Home",
       "dateRange": "Date Range",
       "documentName": "Document Name"
-    }
+    },
+    "placeholder": "Insert document name"
   },
   "sendDocument": {
     "setupBt": "Set Up Document",

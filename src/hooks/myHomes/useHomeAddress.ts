@@ -84,7 +84,7 @@ export const useHomeAddress = () => {
       firstHomeProxy.city = city
       firstHomeProxy.state = state
     } catch (err) {
-      console.log('Error to get address', err)
+      console.error('Error to get address', err)
     }
   }
 

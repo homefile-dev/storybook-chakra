@@ -2,7 +2,7 @@ import { t } from "i18next";
 
 export const UserMenuItems = [
   {
-    handleClick: () => console.log("Clicked on 'My Profile'"),
+    handleClick: () => "Clicked on 'My Profile'",
     label: t('launchpad.menu.profile'),
   },
   {

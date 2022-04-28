@@ -10,10 +10,10 @@ export default {
 
 const Template: ComponentStory<typeof CreateDocumentHeader> = () => {
   return (
-    <Box w="60%">
+    <Box w="60%" bg="white" p="6">
       <CreateDocumentHeader
-        handleDateRange={(date) => console.log(date)}
-        handleSelectHome={(form) => console.log(form)}
+        handleDateRange={(date) => date}
+        handleSelectHome={(form) => {}}
         homes={SelectHomes}
         initialHome={SelectHomes[0].name}
       />
