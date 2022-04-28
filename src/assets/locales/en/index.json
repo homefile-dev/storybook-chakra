@@ -129,7 +129,12 @@
   },
   "sendCommunication": {
     "btLabel": "Document",
-    "title": "Send Communication"
+    "title": "Send Communication",
+    "headers": {
+      "selectHome": "Select Home",
+      "dateRange": "Date Range",
+      "documentName": "Document Name"
+    }
   },
   "sendDocument": {
     "setupBt": "Set Up Document",

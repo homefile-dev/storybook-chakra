@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Box, Grid, GridItem, useDisclosure } from '@chakra-ui/react'
 import { AddHomeContent, MyHomes } from '../myHomes'
 import { Header, LeftPanel, Masthead } from '../launchpad'
@@ -13,8 +13,12 @@ import SendCommunication from '../sendCommunication/SendCommunication'
 import CreateDocumentContent from '../sendCommunication/CreateDocumentContent'
 import { t } from 'i18next'
 import { Document, Proposal, ProgressReport } from '../../assets/images'
+import { CreateDocument } from '../../helpers/launchpad/Documents.helper'
+import { ICreateDocumentHeader } from '../../interfaces/sendCommunication/CreateDocumentHeader.interface'
+import { SelectHomes } from '../../helpers/inputs/SelectInput.helper'
 
 export const Launchpad = () => {
+  const [homes, setHomes] = useState<ICreateDocumentHeader>(CreateDocument)
   const userName = 'Adam Lee'
   const firstName = userName.split(' ')[0]
   const {
@@ -64,7 +68,15 @@ export const Launchpad = () => {
         onClose={onLeftOpen}
       />
       <RightPanel
-        children={<CreateDocumentContent onCloseButton={onRightClose} />}
+        children={
+          <CreateDocumentContent
+            handleDateRange={homes.handleDateRange}
+            handleSelectHome={homes.handleSelectHome}
+            homes={homes.homes}
+            initialHome={homes.initialHome as string}
+            onCloseButton={onRightClose}
+          />
+        }
         isOpen={isRightOpen}
         onClose={onRightClose}
         size="lg"
@@ -83,7 +95,15 @@ export const Launchpad = () => {
               cardFilters={MyHomeFilters}
               cardList={HomeCards}
               cardMenuItems={MenuItems}
-              handleCardClick={(id) => id}
+              handleCardClick={(id) => {
+                onRightOpen()
+                setHomes({
+                  handleDateRange: (date) => console.log(date),
+                  handleSelectHome: (form) => console.log(form),
+                  homes: SelectHomes,
+                  initialHome: SelectHomes[Number(id) - 1].name,
+                })
+              }}
               handleNewHomeClick={onLeftOpen}
               headerMenuItems={MyHomeMenuItems}
             />

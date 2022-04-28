@@ -1,35 +1,39 @@
-import { Box, Flex, Select } from '@chakra-ui/react'
-import { PanelHeader } from '../headers'
-import Report from '../../assets/images/progress-report.svg'
+import { Box, Flex, Text } from '@chakra-ui/react'
 import { t } from 'i18next'
+import { ICreateDocumentHeader } from '../../interfaces/sendCommunication/CreateDocumentHeader.interface'
 import DateRangePicker from '../inputs/DateRangePicker'
-import { CustomIcon } from '../icons/CustomIcon'
-import { BsChevronDown } from 'react-icons/bs'
+import SelectInput from '../inputs/SelectInput'
 
-export const CreateDocumentHeader = () => {
+export const CreateDocumentHeader = ({
+  initialHome = null,
+  handleDateRange,
+  handleSelectHome = () => null,
+  homes = null,
+}: ICreateDocumentHeader) => {
   return (
-    <Box bg="container.neutralBlue" py="2" pl="base">
+    <Box bg="container.tertiary" py="2" pl="base">
       <Flex justify="space-between" align="center">
-        <Flex gap="base" align="center">
-          <Select
-            w="12rem"
-            placeholder="Select Home"
-            icon={<CustomIcon type={BsChevronDown} />}
-            size="sm"
-          >
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-          </Select>
-          <Select
-            w="12rem"
-            placeholder="Progress Report"
-            icon={<CustomIcon type={BsChevronDown} />}
-            size="sm"
-          >
-          </Select>
+        {initialHome && handleSelectHome && homes ? (
+          <Flex gap="2" align="center">
+            <Text variant="info">
+              {t('sendCommunication.headers.selectHome')}
+            </Text>
+
+            <SelectInput
+              handleClick={(form) => handleSelectHome(form)}
+              initailValue={initialHome}
+              items={homes}
+            />
+          </Flex>
+        ) : (
+          <Box />
+        )}
+        <Flex gap="2" align="center">
+          <Text variant="info">{t('sendCommunication.headers.dateRange')}</Text>
+          <DateRangePicker
+            handleClick={(date: string) => handleDateRange(date)}
+          />
         </Flex>
-        <DateRangePicker />
       </Flex>
     </Box>
   )

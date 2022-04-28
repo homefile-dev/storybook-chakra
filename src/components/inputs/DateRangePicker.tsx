@@ -8,7 +8,7 @@ import { FiCalendar } from 'react-icons/fi'
 import '../../styles/Calendar.module.css'
 import { CustomIcon } from '../icons/CustomIcon'
 
-const DateRangePicker = () => {
+const DateRangePicker = ({handleClick}: {handleClick: (date: string) => void}) => {
   const defaultRange = {
     from: null,
     to: null,
@@ -33,13 +33,15 @@ const DateRangePicker = () => {
       'Nov',
       'Dec',
     ]
-    return `${monthList[(selectedDayRange.from?.month as number) - 1]} ${
+    const newValue = `${monthList[(selectedDayRange.from?.month as number) - 1]} ${
       selectedDayRange.from?.day
     }-${selectedDayRange.to?.day} ${selectedDayRange.to?.year}`
+    handleClick(newValue)
+    return newValue
   }
 
   const renderCustomInput = ({ ref }: { ref: any }) => (
-    <Flex align="center" justify="end" gap="base" w="12rem">
+    <Flex align="center" justify="end" gap="base">
       <CustomIcon type={FiCalendar} color="font.link" />
       <Input
         value={
