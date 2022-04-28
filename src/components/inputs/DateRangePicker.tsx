@@ -52,6 +52,7 @@ const DateRangePicker = ({handleClick}: {handleClick: (date: string) => void}) =
         placeholder="Select date range"
         variant="date"
         size="sm"
+        maxW="9rem"
       />
     </Flex>
   )

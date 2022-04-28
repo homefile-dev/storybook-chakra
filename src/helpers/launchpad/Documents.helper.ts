@@ -4,5 +4,5 @@ export const CreateDocument = {
   handleDateRange: (date: string) => null,
   handleSelectHome: (form: ISelectItem) => null,
   homes: null,
-  initialHome: '',
+  initialHome: null,
 }

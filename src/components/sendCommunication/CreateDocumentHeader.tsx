@@ -11,9 +11,9 @@ export const CreateDocumentHeader = ({
   homes = null,
 }: ICreateDocumentHeader) => {
   return (
-    <Box bg="container.tertiary" py="2" pl="base">
+    <Box bg="container.tertiary" py="2" pl="base" w="100%">
       <Flex justify="space-between" align="center">
-        {initialHome && handleSelectHome && homes ? (
+        {homes && initialHome ? (
           <Flex gap="2" align="center">
             <Text variant="info">
               {t('sendCommunication.headers.selectHome')}

@@ -4,7 +4,7 @@ import CreateDocumentHeader from '../../components/sendCommunication/CreateDocum
 import { SelectHomes } from '../../helpers/inputs/SelectInput.helper'
 
 export default {
-  title: 'Components/CreateDocumentHeader',
+  title: 'Components/SendCommunication',
   component: CreateDocumentHeader,
 } as ComponentMeta<typeof CreateDocumentHeader>
 

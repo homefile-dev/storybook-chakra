@@ -9,8 +9,8 @@ import { ICreateDocumentContent } from '../../interfaces/sendCommunication/Creat
 export const CreateDocumentContent = ({
   handleDateRange,
   handleSelectHome,
-  homes,
-  initialHome,
+  homes = null,
+  initialHome = null,
   onCloseButton,
 }: ICreateDocumentContent) => {
   return (

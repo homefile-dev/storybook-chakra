@@ -14,9 +14,9 @@ import { useState } from 'react'
 export const SelectInput = ({ handleClick, initailValue, items }: ISelect) => {
   const [selectedValue, setSelectedValue] = useState<string>(initailValue)
   return (
-    <Menu isLazy>
+    <Menu>
       <MenuButton
-        w="14rem"
+        w="10rem"
         bg="white"
         h="input.sm"
         px="2"

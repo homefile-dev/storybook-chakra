@@ -47,7 +47,15 @@ export const Launchpad = () => {
     {
       label: t('createDocument.menuItems.publicTemplate'),
       icon: Document,
-      onClick: onRightOpen,
+      onClick: () => {
+        onRightOpen()
+        setHomes({
+          handleDateRange: (date) => date,
+          handleSelectHome: (form) => {},
+          homes: SelectHomes,
+          initialHome: SelectHomes[0].name,
+        })
+      },
     },
   ]
   useEffect(() => {
@@ -60,7 +68,7 @@ export const Launchpad = () => {
           <AddHomeContent
             handleSkipClick={onLeftClose}
             userFirstName={firstName}
-            handleCreateHomeClick={(form) => console.log(form)}
+            handleCreateHomeClick={(form) => form}
             isFirstHome
           />
         }
@@ -97,12 +105,11 @@ export const Launchpad = () => {
               cardMenuItems={MenuItems}
               handleCardClick={(id) => {
                 onRightOpen()
-                setHomes({
-                  handleDateRange: (date) => console.log(date),
-                  handleSelectHome: (form) => console.log(form),
-                  homes: SelectHomes,
-                  initialHome: SelectHomes[Number(id) - 1].name,
-                })
+                 setHomes({
+                   ...homes,
+                   initialHome: null,
+                 })
+                
               }}
               handleNewHomeClick={onLeftOpen}
               headerMenuItems={MyHomeMenuItems}

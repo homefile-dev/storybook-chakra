@@ -52,7 +52,6 @@ const Input = {
       },
     },
     date: {
-      width: '80%',
       field: {
         fontFamily: 'primary',
         padding: 0,
