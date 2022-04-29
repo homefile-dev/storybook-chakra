@@ -13,8 +13,8 @@ import { ICreateDocumentContent } from '../../interfaces/sendCommunication/Creat
 import DocumentNameHeader from './DocumentNameHeader'
 import { useState } from 'react'
 import { FooterDrawer } from '../footers/FooterDrawer'
-import ThreeButtonsFooter from '../footers/ThreeButtonsFooter'
-import { ButtonsFooter } from '../../helpers/footers/ThreeButtonsFooter.helper'
+import ThreeButtonsFooter from '../footers/FooterButtons'
+import { ButtonsFooter } from '../../helpers/footers/FooterButtons.helper'
 
 export const CreateDocumentContent = ({
   handleDateRange,

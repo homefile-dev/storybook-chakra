@@ -24,4 +24,4 @@ export {
   DocumentNameHeader,
   CreateDocumentHeader,
 } from './components/sendCommunication'
-export { ThreeButtonsFooter, FooterDrawer } from './components/footers'
+export { FooterButtons, FooterDrawer } from './components/footers'

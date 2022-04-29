@@ -1,11 +1,7 @@
 import { Button, Flex } from '@chakra-ui/react'
-import { IThreeButtonsFooter } from '../../interfaces/footers/ThreeButtonsFooter.interface'
+import { IFooterButtons } from '../../interfaces/footers/FooterButtons.interface'
 
-export const ThreeButtonsFooter = ({
-  button1,
-  button2,
-  button3,
-}: IThreeButtonsFooter) => {
+export const FooterButtons = ({ button1, button2, button3 }: IFooterButtons) => {
   return (
     <Flex align="center" justifyContent="space-between" w="full" px="base">
       <Flex align="center" gap="2">
@@ -16,13 +12,15 @@ export const ThreeButtonsFooter = ({
         >
           {button1.label}
         </Button>
-        <Button
-          variant={button2.buttonStyle}
-          onClick={button2.onClick}
-          maxW="fit-content"
-        >
-          {button2.label}
-        </Button>
+        {button2 && (
+          <Button
+            variant={button2.buttonStyle}
+            onClick={button2.onClick}
+            maxW="fit-content"
+          >
+            {button2.label}
+          </Button>
+        )}
       </Flex>
       <Button
         variant={button3.buttonStyle}
@@ -35,4 +33,4 @@ export const ThreeButtonsFooter = ({
   )
 }
 
-export default ThreeButtonsFooter
+export default FooterButtons

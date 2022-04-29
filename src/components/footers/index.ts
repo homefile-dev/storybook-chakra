@@ -1,2 +1,2 @@
 export { FooterDrawer } from './FooterDrawer'
-export { ThreeButtonsFooter } from './ThreeButtonsFooter'
+export { FooterButtons } from './FooterButtons'
