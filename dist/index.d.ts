@@ -5,4 +5,4 @@ export { PasswordInput, TextInput } from './components/inputs';
 export { ProjectList, UpdateList, DocumentMenu } from './components/homeSummary';
 export { BackHeader, SectionHeader, ContainerHeader, TabsHeader, PanelHeader, } from './components/headers';
 export { SendCommunication, DocumentNameHeader, CreateDocumentHeader, } from './components/sendCommunication';
-export { ThreeButtonsFooter, FooterDrawer } from './components/footers';
+export { FooterButtons, FooterDrawer } from './components/footers';
