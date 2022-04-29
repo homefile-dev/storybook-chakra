@@ -21,7 +21,9 @@
     "i18next": ">=21",
     "i18next-browser-languagedetector": ">=6",
     "react": ">=16",
-    "react-i18next": ">=11"
+    "react-i18next": ">=11",
+    "react-modern-calendar-datepicker": ">=3",
+    "@hassanmojab/react-modern-calendar-datepicker": ">=3"
   },
   "release": {
     "branches": [

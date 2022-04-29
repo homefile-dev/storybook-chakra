@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Button = {
     baseStyle: {
+        transition: 'all 0.2s ease-in-out',
         _focus: {
             boxShadow: 'none',
         },
@@ -33,7 +34,6 @@ var Button = {
             boxShadow: 'base',
             color: 'white',
             backgroundColor: 'button.primary',
-            transition: 'all 0.2s ease-in-out',
             _disabled: {
                 filter: 'grayscale(100%)',
                 pointerEvents: 'none',
@@ -56,7 +56,6 @@ var Button = {
             fontWeight: 'regular',
             borderRadius: 'none',
             boxShadow: 'base',
-            transition: 'all 0.2s ease-in-out',
             backgroundColor: 'transparent',
             border: '1px',
             borderColor: 'button.primary',
@@ -80,7 +79,6 @@ var Button = {
             maxW: '3rem',
             borderRadius: 'sm',
             boxShadow: 'base',
-            transition: 'all 0.2s ease-in-out',
             backgroundColor: 'transparent',
             border: '1px',
             borderColor: 'button.primary',
@@ -153,7 +151,6 @@ var Button = {
             boxShadow: 'base',
             color: 'white',
             backgroundColor: 'brand.primary',
-            transition: 'all 0.2s ease-in-out',
             _disabled: {
                 filter: 'grayscale(100%)',
                 pointerEvents: 'none',
@@ -177,7 +174,6 @@ var Button = {
             boxShadow: 'base',
             color: 'white',
             backgroundColor: 'button.primary',
-            transition: 'all 0.2s ease-in-out',
             _disabled: {
                 filter: 'grayscale(100%)',
                 pointerEvents: 'none',
@@ -199,7 +195,6 @@ var Button = {
             boxShadow: 'base',
             color: 'white',
             backgroundColor: 'button.primary',
-            transition: 'all 0.2s ease-in-out',
             _disabled: {
                 filter: 'grayscale(100%)',
                 pointerEvents: 'none',
@@ -212,6 +207,55 @@ var Button = {
             },
             _hover: {
                 boxShadow: 'xl',
+            },
+        },
+        primaryFooter: {
+            fontSize: 'md',
+            textTransform: 'uppercase',
+            h: 'button.xxs',
+            fontWeight: 'regular',
+            borderRadius: 'none',
+            boxShadow: 'base',
+            color: 'white',
+            backgroundColor: 'button.primary',
+            _disabled: {
+                filter: 'grayscale(100%)',
+                pointerEvents: 'none',
+            },
+            _active: {
+                backgroundColor: 'button.primaryHover',
+                borderRadius: 'lg',
+                fontWeight: 'medium',
+                boxShadow: 'none',
+            },
+            _hover: {
+                boxShadow: 'xl',
+            },
+        },
+        secondaryFooter: {
+            fontSize: 'md',
+            h: 'button.xxs',
+            px: '1rem',
+            fontWeight: 'regular',
+            borderRadius: 'none',
+            boxShadow: 'base',
+            backgroundColor: 'transparent',
+            border: '1px',
+            borderColor: 'button.primary',
+            color: 'button.primary',
+            _active: {
+                backgroundColor: 'button.tertiaryHover',
+                borderRadius: 'lg',
+                fontWeight: 'medium',
+                boxShadow: 'none',
+            },
+            _hover: {
+                backgroundColor: 'button.secondaryHover',
+                boxShadow: 'lg',
+            },
+            _disabled: {
+                filter: 'grayscale(100%)',
+                pointerEvents: 'none',
             },
         },
     },

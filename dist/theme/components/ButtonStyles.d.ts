@@ -1,5 +1,6 @@
 declare const Button: {
     baseStyle: {
+        transition: string;
         _focus: {
             boxShadow: string;
         };
@@ -31,7 +32,6 @@ declare const Button: {
             boxShadow: string;
             color: string;
             backgroundColor: string;
-            transition: string;
             _disabled: {
                 filter: string;
                 pointerEvents: string;
@@ -54,7 +54,6 @@ declare const Button: {
             fontWeight: string;
             borderRadius: string;
             boxShadow: string;
-            transition: string;
             backgroundColor: string;
             border: string;
             borderColor: string;
@@ -78,7 +77,6 @@ declare const Button: {
             maxW: string;
             borderRadius: string;
             boxShadow: string;
-            transition: string;
             backgroundColor: string;
             border: string;
             borderColor: string;
@@ -151,7 +149,6 @@ declare const Button: {
             boxShadow: string;
             color: string;
             backgroundColor: string;
-            transition: string;
             _disabled: {
                 filter: string;
                 pointerEvents: string;
@@ -175,7 +172,6 @@ declare const Button: {
             boxShadow: string;
             color: string;
             backgroundColor: string;
-            transition: string;
             _disabled: {
                 filter: string;
                 pointerEvents: string;
@@ -197,7 +193,6 @@ declare const Button: {
             boxShadow: string;
             color: string;
             backgroundColor: string;
-            transition: string;
             _disabled: {
                 filter: string;
                 pointerEvents: string;
@@ -210,6 +205,55 @@ declare const Button: {
             };
             _hover: {
                 boxShadow: string;
+            };
+        };
+        primaryFooter: {
+            fontSize: string;
+            textTransform: string;
+            h: string;
+            fontWeight: string;
+            borderRadius: string;
+            boxShadow: string;
+            color: string;
+            backgroundColor: string;
+            _disabled: {
+                filter: string;
+                pointerEvents: string;
+            };
+            _active: {
+                backgroundColor: string;
+                borderRadius: string;
+                fontWeight: string;
+                boxShadow: string;
+            };
+            _hover: {
+                boxShadow: string;
+            };
+        };
+        secondaryFooter: {
+            fontSize: string;
+            h: string;
+            px: string;
+            fontWeight: string;
+            borderRadius: string;
+            boxShadow: string;
+            backgroundColor: string;
+            border: string;
+            borderColor: string;
+            color: string;
+            _active: {
+                backgroundColor: string;
+                borderRadius: string;
+                fontWeight: string;
+                boxShadow: string;
+            };
+            _hover: {
+                backgroundColor: string;
+                boxShadow: string;
+            };
+            _disabled: {
+                filter: string;
+                pointerEvents: string;
             };
         };
     };
