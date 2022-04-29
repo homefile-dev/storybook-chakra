@@ -1,4 +1,9 @@
-import { DrawerBody, DrawerContent, DrawerHeader } from '@chakra-ui/react'
+import {
+  DrawerBody,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+} from '@chakra-ui/react'
 import { PanelHeader, TabsHeader } from '../headers'
 import { ProgressReport } from '../../assets/images'
 import { t } from 'i18next'
@@ -7,6 +12,9 @@ import { createDocList } from '../../helpers/headers/TabHeader.helper'
 import { ICreateDocumentContent } from '../../interfaces/sendCommunication/CreateDocumentContent.interface'
 import DocumentNameHeader from './DocumentNameHeader'
 import { useState } from 'react'
+import { FooterDrawer } from '../footers/FooterDrawer'
+import ThreeButtonsFooter from '../footers/ThreeButtonsFooter'
+import { ButtonsFooter } from '../../helpers/footers/ThreeButtonsFooter.helper'
 
 export const CreateDocumentContent = ({
   handleDateRange,
@@ -44,6 +52,18 @@ export const CreateDocumentContent = ({
         />
         <TabsHeader tabList={createDocList} />
       </DrawerBody>
+      <DrawerFooter p="0">
+        <FooterDrawer
+          children={
+            <ThreeButtonsFooter
+              button1={ButtonsFooter.button1}
+              button2={ButtonsFooter.button2}
+              button3={ButtonsFooter.button3}
+            />
+          }
+          isOpen={true}
+        />
+      </DrawerFooter>
     </DrawerContent>
   )
 }

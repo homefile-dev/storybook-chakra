@@ -1,4 +1,3 @@
-export { FooterDrawer } from './components/footers/FooterDrawer'
 export {
   SignUp,
   SignIn,
@@ -25,3 +24,4 @@ export {
   DocumentNameHeader,
   CreateDocumentHeader,
 } from './components/sendCommunication'
+export { ThreeButtonsFooter, FooterDrawer } from './components/footers'

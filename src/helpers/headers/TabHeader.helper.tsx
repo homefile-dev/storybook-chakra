@@ -1,20 +1,36 @@
-import { Text } from '@chakra-ui/react'
+import { Box, Text } from '@chakra-ui/react'
 
 export const createDocList = [
   {
     label: 'Detail',
-    component: <Text>Detail</Text>,
+    component: (
+      <Box p="base" w="full" h="100vh" bg="white">
+        <Text>Detail</Text>
+      </Box>
+    ),
   },
   {
     label: 'Images & media',
-    component: <Text>Images and media</Text>,
+    component: (
+      <Box p="base" w="full" h="100vh" bg="white">
+        <Text>Images and media</Text>
+      </Box>
+    ),
   },
   {
     label: 'Recipients',
-    component: <Text>Recipients</Text>,
+    component: (
+      <Box p="base" w="full" h="100vh" bg="white">
+        <Text>Recipients</Text>
+      </Box>
+    ),
   },
   {
     label: 'Last report',
-    component: <Text>Last report</Text>,
+    component: (
+      <Box p="base" w="full" h="100vh" bg="white">
+        <Text>Last report</Text>
+      </Box>
+    ),
   },
 ]

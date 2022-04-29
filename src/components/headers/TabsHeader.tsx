@@ -24,10 +24,11 @@ export const TabsHeader = ({ tabList }: ITabsHeader) => {
           </Tab>
         ))}
       </TabList>
-
       <TabPanels>
         {tabList?.map(({ label, component }) => (
-          <TabPanel key={label}>{component}</TabPanel>
+          <TabPanel p="base" key={label}>
+            {component}
+          </TabPanel>
         ))}
       </TabPanels>
     </Tabs>
