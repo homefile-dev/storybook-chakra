@@ -3,7 +3,7 @@ import { t } from "i18next";
 export const ButtonsFooter = {
   button1: {
     buttonStyle: 'primaryFooter',
-    label: t('createDocument.buttons.save'),
+    label: t('createDocument.buttons.send'),
     onClick: () => 'Button 1 clicked',
   },
   button2: {
