@@ -88,7 +88,7 @@
     "build": "yarn clean && tsc && yarn copy",
     "build-storybook": "build-storybook",
     "clean": "rimraf dist/",
-    "copy": "copyfiles -u 1 src/assets/**/* dist/",
+    "copy": "copyfiles -u 1 src/assets/**/* src/styles/* dist/",
     "prepare": "husky install"
   },
   "resolutions": {

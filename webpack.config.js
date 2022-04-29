@@ -21,7 +21,7 @@ module.exports = {
         loader: 'json-loader',
       },
       {
-        test: /\.scss$/,
+        test: /\.(css|s[ac]ss)$/i,
         use: [
           {
             loader: 'style-loader',

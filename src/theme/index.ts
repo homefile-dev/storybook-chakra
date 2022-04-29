@@ -106,6 +106,9 @@ const theme = extendTheme({
   },
   space: {
     base: '0.8125rem',
+    onboarding:{
+      top: '3.125rem'
+    },
     container: {
       sm: '1rem',
       md: '2rem',

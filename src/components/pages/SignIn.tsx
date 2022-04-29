@@ -30,7 +30,7 @@ export const SignIn = ({
   }, [values])
 
   return (
-    <Box w="container.full">
+    <Box w="container.full" mt="onboarding.top">
       <Container size="onboarding">
         <Logo />
         <PageTitle title={t('signin.title')} />

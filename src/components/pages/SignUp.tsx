@@ -40,7 +40,7 @@ export const SignUp = ({
   }, [values])
 
   return (
-    <Box w="container.full">
+    <Box w="container.full" mt="onboarding.top">
       <Container size="onboarding">
         <Logo />
         <PageTitle title={t('signup.title')} />
@@ -131,7 +131,9 @@ export const SignUp = ({
             >
               <Text textAlign="center" variant="info" w="100%">
                 {t('signup.terms')}
-                <a target="_blank" href={t('footer.termsUrl')}>{t('footer.termsLink')}</a>
+                <a target="_blank" href={t('footer.termsUrl')}>
+                  {t('footer.termsLink')}
+                </a>
               </Text>
             </Center>
             <Button
