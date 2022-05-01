@@ -1,35 +1,25 @@
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Stack, Text } from '@chakra-ui/react'
+import { t } from 'i18next'
+import DetailsTab from '../../components/sendCommunication/DetailsTab'
 
 export const createDocList = [
   {
-    label: 'Detail',
+    label: t('createDocument.tabs.tab1'),
+    component: <DetailsTab />,
+  },
+  {
+    label: t('createDocument.tabs.tab2'),
     component: (
       <Box p="base" w="full" h="100vh" bg="white">
-        <Text>Detail</Text>
+        <Text>{t('createDocument.tabs.tab2')}</Text>
       </Box>
     ),
   },
   {
-    label: 'Images & media',
+    label: t('createDocument.tabs.tab3'),
     component: (
       <Box p="base" w="full" h="100vh" bg="white">
-        <Text>Images and media</Text>
-      </Box>
-    ),
-  },
-  {
-    label: 'Recipients',
-    component: (
-      <Box p="base" w="full" h="100vh" bg="white">
-        <Text>Recipients</Text>
-      </Box>
-    ),
-  },
-  {
-    label: 'Last report',
-    component: (
-      <Box p="base" w="full" h="100vh" bg="white">
-        <Text>Last report</Text>
+        <Text>{t('createDocument.tabs.tab3')}</Text>
       </Box>
     ),
   },

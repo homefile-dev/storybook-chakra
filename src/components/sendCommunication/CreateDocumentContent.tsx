@@ -13,7 +13,7 @@ import { ICreateDocumentContent } from '../../interfaces/sendCommunication/Creat
 import DocumentNameHeader from './DocumentNameHeader'
 import { useState } from 'react'
 import { FooterDrawer } from '../footers/FooterDrawer'
-import ThreeButtonsFooter from '../footers/FooterButtons'
+import FooterButtons from '../footers/FooterButtons'
 import { ButtonsFooter } from '../../helpers/footers/FooterButtons.helper'
 
 export const CreateDocumentContent = ({
@@ -55,7 +55,7 @@ export const CreateDocumentContent = ({
       <DrawerFooter p="0">
         <FooterDrawer
           children={
-            <ThreeButtonsFooter
+            <FooterButtons
               button1={ButtonsFooter.button1}
               button2={ButtonsFooter.button2}
               button3={ButtonsFooter.button3}

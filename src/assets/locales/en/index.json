@@ -12,9 +12,10 @@
     },
     "buttons": {
       "cancel": "Cancel",
-      "send": "Send",
+      "preview": "Preview",
+      "save": "Save",
       "saveDraft": "Save Draft",
-      "preview": "Preview"
+      "send": "Send"
     },
     "menuItems": {
       "publicTemplate": "Public Template",
@@ -43,10 +44,15 @@
     "password": "Password",
     "passwordConfirm": "Re-enter Password",
     "required": "is required",
-    "return": "Back"
+    "return": "Back",
+    "submit": "Submit"
   },
   "homeSummary": {
     "altFolderIcon": "folder",
+    "createDocument": {
+      "tab1": "Details",
+      "tab2": "Images"
+    },
     "report": {
       "opened": "Opened",
       "unopened": "Unopened"
@@ -66,22 +72,28 @@
   "myHomes": {
     "addHome": "Home",
     "details": {
-      "header": "Homefile Summary"
+      "header": "Homefile Summary",
+      "tabs": {
+        "tab1": "Details",
+        "tab2": "Projects",
+        "tab3": "Clients"
+      }
     },
     "firstHome": {
       "skipBt": "Skip for Now",
       "title": "Let’s add your first home."
     },
     "form": {
-      "zip": "Zip Code",
       "address": "Address",
-      "city": "City",
-      "state": "State",
       "apartmentNumber": "Apartment, Suite, Unit, Building, Floor, etc.",
-      "obs": "Additional information",
-      "required": "is required",
+      "city": "City",
       "invalid": "is invalid",
-      "projectName": "Create Name or Project Number"
+      "name": "Name or Project Number",
+      "obs": "Additional information",
+      "projectName": "Create Name or Project Number",
+      "required": "is required",
+      "state": "State",
+      "zip": "Zip Code"
     },
     "menu": {
       "settings": "Settings",
