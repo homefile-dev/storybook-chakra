@@ -51,7 +51,7 @@ export const MyHomes = ({
                 textAlign="left"
                 transition="all 0.3s ease-in-out"
                 onClick={() => {
-                  handleCardClick(_id)
+                  handleCardClick({_id, name})
                 }}
                 _hover={{
                   boxShadow: 'xl',

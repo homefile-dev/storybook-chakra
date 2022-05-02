@@ -8,8 +8,9 @@ import { ISendCommunication } from '../../interfaces/sendCommunication/SendCommu
 import { DocumentMenu } from '../homeSummary'
 
 export const SendCommunication = ({
-  headerList,
   documentList,
+  headerList,
+  isDisabled = false,
 }: ISendCommunication) => {
   return (
     <Container variant="launchpad" minW="full">
