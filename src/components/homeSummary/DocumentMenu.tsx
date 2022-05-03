@@ -16,12 +16,12 @@ import { RiArrowRightSLine } from 'react-icons/ri'
 import { IDocumentList } from '../../interfaces/homeSummary/DocumentMenu.interface'
 import { t } from 'i18next'
 
-export const DocumentMenu = ({ documents, title }: IDocumentList) => {
+export const DocumentMenu = ({ documents, isDisabled, title }: IDocumentList) => {
   return (
     <Menu gutter={0} matchWidth>
       {({ isOpen }) => (
         <>
-          <MenuButton as={Button} variant="menu">
+          <MenuButton as={Button} variant="menu" disabled={isDisabled}>
             <Flex alignItems="center" justifyContent="space-between" px="4">
               <Flex alignItems="center" gap="4">
                 <CustomIcon type={HiOutlinePlus} color="white" size="7" />

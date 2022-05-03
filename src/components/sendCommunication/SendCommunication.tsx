@@ -23,6 +23,7 @@ export const SendCommunication = ({
       <Box w="full" p="4">
         <DocumentMenu
           documents={documentList}
+          isDisabled={isDisabled}
           title={t('sendCommunication.btLabel')}
         />
       </Box>

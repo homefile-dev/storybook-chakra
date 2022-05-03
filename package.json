@@ -16,14 +16,14 @@
     "@emotion/styled": ">=11",
     "@fontsource/assistant": ">=4",
     "@fontsource/poppins": ">=4",
+    "@hassanmojab/react-modern-calendar-datepicker": ">=3",
     "axios": ">=0",
     "framer-motion": ">=4",
     "i18next": ">=21",
     "i18next-browser-languagedetector": ">=6",
     "react": ">=16",
     "react-i18next": ">=11",
-    "react-modern-calendar-datepicker": ">=3",
-    "@hassanmojab/react-modern-calendar-datepicker": ">=3"
+    "react-modern-calendar-datepicker": ">=3"
   },
   "release": {
     "branches": [
@@ -77,6 +77,7 @@
     "i18next-http-backend": "^1.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-dropzone": "^14.1.2",
     "react-i18next": "^11.16.2",
     "react-icons": "^3.11.0",
     "react-modern-calendar-datepicker": "^3.1.6",

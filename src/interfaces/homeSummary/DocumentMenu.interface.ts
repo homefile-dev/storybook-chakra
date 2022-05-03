@@ -8,5 +8,6 @@ export interface IDocumentItem {
 }
 export interface IDocumentList {
   documents: IDocumentItem[]
+  isDisabled?: boolean
   title: string
 }
