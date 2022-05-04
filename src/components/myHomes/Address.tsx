@@ -6,7 +6,7 @@ import {
   Stack,
 } from '@chakra-ui/react'
 import SectionHeader from '../headers/SectionHeader'
-import HomeAddres from '../../assets/images/home-address.svg'
+import { HomeAddress } from '../../assets/images'
 import TextInput from '../inputs/TextInput'
 import { t } from 'i18next'
 import { isEmptyField } from '../../helpers/Validations'
@@ -29,7 +29,7 @@ export const Address = ({
   isValidated,
   leftElement = null,
   title = t('myHomes.section1'),
-  titleIcon = HomeAddres,
+  titleIcon = HomeAddress,
 }: IAddress) => {
   return (
     <Container variant="ghost" p="4">

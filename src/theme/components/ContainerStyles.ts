@@ -55,6 +55,15 @@ const Container = {
         backgroundColor: 'container.secondary',
       },
     },
+    dragDrop: {
+      backgroundColor: 'transparent',
+      border: '1px solid',
+      borderColor: 'container.primary',
+      transition: 'all 0.2s ease-in-out',
+      _hover: {
+        backgroundColor: 'container.secondary',
+      },
+    },
   },
   defaultProps: {
     size: 'full',
