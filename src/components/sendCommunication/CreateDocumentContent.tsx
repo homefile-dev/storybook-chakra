@@ -52,7 +52,7 @@ export const CreateDocumentContent = ({
         />
         <TabsHeader tabList={createDocList} />
       </DrawerBody>
-      <DrawerFooter p="0">
+      <DrawerFooter p="0" zIndex="dropdown">
         <FooterDrawer
           children={
             <FooterButtons

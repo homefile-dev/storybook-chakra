@@ -5,7 +5,6 @@ import {
   Center,
   Container,
   Text,
-  SimpleGrid,
   CloseButton,
   Modal,
   ModalOverlay,
@@ -16,98 +15,96 @@ import {
   Button,
   Flex,
   Stack,
+  Progress,
 } from '@chakra-ui/react'
-import { useEffect, useState } from 'react'
-import { useDropzone } from 'react-dropzone'
 import { SectionHeader } from '../headers'
 import { HomeAddress } from '../../assets/images'
+import { useAddMedia } from '../../hooks/sendCommunication/useAddMedia'
+import { t } from 'i18next'
+import { HiOutlinePlus } from 'react-icons/hi'
+import { CustomIcon } from '../icons/CustomIcon'
+import { TextInput } from '../inputs'
 
 const AddMedia = () => {
-  const [files, setFiles] = useState<any>([])
-  const [index, setIndex] = useState(0)
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const { getRootProps, getInputProps } = useDropzone({
-    accept: {
-      'image/*': ['.jpeg', '.png', '.svg', '.mp4', '.webm'],
-    },
-    onDrop: (acceptedFiles) => {
-      const totalFiles = [...files, ...acceptedFiles]
-      setFiles(
-        totalFiles.map((file) =>
-          Object.assign(file, {
-            preview: URL.createObjectURL(file),
-          })
-        )
-      )
-    },
-  })
+  const {
+    getRootProps,
+    getInputProps,
+    acceptedFiles,
+    index,
+    setIndex,
+    handleNext,
+    handlePrevious,
+    removeFile,
+    isMobile,
+    handleDescription,
+  } = useAddMedia()
 
-  const removeFile = (name: string) => {
-    const validFileIndex = files.findIndex((file: File) => file.name === name)
-    files.splice(validFileIndex, 1)
-    setFiles([...files])
-  }
-
-  const handleNext = () => {
-    if (index < files.length - 1) {
-      setIndex(index + 1)
-    }
-  }
-  const handlePrevious = () => {
-    if (index > 0) {
-      setIndex(index - 1)
-    }
-  }
-
-  useEffect(() => {
-    return () => files.forEach((file: any) => URL.revokeObjectURL(file.preview))
-  }, [])
-
-  const thumbs = files.map((file: any, index: number) => (
-    <Box key={file.name} position="relative">
-      <CloseButton
-        onClick={() => removeFile(file.name)}
-        size="sm"
-        zIndex="5"
-        position="absolute"
-        bg="container.tertiary"
-        borderRadius="full"
-        right="-2"
-        top="-2"
-        _hover={{
-          bg: 'container.secondary',
-        }}
-      />
-      <Button
-        variant="ghost"
-        onClick={() => {
-          onOpen()
-          setIndex(index)
-        }}
-      >
-        {file.type.split('/')[0] === 'image' ? (
-          <Image src={file.preview} boxSize="6rem" objectFit="cover" />
-        ) : (
-          <video src={file.preview} />
-        )}
-      </Button>
-    </Box>
+  const thumbs = acceptedFiles.map((file: any, index: number) => (
+    <Flex key={file.name} gap="6" align="start">
+      <Box position="relative" w="8rem">
+        <CloseButton
+          onClick={() => removeFile(file.name)}
+          size="sm"
+          zIndex="docked"
+          position="absolute"
+          bg="container.tertiary"
+          borderRadius="full"
+          right="-2"
+          top="-2"
+          _hover={{
+            bg: 'container.secondary',
+          }}
+        />
+        <Button
+          variant="ghost"
+          onClick={() => {
+            onOpen()
+            setIndex(index)
+          }}
+        >
+          {file?.type?.split('/')[0] === 'image' ? (
+            <Image src={file.preview} boxSize="6rem" objectFit="cover" />
+          ) : (
+            <video src={file.preview} />
+          )}
+        </Button>
+      </Box>
+      <Stack w="100%">
+        <Text>Image description:</Text>
+        <TextInput
+          handleChange={(event) =>
+            handleDescription(file.name, event.target.value)
+          }
+          id={file.name}
+          placeholder={'Enter description'}
+          value={file.description}
+        />
+        {!file.uploaded && <Progress size="xs" isIndeterminate />}
+      </Stack>
+    </Flex>
   ))
 
   return (
-    <Stack spacing="base" w="full" bg="white" p="base">
-      <SectionHeader title="Images & videos" titleIcon={HomeAddress} />
+    <Stack spacing="base" w="full" bg="white" p="base" mb="6rem">
+      <SectionHeader title={t('addMedia.title')} titleIcon={HomeAddress} />
       <Container variant="dragDrop" minW="full" {...getRootProps()}>
         <input {...getInputProps()} />
-        <Center h="10rem">
-            <Text variant="info">
-              Drag and drop imagens or videos here, or click to select files
-            </Text>
-        </Center>
+        {isMobile ? (
+          <Button
+            leftIcon={
+              <CustomIcon type={HiOutlinePlus} color="white" size="7" />
+            }
+          >
+            {t('addMedia.addBtn')}
+          </Button>
+        ) : (
+          <Center h="10rem">
+            <Text variant="info">{t('addMedia.dragDrop')}</Text>
+          </Center>
+        )}
       </Container>
-      <SimpleGrid columns={6} spacing="base">
-        {thumbs}
-      </SimpleGrid>
+      <Stack gap="base">{thumbs}</Stack>
       <Modal isOpen={isOpen} onClose={onClose} isCentered size="2xl">
         <ModalOverlay />
         <ModalContent>
@@ -123,24 +120,24 @@ const AddMedia = () => {
                 <ChevronLeftIcon w="10" h="10" />
               </Button>
               <Stack>
-                {files[index]?.type.split('/')[0] === 'image' ? (
+                {acceptedFiles[index]?.type?.split('/')[0] === 'image' ? (
                   <Image
-                    src={files[index].preview}
+                    src={acceptedFiles[index].preview}
                     boxSize="26rem"
                     objectFit="cover"
                   />
                 ) : (
                   <video width="500" controls>
-                    <source src={files[index]?.preview} />
+                    <source src={acceptedFiles[index]?.preview} />
                   </video>
                 )}
-                <Text>{files[index]?.name}</Text>
+                <Text>{acceptedFiles[index]?.name}</Text>
               </Stack>
               <Button
                 variant="icon"
                 maxW="fit-content"
                 onClick={handleNext}
-                disabled={index === files.length - 1}
+                disabled={index === acceptedFiles.length - 1}
               >
                 <ChevronRightIcon w="10" h="10" />
               </Button>

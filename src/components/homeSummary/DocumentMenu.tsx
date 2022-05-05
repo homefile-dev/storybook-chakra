@@ -10,11 +10,11 @@ import {
   Circle,
 } from '@chakra-ui/react'
 import { CustomIcon } from '../icons/CustomIcon'
-import { HiOutlinePlus } from 'react-icons/hi'
 import { RiArrowRightSLine } from 'react-icons/ri'
 
 import { IDocumentList } from '../../interfaces/homeSummary/DocumentMenu.interface'
 import { t } from 'i18next'
+import { IconAndText } from '../buttons/IconAndText'
 
 export const DocumentMenu = ({ documents, isDisabled, title }: IDocumentList) => {
   return (
@@ -23,10 +23,7 @@ export const DocumentMenu = ({ documents, isDisabled, title }: IDocumentList) =>
         <>
           <MenuButton as={Button} variant="menu" disabled={isDisabled}>
             <Flex alignItems="center" justifyContent="space-between" px="4">
-              <Flex alignItems="center" gap="4">
-                <CustomIcon type={HiOutlinePlus} color="white" size="7" />
-                <Text color="white">{title}</Text>
-              </Flex>
+              <IconAndText title={title} />
               <Circle
                 size="40px"
                 bg="button.primary-300"

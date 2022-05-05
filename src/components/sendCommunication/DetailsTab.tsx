@@ -10,9 +10,9 @@ export const DetailTab = () => {
   const [inputs, setInputs] = useState(TemplateFields)
   return (
     <Box p="base" w="full" h="100vh" bg="white">
-      {templateForm?.map(({ label, id }) => {
+      {templateForm?.map(({ label, id }, index) => {
         return (
-          <Stack key={id} mt="6">
+          <Stack key={id} mt={index === 0 ? '' : '6'}>
             <Text>{label}</Text>
             <TextInput
               handleChange={(event) =>
