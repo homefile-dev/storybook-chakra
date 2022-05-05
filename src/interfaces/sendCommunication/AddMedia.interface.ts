@@ -1,7 +1,8 @@
 export interface IImages {
   description: string
+  editing: boolean
+  location: string
   name: string
-  preview: string
   size: number
   type: string
   uploaded: boolean

@@ -5,6 +5,8 @@ import useWindowDimensions from '../useWindowDimensions'
 
 export const useAddMedia = () => {
   const [acceptedFiles, setAcceptedFiles] = useState<IImages[]>([])
+  const [hasError, setHasError] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
   const [index, setIndex] = useState(0)
   const { width } = useWindowDimensions()
   const acceptVideo = false
@@ -16,18 +18,28 @@ export const useAddMedia = () => {
         ? ['.jpeg', '.jpg', '.mp4', '.webm']
         : ['.jpeg', '.jpg'],
     },
+    maxSize: 5000000,
     onDrop: (uploadedFiles) => {
       const selectedFiles = uploadedFiles.map((file: any) => {
         return {
           description: '',
+          editing: true,
+          location: URL.createObjectURL(file),
           name: file.name,
-          preview: URL.createObjectURL(file),
           size: file.size,
           type: file.type,
           uploaded: true,
         }
       })
       setAcceptedFiles([...acceptedFiles, ...selectedFiles])
+    },
+    onDropRejected: (rejectFiles) => {
+      setHasError(true)
+      setErrorMessage(
+        rejectFiles[0].errors[0].code === 'file-too-large'
+          ? 'Please select a file less than 5MB'
+          : 'File type must be .png, .jpeg or .jpg'
+      )
     },
   })
 
@@ -43,19 +55,27 @@ export const useAddMedia = () => {
   //   }, 3000)
   // }
 
+  const findIndex = (name: string) => {
+    return acceptedFiles.findIndex((file: IImages) => file.name === name)
+  }
+
   const removeFile = (name: string) => {
-    const fileIndex = acceptedFiles.findIndex(
-      (file: IImages) => file.name === name
-    )
-    acceptedFiles.splice(fileIndex, 1)
+    acceptedFiles.splice(findIndex(name), 1)
     setAcceptedFiles([...acceptedFiles])
   }
 
   const handleDescription = (name: string, description: string) => {
-    const validFileIndex = acceptedFiles.findIndex(
-      (file: IImages) => file.name === name
-    )
-    acceptedFiles[validFileIndex].description = description
+    acceptedFiles[findIndex(name)].description = description
+    setAcceptedFiles([...acceptedFiles])
+  }
+
+  const handleSaveDescription = (name: string) => {
+    acceptedFiles[findIndex(name)].editing = false
+    setAcceptedFiles([...acceptedFiles])
+  }
+
+  const handleEditDescription = (name: string) => {
+    acceptedFiles[findIndex(name)].editing = true
     setAcceptedFiles([...acceptedFiles])
   }
 
@@ -69,6 +89,15 @@ export const useAddMedia = () => {
       setIndex(index - 1)
     }
   }
+
+  useEffect(() => {
+    if (hasError) {
+      setTimeout(() => {
+        setHasError(false)
+        setErrorMessage('')
+      }, 5000)
+    }
+  }, [hasError])
 
   useEffect(() => {
     return () =>
@@ -86,5 +115,9 @@ export const useAddMedia = () => {
     removeFile,
     isMobile,
     handleDescription,
+    handleSaveDescription,
+    handleEditDescription,
+    hasError,
+    errorMessage,
   }
 }

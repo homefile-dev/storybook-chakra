@@ -57,7 +57,6 @@ export const CreateDocumentContent = ({
           children={
             <FooterButtons
               button1={ButtonsFooter.button1}
-              button2={ButtonsFooter.button2}
               button3={ButtonsFooter.button3}
             />
           }
