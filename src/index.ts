@@ -23,5 +23,6 @@ export {
   SendCommunication,
   DocumentNameHeader,
   CreateDocumentHeader,
+  AddMedia,
 } from './components/sendCommunication'
 export { FooterButtons, FooterDrawer } from './components/footers'

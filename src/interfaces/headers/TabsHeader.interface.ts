@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 interface Tab {
   label: string;
-  component: ReactElement
+  component: ReactElement;
 }
 export interface ITabsHeader {
   tabList: Tab[];

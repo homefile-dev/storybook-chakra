@@ -2,7 +2,8 @@
   "addMedia": {
     "dragDrop": "Drag and drop imagens here, or click to select files",
     "title": "Images",
-    "addBtn": "Add images"
+    "addBtn": "Add images",
+    "description": "Enter a description"
   },
   "buildingApp": {
     "subtitle": "We are connecting to public sources to pull the relevant information about your home into your homefile.",

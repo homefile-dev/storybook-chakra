@@ -1,16 +1,37 @@
 import { useEffect, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
-import { IImages } from '../../interfaces/sendCommunication/AddMedia.interface'
+import {
+  ImagesI,
+  MapImagesI,
+} from '../../interfaces/sendCommunication/AddMedia.interface'
 import useWindowDimensions from '../useWindowDimensions'
 
 export const useAddMedia = () => {
-  const [acceptedFiles, setAcceptedFiles] = useState<IImages[]>([])
+  const [acceptedFiles, setAcceptedFiles] = useState<ImagesI[]>([])
+  const [totalFiles, setTotalFiles] = useState<ImagesI[]>([])
+  const [isUploading, setIsUploading] = useState(false)
   const [hasError, setHasError] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const [index, setIndex] = useState(0)
   const { width } = useWindowDimensions()
   const acceptVideo = false
   const isMobile = width < 700
+
+  const handleMapMedia = ({ files, isLocal = true }: MapImagesI) => {
+    const newFiles = files.map((file: any) => {
+      return {
+        description: isLocal ? '' : file.description,
+        editing: isLocal ? true : false,
+        id: isLocal ? '' : file.id,
+        Location: isLocal ? URL.createObjectURL(file) : file.Location,
+        name: isLocal ? file.name : '',
+        size: isLocal ? file.size : '',
+        type: isLocal ? file.type : '',
+        uploaded: isLocal ? false : true,
+      }
+    })
+    return newFiles
+  }
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: {
@@ -19,19 +40,10 @@ export const useAddMedia = () => {
         : ['.jpeg', '.jpg'],
     },
     maxSize: 5000000,
+    disabled: isUploading,
     onDrop: (uploadedFiles) => {
-      const selectedFiles = uploadedFiles.map((file: any) => {
-        return {
-          description: '',
-          editing: true,
-          location: URL.createObjectURL(file),
-          name: file.name,
-          size: file.size,
-          type: file.type,
-          uploaded: true,
-        }
-      })
-      setAcceptedFiles([...acceptedFiles, ...selectedFiles])
+      const selectedFiles = handleMapMedia({ files: uploadedFiles })
+      setAcceptedFiles(selectedFiles)
     },
     onDropRejected: (rejectFiles) => {
       setHasError(true)
@@ -43,44 +55,34 @@ export const useAddMedia = () => {
     },
   })
 
-  // const handleUpload = () => {
-  //   let counter = 0
-  //   const myInterval = setInterval(() => {
-  //     acceptedFiles[counter].uploaded = true
-  //     counter++
-  //     if (counter === acceptedFiles.length) {
-  //       clearInterval(myInterval)
-  //       console.log('done')
-  //     }
-  //   }, 3000)
-  // }
-
-  const findIndex = (name: string) => {
-    return acceptedFiles.findIndex((file: IImages) => file.name === name)
+  const findIndex = (value: string) => {
+    return totalFiles.findIndex(
+      (file: ImagesI) => file.name || file.id === value
+    )
   }
 
-  const removeFile = (name: string) => {
-    acceptedFiles.splice(findIndex(name), 1)
-    setAcceptedFiles([...acceptedFiles])
+  const removeFile = (value: string) => {
+    totalFiles.splice(findIndex(value), 1)
+    setTotalFiles([...totalFiles])
   }
 
-  const handleDescription = (name: string, description: string) => {
-    acceptedFiles[findIndex(name)].description = description
-    setAcceptedFiles([...acceptedFiles])
+  const handleDescription = (value: string, description: string) => {
+    totalFiles[findIndex(value)].description = description
+    setTotalFiles([...totalFiles])
   }
 
-  const handleSaveDescription = (name: string) => {
-    acceptedFiles[findIndex(name)].editing = false
-    setAcceptedFiles([...acceptedFiles])
+  const handleSaveDescription = (value: string) => {
+    totalFiles[findIndex(value)].editing = false
+    setTotalFiles([...totalFiles])
   }
 
-  const handleEditDescription = (name: string) => {
-    acceptedFiles[findIndex(name)].editing = true
-    setAcceptedFiles([...acceptedFiles])
+  const handleEditDescription = (value: string) => {
+    totalFiles[findIndex(value)].editing = true
+    setTotalFiles([...totalFiles])
   }
 
   const handleNext = () => {
-    if (index < acceptedFiles.length - 1) {
+    if (index < totalFiles.length - 1) {
       setIndex(index + 1)
     }
   }
@@ -105,19 +107,23 @@ export const useAddMedia = () => {
   }, [])
 
   return {
-    getRootProps,
-    getInputProps,
     acceptedFiles,
-    index,
-    setIndex,
+    errorMessage,
+    getInputProps,
+    getRootProps,
+    handleDescription,
+    handleEditDescription,
+    handleMapMedia,
     handleNext,
     handlePrevious,
-    removeFile,
-    isMobile,
-    handleDescription,
     handleSaveDescription,
-    handleEditDescription,
     hasError,
-    errorMessage,
+    index,
+    isMobile,
+    removeFile,
+    setIndex,
+    setIsUploading,
+    setTotalFiles,
+    totalFiles,
   }
 }
