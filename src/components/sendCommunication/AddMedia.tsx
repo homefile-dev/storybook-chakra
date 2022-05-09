@@ -29,6 +29,7 @@ import {
   ImagesI,
 } from '../../interfaces/sendCommunication/AddMedia.interface'
 import { useEffect, useMemo, useState } from 'react'
+import { BeatLoader } from 'react-spinners'
 
 export const AddMedia = ({
   handleDelete,
@@ -168,7 +169,15 @@ export const AddMedia = ({
         )}
       </Container>
       {hasError && <Text variant="error">{errorMessage}</Text>}
-      <Stack gap="base">{thumbs}</Stack>
+      <Stack gap="base">
+        {loading ? (
+          <Center h="8rem">
+            <BeatLoader color="gray" size={8} />
+          </Center>
+        ) : (
+          thumbs
+        )}
+      </Stack>
       <Modal isOpen={isOpen} onClose={onClose} isCentered size="2xl">
         <ModalOverlay />
         <ModalContent>

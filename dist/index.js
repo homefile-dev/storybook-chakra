@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FooterDrawer = exports.FooterButtons = exports.CreateDocumentHeader = exports.DocumentNameHeader = exports.SendCommunication = exports.PanelHeader = exports.TabsHeader = exports.ContainerHeader = exports.SectionHeader = exports.BackHeader = exports.DocumentMenu = exports.UpdateList = exports.ProjectList = exports.TextInput = exports.PasswordInput = exports.Address = exports.MyHomes = exports.AddHomeContent = exports.LeftPanel = exports.Masthead = exports.Header = exports.ResendResetPassword = exports.NewPassword = exports.Launchpad = exports.EmailValidation = exports.ActivateAccount = exports.ResetPassword = exports.SignIn = exports.SignUp = void 0;
+exports.FooterDrawer = exports.FooterButtons = exports.AddMedia = exports.CreateDocumentHeader = exports.DocumentNameHeader = exports.SendCommunication = exports.PanelHeader = exports.TabsHeader = exports.ContainerHeader = exports.SectionHeader = exports.BackHeader = exports.DocumentMenu = exports.UpdateList = exports.ProjectList = exports.TextInput = exports.PasswordInput = exports.Address = exports.MyHomes = exports.AddHomeContent = exports.LeftPanel = exports.Masthead = exports.Header = exports.ResendResetPassword = exports.NewPassword = exports.Launchpad = exports.EmailValidation = exports.ActivateAccount = exports.ResetPassword = exports.SignIn = exports.SignUp = void 0;
 var pages_1 = require("./components/pages");
 Object.defineProperty(exports, "SignUp", { enumerable: true, get: function () { return pages_1.SignUp; } });
 Object.defineProperty(exports, "SignIn", { enumerable: true, get: function () { return pages_1.SignIn; } });
@@ -35,6 +35,7 @@ var sendCommunication_1 = require("./components/sendCommunication");
 Object.defineProperty(exports, "SendCommunication", { enumerable: true, get: function () { return sendCommunication_1.SendCommunication; } });
 Object.defineProperty(exports, "DocumentNameHeader", { enumerable: true, get: function () { return sendCommunication_1.DocumentNameHeader; } });
 Object.defineProperty(exports, "CreateDocumentHeader", { enumerable: true, get: function () { return sendCommunication_1.CreateDocumentHeader; } });
+Object.defineProperty(exports, "AddMedia", { enumerable: true, get: function () { return sendCommunication_1.AddMedia; } });
 var footers_1 = require("./components/footers");
 Object.defineProperty(exports, "FooterButtons", { enumerable: true, get: function () { return footers_1.FooterButtons; } });
 Object.defineProperty(exports, "FooterDrawer", { enumerable: true, get: function () { return footers_1.FooterDrawer; } });

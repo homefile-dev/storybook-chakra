@@ -23,7 +23,8 @@
     "i18next-browser-languagedetector": ">=6",
     "react": ">=16",
     "react-i18next": ">=11",
-    "react-modern-calendar-datepicker": ">=3"
+    "react-modern-calendar-datepicker": ">=3",
+    "react-dropzone": ">=14"
   },
   "release": {
     "branches": [

@@ -20,10 +20,6 @@ export interface MapImagesI {
   isLocal?: boolean
 }
 
-export interface UploadMediaI {
-  upload: (images: ImageDBI[]) => void
-}
-
 export interface AddMediaI {
   handleDelete: (imageId: string) => void
   handleEdit: (file: ImageDBI) => void
