@@ -7,6 +7,7 @@ export interface ImagesI {
   size?: number
   type?: string
   uploaded?: boolean
+  file?: File
 }
 
 export interface ImageDBI {

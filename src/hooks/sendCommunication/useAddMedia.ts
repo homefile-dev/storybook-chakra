@@ -28,6 +28,7 @@ export const useAddMedia = () => {
         size: isLocal ? file.size : '',
         type: isLocal ? file.type : '',
         uploaded: isLocal ? false : true,
+        file: isLocal ? file : undefined,
       }
     })
     return newFiles
