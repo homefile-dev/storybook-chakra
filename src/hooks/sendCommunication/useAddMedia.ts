@@ -22,7 +22,7 @@ export const useAddMedia = () => {
       return {
         description: isLocal ? '' : file.description,
         editing: true,
-        _id: isLocal ? '' : file.id,
+        _id: isLocal ? '' : file._id,
         Location: isLocal ? URL.createObjectURL(file) : file.Location,
         name: isLocal ? file.name : '',
         size: isLocal ? file.size : '',
