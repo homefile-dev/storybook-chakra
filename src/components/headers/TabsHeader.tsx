@@ -9,14 +9,14 @@ export const TabsHeader = ({ tabList }: ITabsHeader) => {
           <Tab
             key={label}
             textTransform="uppercase"
-            fontWeight="bold"
-            fontSize="xs"
+            fontWeight="medium"
+            fontSize="sm"
             fontFamily="primary"
-            color="font.link"
+            color="font.linkHover"
             _hover={{ cursor: 'pointer' }}
             _focus={{ outline: 'none' }}
             _selected={{
-              color: 'font.linkHover',
+              color: 'font.linkSelected',
               borderBottom: '3px solid',
             }}
           >
