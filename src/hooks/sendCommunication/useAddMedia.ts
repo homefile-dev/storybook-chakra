@@ -21,7 +21,7 @@ export const useAddMedia = () => {
     const newFiles = files.map((file: any) => {
       return {
         description: isLocal ? '' : file.description,
-        editing: true,
+        editing: !file.description,
         _id: isLocal ? '' : file._id,
         Location: isLocal ? URL.createObjectURL(file) : file.Location,
         name: isLocal ? file.name : '',
