@@ -22,9 +22,9 @@
     "i18next": ">=21",
     "i18next-browser-languagedetector": ">=6",
     "react": ">=16",
+    "react-dropzone": ">=14",
     "react-i18next": ">=11",
-    "react-modern-calendar-datepicker": ">=3",
-    "react-dropzone": ">=14"
+    "react-modern-calendar-datepicker": ">=3"
   },
   "release": {
     "branches": [
@@ -57,6 +57,7 @@
     "git-commit-msg-linter": "^4.1.1",
     "husky": "^7.0.0",
     "json-loader": "^0.5.7",
+    "miragejs": "^0.1.43",
     "rimraf": "^3.0.2",
     "semantic-release": "^19.0.2",
     "storybook-axios": "^1.0.1",

@@ -13,6 +13,12 @@ const AddMediaContent = () => {
     }, 20000)
   }, [])
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsUploading(false)
+    }, 25000)
+  }, [])
+
   return (
     <AddMedia
       handleDelete={(image) => image}

@@ -1,7 +1,7 @@
 export interface ImagesI {
   description: string
   editing?: boolean
-  id: string
+  _id: string
   Location: string
   name?: string
   size?: number
@@ -12,7 +12,7 @@ export interface ImagesI {
 
 export interface ImageDBI {
   description: string
-  id: string
+  _id: string
   Location: string
 }
 
@@ -24,6 +24,7 @@ export interface MapImagesI {
 export interface AddMediaI {
   handleDelete: (imageId: string) => void
   handleEdit: (file: ImageDBI) => void
+  handleOpen?: (file: ImageDBI) => void
   handleUpload: (images: ImageDBI[]) => void
   images?: ImageDBI[]
   loading?: boolean

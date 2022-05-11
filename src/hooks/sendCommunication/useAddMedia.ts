@@ -22,7 +22,7 @@ export const useAddMedia = () => {
       return {
         description: isLocal ? '' : file.description,
         editing: isLocal ? true : false,
-        id: isLocal ? '' : file.id,
+        _id: isLocal ? '' : file.id,
         Location: isLocal ? URL.createObjectURL(file) : file.Location,
         name: isLocal ? file.name : '',
         size: isLocal ? file.size : '',
@@ -58,7 +58,7 @@ export const useAddMedia = () => {
 
   const findIndex = (value: string) => {
     return totalFiles.findIndex(
-      (file: ImagesI) => file.name || file.id === value
+      (file: ImagesI) => file.name || file._id === value
     )
   }
 
@@ -122,6 +122,7 @@ export const useAddMedia = () => {
     index,
     isMobile,
     removeFile,
+    setAcceptedFiles,
     setIndex,
     setIsUploading,
     setTotalFiles,

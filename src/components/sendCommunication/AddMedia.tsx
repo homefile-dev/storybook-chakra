@@ -34,6 +34,7 @@ import { BeatLoader } from 'react-spinners'
 export const AddMedia = ({
   handleDelete,
   handleEdit,
+  handleOpen,
   handleUpload,
   images = [],
   loading = false,
@@ -55,6 +56,7 @@ export const AddMedia = ({
     index,
     isMobile,
     removeFile,
+    setAcceptedFiles,
     setIndex,
     setIsUploading,
     setTotalFiles,
@@ -77,16 +79,17 @@ export const AddMedia = ({
 
   useEffect(() => {
     setIsUploading(uploading)
+    !uploading && setAcceptedFiles([])
   }, [uploading])
 
   const thumbs = totalFiles.map((file: ImagesI, index: number) => {
     return (
-      <Flex key={file.name || file.id} gap="base" align="start">
+      <Flex key={file.name || file._id || index} gap="base" align="start">
         <Box position="relative" w="8rem">
           <CloseButton
             onClick={() => {
-              removeFile(file?.name || file?.id)
-              handleDelete(file?.id)
+              removeFile(file?.name || file?._id)
+              handleDelete(file?._id)
             }}
             disabled={uploading}
             size="sm"
@@ -102,10 +105,14 @@ export const AddMedia = ({
           />
           <Button
             variant="ghost"
-            onClick={() => {
-              onOpen()
-              setIndex(index)
-            }}
+            onClick={
+              handleOpen
+                ? () => handleOpen(file)
+                : () => {
+                    onOpen()
+                    setIndex(index)
+                  }
+            }
           >
             <Image src={file?.Location} boxSize="6rem" objectFit="cover" />
           </Button>
@@ -115,9 +122,9 @@ export const AddMedia = ({
             {file.editing ? (
               <TextInput
                 handleChange={(event) =>
-                  handleDescription(file?.name || file.id, event.target.value)
+                  handleDescription(file?.name || file._id, event.target.value)
                 }
-                id={file.name || file.id}
+                id={file.name || file._id}
                 placeholder={t('addMedia.description')}
                 value={file.description}
               />
@@ -131,10 +138,10 @@ export const AddMedia = ({
               maxH="input.md"
               onClick={() => {
                 if (file.editing) {
-                  handleSaveDescription(file?.name || file?.id)
+                  handleSaveDescription(file?.name || file?._id)
                   handleEdit(file)
                 } else {
-                  handleEditDescription(file?.name || file?.id)
+                  handleEditDescription(file?.name || file?._id)
                 }
               }}
             >
