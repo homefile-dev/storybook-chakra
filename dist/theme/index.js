@@ -50,6 +50,7 @@ var theme = (0, react_1.extendTheme)({
             secondary: '#818181',
             link: '#2488C6',
             linkHover: '#1D7AB4',
+            linkSelected: '#1E6388',
         },
         container: {
             primary: '#DCE8EC',
@@ -57,10 +58,10 @@ var theme = (0, react_1.extendTheme)({
             tertiary: '#F4F7F8',
             neutralBlue: '#E9EDEF',
             neutral: '#ADB6BA',
-            warning: '#F8AD20'
+            warning: '#F8AD20',
         },
         button: {
-            "primary-300": '#409FD8',
+            'primary-300': '#409FD8',
             primary: '#2488C6',
             primaryHover: '#1D7AB4',
             secondary: '#F0F8F0',
@@ -111,7 +112,7 @@ var theme = (0, react_1.extendTheme)({
     space: {
         base: '0.8125rem',
         onboarding: {
-            top: '3.125rem'
+            top: '3.125rem',
         },
         container: {
             sm: '1rem',

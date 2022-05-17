@@ -5,6 +5,11 @@
     "addBtn": "Add images",
     "description": "Enter a description"
   },
+  "addRecipient": {
+    "addBtn": "Add",
+    "placeholder": "Enter a recipient email",
+    "title": "Recipient"
+  },
   "buildingApp": {
     "subtitle": "We are connecting to public sources to pull the relevant information about your home into your homefile.",
     "title": "One moment, we’re building your homefile."

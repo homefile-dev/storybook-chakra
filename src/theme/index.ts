@@ -40,6 +40,8 @@ const theme = extendTheme({
     },
     avatar: {
       primary: '#60347C',
+      gray: '#C8D9DE',
+      green: '#4CC35A',
     },
     font: {
       primary: '#464646',
@@ -85,6 +87,7 @@ const theme = extendTheme({
     widest: '0.1em',
   },
   fontSizes: {
+    xxs: '0.65rem',
     xs: '0.75rem',
     sm: '0.875rem',
     md: '1rem',

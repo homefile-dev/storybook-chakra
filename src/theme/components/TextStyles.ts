@@ -46,6 +46,11 @@ const Text = {
       fontFamily: 'secondary',
       color: 'pink.500',
     },
+    email: {
+      fontSize: 'xs',
+      color: 'font.link',
+      fontFamily: 'secondary',
+    },
   },
   defaultProps: {
     variant: 'body',

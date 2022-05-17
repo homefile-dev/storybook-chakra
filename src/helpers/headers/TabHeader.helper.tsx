@@ -1,9 +1,10 @@
-import { Box, Text } from '@chakra-ui/react'
 import { t } from 'i18next'
 import DetailsTab from '../../components/sendCommunication/DetailsTab'
 import AddMedia from '../../components/sendCommunication/AddMedia'
 import { imagesDb } from '../sendCommunication/AddMedia.helper'
 import { useEffect, useState } from 'react'
+import RecipientTab from '../../components/sendCommunication/RecipientTab'
+import { recipientsDb } from '../sendCommunication/AddRecipient.helper'
 
 const AddMediaContent = () => {
   const [isUploading, setIsUploading] = useState(false)
@@ -30,6 +31,27 @@ const AddMediaContent = () => {
   )
 }
 
+const AddRecipientContent = () => {
+  const [recipients, setRecipients] = useState(recipientsDb)
+  return (
+    <RecipientTab
+      handleAdd={(email: string) => {
+        setRecipients([
+          ...recipients,
+          { email, firstName: '', lastName: '', phone: '' },
+        ])
+      }}
+      handleRemove={(email: string) =>
+        setRecipients(
+          recipients.filter((recipient) => recipient.email !== email)
+        )
+      }
+      loading={false}
+      recipients={recipients}
+    />
+  )
+}
+
 export const createDocList = [
   {
     label: t('createDocument.tabs.tab1'),
@@ -41,10 +63,6 @@ export const createDocList = [
   },
   {
     label: t('createDocument.tabs.tab3'),
-    component: (
-      <Box p="base" w="full" h="100vh" bg="white">
-        <Text>{t('createDocument.tabs.tab3')}</Text>
-      </Box>
-    ),
+    component: <AddRecipientContent />,
   },
 ]

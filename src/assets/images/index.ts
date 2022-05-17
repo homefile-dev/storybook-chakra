@@ -12,6 +12,7 @@ import RelationshipHome from './relationship-home.svg'
 import ResendPassword from './resend-password.svg'
 import Send from './send.svg'
 import YellowFolder from './yellow-folder.svg'
+import Recipient from './recipient.svg'
 
 export {
   Document,
@@ -28,4 +29,5 @@ export {
   ResendPassword,
   Send,
   YellowFolder,
+  Recipient,
 }

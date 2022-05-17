@@ -78,7 +78,7 @@ const Button = {
       maxW: '3rem',
       borderRadius: 'sm',
       boxShadow: 'base',
-      backgroundColor: 'transparent',
+      backgroundColor: 'white',
       border: '1px',
       borderColor: 'button.primary',
       color: 'button.primary',
