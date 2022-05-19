@@ -120,6 +120,20 @@ declare const Button: {
                 backgroundColor: string;
             };
         };
+        menuIconWithShadow: {
+            color: string;
+            backgroundColor: string;
+            border: string;
+            borderRadius: string;
+            _hover: {
+                backgroundColor: string;
+                color: string;
+                boxShadow: string;
+            };
+            _focus: {
+                backgroundColor: string;
+            };
+        };
         text: {
             w: string;
             fontFamily: string;

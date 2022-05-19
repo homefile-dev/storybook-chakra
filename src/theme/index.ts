@@ -57,6 +57,7 @@ const theme = extendTheme({
       neutralBlue: '#E9EDEF',
       neutral: '#ADB6BA',
       warning: '#F8AD20',
+      green: '#6AB528',
     },
     button: {
       'primary-300': '#409FD8',

@@ -44,6 +44,8 @@ var theme = (0, react_1.extendTheme)({
         },
         avatar: {
             primary: '#60347C',
+            gray: '#C8D9DE',
+            green: '#4CC35A',
         },
         font: {
             primary: '#464646',
@@ -59,6 +61,7 @@ var theme = (0, react_1.extendTheme)({
             neutralBlue: '#E9EDEF',
             neutral: '#ADB6BA',
             warning: '#F8AD20',
+            green: '#6AB528',
         },
         button: {
             'primary-300': '#409FD8',
@@ -89,6 +92,7 @@ var theme = (0, react_1.extendTheme)({
         widest: '0.1em',
     },
     fontSizes: {
+        xxs: '0.65rem',
         xs: '0.75rem',
         sm: '0.875rem',
         md: '1rem',

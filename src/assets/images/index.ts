@@ -13,6 +13,7 @@ import ResendPassword from './resend-password.svg'
 import Send from './send.svg'
 import YellowFolder from './yellow-folder.svg'
 import Recipient from './recipient.svg'
+import LogoCompany from './logo-company.svg'
 
 export {
   Document,
@@ -30,4 +31,5 @@ export {
   Send,
   YellowFolder,
   Recipient,
+  LogoCompany,
 }

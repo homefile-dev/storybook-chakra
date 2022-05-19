@@ -17,7 +17,7 @@ export const PanelHeader = ({
         <Text fontWeight="regular">{title}</Text>
       </Flex>
       <IconButton
-        variant="menuIcon"
+        variant="menuIconWithShadow"
         aria-label={t('myHomes.newHome.btAria')}
         maxW="fit-content"
         onClick={handleCloseButton}

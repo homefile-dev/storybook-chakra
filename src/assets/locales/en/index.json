@@ -33,6 +33,11 @@
       "progressReport": "Progress Report",
       "proposal": "Proposal"
     },
+    "preview": {
+      "title": "Preview Document",
+      "message": "Thank you.",
+      "message2": "If you have any questions, please contact:"
+    },
     "title": "Create Document"
   },
   "footer": {

@@ -51,7 +51,7 @@ export const RecipientTab = ({
         </Flex>
       </Box>
       {loading && (
-        <Center h="8rem">
+        <Center h="full" pb="8rem">
           <BeatLoader color="gray" size={8} />
         </Center>
       )}

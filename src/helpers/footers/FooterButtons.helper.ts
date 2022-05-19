@@ -16,4 +16,9 @@ export const ButtonsFooter = {
     label: t('createDocument.buttons.preview'),
     onClick: () => 'Button 3 clicked',
   },
+  button4: {
+    buttonStyle: 'secondaryFooter',
+    label: t('createDocument.buttons.cancel'),
+    onClick: () => 'Button 4 clicked',
+  },
 }

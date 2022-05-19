@@ -79,7 +79,7 @@ var Button = {
             maxW: '3rem',
             borderRadius: 'sm',
             boxShadow: 'base',
-            backgroundColor: 'transparent',
+            backgroundColor: 'white',
             border: '1px',
             borderColor: 'button.primary',
             color: 'button.primary',
@@ -110,13 +110,27 @@ var Button = {
             },
         },
         menuIcon: {
-            color: 'button.menuIcon',
+            color: 'button.primary',
             backgroundColor: 'transparent',
             border: 'none',
             boxShadow: 'none',
             _hover: {
                 backgroundColor: 'transparent',
-                color: 'button.primary',
+                color: 'button.primaryHover',
+            },
+            _focus: {
+                backgroundColor: 'transparent',
+            },
+        },
+        menuIconWithShadow: {
+            color: 'button.primary',
+            backgroundColor: 'transparent',
+            border: 'none',
+            borderRadius: 'none',
+            _hover: {
+                backgroundColor: 'transparent',
+                color: 'button.primaryHover',
+                boxShadow: 'lg',
             },
             _focus: {
                 backgroundColor: 'transparent',
