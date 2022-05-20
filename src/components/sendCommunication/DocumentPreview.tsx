@@ -105,9 +105,11 @@ export const DocumentPreview = ({
                 {form?.map(
                   (item) =>
                     (item.type === 'string' || 'text') && (
-                      <Stack spacing="base" key={item.name}>
-                        <Text fontSize="sm">{item.name}</Text>
-                        <Text variant="info">{item.value}</Text>
+                      <Stack spacing="1" key={item.name}>
+                        <Text fontWeight="semibold">
+                          {item.name}
+                        </Text>
+                        <Text variant="info" lineHeight="1.2rem">{item.value}</Text>
                       </Stack>
                     )
                 )}
