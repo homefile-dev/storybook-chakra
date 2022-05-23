@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
 import { SignIn } from '../../components/pages/SignIn'
-import { ISignInForm } from '../../interfaces/pages/SignIn.interface'
+import { SignInFormI } from '../../interfaces/pages/SignIn.interface'
 
 export default {
   title: 'Pages/Onboarding',
@@ -16,7 +16,7 @@ const Template: ComponentStory<typeof SignIn> = () => {
     <Box>
       <SignIn
         isLoading={isLoading}
-        handleSignIn={(form: ISignInForm) => {
+        handleSignIn={(form: SignInFormI) => {
           setHasError(false)
           setIsLoading(true)
           setTimeout(() => {

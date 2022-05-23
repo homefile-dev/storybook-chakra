@@ -10,9 +10,9 @@ import {
 import { useTranslation } from 'react-i18next'
 import Logo from '../onboarding/Logo'
 import WelcomeHeader from '../onboarding/WelcomeHeader'
-import { IWelcome } from '../../interfaces/pages/Welcome.interface'
+import { WelcomeI } from '../../interfaces/pages/Welcome.interface'
 
-export const Welcome = ({ handleClick, name, videoUrl = '' }: IWelcome) => {
+export const Welcome = ({ handleClick, name, videoUrl = '' }: WelcomeI) => {
   const { t } = useTranslation()
   return (
     <Box w="container.full">

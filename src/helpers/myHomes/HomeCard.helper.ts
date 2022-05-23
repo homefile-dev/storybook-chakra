@@ -1,7 +1,9 @@
+import { MyHomesFormI } from "../../interfaces/myHomes/MyHomes.interface"
+
 export const MenuItems = [
   {
     label: 'Edit',
-    handleClick: () => {},
+    handleClick: (form: MyHomesFormI) => console.log(form),
   },
 ]
 

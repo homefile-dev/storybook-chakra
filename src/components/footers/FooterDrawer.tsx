@@ -1,7 +1,7 @@
 import { Center, Container, Slide } from '@chakra-ui/react'
-import { IFooterDrawer } from '../../interfaces/footers/FooterDrawer.interface'
+import { FooterDrawerI } from '../../interfaces/footers/FooterDrawer.interface'
 
-export const FooterDrawer = ({ children, isOpen }: IFooterDrawer) => {
+export const FooterDrawer = ({ children, isOpen }: FooterDrawerI) => {
   return (
     <Slide direction="bottom" in={isOpen}>
       <Container variant="footer" minW="full">

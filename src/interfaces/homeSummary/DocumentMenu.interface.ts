@@ -1,13 +1,13 @@
 import { ReactElement } from "react"
 
-export interface IDocumentItem {
+export interface DocumentItemI {
   onClick: () => void
   icon: string
   active?: boolean
   label: string
 }
-export interface IDocumentList {
-  documents: IDocumentItem[]
+export interface DocumentListI {
+  documents: DocumentItemI[]
   isDisabled?: boolean
   title: string
 }

@@ -1,5 +1,5 @@
-export interface IWelcome {
-  description: string;
-  greeting: string;
-  name: string;
+export interface WelcomeI {
+  description: string
+  greeting: string
+  name: string
 }

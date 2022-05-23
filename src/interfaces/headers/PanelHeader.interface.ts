@@ -1,4 +1,4 @@
-export interface IPanelHeader {
+export interface PanelHeaderI {
   handleCloseButton: () => void
   icon: string
   title: string

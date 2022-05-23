@@ -1,9 +1,9 @@
-import { ISelectItem } from '../../interfaces/inputs/Select.interface'
+import { SelectItemI } from '../../interfaces/inputs/Select.interface'
 
-export interface ICreateDocumentContent {
+export interface CreateDocumentContentI {
   handleDateRange?: (date: string) => void
   handleSelectHome?: (form: any) => void
-  homes?: ISelectItem[] | null
+  homes?: SelectItemI[] | null
   initialHome?: string | null
   onCloseButton: () => void
 }

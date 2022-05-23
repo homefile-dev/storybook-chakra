@@ -1,7 +1,7 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
-import { ITabsHeader } from '../../interfaces/headers/TabsHeader.interface'
+import { TabsHeaderI } from '../../interfaces/headers/TabsHeader.interface'
 
-export const TabsHeader = ({ tabList }: ITabsHeader) => {
+export const TabsHeader = ({ tabList }: TabsHeaderI) => {
   return (
     <Tabs variant="unstyled">
       <TabList px={4} bg="white">

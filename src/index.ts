@@ -28,3 +28,4 @@ export {
   DocumentPreview,
 } from './components/sendCommunication'
 export { FooterButtons, FooterDrawer } from './components/footers'
+export { HomeHeader } from './components/homeBoard'

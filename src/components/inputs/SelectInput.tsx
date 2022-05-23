@@ -8,10 +8,10 @@ import {
 } from '@chakra-ui/react'
 import { CustomIcon } from '../icons/CustomIcon'
 import { BsChevronDown } from 'react-icons/bs'
-import { ISelect } from '../../interfaces/inputs/Select.interface'
+import { SelectI } from '../../interfaces/inputs/Select.interface'
 import { useState } from 'react'
 
-export const SelectInput = ({ handleClick, initailValue, items }: ISelect) => {
+export const SelectInput = ({ handleClick, initailValue, items }: SelectI) => {
   const [selectedValue, setSelectedValue] = useState<string>(initailValue)
   return (
     <Menu>

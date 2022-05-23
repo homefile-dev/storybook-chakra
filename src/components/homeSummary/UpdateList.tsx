@@ -5,11 +5,10 @@ import {
   Flex,
   Image,
   Stack,
-  Badge,
 } from '@chakra-ui/react'
 import { t } from 'i18next'
 import ProgressReport from '../../assets/images/progress-report.svg'
-import { IUpdateList } from '../../interfaces/homeSummary/UpdateList.interface'
+import { UpdateListI } from '../../interfaces/homeSummary/UpdateList.interface'
 
 export const UpdateList = ({
   documentType = '',
@@ -17,7 +16,7 @@ export const UpdateList = ({
   handleProjectClick,
   projectName = '',
   updatedAt = '',
-}: IUpdateList) => {
+}: UpdateListI) => {
   return (
     <Container variant="list" p="4">
       <Box as="button" onClick={handleProjectClick} w="full">

@@ -1,5 +1,5 @@
 
-export interface IUpdateList {
+export interface UpdateListI {
   documentType: string
   isOpened: boolean
   handleProjectClick: () => void

@@ -87,6 +87,9 @@
   },
   "myHomes": {
     "addHome": "Home",
+    "board": {
+      "title": "You are viewing "
+    },
     "details": {
       "header": "Homefile Summary",
       "tabs": {

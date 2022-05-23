@@ -6,7 +6,7 @@ import ContainerHeader from '../headers/ContainerHeader'
 import House from '../../assets/images/house.svg'
 import MyHomesHeader from './headers/MyHomesHeader'
 import HomeCard from './HomeCard'
-import { IMyHomes } from '../../interfaces/myHomes/MyHomes.interface'
+import { MyHomesI } from '../../interfaces/myHomes/MyHomes.interface'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
 
 export const MyHomes = ({
@@ -16,7 +16,7 @@ export const MyHomes = ({
   handleCardClick,
   handleNewHomeClick,
   headerMenuItems,
-}: IMyHomes) => {
+}: MyHomesI) => {
   const { width } = useWindowDimensions()
   const isSmallMobile = width < 400
   return (
@@ -42,6 +42,7 @@ export const MyHomes = ({
             <Container key={_id}>
               <ContainerHeader
                 menuItems={cardMenuItems}
+                itemForm={{ _id, name }}
                 icon={<CustomIcon type={FiMoreHorizontal} size="5" />}
                 isThin
               />
@@ -51,7 +52,7 @@ export const MyHomes = ({
                 textAlign="left"
                 transition="all 0.3s ease-in-out"
                 onClick={() => {
-                  handleCardClick({_id, name})
+                  handleCardClick({ _id, name })
                 }}
                 _hover={{
                   boxShadow: 'xl',

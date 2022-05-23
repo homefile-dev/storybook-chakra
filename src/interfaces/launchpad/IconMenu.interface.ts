@@ -1,9 +1,15 @@
-export interface IMenuItem {
-  handleClick: () => void
+interface MenuFormI {
+  _id: string | number
+  name: string
+}
+
+export interface MenuItemI {
+  handleClick: (event: any) => void
   label: string
 }
 
-export interface IIconMenu {
+export interface IconMenuI {
   icon: JSX.Element
-  menuItems?: IMenuItem[]
+  itemForm?: MenuFormI
+  menuItems?: MenuItemI[]
 }

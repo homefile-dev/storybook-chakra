@@ -1,5 +1,5 @@
-import { IAddressForm } from "./Address.interface";
+import { AddressFormI } from './Address.interface'
 
-export interface IHomeForm extends IAddressForm {
+export interface HomeFormI extends AddressFormI {
   name: string
 }

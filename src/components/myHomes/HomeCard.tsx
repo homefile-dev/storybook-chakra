@@ -1,13 +1,13 @@
 import { Image, Stack, Box, Flex, Text, Center } from '@chakra-ui/react'
 import { t } from 'i18next'
 import ImageDefault from '../../assets/images/image-default.jpg'
-import { IHomeCard } from '../../interfaces/myHomes/HomeCard.interface'
+import { HomeCardI } from '../../interfaces/myHomes/HomeCard.interface'
 
 export const HomeCard = ({
   address: { city, state, street, zip },
   image,
   name,
-}: IHomeCard) => {
+}: HomeCardI) => {
   return (
     <>
       <Center h="8rem" bg="container.neutralBlue" overflow="hidden">

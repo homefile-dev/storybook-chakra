@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import LeftPanel from '../../components/launchpad/LeftPanel'
 import AddHomeContent from '../../components/myHomes/AddHomeContent'
 import { formValues } from '../../helpers/myHomes/AddHome.helper'
-import { IHomeForm } from '../../interfaces/myHomes/Home.interface'
+import { HomeFormI } from '../../interfaces/myHomes/Home.interface'
 
 export default {
   title: 'Components/Launchpad',
@@ -20,7 +20,7 @@ const Template: ComponentStory<typeof LeftPanel> = () => {
     <LeftPanel
       children={
         <AddHomeContent
-          handleCreateHomeClick={(form: IHomeForm) => {}}
+          handleCreateHomeClick={(form: HomeFormI) => {}}
           handleSkipClick={onClose}
           userFirstName="Adam"
           values={formValues}

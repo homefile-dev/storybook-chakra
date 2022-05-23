@@ -1,7 +1,7 @@
-import { IMenuItem } from "./IconMenu.interface"
+import { MenuItemI } from './IconMenu.interface'
 
-export interface IMasthead {
+export interface MastheadI {
   avatarUrl?: string
-  menuItems: IMenuItem[]
+  menuItems: MenuItemI[]
   userName: string
 }

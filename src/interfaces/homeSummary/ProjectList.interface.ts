@@ -1,7 +1,7 @@
-import { IMenuItem } from '../launchpad/IconMenu.interface'
+import { MenuItemI } from '../launchpad/IconMenu.interface'
 
 export interface IProjectList {
   handleProjectClick: () => void
-  menuItems: IMenuItem[]
+  menuItems: MenuItemI[]
   title: string
 }

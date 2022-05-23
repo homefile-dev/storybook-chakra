@@ -1,8 +1,8 @@
-import { IDocumentItem } from "../homeSummary/DocumentMenu.interface"
-import { IMenuItem } from "../launchpad/IconMenu.interface"
+import { DocumentItemI } from '../homeSummary/DocumentMenu.interface'
+import { MenuItemI } from '../launchpad/IconMenu.interface'
 
-export interface ISendCommunication {
-  documentList: IDocumentItem[]
-  headerList?: IMenuItem[]
+export interface SendCommunicationI {
+  documentList: DocumentItemI[]
+  headerList?: MenuItemI[]
   isDisabled?: boolean
 }

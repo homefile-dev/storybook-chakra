@@ -4,14 +4,10 @@ import { Logo, Footer } from '../onboarding'
 import { isValidPassword, passwordMatch } from '../../helpers/Validations'
 import ButtonLoader from '../loaders/ButtonLoader'
 import useNewPassword from '../../hooks/useNewPassword'
-import { INewPassword } from '../../interfaces/pages/NewPassword.interface'
+import { NewPasswordI } from '../../interfaces/pages/NewPassword.interface'
 import { PasswordInput } from '../inputs'
 
-export const NewPassword = ({
-  isLoading,
-  handleReset,
-  userEmail,
-}: INewPassword) => {
+export const NewPassword = ({ isLoading, handleReset, userEmail }: NewPasswordI) => {
   const { t } = useTranslation()
   const { inputs, handleInputChange, isValidated, setIsValidated } =
     useNewPassword()

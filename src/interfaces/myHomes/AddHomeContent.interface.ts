@@ -1,9 +1,9 @@
-import { IHomeForm } from './Home.interface'
+import { HomeFormI } from './Home.interface'
 
-export interface IAddHomeContent {
-  handleCreateHomeClick: (form: IHomeForm) => void
+export interface AddHomeContentI {
+  handleCreateHomeClick: (form: HomeFormI) => void
   handleSkipClick: () => void
   isFirstHome?: boolean
   userFirstName?: string
-  values?: IHomeForm
+  values?: HomeFormI
 }

@@ -13,8 +13,8 @@ import { isEmptyField } from '../../helpers/Validations'
 import { AddIcon } from '@chakra-ui/icons'
 import { AiOutlineMinus } from 'react-icons/ai'
 import {
-  IAddress,
-  IAddressForm,
+  AddressI,
+  AddressFormI,
 } from '../../interfaces/myHomes/Address.interface'
 import { CustomIcon } from '../icons/CustomIcon'
 
@@ -30,7 +30,7 @@ export const Address = ({
   leftElement = null,
   title = t('myHomes.section1'),
   titleIcon = HomeAddress,
-}: IAddress) => {
+}: AddressI) => {
   return (
     <Container variant="ghost" p="4">
       <Stack spacing="input.sm">
@@ -66,7 +66,7 @@ export const Address = ({
                 <TextInput
                   id={complement}
                   placeholder={t(`myHomes.form.${complement}`)}
-                  value={inputs[complement as keyof IAddressForm]}
+                  value={inputs[complement as keyof AddressFormI]}
                   handleChange={(event) => handleInputChange(event)}
                 />
                 <Center w="3.5rem">

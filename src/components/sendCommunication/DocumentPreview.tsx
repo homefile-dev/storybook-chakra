@@ -15,7 +15,6 @@ import {
   IconButton,
 } from '@chakra-ui/react'
 import { t } from 'i18next'
-import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { ProgressReport } from '../../assets/images'
 import { DocumentPreviewI } from '../../interfaces/sendCommunication/DocumentPreview.interface'
 import { FooterButtons, FooterDrawer } from '../footers'
@@ -23,6 +22,7 @@ import { PanelHeader } from '../headers'
 import { CustomIcon } from '../icons/CustomIcon'
 import { FaFacebookSquare } from 'react-icons/fa'
 import { BeatLoader } from 'react-spinners'
+import BackCircleButton from '../buttons/BackCircleButton'
 
 export const DocumentPreview = ({
   companyInfo,
@@ -65,21 +65,7 @@ export const DocumentPreview = ({
           </Center>
         ) : (
           <Stack spacing="base" mb="8rem">
-            <Circle
-              size="40px"
-              bg="white"
-              color="white"
-              as="button"
-              onClick={handleClose}
-              transition="all 0.2s ease-in-out"
-              _hover={{ boxShadow: 'lg' }}
-            >
-              <CustomIcon
-                type={AiOutlineArrowLeft}
-                color="button.primary"
-                size="7"
-              />
-            </Circle>
+            <BackCircleButton handleClick={handleClose} />
             <Container minW="full" p="base">
               <Stack spacing="8">
                 <Flex justify="space-between" align="center">
@@ -106,10 +92,10 @@ export const DocumentPreview = ({
                   (item) =>
                     (item.type === 'string' || 'text') && (
                       <Stack spacing="1" key={item.name}>
-                        <Text fontWeight="semibold">
-                          {item.name}
+                        <Text fontWeight="semibold">{item.name}</Text>
+                        <Text variant="info" lineHeight="1.2rem">
+                          {item.value}
                         </Text>
-                        <Text variant="info" lineHeight="1.2rem">{item.value}</Text>
                       </Stack>
                     )
                 )}

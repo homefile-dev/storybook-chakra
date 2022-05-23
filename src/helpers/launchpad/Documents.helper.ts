@@ -1,8 +1,8 @@
-import { ISelectItem } from "../../interfaces/inputs/Select.interface";
+import { SelectItemI } from '../../interfaces/inputs/Select.interface'
 
 export const CreateDocument = {
   handleDateRange: (date: string) => null,
-  handleSelectHome: (form: ISelectItem) => null,
+  handleSelectHome: (form: SelectItemI) => null,
   homes: null,
   initialHome: null,
 }

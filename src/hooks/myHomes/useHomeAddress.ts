@@ -2,9 +2,9 @@ import { AxiosResponse } from 'axios'
 import { ChangeEvent, useEffect, useState } from 'react'
 import locationApi from '../../apis/locationApi'
 import { AddressForm } from '../../helpers/myHomes/Address.helper'
-import { ILocationApi } from '../../interfaces/apis/LocationApi.interface'
-import { IAddressForm } from '../../interfaces/myHomes/Address.interface'
-import { IHomeForm } from '../../interfaces/myHomes/Home.interface'
+import { LocationApiI } from '../../interfaces/apis/LocationApi.interface'
+import { AddressFormI } from '../../interfaces/myHomes/Address.interface'
+import { HomeFormI } from '../../interfaces/myHomes/Home.interface'
 import { firstHomeProxy } from '../../proxies/firstHome.proxy'
 
 export const useHomeAddress = () => {
@@ -28,7 +28,7 @@ export const useHomeAddress = () => {
         ...addressInputs,
         [complement]: '',
       })
-      firstHomeProxy[complement as keyof IHomeForm] = ''
+      firstHomeProxy[complement as keyof HomeFormI] = ''
     }
   }
 
@@ -37,15 +37,15 @@ export const useHomeAddress = () => {
       ...addressInputs,
       [event.target.id]: event.target.value,
     })
-    firstHomeProxy[event.target.id as keyof IHomeForm] = event.target.value
+    firstHomeProxy[event.target.id as keyof HomeFormI] = event.target.value
   }
 
-  const handleAddressAutoFill = (values: IAddressForm) => {
+  const handleAddressAutoFill = (values: AddressFormI) => {
     if (values) {
       setAddressInputs(values)
       Object.keys(values).forEach((key) => {
-        firstHomeProxy[key as keyof IHomeForm] =
-          values[key as keyof IAddressForm]
+        firstHomeProxy[key as keyof HomeFormI] =
+          values[key as keyof AddressFormI]
       })
       setComplements(() => {
         if (values.apartmentNumber !== '' && values.obs !== '') {
@@ -69,7 +69,7 @@ export const useHomeAddress = () => {
     try {
       const {
         data: { features },
-      }: AxiosResponse<ILocationApi> = await locationApi.get(`/${zipCode}.json`)
+      }: AxiosResponse<LocationApiI> = await locationApi.get(`/${zipCode}.json`)
       const city =
         features[0].context.find((item) => item.id.split('.')[0] === 'place')
           ?.text || ''

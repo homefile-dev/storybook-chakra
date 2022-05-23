@@ -1,5 +1,5 @@
 import { FormControl, Text, Input } from '@chakra-ui/react'
-import { IInput } from "../../interfaces/inputs/Input.interface"
+import { InputI } from '../../interfaces/inputs/Input.interface'
 
 export const TextInput = ({
   errorMessage,
@@ -8,8 +8,8 @@ export const TextInput = ({
   handleChange,
   hasError,
   placeholder,
-  value = "",
-}: IInput) => {
+  value = '',
+}: InputI) => {
   return (
     <FormControl isInvalid={hasError}>
       <Input

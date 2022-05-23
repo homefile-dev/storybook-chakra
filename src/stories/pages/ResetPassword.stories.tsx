@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
 import { ResetPassword } from '../../components/pages/ResetPassword'
-import { IEmailForm } from '../../interfaces/pages/ResetPassword.interface'
+import { EmailFormI } from '../../interfaces/pages/ResetPassword.interface'
 
 export default {
   title: 'Pages/Onboarding',
@@ -16,7 +16,7 @@ const Template: ComponentStory<typeof ResetPassword> = () => {
     <Box>
       <ResetPassword
         isLoading={isLoading}
-        handleReset={(form: IEmailForm) => {
+        handleReset={(form: EmailFormI) => {
           setHasError(false)
           setIsLoading(true)
           setTimeout(() => {

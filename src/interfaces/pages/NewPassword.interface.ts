@@ -1,10 +1,10 @@
-export interface INewPasswordForm {
+export interface NewPasswordFormI {
   password: string
   confirmPassword: string
 }
 
-export interface INewPassword {
+export interface NewPasswordI {
   isLoading: boolean
-  handleReset: (form: INewPasswordForm) => void
+  handleReset: (form: NewPasswordFormI) => void
   userEmail: string
 }

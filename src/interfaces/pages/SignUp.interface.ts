@@ -1,15 +1,15 @@
-export interface ISignUpForm {
+export interface SignUpFormI {
   confirmPassword?: string
   email: string
   firstName: string
   lastName: string
-  password?: string 
+  password?: string
 }
 
-export interface ISignUp {
+export interface SignUpI {
   isLoading: boolean
-  handleCreateAccount: (form: ISignUpForm) => void
+  handleCreateAccount: (form: SignUpFormI) => void
   handleSignIn: () => void
   signupError: boolean
-  values?: ISignUpForm
+  values?: SignUpFormI
 }

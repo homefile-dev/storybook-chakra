@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 
-export interface ISectionHeader {
-  leftElement?: ReactElement | null;
+export interface SectionHeaderI {
+  leftElement?: ReactElement | null
   title?: string
   titleIcon?: string
 }

@@ -3,13 +3,13 @@ import { VscClose } from 'react-icons/vsc'
 import { t } from 'i18next'
 
 import { CustomIcon } from '../icons/CustomIcon'
-import { IPanelHeader } from '../../interfaces/headers/PanelHeader.interface'
+import { PanelHeaderI } from '../../interfaces/headers/PanelHeader.interface'
 
 export const PanelHeader = ({
   handleCloseButton,
   icon = '',
   title = '',
-}: IPanelHeader) => {
+}: PanelHeaderI) => {
   return (
     <Flex justify="space-between" bg="white" px="4" py="2" alignItems="center">
       <Flex gap="4" w="full">

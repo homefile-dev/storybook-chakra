@@ -1,7 +1,7 @@
 import { Button, Flex } from '@chakra-ui/react'
-import { IFooterButtons } from '../../interfaces/footers/FooterButtons.interface'
+import { FooterButtonsI } from '../../interfaces/footers/FooterButtons.interface'
 
-export const FooterButtons = ({ button1, button2, button3 }: IFooterButtons) => {
+export const FooterButtons = ({ button1, button2, button3 }: FooterButtonsI) => {
   return (
     <Flex align="center" justifyContent="space-between" w="full" px="base">
       <Flex align="center" gap="2">

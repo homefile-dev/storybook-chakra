@@ -1,6 +1,6 @@
-import { IMenuItem } from '../launchpad/IconMenu.interface'
+import { MenuItemI } from '../launchpad/IconMenu.interface'
 
-export interface IMyHomeHeader {
-  cardFilters: IMenuItem[]
+export interface MyHomeHeaderI {
+  cardFilters: MenuItemI[]
   handleNewHomeClick: () => void
 }

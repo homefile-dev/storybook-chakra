@@ -1,10 +1,10 @@
-export interface ISelectItem {
+export interface SelectItemI {
   name: string
   _id: string
 }
 
-export interface ISelect {
-  handleClick: (form: ISelectItem) => void
+export interface SelectI {
+  handleClick: (form: SelectItemI) => void
   initailValue: string
-  items: ISelectItem[]
+  items: SelectItemI[]
 }

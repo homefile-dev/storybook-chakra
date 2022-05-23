@@ -1,14 +1,15 @@
 import { Flex, Text, Image } from '@chakra-ui/react'
-import { IContainerHeader } from '../../interfaces/headers/ContainerHeader.interface'
+import { ContainerHeaderI } from '../../interfaces/headers/ContainerHeader.interface'
 import IconMenu from '../launchpad/IconMenu'
 
 export const ContainerHeader = ({
   icon,
   isThin,
+  itemForm,
   menuItems,
   title,
   titleIcon,
-}: IContainerHeader) => (
+}: ContainerHeaderI) => (
   <Flex
     justifyContent="space-between"
     bg="white"
@@ -19,7 +20,11 @@ export const ContainerHeader = ({
       {titleIcon && <Image src={titleIcon} />}
       {title && <Text>{title}</Text>}
     </Flex>
-    {menuItems ? <IconMenu icon={icon} menuItems={menuItems} /> : <></>}
+    {menuItems ? (
+      <IconMenu icon={icon} itemForm={itemForm} menuItems={menuItems} />
+    ) : (
+      <></>
+    )}
   </Flex>
 )
 

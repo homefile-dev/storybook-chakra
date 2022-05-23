@@ -10,7 +10,7 @@ import { ProgressReport } from '../../assets/images'
 import { t } from 'i18next'
 import CreateDocumentHeader from './CreateDocumentHeader'
 import { createDocList } from '../../helpers/headers/TabHeader.helper'
-import { ICreateDocumentContent } from '../../interfaces/sendCommunication/CreateDocumentContent.interface'
+import { CreateDocumentContentI } from '../../interfaces/sendCommunication/CreateDocumentContent.interface'
 import DocumentNameHeader from './DocumentNameHeader'
 import { useState } from 'react'
 import { FooterDrawer } from '../footers/FooterDrawer'
@@ -26,7 +26,7 @@ export const CreateDocumentContent = ({
   homes = null,
   initialHome = null,
   onCloseButton,
-}: ICreateDocumentContent) => {
+}: CreateDocumentContentI) => {
   const [projectName, setProjectName] = useState(
     'Progress Report  - Jan 12-16 2022'
   )

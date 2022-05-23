@@ -3,14 +3,10 @@ import { BsChevronDown } from 'react-icons/bs'
 import ImgLogo from '../../assets/images/logo.svg'
 import IconMenu from './IconMenu'
 import { CustomIcon } from '../icons/CustomIcon'
-import { IMasthead } from '../../interfaces/launchpad/Masthead.interface'
+import { MastheadI } from '../../interfaces/launchpad/Masthead.interface'
 import { t } from 'i18next'
 
-export const Masthead = ({
-  avatarUrl = '',
-  menuItems,
-  userName,
-}: IMasthead) => {
+export const Masthead = ({ avatarUrl = '', menuItems, userName }: MastheadI) => {
   const firstName = userName?.split(' ')[0]
   return (
     <Container minW="container.full">

@@ -1,15 +1,15 @@
-import { IMenuItem } from "../launchpad/IconMenu.interface";
-import { IMyHomeHeader } from "./MyHomesHeader.interface";
-import { IHomeCard } from './HomeCard.interface'
+import { MenuItemI } from '../launchpad/IconMenu.interface'
+import { MyHomeHeaderI } from './MyHomesHeader.interface'
+import { HomeCardI } from './HomeCard.interface'
 
-interface IMyHomesForm {
+export interface MyHomesFormI {
   _id: string | number
   name: string
 }
 
-export interface IMyHomes extends IMyHomeHeader {
-  cardList: IHomeCard[]
-  cardMenuItems?: IMenuItem[]
-  handleCardClick: (form: IMyHomesForm) => void
-  headerMenuItems: IMenuItem[]
+export interface MyHomesI extends MyHomeHeaderI {
+  cardList: HomeCardI[]
+  cardMenuItems?: MenuItemI[]
+  handleCardClick: (form: MyHomesFormI) => void
+  headerMenuItems: MenuItemI[]
 }

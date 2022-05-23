@@ -8,7 +8,7 @@ import {
 import { useTranslation } from 'react-i18next'
 import Logo from '../onboarding/Logo'
 import ButtonLoader from '../loaders/ButtonLoader'
-import { IActivateAccount } from '../../interfaces/pages/ActivateAccount.interface'
+import { ActivateAccountI } from '../../interfaces/pages/ActivateAccount.interface'
 import WelcomeHeader from '../onboarding/WelcomeHeader'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
 
@@ -16,7 +16,7 @@ export const ActivateAccount = ({
   name,
   isLoading = false,
   handleActivateBt,
-}: IActivateAccount) => {
+}: ActivateAccountI) => {
   const { width } = useWindowDimensions()
   const { t } = useTranslation()
   return (

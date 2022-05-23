@@ -1,4 +1,4 @@
-export interface ILocationApi {
+export interface LocationApiI {
   features: [
     {
       context: [

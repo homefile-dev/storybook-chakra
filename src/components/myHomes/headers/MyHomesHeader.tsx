@@ -10,14 +10,11 @@ import {
 import { BsChevronDown, BsFilter } from 'react-icons/bs'
 import { t } from 'i18next'
 import { HiOutlinePlus } from 'react-icons/hi'
-import { IMyHomeHeader } from '../../../interfaces/myHomes/MyHomesHeader.interface'
+import { MyHomeHeaderI } from '../../../interfaces/myHomes/MyHomesHeader.interface'
 import { CustomIcon } from '../../icons/CustomIcon'
 import useWindowDimensions from '../../../hooks/useWindowDimensions'
 
-export const MyHomesHeader = ({
-  cardFilters,
-  handleNewHomeClick,
-}: IMyHomeHeader) => {
+export const MyHomesHeader = ({ cardFilters, handleNewHomeClick }: MyHomeHeaderI) => {
   const { width } = useWindowDimensions()
   const isMobile = width < 460
   return (

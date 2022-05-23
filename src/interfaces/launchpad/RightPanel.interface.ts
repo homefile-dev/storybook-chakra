@@ -1,8 +1,6 @@
 import { ReactElement } from "react"
+import { LeftPanelI } from "./LeftPanel.interface"
 
-export interface IRightPanel {
-  children: ReactElement | ReactElement[]
-  isOpen: boolean
-  onClose: () => void
+export interface RightPanelI extends LeftPanelI {
   size?: string
 }

@@ -1,12 +1,12 @@
 import { Drawer, DrawerOverlay } from '@chakra-ui/react'
-import { IRightPanel } from '../../interfaces/launchpad/RightPanel.interface'
+import { RightPanelI } from '../../interfaces/launchpad/RightPanel.interface'
 
 export const RightPanel = ({
   children,
   isOpen,
   onClose,
   size = 'md',
-}: IRightPanel) => {
+}: RightPanelI) => {
   return (
     <Drawer placement="right" onClose={onClose} isOpen={isOpen} size={size}>
       <DrawerOverlay />

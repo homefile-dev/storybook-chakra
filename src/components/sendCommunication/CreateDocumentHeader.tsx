@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
 import { t } from 'i18next'
-import { ICreateDocumentHeader } from '../../interfaces/sendCommunication/CreateDocumentHeader.interface'
+import { CreateDocumentHeaderI } from '../../interfaces/sendCommunication/CreateDocumentHeader.interface'
 import DateRangePicker from '../inputs/DateRangePicker'
 import SelectInput from '../inputs/SelectInput'
 
@@ -9,7 +9,7 @@ export const CreateDocumentHeader = ({
   handleDateRange,
   handleSelectHome = () => null,
   homes = null,
-}: ICreateDocumentHeader) => {
+}: CreateDocumentHeaderI) => {
   return (
     <Box bg="container.tertiary" py="2" pl="base" w="100%">
       <Flex justify="space-between" align="center">

@@ -1,11 +1,11 @@
 import { Flex, Text, Image } from '@chakra-ui/react'
-import { ISectionHeader } from '../../interfaces/headers/SectionHeader.inteface'
+import { SectionHeaderI } from '../../interfaces/headers/SectionHeader.inteface'
 
 export const SectionHeader = ({
   leftElement = null,
-  title = "",
+  title = '',
   titleIcon,
-}: ISectionHeader) => (
+}: SectionHeaderI) => (
   <Flex justify="space-between">
     <Flex gap="4" w="full">
       <Image src={titleIcon} alt={title} w="auto" h="24px" />

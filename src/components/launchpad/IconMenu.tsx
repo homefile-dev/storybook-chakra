@@ -5,9 +5,9 @@ import {
   MenuItem,
   MenuList,
 } from '@chakra-ui/react'
-import { IIconMenu } from '../../interfaces/launchpad/IconMenu.interface'
+import { IconMenuI } from '../../interfaces/launchpad/IconMenu.interface'
 
-export const IconMenu = ({ icon, menuItems }: IIconMenu) => {
+export const IconMenu = ({ icon, itemForm, menuItems }: IconMenuI) => {
   return (
     <Menu isLazy>
       <MenuButton
@@ -21,7 +21,7 @@ export const IconMenu = ({ icon, menuItems }: IIconMenu) => {
         {menuItems?.map(({ handleClick, label }) => (
           <MenuItem
             key={label}
-            onClick={handleClick}
+            onClick={() => handleClick(itemForm)}
             _hover={{
               bg: 'container.secondary',
             }}

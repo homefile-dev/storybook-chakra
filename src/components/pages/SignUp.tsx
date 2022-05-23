@@ -1,7 +1,7 @@
 import { Box, Button, Center, Container, Stack, Text } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 import { Logo, Footer, CardFooter, PageTitle } from '../onboarding'
-import { ISignUp } from '../../interfaces/pages/SignUp.interface'
+import { SignUpI } from '../../interfaces/pages/SignUp.interface'
 import { PasswordInput, TextInput } from '../inputs'
 import useSignUp from '../../hooks/useSignUp'
 import {
@@ -25,7 +25,7 @@ export const SignUp = ({
     confirmPassword: '',
     password: '',
   },
-}: ISignUp) => {
+}: SignUpI) => {
   const { t } = useTranslation()
   const {
     inputs,

@@ -14,11 +14,11 @@ import CreateDocumentContent from '../sendCommunication/CreateDocumentContent'
 import { t } from 'i18next'
 import { Document, Proposal, ProgressReport } from '../../assets/images'
 import { CreateDocument } from '../../helpers/launchpad/Documents.helper'
-import { ICreateDocumentHeader } from '../../interfaces/sendCommunication/CreateDocumentHeader.interface'
+import { CreateDocumentHeaderI } from '../../interfaces/sendCommunication/CreateDocumentHeader.interface'
 import { SelectHomes } from '../../helpers/inputs/SelectInput.helper'
 
 export const Launchpad = () => {
-  const [homes, setHomes] = useState<ICreateDocumentHeader>(CreateDocument)
+  const [homes, setHomes] = useState<CreateDocumentHeaderI>(CreateDocument)
   const userName = 'Adam Lee'
   const firstName = userName.split(' ')[0]
   const {
@@ -90,13 +90,13 @@ export const Launchpad = () => {
         size="lg"
       />
       <Masthead userName={userName} menuItems={UserMenuItems} />
-      <Box px="base">
+      <Box px={[0, 'base']}>
         <Header firstName={firstName} />
         <Grid
           templateColumns={['repeat(1, 1fr)', 'repeat(10, 1fr)']}
           gap="base"
           w="full"
-          px="base"
+          px={[0, 'base']}
         >
           <GridItem colSpan={[1, 7]} w="full">
             <MyHomes
@@ -105,11 +105,10 @@ export const Launchpad = () => {
               cardMenuItems={MenuItems}
               handleCardClick={(id) => {
                 onRightOpen()
-                 setHomes({
-                   ...homes,
-                   initialHome: null,
-                 })
-                
+                setHomes({
+                  ...homes,
+                  initialHome: null,
+                })
               }}
               handleNewHomeClick={onLeftOpen}
               headerMenuItems={MyHomeMenuItems}

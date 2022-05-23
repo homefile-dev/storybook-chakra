@@ -8,7 +8,7 @@ import {
   Button,
 } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
-import { IEmailValidation } from '../../interfaces/pages/EmailValidation.interface'
+import { EmailValidationI } from '../../interfaces/pages/EmailValidation.interface'
 import Logo from '../onboarding/Logo'
 import ResendImg from '../../assets/images/resend-password.svg'
 import ButtonLoader from '../loaders/ButtonLoader'
@@ -17,7 +17,7 @@ export const ResendResetPassword = ({
   email,
   isLoading = false,
   handleResendBt,
-}: IEmailValidation) => {
+}: EmailValidationI) => {
   const { t } = useTranslation()
   return (
     <Box w="container.full">

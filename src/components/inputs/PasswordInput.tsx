@@ -8,7 +8,7 @@ import {
   Text,
 } from '@chakra-ui/react'
 import { useState } from 'react'
-import { IInput } from '../../interfaces/inputs/Input.interface'
+import { InputI } from '../../interfaces/inputs/Input.interface'
 
 export const PasswordInput = ({
   errorMessage,
@@ -16,8 +16,8 @@ export const PasswordInput = ({
   handleChange,
   hasError,
   placeholder,
-  value = "",
-}: IInput) => {
+  value = '',
+}: InputI) => {
   const [show, setShow] = useState(false)
   const handleClick = () => setShow(!show)
   return (

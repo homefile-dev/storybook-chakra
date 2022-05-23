@@ -1,10 +1,10 @@
-export interface IEmailForm {
+export interface EmailFormI {
   email: string
 }
 
-export interface IResetPassword {
+export interface ResetPasswordI {
   handleSignIn: () => void
-  handleReset: (form: IEmailForm) => void
+  handleReset: (form: EmailFormI) => void
   isLoading: boolean
   resetError: boolean
 }

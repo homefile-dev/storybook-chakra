@@ -10,7 +10,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import { t } from 'i18next'
-import { IAddHomeContent } from '../../interfaces/myHomes/AddHomeContent.interface'
+import { AddHomeContentI } from '../../interfaces/myHomes/AddHomeContent.interface'
 import SectionHeader from '../headers/SectionHeader'
 import Address from './Address'
 import FirstHomeHeader from './headers/FirstHomeHeader'
@@ -31,7 +31,7 @@ export const AddHomeContent = ({
   isFirstHome = false,
   userFirstName = '',
   values,
-}: IAddHomeContent) => {
+}: AddHomeContentI) => {
   const {
     handleInputChange,
     isValidated,

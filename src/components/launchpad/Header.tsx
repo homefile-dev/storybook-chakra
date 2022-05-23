@@ -2,9 +2,9 @@ import { Flex, Text, Stack, Button } from '@chakra-ui/react'
 import { HiOutlinePlus } from 'react-icons/hi'
 import { t } from 'i18next'
 import { CustomIcon } from '../icons/CustomIcon'
-import { IHeader } from '../../interfaces/launchpad/Header.interface'
+import { HeaderI} from '../../interfaces/launchpad/Header.interface'
 
-export const HeaderWithView = ({ firstName, handleViews }: IHeader) => {
+export const HeaderWithView = ({ firstName, handleViews }: HeaderI) => {
   return (
     <Flex justifyContent="space-between" align="center" gap="2" pl="4" py="2">
       <Stack direction={['column', 'row']} spacing="2">
@@ -25,7 +25,7 @@ export const HeaderWithView = ({ firstName, handleViews }: IHeader) => {
   )
 }
 
-export const Header = ({ firstName }: IHeader) => {
+export const Header = ({ firstName }: HeaderI) => {
   return (
     <Flex justifyContent="space-between" align="center" gap="2" pl="4" py="4">
       <Stack direction={['column', 'row']} spacing="2">

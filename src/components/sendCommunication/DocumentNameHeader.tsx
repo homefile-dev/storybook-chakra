@@ -1,14 +1,14 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
 import { t } from 'i18next'
 import { isEmptyField } from '../../helpers/Validations'
-import { IDocumentNameHeader } from '../../interfaces/headers/DocumentNameHeader.interface'
+import { DocumentNameHeaderI } from '../../interfaces/headers/DocumentNameHeader.interface'
 import { TextInput } from '../inputs'
 
 export const DocumentNameHeader = ({
   id = '',
   handleChange,
   value = '',
-}: IDocumentNameHeader) => {
+}: DocumentNameHeaderI) => {
   return (
     <Box bg="container.neutralBlue" py="2" px="base" w="100%">
       <Flex gap="2" align="center">

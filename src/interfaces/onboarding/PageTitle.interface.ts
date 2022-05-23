@@ -1,3 +1,3 @@
-export interface IPageTitle {
-  title: string;
+export interface PageTitleI {
+  title: string
 }

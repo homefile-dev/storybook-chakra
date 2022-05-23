@@ -1,18 +1,18 @@
-interface IHomeAddress {
+interface HomeAddressI {
   city: string
   state: string
   street: string
   zip: string
 }
 
-export interface IImage {
+export interface ImageI {
   Location: string
 }
 
-export interface IHomeCard {
-  address: IHomeAddress
+export interface HomeCardI {
+  address: HomeAddressI
   active: boolean
   _id: string
-  image?: IImage | null
+  image?: ImageI | null
   name: string
 }

@@ -1,6 +1,6 @@
 import { As } from "@chakra-ui/react"
 
-export interface IIconAndText {
+export interface IconAndTextI {
   icon?: As<any>
   title: string
 }

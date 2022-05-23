@@ -4,7 +4,7 @@ import { Logo, Footer, PageTitle, CardFooter } from '../onboarding'
 import TextInput from '../inputs/TextInput'
 import { isEmptyField, isValidEmail } from '../../helpers/Validations'
 import ButtonLoader from '../loaders/ButtonLoader'
-import { IResetPassword } from '../../interfaces/pages/ResetPassword.interface'
+import { ResetPasswordI } from '../../interfaces/pages/ResetPassword.interface'
 import useResetPassword from '../../hooks/useResetPassword'
 
 export const ResetPassword = ({
@@ -12,7 +12,7 @@ export const ResetPassword = ({
   handleReset,
   handleSignIn,
   resetError,
-}: IResetPassword) => {
+}: ResetPasswordI) => {
   const { t } = useTranslation()
   const { inputs, handleInputChange, isValidated, setIsValidated } =
     useResetPassword()

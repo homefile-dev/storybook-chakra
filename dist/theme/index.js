@@ -38,30 +38,14 @@ var theme = (0, react_1.extendTheme)({
         Select: SelectStyles_1.default,
     },
     colors: {
-        brand: {
-            primary: '#6AB528',
-            secondary: '#2C8412',
-        },
         avatar: {
             primary: '#60347C',
             gray: '#C8D9DE',
             green: '#4CC35A',
         },
-        font: {
-            primary: '#464646',
-            secondary: '#818181',
-            link: '#2488C6',
-            linkHover: '#1D7AB4',
-            linkSelected: '#1E6388',
-        },
-        container: {
-            primary: '#DCE8EC',
-            secondary: '#F0F8F0',
-            tertiary: '#F4F7F8',
-            neutralBlue: '#E9EDEF',
-            neutral: '#ADB6BA',
-            warning: '#F8AD20',
-            green: '#6AB528',
+        brand: {
+            primary: '#6AB528',
+            secondary: '#2C8412',
         },
         button: {
             'primary-300': '#409FD8',
@@ -72,6 +56,23 @@ var theme = (0, react_1.extendTheme)({
             tertiaryHover: '#CAE1EF',
             icon: '#BCD1D8',
             menuIcon: '#464646',
+        },
+        container: {
+            primary: '#DCE8EC',
+            secondary: '#F0F8F0',
+            tertiary: '#F4F7F8',
+            neutralBlue: '#E9EDEF',
+            neutral: '#ADB6BA',
+            warning: '#F8AD20',
+            green: '#6AB528',
+        },
+        divider: '#A2B4BA',
+        font: {
+            primary: '#464646',
+            secondary: '#818181',
+            link: '#2488C6',
+            linkHover: '#1D7AB4',
+            linkSelected: '#1E6388',
         },
         input: {
             border: '#BCD1D8',

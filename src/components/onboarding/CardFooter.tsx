@@ -1,11 +1,11 @@
 import { Box, Container, Text, Button } from '@chakra-ui/react'
-import { ICardFooter } from '../../interfaces/onboarding/CardFooter.interface'
+import { CardFooterI } from '../../interfaces/onboarding/CardFooter.interface'
 
 export const CardFooter = ({
   title = '',
   buttonLabel,
   handleButtonClick,
-}: ICardFooter) => {
+}: CardFooterI) => {
   return (
     <Container variant="secondary" centerContent>
       <Box

@@ -1,7 +1,7 @@
 import { ChangeEvent } from "react"
-import { ISectionHeader } from "../headers/SectionHeader.inteface"
+import { SectionHeaderI } from '../headers/SectionHeader.inteface'
 
-export interface IAddressForm {
+export interface AddressFormI {
   apartmentNumber: string
   city: string
   obs: string
@@ -10,13 +10,13 @@ export interface IAddressForm {
   zip: string
 }
 
-export interface IAddress extends ISectionHeader {
+export interface AddressI extends SectionHeaderI {
   complements: string[]
   counter: number
   handleInputChange: (event: ChangeEvent<HTMLInputElement>) => void
   handleAddComplements: () => void
   handleDeleteComplements: (complement: string) => void
-  inputs: IAddressForm
+  inputs: AddressFormI
   isDisabled?: boolean
   isValidated: boolean
 }

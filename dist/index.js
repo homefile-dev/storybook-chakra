@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FooterDrawer = exports.FooterButtons = exports.DocumentPreview = exports.RecipientTab = exports.AddMedia = exports.CreateDocumentHeader = exports.DocumentNameHeader = exports.SendCommunication = exports.PanelHeader = exports.TabsHeader = exports.ContainerHeader = exports.SectionHeader = exports.BackHeader = exports.DocumentMenu = exports.UpdateList = exports.ProjectList = exports.TextInput = exports.PasswordInput = exports.Address = exports.MyHomes = exports.AddHomeContent = exports.LeftPanel = exports.Masthead = exports.Header = exports.ResendResetPassword = exports.NewPassword = exports.Launchpad = exports.EmailValidation = exports.ActivateAccount = exports.ResetPassword = exports.SignIn = exports.SignUp = void 0;
+exports.HomeHeader = exports.FooterDrawer = exports.FooterButtons = exports.DocumentPreview = exports.RecipientTab = exports.AddMedia = exports.CreateDocumentHeader = exports.DocumentNameHeader = exports.SendCommunication = exports.PanelHeader = exports.TabsHeader = exports.ContainerHeader = exports.SectionHeader = exports.BackHeader = exports.DocumentMenu = exports.UpdateList = exports.ProjectList = exports.TextInput = exports.PasswordInput = exports.Address = exports.MyHomes = exports.AddHomeContent = exports.LeftPanel = exports.Masthead = exports.Header = exports.ResendResetPassword = exports.NewPassword = exports.Launchpad = exports.EmailValidation = exports.ActivateAccount = exports.ResetPassword = exports.SignIn = exports.SignUp = void 0;
 var pages_1 = require("./components/pages");
 Object.defineProperty(exports, "SignUp", { enumerable: true, get: function () { return pages_1.SignUp; } });
 Object.defineProperty(exports, "SignIn", { enumerable: true, get: function () { return pages_1.SignIn; } });
@@ -41,3 +41,5 @@ Object.defineProperty(exports, "DocumentPreview", { enumerable: true, get: funct
 var footers_1 = require("./components/footers");
 Object.defineProperty(exports, "FooterButtons", { enumerable: true, get: function () { return footers_1.FooterButtons; } });
 Object.defineProperty(exports, "FooterDrawer", { enumerable: true, get: function () { return footers_1.FooterDrawer; } });
+var homeBoard_1 = require("./components/homeBoard");
+Object.defineProperty(exports, "HomeHeader", { enumerable: true, get: function () { return homeBoard_1.HomeHeader; } });

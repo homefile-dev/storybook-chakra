@@ -12,11 +12,11 @@ import {
 import { CustomIcon } from '../icons/CustomIcon'
 import { RiArrowRightSLine } from 'react-icons/ri'
 
-import { IDocumentList } from '../../interfaces/homeSummary/DocumentMenu.interface'
+import { DocumentListI } from '../../interfaces/homeSummary/DocumentMenu.interface'
 import { t } from 'i18next'
 import { IconAndText } from '../buttons/IconAndText'
 
-export const DocumentMenu = ({ documents, isDisabled, title }: IDocumentList) => {
+export const DocumentMenu = ({ documents, isDisabled, title }: DocumentListI) => {
   return (
     <Menu gutter={0} matchWidth>
       {({ isOpen }) => (

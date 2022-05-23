@@ -9,12 +9,9 @@ import {
 } from '@chakra-ui/react'
 import { t } from 'i18next'
 import ImgLogo from '../../../assets/images/logo.svg'
-import { IFirstHomeHeader } from '../../../interfaces/myHomes/FirstHomeHeader.interface'
+import { FirstHomeHeaderI } from '../../../interfaces/myHomes/FirstHomeHeader.interface'
 
-export const FirstHomeHeader = ({
-  firstName,
-  handleClick,
-}: IFirstHomeHeader) => {
+export const FirstHomeHeader = ({ firstName, handleClick }: FirstHomeHeaderI) => {
   return (
     <Container variant="secondary" p="4">
       <Stack spacing="8rem">
