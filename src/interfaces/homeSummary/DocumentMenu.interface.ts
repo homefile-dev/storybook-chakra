@@ -1,5 +1,3 @@
-import { ReactElement } from "react"
-
 export interface DocumentItemI {
   onClick: () => void
   icon: string

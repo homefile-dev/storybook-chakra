@@ -4,7 +4,7 @@ interface MenuFormI {
 }
 
 export interface MenuItemI {
-  handleClick: (event: any) => void
+  handleClick: (form: any) => void
   label: string
 }
 

@@ -1,1 +1,2 @@
-export { HomeHeader } from './HomeHeader'
+export * from './HomeHeader'
+export * from './HomeCardWithRecipent'

@@ -11,7 +11,7 @@ export interface ImageI {
 
 export interface HomeCardI {
   address: HomeAddressI
-  active: boolean
+  active?: boolean
   _id: string
   image?: ImageI | null
   name: string
