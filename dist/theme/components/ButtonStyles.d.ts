@@ -134,6 +134,21 @@ declare const Button: {
                 backgroundColor: string;
             };
         };
+        folder: {
+            color: string;
+            fontWeight: string;
+            backgroundColor: string;
+            border: string;
+            borderRadius: string;
+            _hover: {
+                backgroundColor: string;
+                color: string;
+                boxShadow: string;
+            };
+            _focus: {
+                backgroundColor: string;
+            };
+        };
         text: {
             w: string;
             fontFamily: string;
@@ -155,8 +170,6 @@ declare const Button: {
         leftRounded: {
             fontSize: string;
             textTransform: string;
-            h: string;
-            pl: string;
             fontWeight: string;
             borderRightRadius: string;
             borderLeftRadius: string;

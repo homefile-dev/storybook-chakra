@@ -65,6 +65,7 @@ var theme = (0, react_1.extendTheme)({
             neutral: '#ADB6BA',
             warning: '#F8AD20',
             green: '#6AB528',
+            violet: '#6041B7',
         },
         divider: '#A2B4BA',
         font: {
