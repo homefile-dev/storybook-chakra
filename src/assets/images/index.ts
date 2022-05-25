@@ -5,6 +5,7 @@ import HomeAddress from './home-address.svg'
 import House from './house.svg'
 import ImageDefault from './image-default.svg'
 import Logo from './logo.svg'
+import LogoSmall from './logo-small.svg'
 import Message from './message.svg'
 import ProgressReport from './progress-report.svg'
 import Proposal from './proposal.svg'
@@ -25,6 +26,7 @@ export {
   House,
   ImageDefault,
   Logo,
+  LogoSmall,
   Message,
   ProgressReport,
   Proposal,

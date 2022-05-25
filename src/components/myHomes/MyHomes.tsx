@@ -32,7 +32,7 @@ export const MyHomes = ({
         handleNewHomeClick={handleNewHomeClick}
       />
       <SimpleGrid
-        columns={[isSmallMobile ? 1 : 2, 2, 3, 4, 5]}
+        columns={[isSmallMobile ? 1 : 2, 2, 2, 4, 5]}
         spacing="base"
         px="base"
         alignItems="start"

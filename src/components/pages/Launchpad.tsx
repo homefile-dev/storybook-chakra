@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Box, Grid, GridItem, useDisclosure } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem, useDisclosure } from '@chakra-ui/react'
 import { AddHomeContent, MyHomes } from '../myHomes'
 import { Header, LeftPanel, Masthead } from '../launchpad'
 import {
@@ -92,13 +92,13 @@ export const Launchpad = () => {
       <Masthead userName={userName} menuItems={UserMenuItems} />
       <Box px={[0, 'base']}>
         <Header firstName={firstName} />
-        <Grid
-          templateColumns={['repeat(1, 1fr)', 'repeat(10, 1fr)']}
+        <Flex
+          direction={['column-reverse', 'row']}
           gap="base"
           w="full"
           px={[0, 'base']}
         >
-          <GridItem colSpan={[1, 7]} w="full">
+          <Box w={['full', null, '60%', '70%']}>
             <MyHomes
               cardFilters={MyHomeFilters}
               cardList={HomeCards}
@@ -113,11 +113,11 @@ export const Launchpad = () => {
               handleNewHomeClick={onLeftOpen}
               headerMenuItems={MyHomeMenuItems}
             />
-          </GridItem>
-          <GridItem colSpan={[1, 3]} w="full">
+          </Box>
+          <Box w={['full', null, '40%', '30%']}>
             <SendCommunication documentList={documents} />
-          </GridItem>
-        </Grid>
+          </Box>
+        </Flex>
       </Box>
     </Box>
   )
