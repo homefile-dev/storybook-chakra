@@ -31,7 +31,7 @@ export const SelectInput = ({ handleClick, initailValue, items }: SelectI) => {
           <CustomIcon type={BsChevronDown} />
         </Flex>
       </MenuButton>
-      <MenuList>
+      <MenuList zIndex="dropdown">
         {items?.map((item) => (
           <MenuItem
             key={item._id}

@@ -14,6 +14,8 @@ import Send from './send.svg'
 import YellowFolder from './yellow-folder.svg'
 import Recipient from './recipient.svg'
 import LogoCompany from './logo-company.svg'
+import BlueFolder from './blue-folder.svg'
+import VioletFolder from './violet-folder.svg'
 
 export {
   Document,
@@ -32,4 +34,6 @@ export {
   YellowFolder,
   Recipient,
   LogoCompany,
+  BlueFolder,
+  VioletFolder,
 }

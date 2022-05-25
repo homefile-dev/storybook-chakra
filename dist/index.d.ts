@@ -6,4 +6,4 @@ export { ProjectList, UpdateList, DocumentMenu } from './components/homeSummary'
 export { BackHeader, SectionHeader, ContainerHeader, TabsHeader, PanelHeader, } from './components/headers';
 export { SendCommunication, DocumentNameHeader, CreateDocumentHeader, AddMedia, RecipientTab, DocumentPreview, } from './components/sendCommunication';
 export { FooterButtons, FooterDrawer } from './components/footers';
-export { HomeHeader } from './components/homeBoard';
+export { HomeHeader, HomeCardWithRecipent } from './components/homeBoard';

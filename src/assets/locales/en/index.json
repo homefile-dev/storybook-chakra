@@ -40,6 +40,11 @@
     },
     "title": "Create Document"
   },
+  "folderSharing": {
+    "altIcon": "Folder",
+    "newFolder": "new",
+    "title": "Files"
+  },
   "footer": {
     "copyright": "© 2021 Homefile Inc. All Rights Reserved.",
     "privacyLink": "Privacy Policy",

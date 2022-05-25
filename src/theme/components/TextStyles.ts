@@ -51,6 +51,12 @@ const Text = {
       color: 'font.link',
       fontFamily: 'secondary',
     },
+    bagde: {
+      fontSize: 'xxs',
+      color: 'white',
+      textTransform: 'uppercase',
+      fontWeight: 'bold',
+    },
   },
   defaultProps: {
     variant: 'body',
