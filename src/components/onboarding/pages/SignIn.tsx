@@ -1,11 +1,11 @@
 import { Box, Button, Center, Container, Stack } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
-import { Logo, Footer, PageTitle, CardFooter } from '../onboarding'
-import { PasswordInput, TextInput } from '../inputs'
-import useSignIn from '../../hooks/useSignIn'
-import { isEmptyField } from '../../helpers/Validations'
-import { SignInI } from '../../interfaces/pages/SignIn.interface'
-import ButtonLoader from '../loaders/ButtonLoader'
+import { Logo, Footer, PageTitle, CardFooter } from '..'
+import { PasswordInput, TextInput } from '../../inputs'
+import useSignIn from '../../../hooks/useSignIn'
+import { isEmptyField } from '../../../helpers/Validations'
+import { SignInI } from '../../../interfaces/pages/SignIn.interface'
+import ButtonLoader from '../../loaders/ButtonLoader'
 import { useEffect } from 'react'
 
 export const SignIn = ({

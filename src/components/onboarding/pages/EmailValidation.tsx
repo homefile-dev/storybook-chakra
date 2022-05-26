@@ -8,12 +8,12 @@ import {
   Button,
 } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
-import { EmailValidationI } from '../../interfaces/pages/EmailValidation.interface'
-import Logo from '../onboarding/Logo'
-import ResendImg from '../../assets/images/resend-password.svg'
-import ButtonLoader from '../loaders/ButtonLoader'
+import { EmailValidationI } from '../../../interfaces/pages/EmailValidation.interface'
+import Logo from '../Logo'
+import ConfirmationImg from '../../../assets/images/confirmation.svg'
+import ButtonLoader from '../../loaders/ButtonLoader'
 
-export const ResendResetPassword = ({
+export const EmailValidation = ({
   email,
   isLoading = false,
   handleResendBt,
@@ -35,12 +35,13 @@ export const ResendResetPassword = ({
               {t('validation.title1')}
             </chakra.span>
             <chakra.span color="font.link">{email}</chakra.span>
-            <Text variant="title">{t('validation.title3')}</Text>
+            <chakra.span color="font.primary">
+              {t('validation.title2')}
+            </chakra.span>
           </Text>
-
           <Center>
             <Image
-              src={ResendImg}
+              src={ConfirmationImg}
               alt="Activate account"
               h={['100px', '145px']}
               w="auto"
@@ -65,7 +66,7 @@ export const ResendResetPassword = ({
             spinner={<ButtonLoader isOutlined />}
             size="onboarding"
           >
-            {t('validation.resendResetBt')}
+            {t('validation.resendBt')}
           </Button>
         </Center>
       </Container>
@@ -73,4 +74,4 @@ export const ResendResetPassword = ({
   )
 }
 
-export default ResendResetPassword
+export default EmailValidation

@@ -15,6 +15,7 @@ import { t } from 'i18next'
 import { FiMoreHorizontal } from 'react-icons/fi'
 import { HiOutlinePlus } from 'react-icons/hi'
 import { BlueFolder, VioletFolder, YellowFolder } from '../../assets/images'
+import useWindowDimensions from '../../hooks/useWindowDimensions'
 import { FolderSharingI } from '../../interfaces/homeBoard/FolderSharing.interface'
 import { ContainerHeader } from '../headers'
 import { CustomIcon } from '../icons/CustomIcon'
@@ -28,8 +29,10 @@ export const FolderSharing = ({
   menuItems,
   selectItems,
 }: FolderSharingI) => {
+  const { width } = useWindowDimensions()
+  const isDesktop = width > 800
   return (
-    <Container variant="launchpad" maxW="35rem">
+    <Container variant="launchpad" minW={isDesktop ? '60%' : 'full'}>
       <ContainerHeader
         title={t('folderSharing.title')}
         titleIcon={YellowFolder}
@@ -48,51 +51,47 @@ export const FolderSharing = ({
           </Button>
         </Flex>
       </Box>
-      <Center>
-        <Wrap py="8" spacing="base">
-          {folders &&
-            folders.map(({ isNew = false, subTypes, type }, index) => {
-              return (
-                <WrapItem position="relative" key={type + index} >
-                  {isNew && (
-                    <Box
-                      bg="container.violet"
-                      borderRadius="base"
-                      w="fit-content"
-                      py="0.2rem"
-                      px="0.4rem"
-                      zIndex="docked"
-                      position="absolute"
-                      right="4"
-                      top="-1"
-                    >
-                      <Text variant="bagde">
-                        {t('folderSharing.newFolder')}
-                      </Text>
-                    </Box>
-                  )}
-                  <Button
-                    variant="folder"
-                    px="base"
-                    pb="base"
-                    pt="6"
-                    onClick={() => handleFolderClick({ subTypes, type })}
+      <Wrap py="8" px="base" spacing="base">
+        {folders &&
+          folders.map(({ isNew = false, subTypes, type }, index) => {
+            return (
+              <WrapItem position="relative" key={type + index}>
+                {isNew && (
+                  <Box
+                    bg="container.violet"
+                    borderRadius="base"
+                    w="fit-content"
+                    py="0.2rem"
+                    px="0.4rem"
+                    zIndex="docked"
+                    position="absolute"
+                    right="4"
+                    top="-1"
                   >
-                    <Flex direction="column" gap="base" align="center">
-                      <Image
-                        src={isNew ? VioletFolder : BlueFolder}
-                        w="3.7rem"
-                        h="auto"
-                        alt={t('folderSharing.altIcon')}
-                      />
-                      <Text fontSize="sm">{type}</Text>
-                    </Flex>
-                  </Button>
-                </WrapItem>
-              )
-            })}
-        </Wrap>
-      </Center>
+                    <Text variant="bagde">{t('folderSharing.newFolder')}</Text>
+                  </Box>
+                )}
+                <Button
+                  variant="folder"
+                  px="base"
+                  pb="base"
+                  pt="6"
+                  onClick={() => handleFolderClick({ subTypes, type })}
+                >
+                  <Flex direction="column" gap="base" align="center">
+                    <Image
+                      src={isNew ? VioletFolder : BlueFolder}
+                      w="3.7rem"
+                      h="auto"
+                      alt={t('folderSharing.altIcon')}
+                    />
+                    <Text fontSize="sm">{type}</Text>
+                  </Flex>
+                </Button>
+              </WrapItem>
+            )
+          })}
+      </Wrap>
     </Container>
   )
 }

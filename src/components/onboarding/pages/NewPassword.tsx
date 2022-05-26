@@ -1,11 +1,11 @@
 import { Box, Button, Text, Container, Stack, chakra } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
-import { Logo, Footer } from '../onboarding'
-import { isValidPassword, passwordMatch } from '../../helpers/Validations'
-import ButtonLoader from '../loaders/ButtonLoader'
-import useNewPassword from '../../hooks/useNewPassword'
-import { NewPasswordI } from '../../interfaces/pages/NewPassword.interface'
-import { PasswordInput } from '../inputs'
+import { Logo, Footer } from '..'
+import { isValidPassword, passwordMatch } from '../../../helpers/Validations'
+import ButtonLoader from '../../loaders/ButtonLoader'
+import useNewPassword from '../../../hooks/useNewPassword'
+import { NewPasswordI } from '../../../interfaces/pages/NewPassword.interface'
+import { PasswordInput } from '../../inputs'
 
 export const NewPassword = ({ isLoading, handleReset, userEmail }: NewPasswordI) => {
   const { t } = useTranslation()

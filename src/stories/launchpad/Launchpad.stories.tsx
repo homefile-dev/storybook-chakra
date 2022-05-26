@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Launchpad from '../../components/pages/Launchpad'
+import Launchpad from '../../components/launchpad/Launchpad'
 
 export default {
   title: 'Pages/Launchpad',

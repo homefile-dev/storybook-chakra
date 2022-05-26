@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import Welcome from '../../components/pages/Welcome'
+import Welcome from '../../../components/onboarding/pages/Welcome'
 
 export default {
   title: 'Pages/Onboarding',

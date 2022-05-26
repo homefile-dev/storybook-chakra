@@ -1,8 +1,8 @@
 import { Box } from '@chakra-ui/react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
-import { NewPassword } from '../../components/pages/NewPassword'
-import { NewPasswordFormI } from '../../interfaces/pages/NewPassword.interface'
+import { NewPassword } from '../../../components/onboarding/pages/NewPassword'
+import { NewPasswordFormI } from '../../../interfaces/pages/NewPassword.interface'
 
 export default {
   title: 'Pages/Onboarding',

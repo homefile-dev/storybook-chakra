@@ -1,16 +1,16 @@
 import { Box, Button, Center, Container, Stack, Text } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
-import { Logo, Footer, CardFooter, PageTitle } from '../onboarding'
-import { SignUpI } from '../../interfaces/pages/SignUp.interface'
-import { PasswordInput, TextInput } from '../inputs'
-import useSignUp from '../../hooks/useSignUp'
+import { Logo, Footer, CardFooter, PageTitle } from '..'
+import { SignUpI } from '../../../interfaces/pages/SignUp.interface'
+import { PasswordInput, TextInput } from '../../inputs'
+import useSignUp from '../../../hooks/useSignUp'
 import {
   isEmptyField,
   isValidEmail,
   isValidPassword,
   passwordMatch,
-} from '../../helpers/Validations'
-import ButtonLoader from '../loaders/ButtonLoader'
+} from '../../../helpers/Validations'
+import ButtonLoader from '../../loaders/ButtonLoader'
 import { useEffect } from 'react'
 
 export const SignUp = ({

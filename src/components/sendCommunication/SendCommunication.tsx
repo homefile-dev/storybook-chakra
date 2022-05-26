@@ -13,7 +13,7 @@ export const SendCommunication = ({
   isDisabled = false,
 }: SendCommunicationI) => {
   return (
-    <Container variant="launchpad" minW="full">
+    <Container variant="launchpad" h="fit-content" minW="20rem">
       <ContainerHeader
         title={t('sendCommunication.title')}
         titleIcon={SendDoc}

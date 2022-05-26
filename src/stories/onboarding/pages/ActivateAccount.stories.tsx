@@ -1,21 +1,21 @@
 import { Box } from '@chakra-ui/react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
-import EmailValidation from '../../components/pages/EmailValidation'
+import ActivateAccount from '../../../components/onboarding/pages/ActivateAccount'
 
 export default {
   title: 'Pages/Onboarding',
-  component: EmailValidation,
-} as ComponentMeta<typeof EmailValidation>
+  component: ActivateAccount,
+} as ComponentMeta<typeof ActivateAccount>
 
-const Template: ComponentStory<typeof EmailValidation> = () => {
+const Template: ComponentStory<typeof ActivateAccount> = () => {
   const [isLoading, setIsLoading] = useState(false)
   return (
     <Box>
-      <EmailValidation
-        email="user@user.com.br"
+      <ActivateAccount
+        name="Matthew"
         isLoading={isLoading}
-        handleResendBt={() => {
+        handleActivateBt={() => {
           setIsLoading(true)
           setTimeout(() => {
             setIsLoading(false)
@@ -26,4 +26,4 @@ const Template: ComponentStory<typeof EmailValidation> = () => {
   )
 }
 
-export const EmailValidationPage = Template.bind({})
+export const ActivateAccountPage = Template.bind({})

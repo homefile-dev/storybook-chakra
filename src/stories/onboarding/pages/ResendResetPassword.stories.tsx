@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
-import ResendResetPassword from '../../components/pages/ResendResetPassword'
+import ResendResetPassword from '../../../components/onboarding/pages/ResendResetPassword'
 
 export default {
   title: 'Pages/Onboarding',

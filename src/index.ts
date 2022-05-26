@@ -4,11 +4,10 @@ export {
   ResetPassword,
   ActivateAccount,
   EmailValidation,
-  Launchpad,
   NewPassword,
   ResendResetPassword,
-} from './components/pages'
-export { Header, Masthead, LeftPanel } from './components/launchpad'
+} from './components/onboarding/pages'
+export { Header, Masthead, LeftPanel, Launchpad } from './components/launchpad'
 export { AddHomeContent, MyHomes, Address } from './components/myHomes'
 export { PasswordInput, TextInput } from './components/inputs'
 export { ProjectList, UpdateList, DocumentMenu } from './components/homeSummary'

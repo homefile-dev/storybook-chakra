@@ -1,11 +1,11 @@
 import { Box, Button, Text, Container, Stack } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
-import { Logo, Footer, PageTitle, CardFooter } from '../onboarding'
-import TextInput from '../inputs/TextInput'
-import { isEmptyField, isValidEmail } from '../../helpers/Validations'
-import ButtonLoader from '../loaders/ButtonLoader'
-import { ResetPasswordI } from '../../interfaces/pages/ResetPassword.interface'
-import useResetPassword from '../../hooks/useResetPassword'
+import { Logo, Footer, PageTitle, CardFooter } from '..'
+import TextInput from '../../inputs/TextInput'
+import { isEmptyField, isValidEmail } from '../../../helpers/Validations'
+import ButtonLoader from '../../loaders/ButtonLoader'
+import { ResetPasswordI } from '../../../interfaces/pages/ResetPassword.interface'
+import useResetPassword from '../../../hooks/useResetPassword'
 
 export const ResetPassword = ({
   isLoading,

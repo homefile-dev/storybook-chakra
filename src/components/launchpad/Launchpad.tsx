@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 import { Box, Flex, Grid, GridItem, useDisclosure } from '@chakra-ui/react'
 import { AddHomeContent, MyHomes } from '../myHomes'
-import { Header, LeftPanel, Masthead } from '../launchpad'
+import { Header, LeftPanel, Masthead } from '.'
 import {
   MyHomeMenuItems,
   UserMenuItems,
 } from '../../helpers/launchpad/MenuItems.helper'
 import { HomeCards, MyHomeFilters } from '../../helpers/myHomes'
 import { MenuItems } from '../../helpers/myHomes/HomeCard.helper'
-import RightPanel from '../launchpad/RightPanel'
+import RightPanel from './RightPanel'
 import SendCommunication from '../sendCommunication/SendCommunication'
 import CreateDocumentContent from '../sendCommunication/CreateDocumentContent'
 import { t } from 'i18next'

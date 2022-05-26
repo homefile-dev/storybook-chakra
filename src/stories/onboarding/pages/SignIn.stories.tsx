@@ -1,8 +1,8 @@
 import { Box } from '@chakra-ui/react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
-import { SignIn } from '../../components/pages/SignIn'
-import { SignInFormI } from '../../interfaces/pages/SignIn.interface'
+import { SignIn } from '../../../components/onboarding/pages/SignIn'
+import { SignInFormI } from '../../../interfaces/pages/SignIn.interface'
 
 export default {
   title: 'Pages/Onboarding',

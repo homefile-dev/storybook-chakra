@@ -27,7 +27,7 @@ export const HomeCardWithRecipent = ({
   recipients,
 }: HomeCardWithRecipentI) => {
   return (
-    <Container variant="launchpad" maxW="24rem">
+    <Container variant="launchpad" maxW="24rem" minW="20rem">
       <Center h="12rem" bg="container.neutralBlue" overflow="hidden">
         <Image
           src={image?.Location || ImageDefault}

@@ -8,9 +8,9 @@ import {
   AspectRatio,
 } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
-import Logo from '../onboarding/Logo'
-import WelcomeHeader from '../onboarding/WelcomeHeader'
-import { WelcomeI } from '../../interfaces/pages/Welcome.interface'
+import Logo from '../Logo'
+import WelcomeHeader from '../WelcomeHeader'
+import { WelcomeI } from '../../../interfaces/pages/Welcome.interface'
 
 export const Welcome = ({ handleClick, name, videoUrl = '' }: WelcomeI) => {
   const { t } = useTranslation()

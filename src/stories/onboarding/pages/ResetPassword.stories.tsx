@@ -1,8 +1,8 @@
 import { Box } from '@chakra-ui/react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
-import { ResetPassword } from '../../components/pages/ResetPassword'
-import { EmailFormI } from '../../interfaces/pages/ResetPassword.interface'
+import { ResetPassword } from '../../../components/onboarding/pages/ResetPassword'
+import { EmailFormI } from '../../../interfaces/pages/ResetPassword.interface'
 
 export default {
   title: 'Pages/Onboarding',
