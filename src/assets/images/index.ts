@@ -21,6 +21,7 @@ import PdfIcon from './pdf-icon.svg'
 import DocIcon from './doc-icon.svg'
 import ImgIcon from './img-icon.svg'
 import VideoIcon from './video-icon.svg'
+import YellowFolderUnshared from './yellow-folder-unshared.svg'
 
 export {
   Document,
@@ -46,4 +47,5 @@ export {
   DocIcon,
   ImgIcon,
   VideoIcon,
+  YellowFolderUnshared,
 }

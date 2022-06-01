@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import { t } from 'i18next'
-import { useState, useLayoutEffect } from 'react'
+import { useState, useLayoutEffect, useEffect } from 'react'
 import { TextBadgeI } from '../../interfaces/badge/TextBadge.interface'
 
 export const TextBagde = ({
@@ -10,13 +10,22 @@ export const TextBagde = ({
 }: TextBadgeI) => {
   const [textBadge, setTextBadge] = useState(text)
   const [badgeWidth, setBadgeWidth] = useState(width)
+  const singleLetterWidth = '1.4rem'
 
   useLayoutEffect(() => {
     setTimeout(() => {
       setTextBadge(text?.charAt(0))
-      setBadgeWidth('1.4rem')
+      setBadgeWidth(singleLetterWidth)
     }, 3000)
   }, [])
+
+  useEffect(() => {
+    if (textBadge && textBadge?.length > 1) {
+      setBadgeWidth(width)
+    } else {
+      setBadgeWidth(singleLetterWidth)
+    }
+  }, [textBadge])
 
   return (
     <Box

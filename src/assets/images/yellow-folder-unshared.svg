@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60.695" height="49.12" viewBox="0 0 60.695 49.12">
+  <g id="Grupo_12432" data-name="Grupo 12432" transform="translate(-830.5 -410)">
+    <g id="Folder_Component" transform="translate(831 410)">
+      <path id="União_31" data-name="União 31" d="M0,34.109V7.638H20.621L26.048,0H59.695V34.109Z" transform="translate(0 14.511)" fill="#f2c45e" stroke="rgba(0,0,0,0)" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="Caminho_8965" data-name="Caminho 8965" d="M3489.829-1775.129v9.378h-5.672v-4.7H3435.8v7.006h-.006v5.333h-5.666v-22.149h25.506l5.427,5.132Z" transform="translate(-3430.133 1780.261)" fill="#f99640"/>
+      <path id="Caminho_8966" data-name="Caminho 8966" d="M3488.93-1757.492v.092h-27.974l-5.426,7.639h-14.957v-5.333h7.039v-7.006h41.318Z" transform="translate(-3434.908 1771.911)" fill="#fff"/>
+      <path id="Caminho_8968" data-name="Caminho 8968" d="M3447.616-1762.1l-7.033,7v-7Z" transform="translate(-3434.913 1771.911)" fill="#fff"/>
+    </g>
+    <path id="Icon_awesome-lock" data-name="Icon awesome-lock" d="M15.44,8.646h-.926V5.867a5.867,5.867,0,0,0-11.734,0V8.646H1.853A1.853,1.853,0,0,0,0,10.5V17.91a1.853,1.853,0,0,0,1.853,1.853H15.44a1.853,1.853,0,0,0,1.853-1.853V10.5A1.853,1.853,0,0,0,15.44,8.646Zm-4.014,0H5.867V5.867a2.779,2.779,0,0,1,5.558,0Z" transform="translate(867 430.619)" fill="#d68843" opacity="0.596"/>
+  </g>
+</svg>

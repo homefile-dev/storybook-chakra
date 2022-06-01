@@ -17,6 +17,7 @@ export const FoldersDB: FolderI[] = [
       'Contract Approval',
       'Delay Notice',
     ],
+    isShared: true,
   },
   {
     isShared: true,
@@ -28,6 +29,10 @@ export const FoldersDB: FolderI[] = [
       'Heating & Cooling',
       'Misc',
     ],
+  },
+  {
+    type: 'Private',
+    subTypes: ['Blueprint', 'Misc'],
   },
   {
     type: 'Drawings',

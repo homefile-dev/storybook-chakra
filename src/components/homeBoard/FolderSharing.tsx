@@ -14,7 +14,12 @@ import {
 import { t } from 'i18next'
 import { FiMoreHorizontal } from 'react-icons/fi'
 import { HiOutlinePlus } from 'react-icons/hi'
-import { BlueFolder, VioletFolder, YellowFolder } from '../../assets/images'
+import {
+  BlueFolder,
+  VioletFolder,
+  YellowFolder,
+  YellowFolderUnshared,
+} from '../../assets/images'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
 import { FolderSharingI } from '../../interfaces/homeBoard/FolderSharing.interface'
 import TextBagde from '../badge/TextBadge'
@@ -77,7 +82,13 @@ export const FolderSharing = ({
                     </Flex>
                     <Flex direction="column" gap="base" align="center">
                       <Image
-                        src={isNew ? VioletFolder : BlueFolder}
+                        src={
+                          isNew
+                            ? VioletFolder
+                            : isShared
+                            ? BlueFolder
+                            : YellowFolderUnshared
+                        }
                         w="3.7rem"
                         h="auto"
                         alt={t('folderSharing.altIcon')}
