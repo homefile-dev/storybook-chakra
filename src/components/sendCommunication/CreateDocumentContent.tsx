@@ -73,7 +73,7 @@ export const CreateDocumentContent = ({
           children={
             <FooterButtons button1={ButtonsFooter.button1} button3={button3} />
           }
-          isOpen={true}
+          isOpen
         />
       </DrawerFooter>
       <RightPanel

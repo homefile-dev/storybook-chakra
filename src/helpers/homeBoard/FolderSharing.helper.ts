@@ -3,9 +3,10 @@ import { SelectItemI } from "../../interfaces/inputs/Select.interface";
 
 export const FoldersDB: FolderI[] = [
   {
-    type: 'General',
-    subTypes: ['Misc'],
     isNew: true,
+    isShared: true,
+    subTypes: ['Misc'],
+    type: 'General',
   },
   {
     type: 'Construction',
@@ -18,6 +19,7 @@ export const FoldersDB: FolderI[] = [
     ],
   },
   {
+    isShared: true,
     type: 'Appliances',
     subTypes: [
       'Refrigeration',

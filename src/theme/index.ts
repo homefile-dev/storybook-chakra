@@ -62,6 +62,7 @@ const theme = extendTheme({
       warning: '#F8AD20',
       green: '#6AB528',
       violet: '#6041B7',
+      blue: '#3770DB',
     },
     divider: '#A2B4BA',
     font: {

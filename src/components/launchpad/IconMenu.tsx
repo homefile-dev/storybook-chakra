@@ -7,7 +7,12 @@ import {
 } from '@chakra-ui/react'
 import { IconMenuI } from '../../interfaces/launchpad/IconMenu.interface'
 
-export const IconMenu = ({ icon, itemForm, menuItems }: IconMenuI) => {
+export const IconMenu = ({
+  disabled = false,
+  icon,
+  itemForm,
+  menuItems,
+}: IconMenuI) => {
   return (
     <Menu isLazy>
       <MenuButton
@@ -16,6 +21,7 @@ export const IconMenu = ({ icon, itemForm, menuItems }: IconMenuI) => {
         icon={icon}
         variant="menuIcon"
         w="fit-content"
+        disabled={disabled}
       />
       <MenuList>
         {menuItems?.map(({ handleClick, label }) => (

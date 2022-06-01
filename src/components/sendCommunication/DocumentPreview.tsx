@@ -168,7 +168,7 @@ export const DocumentPreview = ({
               button3={ButtonsFooter.cancel}
             />
           }
-          isOpen={true}
+          isOpen
         />
       </DrawerFooter>
     </DrawerContent>

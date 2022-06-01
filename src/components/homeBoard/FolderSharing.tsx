@@ -17,6 +17,7 @@ import { HiOutlinePlus } from 'react-icons/hi'
 import { BlueFolder, VioletFolder, YellowFolder } from '../../assets/images'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
 import { FolderSharingI } from '../../interfaces/homeBoard/FolderSharing.interface'
+import TextBagde from '../badge/TextBadge'
 import { ContainerHeader } from '../headers'
 import { CustomIcon } from '../icons/CustomIcon'
 import SelectInput from '../inputs/SelectInput'
@@ -53,44 +54,41 @@ export const FolderSharing = ({
       </Box>
       <Wrap py="8" px="base" spacing="base">
         {folders &&
-          folders.map(({ isNew = false, subTypes, type }, index) => {
-            return (
-              <WrapItem position="relative" key={type + index}>
-                {isNew && (
-                  <Box
-                    bg="container.violet"
-                    borderRadius="base"
-                    w="fit-content"
-                    py="0.2rem"
-                    px="0.4rem"
-                    zIndex="docked"
-                    position="absolute"
-                    right="4"
-                    top="-1"
+          folders.map(
+            ({ isNew = false, isShared = false, subTypes, type }, index) => {
+              return (
+                <WrapItem position="relative" key={type + index}>
+                  <Button
+                    variant="folder"
+                    px="base"
+                    pb="base"
+                    pt="6"
+                    onClick={() => handleFolderClick({ isNew, subTypes, type })}
                   >
-                    <Text variant="bagde">{t('folderSharing.newFolder')}</Text>
-                  </Box>
-                )}
-                <Button
-                  variant="folder"
-                  px="base"
-                  pb="base"
-                  pt="6"
-                  onClick={() => handleFolderClick({ subTypes, type })}
-                >
-                  <Flex direction="column" gap="base" align="center">
-                    <Image
-                      src={isNew ? VioletFolder : BlueFolder}
-                      w="3.7rem"
-                      h="auto"
-                      alt={t('folderSharing.altIcon')}
-                    />
-                    <Text fontSize="sm">{type}</Text>
-                  </Flex>
-                </Button>
-              </WrapItem>
-            )
-          })}
+                    <Flex gap="1" position="absolute" top="-1" left="base">
+                      {isNew && <TextBagde />}
+                      {isShared && (
+                        <TextBagde
+                          bgColor="container.blue"
+                          text={t('badges.shared')}
+                          width="3rem"
+                        />
+                      )}
+                    </Flex>
+                    <Flex direction="column" gap="base" align="center">
+                      <Image
+                        src={isNew ? VioletFolder : BlueFolder}
+                        w="3.7rem"
+                        h="auto"
+                        alt={t('folderSharing.altIcon')}
+                      />
+                      <Text fontSize="sm">{type}</Text>
+                    </Flex>
+                  </Button>
+                </WrapItem>
+              )
+            }
+          )}
       </Wrap>
     </Container>
   )

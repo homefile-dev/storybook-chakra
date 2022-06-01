@@ -31,4 +31,5 @@ export {
   HomeHeader,
   HomeCardWithRecipent,
   FolderSharing,
+  FolderDetail,
 } from './components/homeBoard'

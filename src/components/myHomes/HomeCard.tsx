@@ -1,6 +1,7 @@
 import { Image, Stack, Box, Flex, Text, Center } from '@chakra-ui/react'
 import { t } from 'i18next'
 import ImageDefault from '../../assets/images/image-default.jpg'
+import { useImage } from '../../hooks/useImage'
 import { HomeCardI } from '../../interfaces/myHomes/HomeCard.interface'
 
 export const HomeCard = ({
@@ -8,13 +9,16 @@ export const HomeCard = ({
   image,
   name,
 }: HomeCardI) => {
+  const { isWidthBiggerThanHeight } = useImage(image?.Location || '')
   return (
     <>
       <Center h="8rem" bg="container.neutralBlue" overflow="hidden">
         <Image
           src={image?.Location || ImageDefault}
           alt={`${name} ${t('images.altImage')}`}
-          width="100%"
+          width={isWidthBiggerThanHeight ? '100%' : '10rem'}
+          height="100%"
+          objectFit="cover"
         />
       </Center>
 

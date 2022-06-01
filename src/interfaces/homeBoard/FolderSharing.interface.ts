@@ -3,6 +3,7 @@ import { MenuItemI } from "../launchpad/IconMenu.interface";
 
 export interface FolderI {
   isNew?: boolean
+  isShared?: boolean
   subTypes: string[]
   type: string
 }

@@ -1,14 +1,20 @@
 {
   "addMedia": {
-    "dragDrop": "Drag and drop imagens here, or click to select files",
+    "dragDrop": "Drag and drop images here, or click to select files",
     "title": "Images",
     "addBtn": "Add images",
-    "description": "Enter a description"
+    "description": "Enter a description",
+    "errorSize": "Please select a file less than 5MB",
+    "errorType": "File type must be .png, .jpeg or .jpg"
   },
   "addRecipient": {
     "addBtn": "Add",
     "placeholder": "Enter a recipient email",
     "title": "Recipient"
+  },
+  "badges": {
+    "new": "New",
+    "shared": "Shared"
   },
   "buildingApp": {
     "subtitle": "We are connecting to public sources to pull the relevant information about your home into your homefile.",
@@ -43,7 +49,17 @@
   "folderSharing": {
     "altIcon": "Folder",
     "newFolder": "new",
-    "title": "Files"
+    "title": "Files",
+    "details": {
+      "add": "Add files",
+      "delete": "Delete Folder",
+      "dragDropMessage": "Drag and drop or click to select files",
+      "name": "Name",
+      "placeholder": "Enter a name",
+      "title": "Files",
+      "errorSize": "Please select a file less than 5MB",
+      "errorType": "File type must be .jpeg, .jpg, .pdf, .txt, .doc or .docx"
+    }
   },
   "footer": {
     "copyright": "© 2021 Homefile Inc. All Rights Reserved.",

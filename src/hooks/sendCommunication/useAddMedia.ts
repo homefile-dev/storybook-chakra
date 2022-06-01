@@ -1,10 +1,10 @@
+import { t } from 'i18next'
 import { useEffect, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import {
   ImagesI,
   MapImagesI,
 } from '../../interfaces/sendCommunication/AddMedia.interface'
-import useWindowDimensions from '../useWindowDimensions'
 
 export const useAddMedia = () => {
   const [acceptedFiles, setAcceptedFiles] = useState<ImagesI[]>([])
@@ -13,9 +13,7 @@ export const useAddMedia = () => {
   const [hasError, setHasError] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const [index, setIndex] = useState(0)
-  const { width } = useWindowDimensions()
   const acceptVideo = false
-  const isMobile = width < 700
 
   const handleMapMedia = ({ files, isLocal = true }: MapImagesI) => {
     const newFiles = files.map((file: any) => {
@@ -50,8 +48,8 @@ export const useAddMedia = () => {
       setHasError(true)
       setErrorMessage(
         rejectFiles[0].errors[0].code === 'file-too-large'
-          ? 'Please select a file less than 5MB'
-          : 'File type must be .png, .jpeg or .jpg'
+          ? t('addMedia.errorSize')
+          : t('addMedia.errorType')
       )
     },
   })
@@ -120,7 +118,6 @@ export const useAddMedia = () => {
     handleSaveDescription,
     hasError,
     index,
-    isMobile,
     removeFile,
     setAcceptedFiles,
     setIndex,

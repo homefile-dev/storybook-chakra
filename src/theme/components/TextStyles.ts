@@ -52,10 +52,15 @@ const Text = {
       fontFamily: 'secondary',
     },
     bagde: {
-      fontSize: 'xxs',
+      fontSize: '0.625rem',
       color: 'white',
       textTransform: 'uppercase',
       fontWeight: 'bold',
+    },
+    date: {
+      fontSize: '0.625rem',
+      color: 'font.secondary',
+      fontFamily: 'secondary',
     },
   },
   defaultProps: {

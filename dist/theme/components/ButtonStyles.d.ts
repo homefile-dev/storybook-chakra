@@ -140,10 +140,14 @@ declare const Button: {
             backgroundColor: string;
             border: string;
             borderRadius: string;
+            _disabled: {
+                pointerEvents: string;
+            };
             _hover: {
                 backgroundColor: string;
                 color: string;
                 boxShadow: string;
+                transform: string;
             };
             _focus: {
                 backgroundColor: string;

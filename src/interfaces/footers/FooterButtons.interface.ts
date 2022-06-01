@@ -5,7 +5,7 @@ export interface FooterButtonI {
 }
 
 export interface FooterButtonsI {
-  button1: FooterButtonI
+  button1?: FooterButtonI
   button2?: FooterButtonI | null
-  button3: FooterButtonI
+  button3?: FooterButtonI
 }

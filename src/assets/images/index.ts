@@ -17,6 +17,10 @@ import Recipient from './recipient.svg'
 import LogoCompany from './logo-company.svg'
 import BlueFolder from './blue-folder.svg'
 import VioletFolder from './violet-folder.svg'
+import PdfIcon from './pdf-icon.svg'
+import DocIcon from './doc-icon.svg'
+import ImgIcon from './img-icon.svg'
+import VideoIcon from './video-icon.svg'
 
 export {
   Document,
@@ -38,4 +42,8 @@ export {
   LogoCompany,
   BlueFolder,
   VioletFolder,
+  PdfIcon,
+  DocIcon,
+  ImgIcon,
+  VideoIcon,
 }

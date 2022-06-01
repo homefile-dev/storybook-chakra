@@ -2,8 +2,6 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import {
   Image,
   Box,
-  Center,
-  Container,
   Text,
   CloseButton,
   Modal,
@@ -21,15 +19,14 @@ import { SectionHeader } from '../headers'
 import { HomeAddress } from '../../assets/images'
 import { useAddMedia } from '../../hooks/sendCommunication/useAddMedia'
 import { t } from 'i18next'
-import { HiOutlinePlus } from 'react-icons/hi'
-import { CustomIcon } from '../icons/CustomIcon'
 import { TextInput } from '../inputs'
 import {
   AddMediaI,
   ImagesI,
 } from '../../interfaces/sendCommunication/AddMedia.interface'
 import { useEffect, useMemo, useState } from 'react'
-import { BeatLoader } from 'react-spinners'
+import { DragDropArea } from '../dragDrop/DragDropArea'
+import { DragDropLoading } from '../dragDrop/DragDropLoading'
 
 export const AddMedia = ({
   handleDelete,
@@ -54,7 +51,6 @@ export const AddMedia = ({
     handleSaveDescription,
     hasError,
     index,
-    isMobile,
     removeFile,
     setAcceptedFiles,
     setIndex,
@@ -159,32 +155,13 @@ export const AddMedia = ({
   return (
     <Stack spacing="base" w="full" bg="white" p="base" mb="6rem">
       <SectionHeader title={t('addMedia.title')} titleIcon={HomeAddress} />
-      <Container variant="dragDrop" minW="full" {...getRootProps()}>
-        <input {...getInputProps()} />
-        {isMobile ? (
-          <Button
-            leftIcon={
-              <CustomIcon type={HiOutlinePlus} color="white" size="7" />
-            }
-          >
-            {t('addMedia.addBtn')}
-          </Button>
-        ) : (
-          <Center h="10rem">
-            <Text variant="info">{t('addMedia.dragDrop')}</Text>
-          </Center>
-        )}
-      </Container>
-      {hasError && <Text variant="error">{errorMessage}</Text>}
-      <Stack gap="base">
-        {loading ? (
-          <Center h="8rem">
-            <BeatLoader color="gray" size={8} />
-          </Center>
-        ) : (
-          thumbs
-        )}
-      </Stack>
+      <DragDropArea
+        errorMessage={errorMessage}
+        getInputProps={getInputProps}
+        getRootProps={getRootProps}
+        hasError={hasError}
+      />
+      <DragDropLoading children={thumbs} isLoading={loading} />
       <Modal isOpen={isOpen} onClose={onClose} isCentered size="2xl">
         <ModalOverlay />
         <ModalContent>

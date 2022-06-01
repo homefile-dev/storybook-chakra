@@ -142,10 +142,14 @@ var Button = {
             backgroundColor: 'transparent',
             border: 'none',
             borderRadius: 'none',
+            _disabled: {
+                pointerEvents: 'none',
+            },
             _hover: {
                 backgroundColor: 'white',
                 color: 'button.primaryHover',
                 boxShadow: 'lg',
+                transform: 'scale(1.05)',
             },
             _focus: {
                 backgroundColor: 'transparent',

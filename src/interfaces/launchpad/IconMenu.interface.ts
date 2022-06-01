@@ -9,6 +9,7 @@ export interface MenuItemI {
 }
 
 export interface IconMenuI {
+  disabled?: boolean
   icon: JSX.Element
   itemForm?: MenuFormI
   menuItems?: MenuItemI[]

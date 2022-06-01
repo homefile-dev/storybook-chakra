@@ -13,6 +13,8 @@ import {
 } from '../../helpers/homeBoard/FolderSharing.helper'
 import FolderSharing from './FolderSharing'
 import FolderDetail from './FolderDetail'
+import { FolderI } from '../../interfaces/homeBoard/FolderSharing.interface'
+import { useState } from 'react'
 
 export const HomeBoard = () => {
   const homeName = 'The Edmunds'
@@ -23,13 +25,27 @@ export const HomeBoard = () => {
     onClose: onRightClose,
   } = useDisclosure()
 
+  const [selectedFolder, setSelectedFolder] = useState<FolderI>({
+    subTypes: [],
+    type: '',
+  })
+
   return (
     <Box w="full">
       <RightPanel
-        children={<FolderDetail />}
+        children={
+          <FolderDetail
+            folder={selectedFolder}
+            handleClose={onRightClose}
+            files={[]}
+            handleDelete={(id) => id}
+            handleUpload={() => {}}
+            uploading={false}
+          />
+        }
         isOpen={isRightOpen}
         onClose={onRightClose}
-        size="lg"
+        size="md"
       />
       <Stack spacing="base">
         <Masthead userName={userName} menuItems={UserMenuItems} />
@@ -62,7 +78,10 @@ export const HomeBoard = () => {
             >
               <FolderSharing
                 folders={FoldersDB}
-                handleFolderClick={onRightOpen}
+                handleFolderClick={(folder) => {
+                  setSelectedFolder(folder)
+                  onRightOpen()
+                }}
                 handleSelect={() => {}}
                 initialSelectItem={selectOptions[0]}
                 menuItems={[
