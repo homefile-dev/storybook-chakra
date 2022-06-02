@@ -1,38 +1,32 @@
-import { Button, Center, Container, Stack, Text } from '@chakra-ui/react'
+import { Center, Container, Flex, Stack, Text } from '@chakra-ui/react'
 import { t } from 'i18next'
-import { HiOutlinePlus } from 'react-icons/hi'
-import useWindowDimensions from '../../hooks/useWindowDimensions'
+import { AiOutlineCloudUpload } from 'react-icons/ai'
 import { DragDropAreaI } from '../../interfaces/dragDrop/DragDropArea.interface'
 import { CustomIcon } from '../icons/CustomIcon'
 
 export const DragDropArea = ({
-  btnText = t('addMedia.addBtn'),
   errorMessage,
   getInputProps,
   getRootProps,
   hasError = false,
-  height = '10rem',
-  message = t('addMedia.dragDrop'),
+  height = '3rem',
+  message = t('dragDrop.message'),
+  message2 = t('dragDrop.message2'),
+  variant = 'dragDropDashed',
 }: DragDropAreaI) => {
-  const { width } = useWindowDimensions()
-  const isMobile = width < 700
   return (
     <Stack spacing="base">
-      <Container variant="dragDrop" minW="full" {...getRootProps()}>
+      <Container variant={variant} minW="full" {...getRootProps()}>
         <input {...getInputProps()} />
-        {isMobile ? (
-          <Button
-            leftIcon={
-              <CustomIcon type={HiOutlinePlus} color="white" size="7" />
-            }
-          >
-            {btnText}
-          </Button>
-        ) : (
-          <Center h={height}>
-            <Text variant="info">{message}</Text>
-          </Center>
-        )}
+        <Center h={height}>
+          <Flex align="center" gap="1">
+            <CustomIcon type={AiOutlineCloudUpload} color="gray.400" size="6" />
+            <Flex align="center" gap="1">
+              {message && <Text variant="dragDrop">{message}</Text>}
+              {message2 && <Text variant="dragDropLink">{message2}</Text>}
+            </Flex>
+          </Flex>
+        </Center>
       </Container>
       {hasError && <Text variant="error">{errorMessage}</Text>}
     </Stack>

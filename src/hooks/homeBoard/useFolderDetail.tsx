@@ -14,7 +14,7 @@ export const useFolderDetail = () => {
   const fileMenu = [
     {
       label: 'Download',
-      handleClick: (form: any) => console.log(form),
+      handleClick: (form: any) => form,
     },
     {
       label: 'Share',
@@ -33,7 +33,7 @@ export const useFolderDetail = () => {
         file: isLocal ? file : undefined,
         isNew: isLocal ? true : false,
         isShare: isLocal ? false : true,
-        Location: isLocal ? URL.createObjectURL(file) : file.Location,
+        imageUrl: isLocal ? URL.createObjectURL(file) : file.Location,
         name: isLocal ? file.name : '',
         menu: fileMenu,
         type: isLocal ? '' : file.type,

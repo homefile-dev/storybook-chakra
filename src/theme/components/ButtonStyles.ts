@@ -158,7 +158,6 @@ const Button = {
       w: 'button.max',
       fontFamily: 'secondary',
       fontSize: 'md',
-      letterSpacing: 'wide',
       color: 'font.link',
       backgroundColor: 'transparent',
       border: 'none',

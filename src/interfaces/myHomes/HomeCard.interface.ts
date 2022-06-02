@@ -6,7 +6,9 @@ interface HomeAddressI {
 }
 
 export interface ImageI {
-  Location: string
+  bucketName: string
+  extension: string
+  fileName: string
 }
 
 export interface HomeCardI {

@@ -14,19 +14,24 @@ export const useAddMedia = () => {
   const [errorMessage, setErrorMessage] = useState('')
   const [index, setIndex] = useState(0)
   const acceptVideo = false
+  const { REACT_APP_STORAGE_URL: storageUrl } = process.env
+  const urlModal = `${storageUrl}/${totalFiles[index]?.bucketName}/${totalFiles[index]?.fileName}.${totalFiles[index]?.extension}`
 
   const handleMapMedia = ({ files, isLocal = true }: MapImagesI) => {
     const newFiles = files.map((file: any) => {
       return {
+        bucketName: isLocal ? '' : file?.bucketName,
         description: isLocal ? '' : file.description,
         editing: !file.description,
+        extension: isLocal ? file.type.split('/').pop() : file.extension,
+        file: isLocal ? file : undefined,
+        fileName: isLocal ? file.name.split('.')[0] : file.fileName,
         _id: isLocal ? '' : file._id,
-        Location: isLocal ? URL.createObjectURL(file) : file.Location,
+        imageUrl: isLocal ? URL.createObjectURL(file) : '',
         name: isLocal ? file.name : '',
         size: isLocal ? file.size : '',
         type: isLocal ? file.type : '',
         uploaded: isLocal ? false : true,
-        file: isLocal ? file : undefined,
       }
     })
     return newFiles
@@ -123,6 +128,8 @@ export const useAddMedia = () => {
     setIndex,
     setIsUploading,
     setTotalFiles,
+    storageUrl,
     totalFiles,
+    urlModal,
   }
 }

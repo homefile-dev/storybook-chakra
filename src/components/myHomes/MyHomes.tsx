@@ -20,7 +20,7 @@ export const MyHomes = ({
   const { width } = useWindowDimensions()
   const isSmallMobile = width < 400
   return (
-    <Container variant="launchpad" minW="full" pb="3rem">
+    <Container variant="launchpad" maxW="63rem" pb="3rem">
       <ContainerHeader
         title={t('myHomes.title')}
         titleIcon={House}
@@ -39,7 +39,7 @@ export const MyHomes = ({
       >
         {cardList &&
           cardList?.map(({ address, active, _id, image, name }) => (
-            <Container key={_id}>
+            <Container key={_id} maxW="fit-content">
               <ContainerHeader
                 menuItems={cardMenuItems}
                 itemForm={{ _id, name }}

@@ -19,7 +19,7 @@ const Template: ComponentStory<typeof HomeCardWithRecipent> = () => {
       menu={[
         {
           label: 'Edit',
-          handleClick: (form) => console.log(form),
+          handleClick: (form) => form,
         },
       ]}
       recipients={recipientsDb}

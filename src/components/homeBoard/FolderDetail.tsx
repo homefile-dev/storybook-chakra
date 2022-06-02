@@ -12,14 +12,15 @@ import {
   FolderDetailI,
   FolderFileI,
 } from '../../interfaces/homeBoard/FolderDetail.interface'
-import { PanelHeader, SectionHeader } from '../headers'
-import { BlueFolder, HomeAddress, VioletFolder } from '../../assets/images'
+import { PanelHeader } from '../headers'
+import { BlueFolder, VioletFolder } from '../../assets/images'
 import { DragDropArea } from '../dragDrop/DragDropArea'
 import { useFolderDetail } from '../../hooks/homeBoard/useFolderDetail'
 import { DragDropLoading } from '../dragDrop/DragDropLoading'
 import { FolderFile } from './FolderFile'
 import { FooterDrawer, FooterButtons } from '../footers'
 import { useState, useMemo, useEffect } from 'react'
+import { SortHeader } from './SortHeader'
 
 export const FolderDetail = ({
   files,
@@ -97,20 +98,14 @@ export const FolderDetail = ({
           title={folder?.type || ''}
         />
       </DrawerHeader>
-      <DrawerBody p="base">
-        <Stack spacing="base" w="full" bg="white" p="base" h="100%">
-          <SectionHeader
-            title={t('folderSharing.details.title')}
-            titleIcon={HomeAddress}
-          />
+      <SortHeader />
+      <DrawerBody p="0" bg="white">
+        <Stack spacing="4" w="full" p="base" h="100%">
           <DragDropArea
-            btnText={t('folderSharing.details.add')}
             errorMessage={errorMessage}
             getInputProps={getInputProps}
             getRootProps={getRootProps}
             hasError={hasError}
-            height="8rem"
-            message={t('folderSharing.details.dragDropMessage')}
           />
           <DragDropLoading children={filesMapped} isLoading={loading} />
         </Stack>

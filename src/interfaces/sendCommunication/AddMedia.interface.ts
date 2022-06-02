@@ -1,19 +1,24 @@
 export interface ImagesI {
+  bucketName: string
   description: string
   editing?: boolean
+  extension: string
+  file?: File
+  fileName: string
   _id: string
-  Location: string
+  imageUrl?: string
   name?: string
   size?: number
   type?: string
   uploaded?: boolean
-  file?: File
 }
 
 export interface ImageDBI {
+  bucketName: string
   description: string
+  extension: string
+  fileName: string
   _id: string
-  Location: string
 }
 
 export interface MapImagesI {

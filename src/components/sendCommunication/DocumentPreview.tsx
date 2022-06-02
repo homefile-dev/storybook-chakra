@@ -1,6 +1,5 @@
 import {
   Box,
-  Circle,
   Container,
   DrawerBody,
   DrawerContent,
@@ -23,6 +22,7 @@ import { CustomIcon } from '../icons/CustomIcon'
 import { FaFacebookSquare } from 'react-icons/fa'
 import { BeatLoader } from 'react-spinners'
 import BackCircleButton from '../buttons/BackCircleButton'
+const { REACT_APP_STORAGE_URL: storageUrl } = process.env
 
 export const DocumentPreview = ({
   companyInfo,
@@ -100,17 +100,23 @@ export const DocumentPreview = ({
                     )
                 )}
                 <SimpleGrid minChildWidth={imageSize} spacing="base">
-                  {images?.map(({ description, Location, _id }) => (
-                    <Image
-                      src={Location}
-                      alt={description}
-                      key={_id}
-                      minH={imageSize}
-                      maxH={imageSize}
-                      objectFit="cover"
-                      w="full"
-                    />
-                  ))}
+                  {images?.map(
+                    ({ bucketName, description, extension, fileName, _id }) => (
+                      <Image
+                        src={
+                          bucketName
+                            ? `${storageUrl}/${bucketName}/${fileName}.${extension}`
+                            : ''
+                        }
+                        alt={description}
+                        key={_id}
+                        minH={imageSize}
+                        maxH={imageSize}
+                        objectFit="cover"
+                        w="full"
+                      />
+                    )
+                  )}
                 </SimpleGrid>
                 <Stack spacing="base">
                   <Text variant="info">

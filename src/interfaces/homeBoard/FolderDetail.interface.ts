@@ -1,6 +1,5 @@
-import { MenuItemI } from "../launchpad/IconMenu.interface"
-import { ImageDBI } from "../sendCommunication/AddMedia.interface"
-import { FolderI } from "./FolderSharing.interface"
+import { MenuItemI } from '../launchpad/IconMenu.interface'
+import { FolderI } from './FolderSharing.interface'
 
 export interface FileI {
   handleClick: (id: string) => void
@@ -28,7 +27,7 @@ export interface FolderFileI {
   _id: string
   isNew?: boolean
   isShared?: boolean
-  Location: string
+  imageUrl: string
   menu?: MenuItemI[]
   name: string
   type: string

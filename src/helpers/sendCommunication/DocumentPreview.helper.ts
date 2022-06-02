@@ -4,74 +4,86 @@ const images = [
   {
     description: 'construction1',
     _id: '1',
-    Location:
-      'https://images.pexels.com/photos/2323080/pexels-photo-2323080.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    bucketName: 'homefile-images',
+    extension: 'jpeg',
+    fileName: 'test-consult.jpeg-db224d',
   },
   {
     description: 'construction2',
     _id: '2',
-    Location:
-      'https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    bucketName: 'homefile-images',
+    extension: 'jpeg',
+    fileName: 'test-consult.jpeg-db224d',
   },
   {
     description: 'construction3',
     _id: '3',
-    Location:
-      'https://images.pexels.com/photos/7931/pexels-photo-7931.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    bucketName: 'homefile-images',
+    extension: 'jpeg',
+    fileName: 'test-consult.jpeg-db224d',
   },
   {
     description: 'construction4',
     _id: '4',
-    Location:
-      'https://images.pexels.com/photos/2469/building-construction-building-site-constructing.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    bucketName: 'homefile-images',
+    extension: 'jpeg',
+    fileName: 'test-consult.jpeg-db224d',
   },
   {
     description: 'construction5',
     _id: '5',
-    Location:
-      'https://images.pexels.com/photos/6774022/pexels-photo-6774022.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    bucketName: 'homefile-images',
+    extension: 'jpeg',
+    fileName: 'test-consult.jpeg-db224d',
   },
   {
     description: 'construction6',
     _id: '6',
-    Location:
-      'https://images.pexels.com/photos/1022928/pexels-photo-1022928.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    bucketName: 'homefile-images',
+    extension: 'jpeg',
+    fileName: 'test-consult.jpeg-db224d',
   },
   {
     description: 'construction7',
     _id: '7',
-    Location:
-      'https://images.pexels.com/photos/2209529/pexels-photo-2209529.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    bucketName: 'homefile-images',
+    extension: 'jpeg',
+    fileName: 'test-consult.jpeg-db224d',
   },
   {
     description: 'construction8',
     _id: '8',
-    Location:
-      'https://images.pexels.com/photos/159375/construction-site-build-construction-work-159375.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    bucketName: 'homefile-images',
+    extension: 'jpeg',
+    fileName: 'test-consult.jpeg-db224d',
   },
   {
     description: 'construction9',
     _id: '9',
-    Location:
-      'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    bucketName: 'homefile-images',
+    extension: 'jpeg',
+    fileName: 'test-consult.jpeg-db224d',
   },
   {
     description: 'construction10',
     _id: '10',
-    Location:
-      'https://images.pexels.com/photos/3862365/pexels-photo-3862365.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    bucketName: 'homefile-images',
+    extension: 'jpeg',
+    fileName: 'test-consult.jpeg-db224d',
   },
   {
     description: 'construction11',
     _id: '11',
-    Location:
-      'https://images.pexels.com/photos/12081659/pexels-photo-12081659.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    bucketName: 'homefile-images',
+    extension: 'jpeg',
+    fileName: 'test-consult.jpeg-db224d',
   },
   {
     description: 'construction12',
     _id: '12',
-    Location:
-      'https://images.pexels.com/photos/4134179/pexels-photo-4134179.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    bucketName: 'homefile-images',
+    extension: 'jpeg',
+    fileName: 'test-consult.jpeg-db224d',
   },
 ]
 

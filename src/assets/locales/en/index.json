@@ -1,8 +1,6 @@
 {
   "addMedia": {
-    "dragDrop": "Drag and drop images here, or click to select files",
     "title": "Images",
-    "addBtn": "Add images",
     "description": "Enter a description",
     "errorSize": "Please select a file less than 5MB",
     "errorType": "File type must be .png, .jpeg or .jpg"
@@ -46,14 +44,16 @@
     },
     "title": "Create Document"
   },
+  "dragDrop": {
+    "message": "Drop files to attach or ",
+    "message2": "browse"
+  },
   "folderSharing": {
     "altIcon": "Folder",
     "newFolder": "new",
     "title": "Files",
     "details": {
-      "add": "Add files",
       "delete": "Delete Folder",
-      "dragDropMessage": "Drag and drop or click to select files",
       "name": "Name",
       "placeholder": "Enter a name",
       "title": "Files",

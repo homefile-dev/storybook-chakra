@@ -14,8 +14,8 @@ import { ImageDefault } from '../../assets/images'
 import { HomeCardWithRecipentI } from '../../interfaces/homeBoard/HomeCardWithRecipent.interface'
 import { CustomIcon } from '../icons/CustomIcon'
 import { IconMenu } from '../launchpad'
-import RecipientCard from '../sendCommunication/RecipientCard'
 import RecipientContent from '../sendCommunication/RecipientContent'
+const { REACT_APP_STORAGE_URL: storageUrl } = process.env
 
 export const HomeCardWithRecipent = ({
   address: { city, state, street, zip },
@@ -26,12 +26,15 @@ export const HomeCardWithRecipent = ({
   name,
   recipients,
 }: HomeCardWithRecipentI) => {
+  const imageUrl = `${storageUrl}/${image?.bucketName}/${image?.fileName}.${image?.extension}`
   return (
     <Container variant="launchpad" maxW="24rem" minW="20rem">
       <Center h="12rem" bg="container.neutralBlue" overflow="hidden">
         <Image
-          src={image?.Location || ImageDefault}
+          src={(image?.bucketName && imageUrl) || ImageDefault}
           alt={`${name} ${t('images.altImage')}`}
+          w="full"
+          objectFit="cover"
         />
       </Center>
       <Stack px="base" pb="base" pt="2" bg="white" spacing="1">

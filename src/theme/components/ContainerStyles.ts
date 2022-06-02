@@ -64,6 +64,17 @@ const Container = {
         backgroundColor: 'container.secondary',
       },
     },
+    dragDropDashed: {
+      backgroundColor: 'transparent',
+      border: '1px dashed',
+      borderRadius: 'none',
+      borderColor: 'container.primary',
+      transition: 'all 0.2s ease-in-out',
+      _hover: {
+        backgroundColor: 'container.secondary',
+        cursor: 'pointer',
+      },
+    },
   },
   defaultProps: {
     size: 'full',

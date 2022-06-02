@@ -8,4 +8,6 @@ export interface DragDropAreaI {
   hasError?: boolean
   height?: number | string
   message?: string
+  message2?: string
+  variant?: 'dragDrop' | 'dragDropDashed'
 }

@@ -62,6 +62,18 @@ const Text = {
       color: 'font.secondary',
       fontFamily: 'secondary',
     },
+    dragDrop: {
+      fontSize: 'md',
+      fontFamily: 'secondary',
+      color: 'gray.400',
+      fontWeight: 'semibold',
+    },
+    dragDropLink: {
+      fontSize: 'md',
+      fontFamily: 'secondary',
+      color: 'font.link',
+      fontWeight: 'semibold',
+    },
   },
   defaultProps: {
     variant: 'body',

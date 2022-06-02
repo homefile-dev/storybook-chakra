@@ -3,22 +3,24 @@ import { t } from 'i18next'
 import ImageDefault from '../../assets/images/image-default.jpg'
 import { useImage } from '../../hooks/useImage'
 import { HomeCardI } from '../../interfaces/myHomes/HomeCard.interface'
+const { REACT_APP_STORAGE_URL: storageUrl } = process.env
 
 export const HomeCard = ({
   address: { city, state, street, zip },
   image,
   name,
 }: HomeCardI) => {
-  const { isWidthBiggerThanHeight } = useImage(image?.Location || '')
+  const imageUrl = `${storageUrl}/${image?.bucketName}/${image?.fileName}.${image?.extension}`
+  const { isWidthBiggerThanHeight } = useImage(image?.bucketName && imageUrl || '')
   return (
     <>
-      <Center h="8rem" bg="container.neutralBlue" overflow="hidden">
+      <Center h="8rem" bg="container.neutralBlue" overflow="hidden" w="full">
         <Image
-          src={image?.Location || ImageDefault}
+          src={(image?.bucketName && imageUrl) || ImageDefault}
           alt={`${name} ${t('images.altImage')}`}
-          width={isWidthBiggerThanHeight ? '100%' : '10rem'}
-          height="100%"
           objectFit="cover"
+          minH={isWidthBiggerThanHeight ? '100%' : undefined}
+          minW={isWidthBiggerThanHeight ? undefined : '100%'}
         />
       </Center>
 

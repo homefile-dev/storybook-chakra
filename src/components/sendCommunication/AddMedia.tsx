@@ -56,7 +56,9 @@ export const AddMedia = ({
     setIndex,
     setIsUploading,
     setTotalFiles,
+    storageUrl,
     totalFiles,
+    urlModal,
   } = useAddMedia()
 
   const [dbImages, setDbImages] = useState<ImagesI[]>([])
@@ -79,13 +81,25 @@ export const AddMedia = ({
   }, [uploading])
 
   const thumbs = totalFiles.map((file: ImagesI, index: number) => {
+    const {
+      bucketName,
+      description,
+      editing,
+      extension,
+      fileName,
+      _id,
+      imageUrl,
+      name,
+      uploaded,
+    } = file
+    const url = `${storageUrl}/${bucketName}/${fileName}.${extension}`
     return (
-      <Flex key={file.name || file._id || index} gap="base" align="start">
+      <Flex key={name || _id || index} gap="base" align="start">
         <Box position="relative" w="8rem">
           <CloseButton
             onClick={() => {
-              removeFile(file?.name || file?._id)
-              handleDelete(file?._id)
+              removeFile(name || _id)
+              handleDelete(_id)
             }}
             disabled={uploading}
             size="sm"
@@ -110,7 +124,7 @@ export const AddMedia = ({
                   }
             }
           >
-            <Image src={file?.Location} boxSize="6rem" objectFit="cover" />
+            <Image src={imageUrl || url} boxSize="6rem" objectFit="cover" />
           </Button>
         </Box>
         <Stack w="100%">
@@ -118,49 +132,49 @@ export const AddMedia = ({
             {file.editing ? (
               <TextInput
                 handleChange={(event) =>
-                  handleDescription(file?.name || file._id, event.target.value)
+                  handleDescription(name || _id, event.target.value)
                 }
-                id={file.name || file._id}
+                id={name || _id}
                 placeholder={t('addMedia.description')}
-                value={file.description}
+                value={description}
               />
             ) : (
-              <Text w="100%">{file.description}</Text>
+              <Text w="100%">{description}</Text>
             )}
             <Button
-              disabled={!file.description || uploading}
+              disabled={!description || uploading}
               variant="secondary"
               maxW="fit-content"
               maxH="input.md"
               onClick={() => {
-                if (file.editing) {
-                  handleSaveDescription(file?.name || file?._id)
+                if (editing) {
+                  handleSaveDescription(name || _id)
                   handleEdit(file)
                 } else {
-                  handleEditDescription(file?.name || file?._id)
+                  handleEditDescription(name || _id)
                 }
               }}
             >
-              {file.editing ? 'Add' : 'Edit'}
+              {editing ? 'Add' : 'Edit'}
             </Button>
           </Flex>
-          {uploading && !file.uploaded && (
-            <Progress size="xs" isIndeterminate />
-          )}
+          {uploading && !uploaded && <Progress size="xs" isIndeterminate />}
         </Stack>
       </Flex>
     )
   })
 
   return (
-    <Stack spacing="base" w="full" bg="white" p="base" mb="6rem">
-      <SectionHeader title={t('addMedia.title')} titleIcon={HomeAddress} />
-      <DragDropArea
-        errorMessage={errorMessage}
-        getInputProps={getInputProps}
-        getRootProps={getRootProps}
-        hasError={hasError}
-      />
+    <Stack spacing="6" w="full" bg="white" p="base" mb="6rem">
+      <Stack spacing="base">
+        <SectionHeader title={t('addMedia.title')} titleIcon={HomeAddress} />
+        <DragDropArea
+          errorMessage={errorMessage}
+          getInputProps={getInputProps}
+          getRootProps={getRootProps}
+          hasError={hasError}
+        />
+      </Stack>
       <DragDropLoading children={thumbs} isLoading={loading} />
       <Modal isOpen={isOpen} onClose={onClose} isCentered size="2xl">
         <ModalOverlay />
@@ -178,7 +192,7 @@ export const AddMedia = ({
               </Button>
               <Stack>
                 <Image
-                  src={totalFiles[index]?.Location}
+                  src={totalFiles[index]?.imageUrl || urlModal}
                   boxSize="26rem"
                   objectFit="cover"
                 />

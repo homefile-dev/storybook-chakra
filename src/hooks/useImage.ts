@@ -18,7 +18,7 @@ export const useImage = (src: string) => {
 
     image.onload = handleLoad
 
-    setIsWidthBiggerThanHeight(image.width > image.height)
+    setIsWidthBiggerThanHeight(image.width >= image.height)
 
     return () => {
       image.removeEventListener('load', handleLoad)
