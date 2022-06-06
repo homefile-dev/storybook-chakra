@@ -1,22 +1,11 @@
-import { MenuItemI } from '../launchpad/IconMenu.interface'
+import { FileI } from './File.interface'
 import { FolderI } from './FolderSharing.interface'
 
-export interface FileI {
-  handleClick: (id: string) => void
-  isNew?: boolean
-  isShared?: boolean
-  menu: MenuItemI[]
-  title: string
-  type: string
-  updatedAt: string
-  uploaded?: boolean
-  uploading?: boolean
-  _id: string
-}
 export interface FolderDetailI {
-  files: FileI[]
+  files: FolderFileI[]
   folder: FolderI
   handleClose: () => void
+  handleEditFileName: (id: string) => void
   handleDelete: (id: string) => void
   handleUpload: (files: FolderFileI[]) => void
   loading?: boolean
@@ -28,7 +17,6 @@ export interface FolderFileI {
   isNew?: boolean
   isShared?: boolean
   imageUrl: string
-  menu?: MenuItemI[]
   name: string
   type: string
   file?: File
@@ -40,17 +28,4 @@ export interface MapFileI {
   files: FolderFileI[] | File[] | FileI[]
   isLocal?: boolean
 }
-// export interface ReportsI {
-//   createdAt: string
-//   home: string
-//   images: ImageDBI[]
-//   needsReview: boolean
-//   project: string
-//   reviewed: boolean
-//   status: string
-//   subType: string
-//   title: string
-//   type: string
-//   updatedAt: string
-//   _id: string
-// }
+

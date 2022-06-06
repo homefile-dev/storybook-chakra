@@ -6,10 +6,7 @@ import {
   Wrap,
   WrapItem,
   Image,
-  Stack,
   Text,
-  Badge,
-  Center,
 } from '@chakra-ui/react'
 import { t } from 'i18next'
 import { FiMoreHorizontal } from 'react-icons/fi'
@@ -26,6 +23,7 @@ import TextBagde from '../badge/TextBadge'
 import { ContainerHeader } from '../headers'
 import { CustomIcon } from '../icons/CustomIcon'
 import SelectInput from '../inputs/SelectInput'
+import { folderHeaderProxy } from '../../proxies/folderHeader.proxy'
 
 export const FolderSharing = ({
   folders,
@@ -61,6 +59,11 @@ export const FolderSharing = ({
         {folders &&
           folders.map(
             ({ isNew = false, isShared = false, subTypes, type }, index) => {
+              const icon = isNew
+                ? VioletFolder
+                : isShared
+                ? BlueFolder
+                : YellowFolderUnshared
               return (
                 <WrapItem position="relative" key={type + index}>
                   <Button
@@ -68,7 +71,11 @@ export const FolderSharing = ({
                     px="base"
                     pb="base"
                     pt="6"
-                    onClick={() => handleFolderClick({ isNew, subTypes, type })}
+                    onClick={() => {
+                      handleFolderClick({ isNew, subTypes, type })
+                      folderHeaderProxy.icon = icon
+                      folderHeaderProxy.title = type
+                    }}
                   >
                     <Flex gap="1" position="absolute" top="-1" left="base">
                       {isNew && <TextBagde />}
@@ -82,13 +89,7 @@ export const FolderSharing = ({
                     </Flex>
                     <Flex direction="column" gap="base" align="center">
                       <Image
-                        src={
-                          isNew
-                            ? VioletFolder
-                            : isShared
-                            ? BlueFolder
-                            : YellowFolderUnshared
-                        }
+                        src={icon}
                         w="3.7rem"
                         h="auto"
                         alt={t('folderSharing.altIcon')}

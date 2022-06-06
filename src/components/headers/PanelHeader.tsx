@@ -1,7 +1,6 @@
 import { Flex, IconButton, Image, Text } from '@chakra-ui/react'
 import { VscClose } from 'react-icons/vsc'
 import { t } from 'i18next'
-
 import { CustomIcon } from '../icons/CustomIcon'
 import { PanelHeaderI } from '../../interfaces/headers/PanelHeader.interface'
 
@@ -13,7 +12,7 @@ export const PanelHeader = ({
   return (
     <Flex justify="space-between" bg="white" px="4" py="2" alignItems="center">
       <Flex gap="4" w="full">
-        <Image src={icon} alt={title} w="24px" h="auto" />
+        {icon && <Image src={icon} alt={title} w="24px" h="auto" />}
         <Text fontWeight="regular">{title}</Text>
       </Flex>
       <IconButton

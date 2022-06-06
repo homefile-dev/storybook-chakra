@@ -37,6 +37,7 @@ export const HomeBoard = () => {
           <FolderDetail
             folder={selectedFolder}
             handleClose={onRightClose}
+            handleEditFileName={(id) => id}
             files={[]}
             handleDelete={(id) => id}
             handleUpload={() => {}}

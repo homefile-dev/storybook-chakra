@@ -18,7 +18,6 @@
     "@fontsource/poppins": ">=4",
     "@hassanmojab/react-modern-calendar-datepicker": ">=3",
     "axios": ">=0",
-    "framer-motion": ">=4",
     "i18next": ">=21",
     "i18next-browser-languagedetector": ">=6",
     "react": ">=16",

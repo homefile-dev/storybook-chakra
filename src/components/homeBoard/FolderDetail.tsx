@@ -1,11 +1,9 @@
 import {
-  Box,
   DrawerBody,
   DrawerContent,
   DrawerFooter,
   DrawerHeader,
   Stack,
-  Wrap,
 } from '@chakra-ui/react'
 import { t } from 'i18next'
 import {
@@ -17,15 +15,16 @@ import { BlueFolder, VioletFolder } from '../../assets/images'
 import { DragDropArea } from '../dragDrop/DragDropArea'
 import { useFolderDetail } from '../../hooks/homeBoard/useFolderDetail'
 import { DragDropLoading } from '../dragDrop/DragDropLoading'
-import { FolderFile } from './FolderFile'
 import { FooterDrawer, FooterButtons } from '../footers'
 import { useState, useMemo, useEffect } from 'react'
 import { SortHeader } from './SortHeader'
+import { Files } from './Files'
 
 export const FolderDetail = ({
   files,
   folder,
   handleClose,
+  handleEditFileName,
   handleDelete,
   handleUpload = () => {},
   loading,
@@ -62,33 +61,6 @@ export const FolderDetail = ({
     !uploading && setAcceptedFiles([])
   }, [uploading])
 
-  const filesMapped = (
-    <Wrap>
-      {acceptedFiles?.map(
-        (
-          { isNew, isShared, name, menu, type, uploaded, updatedAt, _id },
-          index
-        ) => {
-          return (
-            <Box key={_id + index}>
-              <FolderFile
-                handleClick={(id) => id}
-                isNew={isNew}
-                isShared={isShared}
-                menu={menu || []}
-                title={name}
-                type={name.split('.').pop() || type}
-                updatedAt={updatedAt}
-                uploaded={uploaded}
-                uploading={uploading}
-                _id={_id}
-              />
-            </Box>
-          )
-        }
-      )}
-    </Wrap>
-  )
   return (
     <DrawerContent bg="container.tertiary">
       <DrawerHeader p="0">
@@ -107,7 +79,15 @@ export const FolderDetail = ({
             getRootProps={getRootProps}
             hasError={hasError}
           />
-          <DragDropLoading children={filesMapped} isLoading={loading} />
+          <DragDropLoading
+            children={
+              <Files
+                files={acceptedFiles}
+                handleEditFileName={handleEditFileName}
+              />
+            }
+            isLoading={loading}
+          />
         </Stack>
       </DrawerBody>
       <DrawerFooter p="0" zIndex="dropdown">

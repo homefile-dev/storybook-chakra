@@ -11,31 +11,15 @@ export const useFolderDetail = () => {
   const [totalFiles, setTotalFiles] = useState<FolderFileI[]>([])
   const [isUploading, setIsUploading] = useState(false)
 
-  const fileMenu = [
-    {
-      label: 'Download',
-      handleClick: (form: any) => form,
-    },
-    {
-      label: 'Share',
-      handleClick: (form: any) => {},
-    },
-    {
-      label: 'Delete',
-      handleClick: (form: any) => {},
-    },
-  ]
-
   const handleMapFile = ({ files, isLocal = true }: MapFileI) => {
     const newFiles = files.map((file: any) => {
       return {
-        _id: isLocal ? '' : file._id,
+        _id: isLocal ? file.name : file._id,
         file: isLocal ? file : undefined,
         isNew: isLocal ? true : false,
         isShare: isLocal ? false : true,
         imageUrl: isLocal ? URL.createObjectURL(file) : file.Location,
         name: isLocal ? file.name : '',
-        menu: fileMenu,
         type: isLocal ? '' : file.type,
         updatedAt: isLocal ? formatDate(file.lastModified) : file.updatedAt,
         uploaded: isLocal ? false : true,

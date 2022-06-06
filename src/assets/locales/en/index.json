@@ -50,16 +50,28 @@
   },
   "folderSharing": {
     "altIcon": "Folder",
-    "newFolder": "new",
-    "title": "Files",
     "details": {
+      "added": "Added",
+      "addedBy": "Added By",
       "delete": "Delete Folder",
       "name": "Name",
       "placeholder": "Enter a name",
       "title": "Files",
       "errorSize": "Please select a file less than 5MB",
       "errorType": "File type must be .jpeg, .jpg, .pdf, .txt, .doc or .docx"
-    }
+    },
+    "menu": {
+      "delete": "Delete",
+      "details": "View Details",
+      "download": "Download",
+      "share": "Share"
+    },
+    "tabs": {
+      "tab1": "Details",
+      "tab2": "Shared with"
+    },
+    "newFolder": "new",
+    "title": "Files"
   },
   "footer": {
     "copyright": "© 2021 Homefile Inc. All Rights Reserved.",
