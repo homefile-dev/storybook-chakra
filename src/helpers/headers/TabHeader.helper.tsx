@@ -31,7 +31,7 @@ const AddMediaContent = () => {
   )
 }
 
-const AddRecipientContent = () => {
+export const AddRecipientContent = () => {
   const [recipients, setRecipients] = useState(recipientsDb)
   return (
     <RecipientTab

@@ -1,18 +1,18 @@
 import { Box, Flex, Stack, useDisclosure } from '@chakra-ui/react'
 import { UserMenuItems } from '../../helpers/launchpad/MenuItems.helper'
 import { HomeCards } from '../../helpers/myHomes'
-import SendCommunication from '../sendCommunication/SendCommunication'
-import RightPanel from '../launchpad/RightPanel'
+import { SendCommunication } from '../sendCommunication/SendCommunication'
+import { RightPanel } from '../launchpad/RightPanel'
 import { Masthead } from '../launchpad'
-import HomeHeader from './HomeHeader'
-import HomeCardWithRecipent from './HomeCardWithRecipent'
+import { HomeHeader } from './HomeHeader'
+import { HomeCardWithRecipent } from './HomeCardWithRecipent'
 import { recipientsDb } from '../../helpers/sendCommunication/AddRecipient.helper'
 import {
   FoldersDB,
   selectOptions,
 } from '../../helpers/homeBoard/FolderSharing.helper'
-import FolderSharing from './FolderSharing'
-import FolderDetail from './FolderDetail'
+import { FolderSharing } from './FolderSharing'
+import { FolderDetail } from './FolderDetail'
 import { FolderI } from '../../interfaces/homeBoard/FolderSharing.interface'
 import { useState } from 'react'
 
@@ -36,11 +36,41 @@ export const HomeBoard = () => {
         children={
           <FolderDetail
             folder={selectedFolder}
+            handleAddRecipient={(email) => {
+              console.log('this is the email added', email)
+            }}
             handleClose={onRightClose}
+            handleDeleteRecipient={(email) => {
+              console.log('this is the email deleted', email)
+            }}
+            handleEditDescription={(description) => {}}
             handleEditFileName={(id) => id}
-            files={[]}
-            handleDelete={(id) => id}
+            files={[
+              {
+                description: 'Construction pdf',
+                _id: '1',
+                isNew: true,
+                isShared: true,
+                imageUrl: '',
+                name: 'V28',
+                recipients: [
+                  {
+                    firstName: 'John',
+                    lastName: 'Doe',
+                    email: 'user@user.com',
+                    phone: '32329099',
+                  },
+                ],
+                type: 'pdf',
+                updatedAt: '2022-06-03T18:55:56.793Z',
+              },
+            ]}
+            handleDelete={(id) => {
+              onRightClose()
+            }}
             handleUpload={() => {}}
+            loading={false}
+            panelSize="md"
             uploading={false}
           />
         }

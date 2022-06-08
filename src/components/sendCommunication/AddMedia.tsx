@@ -143,9 +143,8 @@ export const AddMedia = ({
             )}
             <Button
               disabled={!description || uploading}
-              variant="secondary"
-              maxW="fit-content"
-              maxH="input.md"
+              variant="tertiary"
+              h="input.md"
               onClick={() => {
                 if (editing) {
                   handleSaveDescription(name || _id)

@@ -74,6 +74,32 @@ const Button = {
         pointerEvents: 'none',
       },
     },
+    tertiary: {
+      fontSize: 'md',
+      w: 'fit-content',
+      px: '1rem',
+      fontWeight: 'regular',
+      borderRadius: 'none',
+      boxShadow: 'base',
+      backgroundColor: 'white',
+      border: '1px',
+      borderColor: 'button.primary',
+      color: 'button.primary',
+      _active: {
+        backgroundColor: 'button.tertiaryHover',
+        borderRadius: 'lg',
+        fontWeight: 'medium',
+        boxShadow: 'none',
+      },
+      _hover: {
+        backgroundColor: 'button.secondaryHover',
+        boxShadow: 'lg',
+      },
+      _disabled: {
+        filter: 'grayscale(100%)',
+        pointerEvents: 'none',
+      },
+    },
     iconOutlined: {
       maxW: '3rem',
       borderRadius: 'sm',

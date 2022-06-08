@@ -7,15 +7,33 @@ import { useAddRecipient } from '../../hooks/sendCommunication/useAddRecipient'
 import { RecipientTabI } from '../../interfaces/sendCommunication/AddRecipient.interface'
 import { CustomIcon } from '../icons/CustomIcon'
 import { TextInput } from '../inputs'
-import RecipientCard from './RecipientCard'
+import { RecipientCard } from './RecipientCard'
+import { useEffect } from 'react'
 
 export const RecipientTab = ({
   handleAdd,
   handleRemove,
+  hasTitle,
   loading,
-  recipients,
+  recipients: recipientsDB,
 }: RecipientTabI) => {
-  const { email, handleChange, isError, setEmail, setIsError } = useAddRecipient()
+  const {
+    email,
+    errorMessage,
+    handleAddLocal,
+    handleChange,
+    hasError,
+    handleRemoveLocal,
+    isUniqueEmail,
+    recipients,
+    setEmail,
+    setHasError,
+    setRecipients,
+  } = useAddRecipient()
+
+  useEffect(() => {
+    setRecipients(recipientsDB || [])
+  }, [recipientsDB])
 
   return (
     <Box m="-0.8125rem">
@@ -23,53 +41,48 @@ export const RecipientTab = ({
         <Flex w="100%" gap="base">
           <Box w="20rem">
             <TextInput
-              errorMessage={t('forms.errorEmail')}
+              errorMessage={errorMessage || t('forms.errorEmail')}
               handleChange={(event) => handleChange(event)}
-              hasError={isError}
+              hasError={hasError}
               id="email"
               placeholder={t('addRecipient.placeholder')}
               value={email}
             />
           </Box>
           <Button
-            variant="secondary"
-            maxW="fit-content"
-            maxH="input.md"
+            variant="tertiary"
             onClick={() => {
-              if (isValidEmail(email)) {
+              if (isValidEmail(email) && isUniqueEmail(email)) {
                 handleAdd(email)
+                handleAddLocal(email)
                 setEmail('')
               } else {
-                setIsError(true)
+                setHasError(true)
               }
             }}
-            bg="white"
             disabled={!email}
           >
             {t('addRecipient.addBtn')}
           </Button>
         </Flex>
       </Box>
-      {loading && (
+      {loading ? (
         <Center h="full" pb="8rem">
           <BeatLoader color="gray" size={8} />
         </Center>
-      )}
-      {recipients && !loading && (
+      ) : (
         <Stack
-          bg="container.neutralBlue"
+          bg={recipients?.length ? 'container.neutralBlue' : 'transparent'}
           p="base"
           minH="full"
           w="100%"
           spacing="base"
         >
-          {recipients.map(({ email, firstName, lastName, phone }) => (
-            <Flex align="center" gap="2" key={email}>
+          {recipients?.map(({ email, firstName, lastName, phone }, index) => (
+            <Flex align="center" gap="2" key={email + index}>
               <RecipientCard
-                email={email}
-                firstName={firstName}
-                lastName={lastName}
-                phone={phone}
+                hasTitle={hasTitle}
+                recipient={{ email, firstName, lastName, phone }}
               />
               <Center>
                 <IconButton
@@ -80,6 +93,7 @@ export const RecipientTab = ({
                   icon={<CustomIcon type={AiOutlineMinus} />}
                   onClick={() => {
                     handleRemove(email)
+                    handleRemoveLocal(index)
                   }}
                 />
               </Center>

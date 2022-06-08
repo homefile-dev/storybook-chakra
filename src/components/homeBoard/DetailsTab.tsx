@@ -1,14 +1,19 @@
 import { Stack, Flex, Text, Button, Image, Box } from '@chakra-ui/react'
 import { t } from 'i18next'
 import { useState } from 'react'
-import { FileDetailI } from '../../interfaces/homeBoard/File.interface'
 import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
 import { TextInput } from '../inputs'
-import { folderHeaderProxy } from '../../proxies/folderHeader.proxy';
+import { folderHeaderProxy } from '../../proxies/folderHeader.proxy'
 
-export const DetailsTab = ({ handleEditFileName }: FileDetailI) => {
-  const { addedAt, addedBy, icon, name, _id } = fileDetailProxy
+interface DetailsTab {
+  handleEditFileName: (id: string) => void
+}
+
+export const DetailsTab = ({ handleEditFileName }: DetailsTab) => {
+  const { addedAt, addedBy, description: descriptionProxy, icon, name, _id } = fileDetailProxy
   const [fileName, setFileName] = useState(name)
+  const [description, setDescription] = useState(descriptionProxy)
+  const [editing, setEditing] = useState(false)
 
   return (
     <Stack spacing="base">
@@ -24,9 +29,8 @@ export const DetailsTab = ({ handleEditFileName }: FileDetailI) => {
           value={fileName}
         />
         <Button
-          variant="secondaryFooter"
-          maxW="fit-content"
-          maxH="input.md"
+          variant="tertiary"
+          h="input.md"
           onClick={() => {
             handleEditFileName(_id)
             folderHeaderProxy.handleCloseButton()
@@ -57,6 +61,41 @@ export const DetailsTab = ({ handleEditFileName }: FileDetailI) => {
           <Text variant="info" color="font.linkHover" flex="0.8">
             {addedBy}
           </Text>
+        </Flex>
+        <Flex
+          borderBottom="1px solid"
+          borderColor="input.border"
+          py="base"
+          px="2"
+        >
+          <Text variant="info" flex="0.2">
+            {t('folderSharing.details.description')}
+          </Text>
+          <Flex w="100%" gap="base" flex="0.8">
+            {editing ? (
+              <TextInput
+                handleChange={(event) => {
+                  setDescription(event.target.value)
+                  fileDetailProxy.description = event.target.value
+                }}
+                id={name || _id}
+                placeholder={t('addMedia.description')}
+                value={description || ''}
+              />
+            ) : (
+              <Text w="100%" variant="info">
+                {description}
+              </Text>
+            )}
+            <Button
+              disabled={!description}
+              variant="tertiary"
+              h="input.md"
+              onClick={() => setEditing(!editing)}
+            >
+              {editing ? 'Add' : 'Edit'}
+            </Button>
+          </Flex>
         </Flex>
       </Box>
     </Stack>

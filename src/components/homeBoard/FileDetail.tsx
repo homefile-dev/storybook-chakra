@@ -14,8 +14,11 @@ import { t } from 'i18next'
 import { DetailsTab } from './DetailsTab'
 import { useSnapshot } from 'valtio'
 import { FileDetailI } from '../../interfaces/homeBoard/File.interface'
+import { RecipientTab } from '../sendCommunication'
+import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy'
 
-export const FileDetail = ({ handleEditFileName }: FileDetailI) => {
+export const FileDetail = ({ handleAddRecipient,  handleEditFileName, handleDeleteRecipient }: FileDetailI) => {
+  const { recipients } = fileRecipientProxy
   const tabs = [
     {
       label: t('folderSharing.tabs.tab1'),
@@ -23,7 +26,15 @@ export const FileDetail = ({ handleEditFileName }: FileDetailI) => {
     },
     {
       label: t('folderSharing.tabs.tab2'),
-      component: <div>hello</div>,
+      component: (
+        <RecipientTab
+          handleAdd={handleAddRecipient}
+          handleRemove={handleDeleteRecipient}
+          hasTitle={false}
+          loading={false}
+          recipients={recipients}
+        />
+      ),
     },
   ]
   const { handleCloseButton, icon, title } = folderHeaderProxy

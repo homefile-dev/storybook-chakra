@@ -11,7 +11,7 @@ import {
   FolderFileI,
 } from '../../interfaces/homeBoard/FolderDetail.interface'
 import { PanelHeader } from '../headers'
-import { BlueFolder, VioletFolder } from '../../assets/images'
+import { BlueFolder, VioletFolder, YellowFolder } from '../../assets/images'
 import { DragDropArea } from '../dragDrop/DragDropArea'
 import { useFolderDetail } from '../../hooks/homeBoard/useFolderDetail'
 import { DragDropLoading } from '../dragDrop/DragDropLoading'
@@ -19,15 +19,20 @@ import { FooterDrawer, FooterButtons } from '../footers'
 import { useState, useMemo, useEffect } from 'react'
 import { SortHeader } from './SortHeader'
 import { Files } from './Files'
+import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy'
+import { useSnapshot } from 'valtio'
 
 export const FolderDetail = ({
   files,
   folder,
   handleClose,
   handleEditFileName,
+  handleAddRecipient,
   handleDelete,
+  handleDeleteRecipient,
   handleUpload = () => {},
   loading,
+  panelSize = 'md',
   uploading,
 }: FolderDetailI) => {
   const {
@@ -40,6 +45,7 @@ export const FolderDetail = ({
     setAcceptedFiles,
     setTotalFiles,
     setIsUploading,
+    totalFiles,
   } = useFolderDetail()
 
   const [dbFiles, setDbFiles] = useState<FolderFileI[]>([])
@@ -61,12 +67,19 @@ export const FolderDetail = ({
     !uploading && setAcceptedFiles([])
   }, [uploading])
 
+
   return (
     <DrawerContent bg="container.tertiary">
       <DrawerHeader p="0">
         <PanelHeader
           handleCloseButton={handleClose}
-          icon={folder?.isNew ? VioletFolder : BlueFolder}
+          icon={
+            folder?.isNew
+              ? VioletFolder
+              : folder?.isShared
+              ? BlueFolder
+              : YellowFolder
+          }
           title={folder?.type || ''}
         />
       </DrawerHeader>
@@ -82,8 +95,12 @@ export const FolderDetail = ({
           <DragDropLoading
             children={
               <Files
-                files={acceptedFiles}
+                files={totalFiles}
+                handleAddRecipient={handleAddRecipient}
                 handleEditFileName={handleEditFileName}
+                handleDeleteRecipient={handleDeleteRecipient}
+                panelSize={panelSize}
+                uploading={uploading}
               />
             }
             isLoading={loading}

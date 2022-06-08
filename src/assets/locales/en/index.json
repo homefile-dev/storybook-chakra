@@ -7,6 +7,7 @@
   },
   "addRecipient": {
     "addBtn": "Add",
+    "errorDuplicate": "This email address is already in the list",
     "placeholder": "Enter a recipient email",
     "title": "Recipient"
   },
@@ -54,8 +55,10 @@
       "added": "Added",
       "addedBy": "Added By",
       "delete": "Delete Folder",
+      "description": "Description",
       "name": "Name",
       "placeholder": "Enter a name",
+      "placeholderDescription": "Enter a description",
       "title": "Files",
       "errorSize": "Please select a file less than 5MB",
       "errorType": "File type must be .jpeg, .jpg, .pdf, .txt, .doc or .docx"

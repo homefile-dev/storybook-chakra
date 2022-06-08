@@ -14,14 +14,18 @@ export const useFolderDetail = () => {
   const handleMapFile = ({ files, isLocal = true }: MapFileI) => {
     const newFiles = files.map((file: any) => {
       return {
-        _id: isLocal ? file.name : file._id,
+        description: isLocal ? '' : file.description,
         file: isLocal ? file : undefined,
-        isNew: isLocal ? true : false,
-        isShare: isLocal ? false : true,
+        _id: isLocal ? file.name : file._id,
+        isNew: isLocal ? true : file.isNew || false,
+        isShare: isLocal ? false : file.isShared,
         imageUrl: isLocal ? URL.createObjectURL(file) : file.Location,
-        name: isLocal ? file.name : '',
-        type: isLocal ? '' : file.type,
-        updatedAt: isLocal ? formatDate(file.lastModified) : file.updatedAt,
+        name: isLocal ? file.name : file.name,
+        type: isLocal ? file.name.split('.').pop() : file.type,
+        recipients: isLocal ? [] : file.recipients,
+        updatedAt: isLocal
+          ? formatDate(file.lastModified)
+          : formatDate(file.updatedAt),
         uploaded: isLocal ? false : true,
       }
     })
@@ -33,7 +37,7 @@ export const useFolderDetail = () => {
       'image/png': ['.jpeg', '.jpg', '.pdf', '.txt', '.doc', '.docx'],
     },
     disabled: isUploading,
-    maxSize: 5000000,
+    maxSize: 25000000,
     onDrop: (uploadedFiles) => {
       const selectedFiles = handleMapFile({ files: uploadedFiles })
       setAcceptedFiles(selectedFiles)
@@ -78,5 +82,6 @@ export const useFolderDetail = () => {
     setAcceptedFiles,
     setTotalFiles,
     setIsUploading,
+    totalFiles,
   }
 }

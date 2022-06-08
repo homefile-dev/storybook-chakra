@@ -47,6 +47,7 @@ export const TextBagde = ({
       textColor="white"
       fontSize="0.625rem"
       fontWeight="bold"
+      letterSpacing="0"
       textTransform="uppercase"
       _hover={{
         w: width,

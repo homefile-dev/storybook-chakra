@@ -8,6 +8,7 @@ export interface RecipientI {
 export interface RecipientTabI {
   handleAdd: (email: string) => void
   handleRemove: (email: string) => void
-  loading: boolean
+  hasTitle?: boolean
+  loading?: boolean
   recipients?: RecipientI[]
 }

@@ -6,14 +6,25 @@ import { folderHeaderProxy } from '../../proxies/folderHeader.proxy'
 import { t } from 'i18next'
 import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
 import { FolderFileI } from '../../interfaces/homeBoard/FolderDetail.interface'
+import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy';
 
 interface FilesI {
   files: FolderFileI[]
+  handleAddRecipient: (email: string) => void
   handleEditFileName: (id: string) => void
+  handleDeleteRecipient: (email: string) => void
+  panelSize?: string
   uploading?: boolean
 }
 
-export const Files = ({ files, handleEditFileName, uploading }: FilesI) => {
+export const Files = ({
+  files,
+  handleAddRecipient,
+  handleEditFileName,
+  handleDeleteRecipient,
+  panelSize,
+  uploading,
+}: FilesI) => {
   const {
     isOpen: isRightOpen,
     onOpen: onRightOpen,
@@ -38,8 +49,23 @@ export const Files = ({ files, handleEditFileName, uploading }: FilesI) => {
   return (
     <Wrap>
       {files?.map(
-        ({ isNew, isShared, name, type, uploaded, updatedAt, _id }, index) => {
+        (
+          {
+            description,
+            _id,
+            isNew,
+            isShared,
+            name,
+            recipients,
+            type,
+            uploaded,
+            updatedAt,
+          },
+          index
+        ) => {
           const titleFormatted = name.split('.')[0]
+          fileRecipientProxy.recipients = recipients
+          fileDetailProxy.description = description
           return (
             <Box key={_id + index}>
               <File
@@ -51,7 +77,7 @@ export const Files = ({ files, handleEditFileName, uploading }: FilesI) => {
                 isShared={isShared}
                 menu={fileMenu}
                 title={titleFormatted}
-                type={name.split('.').pop() || type}
+                type={type}
                 updatedAt={updatedAt}
                 uploaded={uploaded}
                 uploading={uploading}
@@ -62,10 +88,16 @@ export const Files = ({ files, handleEditFileName, uploading }: FilesI) => {
         }
       )}
       <RightPanel
-        children={<FileDetail handleEditFileName={handleEditFileName} />}
+        children={
+          <FileDetail
+            handleEditFileName={handleEditFileName}
+            handleAddRecipient={handleAddRecipient}
+            handleDeleteRecipient={handleDeleteRecipient}
+          />
+        }
         isOpen={isRightOpen}
         onClose={onRightClose}
-        size="md"
+        size={panelSize}
       />
     </Wrap>
   )

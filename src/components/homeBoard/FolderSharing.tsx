@@ -83,7 +83,7 @@ export const FolderSharing = ({
                         <TextBagde
                           bgColor="container.blue"
                           text={t('badges.shared')}
-                          width="3rem"
+                          width="3.4rem"
                         />
                       )}
                     </Flex>

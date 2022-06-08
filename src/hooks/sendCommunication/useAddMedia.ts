@@ -43,7 +43,7 @@ export const useAddMedia = () => {
         ? ['.jpeg', '.jpg', '.mp4', '.webm']
         : ['.jpeg', '.jpg'],
     },
-    maxSize: 5000000,
+    maxSize: 25000000,
     disabled: isUploading,
     onDrop: (uploadedFiles) => {
       const selectedFiles = handleMapMedia({ files: uploadedFiles })

@@ -15,6 +15,7 @@ const theme = extendTheme({
         fontFamily: 'primary',
         margin: 0,
         padding: 0,
+        webkitFontSmoothing: 'antialiased',
       },
       a: {
         color: 'font.link',
