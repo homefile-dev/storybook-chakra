@@ -3,17 +3,26 @@ import { t } from 'i18next'
 import { useState } from 'react'
 import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
 import { TextInput } from '../inputs'
-import { folderHeaderProxy } from '../../proxies/folderHeader.proxy'
 
 interface DetailsTab {
+  handleEditDescription: (id: string) => void
   handleEditFileName: (id: string) => void
 }
 
-export const DetailsTab = ({ handleEditFileName }: DetailsTab) => {
-  const { addedAt, addedBy, description: descriptionProxy, icon, name, _id } = fileDetailProxy
+export const DetailsTab = ({
+  handleEditDescription,
+  handleEditFileName,
+}: DetailsTab) => {
+  const {
+    addedAt,
+    addedBy,
+    description: descriptionProxy,
+    icon,
+    name,
+    _id,
+  } = fileDetailProxy
   const [fileName, setFileName] = useState(name)
   const [description, setDescription] = useState(descriptionProxy)
-  const [editing, setEditing] = useState(false)
 
   return (
     <Stack spacing="base">
@@ -31,10 +40,7 @@ export const DetailsTab = ({ handleEditFileName }: DetailsTab) => {
         <Button
           variant="tertiary"
           h="input.md"
-          onClick={() => {
-            handleEditFileName(_id)
-            folderHeaderProxy.handleCloseButton()
-          }}
+          onClick={() => fileName && handleEditFileName(_id)}
           disabled={fileName.length === 0}
         >
           {t('createDocument.buttons.save')}
@@ -66,34 +72,29 @@ export const DetailsTab = ({ handleEditFileName }: DetailsTab) => {
           borderBottom="1px solid"
           borderColor="input.border"
           py="base"
-          px="2"
+          pl="2"
+          align="center"
         >
           <Text variant="info" flex="0.2">
             {t('folderSharing.details.description')}
           </Text>
-          <Flex w="100%" gap="base" flex="0.8">
-            {editing ? (
-              <TextInput
-                handleChange={(event) => {
-                  setDescription(event.target.value)
-                  fileDetailProxy.description = event.target.value
-                }}
-                id={name || _id}
-                placeholder={t('addMedia.description')}
-                value={description || ''}
-              />
-            ) : (
-              <Text w="100%" variant="info">
-                {description}
-              </Text>
-            )}
+          <Flex gap="base" flex="0.8">
+            <TextInput
+              handleChange={(event) => {
+                setDescription(event.target.value)
+                fileDetailProxy.description = event.target.value
+              }}
+              id={name || _id}
+              placeholder={t('addMedia.description')}
+              value={description || ''}
+            />
             <Button
               disabled={!description}
               variant="tertiary"
               h="input.md"
-              onClick={() => setEditing(!editing)}
+              onClick={() => description && handleEditDescription(_id)}
             >
-              {editing ? 'Add' : 'Edit'}
+              {t('createDocument.buttons.save')}
             </Button>
           </Flex>
         </Flex>

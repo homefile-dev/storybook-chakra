@@ -2,6 +2,7 @@ import { MenuItemI } from "../launchpad/IconMenu.interface"
 
 export interface FileDetailI {
   handleAddRecipient: (email: string) => void
+  handleEditDescription: (id: string) => void
   handleEditFileName: (id: string) => void
   handleDeleteRecipient: (email: string) => void
 }

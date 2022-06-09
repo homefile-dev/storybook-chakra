@@ -1,5 +1,7 @@
 {
   "addMedia": {
+    "addBtn": "Add",
+    "editBtn": "Edit",
     "title": "Images",
     "description": "Enter a description",
     "errorSize": "Please select a file less than 5MB",

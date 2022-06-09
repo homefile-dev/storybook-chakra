@@ -19,13 +19,12 @@ import { FooterDrawer, FooterButtons } from '../footers'
 import { useState, useMemo, useEffect } from 'react'
 import { SortHeader } from './SortHeader'
 import { Files } from './Files'
-import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy'
-import { useSnapshot } from 'valtio'
 
 export const FolderDetail = ({
   files,
   folder,
   handleClose,
+  handleEditDescription,
   handleEditFileName,
   handleAddRecipient,
   handleDelete,
@@ -97,6 +96,7 @@ export const FolderDetail = ({
               <Files
                 files={totalFiles}
                 handleAddRecipient={handleAddRecipient}
+                handleEditDescription={handleEditDescription}
                 handleEditFileName={handleEditFileName}
                 handleDeleteRecipient={handleDeleteRecipient}
                 panelSize={panelSize}

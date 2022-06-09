@@ -17,12 +17,22 @@ import { FileDetailI } from '../../interfaces/homeBoard/File.interface'
 import { RecipientTab } from '../sendCommunication'
 import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy'
 
-export const FileDetail = ({ handleAddRecipient,  handleEditFileName, handleDeleteRecipient }: FileDetailI) => {
+export const FileDetail = ({
+  handleAddRecipient,
+  handleEditDescription,
+  handleEditFileName,
+  handleDeleteRecipient,
+}: FileDetailI) => {
   const { recipients } = fileRecipientProxy
   const tabs = [
     {
       label: t('folderSharing.tabs.tab1'),
-      component: <DetailsTab handleEditFileName={handleEditFileName} />,
+      component: (
+        <DetailsTab
+          handleEditDescription={handleEditDescription}
+          handleEditFileName={handleEditFileName}
+        />
+      ),
     },
     {
       label: t('folderSharing.tabs.tab2'),

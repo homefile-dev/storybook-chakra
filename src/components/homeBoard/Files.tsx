@@ -6,11 +6,12 @@ import { folderHeaderProxy } from '../../proxies/folderHeader.proxy'
 import { t } from 'i18next'
 import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
 import { FolderFileI } from '../../interfaces/homeBoard/FolderDetail.interface'
-import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy';
+import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy'
 
 interface FilesI {
   files: FolderFileI[]
   handleAddRecipient: (email: string) => void
+  handleEditDescription: (id: string) => void
   handleEditFileName: (id: string) => void
   handleDeleteRecipient: (email: string) => void
   panelSize?: string
@@ -20,6 +21,7 @@ interface FilesI {
 export const Files = ({
   files,
   handleAddRecipient,
+  handleEditDescription,
   handleEditFileName,
   handleDeleteRecipient,
   panelSize,
@@ -90,8 +92,9 @@ export const Files = ({
       <RightPanel
         children={
           <FileDetail
-            handleEditFileName={handleEditFileName}
             handleAddRecipient={handleAddRecipient}
+            handleEditDescription={handleEditDescription}
+            handleEditFileName={handleEditFileName}
             handleDeleteRecipient={handleDeleteRecipient}
           />
         }

@@ -10,7 +10,6 @@ import {
 } from '@chakra-ui/react'
 import { t } from 'i18next'
 import { FiMoreHorizontal } from 'react-icons/fi'
-import { HiOutlinePlus } from 'react-icons/hi'
 import {
   BlueFolder,
   VioletFolder,
@@ -19,11 +18,12 @@ import {
 } from '../../assets/images'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
 import { FolderSharingI } from '../../interfaces/homeBoard/FolderSharing.interface'
-import TextBagde from '../badge/TextBadge'
+import { TextBagde } from '../badge/TextBadge'
 import { ContainerHeader } from '../headers'
 import { CustomIcon } from '../icons/CustomIcon'
-import SelectInput from '../inputs/SelectInput'
+import { SelectInput } from '../inputs/SelectInput'
 import { folderHeaderProxy } from '../../proxies/folderHeader.proxy'
+import { LeftButtonAnimated } from '../buttons/LeftButtonAnimated'
 
 export const FolderSharing = ({
   folders,
@@ -50,9 +50,12 @@ export const FolderSharing = ({
             initailValue={initialSelectItem.name}
             items={selectItems}
           />
-          <Button maxW="4rem" h="2rem" variant="leftRounded">
-            <CustomIcon type={HiOutlinePlus} color="white" size="7" />
-          </Button>
+          <LeftButtonAnimated
+            handleClick={() => {
+              //TODO: implement handle click
+            }}
+            label="Folder"
+          />
         </Flex>
       </Box>
       <Wrap py="8" px="base" spacing="base">

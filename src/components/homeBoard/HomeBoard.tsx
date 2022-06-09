@@ -8,6 +8,7 @@ import { HomeHeader } from './HomeHeader'
 import { HomeCardWithRecipent } from './HomeCardWithRecipent'
 import { recipientsDb } from '../../helpers/sendCommunication/AddRecipient.helper'
 import {
+  fileDB,
   FoldersDB,
   selectOptions,
 } from '../../helpers/homeBoard/FolderSharing.helper'
@@ -36,35 +37,12 @@ export const HomeBoard = () => {
         children={
           <FolderDetail
             folder={selectedFolder}
-            handleAddRecipient={(email) => {
-              console.log('this is the email added', email)
-            }}
+            handleAddRecipient={(email) => email}
             handleClose={onRightClose}
-            handleDeleteRecipient={(email) => {
-              console.log('this is the email deleted', email)
-            }}
-            handleEditDescription={(description) => {}}
+            handleDeleteRecipient={(email) => email}
+            handleEditDescription={(id) => id}
             handleEditFileName={(id) => id}
-            files={[
-              {
-                description: 'Construction pdf',
-                _id: '1',
-                isNew: true,
-                isShared: true,
-                imageUrl: '',
-                name: 'V28',
-                recipients: [
-                  {
-                    firstName: 'John',
-                    lastName: 'Doe',
-                    email: 'user@user.com',
-                    phone: '32329099',
-                  },
-                ],
-                type: 'pdf',
-                updatedAt: '2022-06-03T18:55:56.793Z',
-              },
-            ]}
+            files={fileDB}
             handleDelete={(id) => {
               onRightClose()
             }}

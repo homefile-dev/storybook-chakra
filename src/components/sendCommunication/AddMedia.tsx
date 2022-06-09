@@ -154,7 +154,7 @@ export const AddMedia = ({
                 }
               }}
             >
-              {editing ? 'Add' : 'Edit'}
+              {editing ? t('addMedia.addBtn') : t('addMedia.editBtn')}
             </Button>
           </Flex>
           {uploading && !uploaded && <Progress size="xs" isIndeterminate />}
