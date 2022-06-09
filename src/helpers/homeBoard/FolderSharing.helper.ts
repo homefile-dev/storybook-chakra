@@ -68,7 +68,7 @@ export const fileDB: FolderFileI[] = [
     isNew: true,
     isShared: true,
     imageUrl: '',
-    name: 'V28',
+    title: 'V28',
     recipients: [
       {
         firstName: 'John',

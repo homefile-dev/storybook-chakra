@@ -25,7 +25,7 @@ export interface FolderFileI {
   isNew?: boolean
   isShared?: boolean
   imageUrl: string
-  name: string
+  title: string
   recipients?: RecipientI[]
   type: string
   uploaded?: boolean

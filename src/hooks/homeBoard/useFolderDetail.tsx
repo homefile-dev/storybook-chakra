@@ -20,7 +20,7 @@ export const useFolderDetail = () => {
         isNew: isLocal ? true : file.isNew || false,
         isShare: isLocal ? false : file.isShared,
         imageUrl: isLocal ? URL.createObjectURL(file) : file.Location,
-        name: isLocal ? file.name : file.name,
+        title: isLocal ? file.name : file.title,
         type: isLocal ? file.name.split('.').pop() : file.type,
         recipients: isLocal ? [] : file.recipients,
         updatedAt: isLocal
@@ -54,7 +54,7 @@ export const useFolderDetail = () => {
 
   const findIndex = (value: string) => {
     return totalFiles.findIndex(
-      (file: FolderFileI) => file.name || file._id === value
+      (file: FolderFileI) => file.title || file._id === value
     )
   }
 

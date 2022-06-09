@@ -57,7 +57,7 @@ export const Files = ({
             _id,
             isNew,
             isShared,
-            name,
+            title,
             recipients,
             type,
             uploaded,
@@ -65,7 +65,7 @@ export const Files = ({
           },
           index
         ) => {
-          const titleFormatted = name.split('.')[0]
+          const titleFormatted = title?.split('.')[0]
           fileRecipientProxy.recipients = recipients
           fileDetailProxy.description = description
           return (
