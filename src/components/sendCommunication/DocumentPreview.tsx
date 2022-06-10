@@ -21,7 +21,9 @@ import { PanelHeader } from '../headers'
 import { CustomIcon } from '../icons/CustomIcon'
 import { FaFacebookSquare } from 'react-icons/fa'
 import { BeatLoader } from 'react-spinners'
-import BackCircleButton from '../buttons/BackCircleButton'
+import { BackCircleButton } from '../buttons/BackCircleButton'
+import { useEffect, useRef, useState } from 'react'
+import useWindowDimensions from '../../hooks/useWindowDimensions'
 const { REACT_APP_STORAGE_URL: storageUrl } = process.env
 
 export const DocumentPreview = ({
@@ -36,7 +38,7 @@ export const DocumentPreview = ({
   loading = false,
   userInfo,
 }: DocumentPreviewI) => {
-  const imageSize = '90px'
+  const imageSize = ['120px', '90px']
   const ButtonsFooter = {
     send: {
       buttonStyle: 'primaryFooter',
@@ -49,9 +51,34 @@ export const DocumentPreview = ({
       onClick: handleClose,
     },
   }
+  const { width } = useWindowDimensions()
+  const [columnWidth, setColumnWidth] = useState<number>(90)
+  const contentRef = useRef<HTMLDivElement>(null)
+  const columnsDesktop = 5
+  const columnsMobile = 3
+
+  const handleSpacings = (columns: number) => (columns - 1 + 4) * 13
+
+  useEffect(() => {
+    if (contentRef.current) {
+      const boxWidth =
+        (contentRef.current.offsetWidth - handleSpacings(columnsDesktop)) /
+        columnsDesktop
+      setColumnWidth(boxWidth)
+    }
+  }, [contentRef])
+
+  useEffect(() => {
+    if (width < 500) {
+      const boxWidth = (width - handleSpacings(columnsMobile)) / columnsMobile
+      setColumnWidth(boxWidth)
+    }
+  }, [width])
+
   return (
     <DrawerContent bg="container.tertiary">
       <DrawerHeader p="0">
+        <Box w="full" ref={contentRef} />
         <PanelHeader
           handleCloseButton={handleClose}
           icon={ProgressReport}
@@ -99,7 +126,10 @@ export const DocumentPreview = ({
                       </Stack>
                     )
                 )}
-                <SimpleGrid minChildWidth={imageSize} spacing="base">
+                <SimpleGrid
+                  columns={[columnsMobile, columnsDesktop]}
+                  spacing="base"
+                >
                   {images?.map(
                     ({ bucketName, description, extension, fileName, _id }) => (
                       <Image
@@ -110,10 +140,8 @@ export const DocumentPreview = ({
                         }
                         alt={description}
                         key={_id}
-                        minH={imageSize}
-                        maxH={imageSize}
+                        boxSize={columnWidth}
                         objectFit="cover"
-                        w="full"
                       />
                     )
                   )}
