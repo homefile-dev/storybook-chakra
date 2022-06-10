@@ -75,7 +75,7 @@ export const FolderSharing = ({
                     pb="base"
                     pt="6"
                     onClick={() => {
-                      handleFolderClick({ isNew, subTypes, type })
+                      handleFolderClick({ isNew, isShared, subTypes, type })
                       folderHeaderProxy.icon = icon
                       folderHeaderProxy.title = type
                     }}

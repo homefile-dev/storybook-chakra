@@ -6,14 +6,14 @@ import { folderHeaderProxy } from '../../proxies/folderHeader.proxy'
 import { t } from 'i18next'
 import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
 import { FolderFileI } from '../../interfaces/homeBoard/FolderDetail.interface'
-import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy'
 
 interface FilesI {
   files: FolderFileI[]
+  handleDeleteRecipient: (email: string) => void
   handleAddRecipient: (email: string) => void
   handleEditDescription: (id: string) => void
   handleEditFileName: (id: string) => void
-  handleDeleteRecipient: (email: string) => void
+  handleFileClick: (id: string) => void
   panelSize?: string
   uploading?: boolean
 }
@@ -21,9 +21,10 @@ interface FilesI {
 export const Files = ({
   files,
   handleAddRecipient,
+  handleDeleteRecipient,
   handleEditDescription,
   handleEditFileName,
-  handleDeleteRecipient,
+  handleFileClick,
   panelSize,
   uploading,
 }: FilesI) => {
@@ -44,6 +45,7 @@ export const Files = ({
         fileDetailProxy.addedAt = form.updatedAt.replace(' ', ' @ ')
         fileDetailProxy.icon = form.icon
         fileDetailProxy._id = form._id
+        handleFileClick(fileDetailProxy._id)
       },
     },
   ]
@@ -58,7 +60,6 @@ export const Files = ({
             isNew,
             isShared,
             title,
-            recipients,
             type,
             uploaded,
             updatedAt,
@@ -66,7 +67,6 @@ export const Files = ({
           index
         ) => {
           const titleFormatted = title?.split('.')[0]
-          fileRecipientProxy.recipients = recipients
           fileDetailProxy.description = description
           return (
             <Box key={_id + index}>

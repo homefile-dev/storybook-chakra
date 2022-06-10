@@ -10,6 +10,8 @@ export const FoldersDB: FolderI[] = [
     type: 'General',
   },
   {
+    isNew: false,
+    isShared: true,
     type: 'Construction',
     subTypes: [
       'Progress Report',
@@ -18,9 +20,9 @@ export const FoldersDB: FolderI[] = [
       'Contract Approval',
       'Delay Notice',
     ],
-    isShared: true,
   },
   {
+    isNew: false,
     isShared: true,
     type: 'Appliances',
     subTypes: [
@@ -32,15 +34,20 @@ export const FoldersDB: FolderI[] = [
     ],
   },
   {
+    isNew: false,
+    isShared: false,
     type: 'Private',
     subTypes: ['Blueprint', 'Misc'],
   },
   {
+    isNew: true,
+    isShared: false,
     type: 'Drawings',
     subTypes: ['Blueprint', 'Misc'],
-    isNew: true,
   },
   {
+    isNew: false,
+    isShared: false,
     type: 'Files',
     subTypes: ['PDF', 'Text', 'Misc'],
   },
@@ -69,14 +76,6 @@ export const fileDB: FolderFileI[] = [
     isShared: true,
     imageUrl: '',
     title: 'V28',
-    recipients: [
-      {
-        firstName: 'John',
-        lastName: 'Doe',
-        email: 'user@user.com',
-        phone: '32329099',
-      },
-    ],
     type: 'pdf',
     updatedAt: '2022-06-03T18:55:56.793Z',
   },

@@ -27,6 +27,8 @@ export const HomeBoard = () => {
   } = useDisclosure()
 
   const [selectedFolder, setSelectedFolder] = useState<FolderI>({
+    isNew: false,
+    isShared: false,
     subTypes: [],
     type: '',
   })
@@ -42,6 +44,7 @@ export const HomeBoard = () => {
             handleDeleteRecipient={(email) => email}
             handleEditDescription={(id) => id}
             handleEditFileName={(id) => id}
+            handleFileClick={(id) => id}
             files={fileDB}
             handleDelete={(id) => {
               onRightClose()
@@ -49,6 +52,14 @@ export const HomeBoard = () => {
             handleUpload={() => {}}
             loading={false}
             panelSize="md"
+            recipients={[
+              {
+                firstName: 'John',
+                lastName: 'Doe',
+                email: 'user@user.com',
+                phone: '32329099',
+              },
+            ]}
             uploading={false}
           />
         }

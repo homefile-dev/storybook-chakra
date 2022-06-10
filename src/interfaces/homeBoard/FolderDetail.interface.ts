@@ -8,13 +8,15 @@ export interface FolderDetailI {
   folder: FolderI
   handleAddRecipient: (email: string) => void
   handleClose: () => void
+  handleDelete: (id: string) => void
   handleDeleteRecipient: (email: string) => void
   handleEditDescription: (id: string) => void
   handleEditFileName: (id: string) => void
-  handleDelete: (id: string) => void
+  handleFileClick: (id: string) => void
   handleUpload: (files: FolderFileI[]) => void
   loading?: boolean
   panelSize?: string
+  recipients?: RecipientI[]
   uploading: boolean
 }
 
@@ -26,7 +28,6 @@ export interface FolderFileI {
   isShared?: boolean
   imageUrl: string
   title: string
-  recipients?: RecipientI[]
   type: string
   uploaded?: boolean
   updatedAt: string

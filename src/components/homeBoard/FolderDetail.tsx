@@ -11,7 +11,11 @@ import {
   FolderFileI,
 } from '../../interfaces/homeBoard/FolderDetail.interface'
 import { PanelHeader } from '../headers'
-import { BlueFolder, VioletFolder, YellowFolder } from '../../assets/images'
+import {
+  BlueFolder,
+  VioletFolder,
+  YellowFolderUnshared,
+} from '../../assets/images'
 import { DragDropArea } from '../dragDrop/DragDropArea'
 import { useFolderDetail } from '../../hooks/homeBoard/useFolderDetail'
 import { DragDropLoading } from '../dragDrop/DragDropLoading'
@@ -19,6 +23,7 @@ import { FooterDrawer, FooterButtons } from '../footers'
 import { useState, useMemo, useEffect } from 'react'
 import { SortHeader } from './SortHeader'
 import { Files } from './Files'
+import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy'
 
 export const FolderDetail = ({
   files,
@@ -29,9 +34,11 @@ export const FolderDetail = ({
   handleAddRecipient,
   handleDelete,
   handleDeleteRecipient,
+  handleFileClick,
   handleUpload = () => {},
   loading,
   panelSize = 'md',
+  recipients,
   uploading,
 }: FolderDetailI) => {
   const {
@@ -48,6 +55,7 @@ export const FolderDetail = ({
   } = useFolderDetail()
 
   const [dbFiles, setDbFiles] = useState<FolderFileI[]>([])
+  fileRecipientProxy.recipients = recipients
 
   useMemo(() => {
     setDbFiles(handleMapFile({ files, isLocal: false }))
@@ -66,7 +74,6 @@ export const FolderDetail = ({
     !uploading && setAcceptedFiles([])
   }, [uploading])
 
-
   return (
     <DrawerContent bg="container.tertiary">
       <DrawerHeader p="0">
@@ -77,7 +84,7 @@ export const FolderDetail = ({
               ? VioletFolder
               : folder?.isShared
               ? BlueFolder
-              : YellowFolder
+              : YellowFolderUnshared
           }
           title={folder?.type || ''}
         />
@@ -96,9 +103,10 @@ export const FolderDetail = ({
               <Files
                 files={totalFiles}
                 handleAddRecipient={handleAddRecipient}
+                handleDeleteRecipient={handleDeleteRecipient}
                 handleEditDescription={handleEditDescription}
                 handleEditFileName={handleEditFileName}
-                handleDeleteRecipient={handleDeleteRecipient}
+                handleFileClick={handleFileClick}
                 panelSize={panelSize}
                 uploading={uploading}
               />
