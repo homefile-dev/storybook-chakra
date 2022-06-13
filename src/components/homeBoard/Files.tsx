@@ -9,8 +9,9 @@ import { FolderFileI } from '../../interfaces/homeBoard/FolderDetail.interface'
 
 interface FilesI {
   files: FolderFileI[]
-  handleDeleteRecipient: (email: string) => void
   handleAddRecipient: (email: string) => void
+  handleDeleteFile: (id: string) => void
+  handleDeleteRecipient: (email: string) => void
   handleEditDescription: (id: string) => void
   handleEditFileName: (id: string) => void
   handleFileClick: (id: string) => void
@@ -21,6 +22,7 @@ interface FilesI {
 export const Files = ({
   files,
   handleAddRecipient,
+  handleDeleteFile,
   handleDeleteRecipient,
   handleEditDescription,
   handleEditFileName,
@@ -46,6 +48,13 @@ export const Files = ({
         fileDetailProxy.icon = form.icon
         fileDetailProxy._id = form._id
         handleFileClick(fileDetailProxy._id)
+      },
+    },
+    {
+      label: t('folderSharing.menu.delete'),
+      handleClick: (form: any) => {
+        fileDetailProxy._id = form._id
+        handleDeleteFile(fileDetailProxy._id)
       },
     },
   ]

@@ -42,13 +42,11 @@ export const HomeBoard = () => {
             handleAddRecipient={(email) => email}
             handleClose={onRightClose}
             handleDeleteRecipient={(email) => email}
-            handleEditDescription={(id) => id}
-            handleEditFileName={(id) => id}
+            handleEditDescription={(file) => file}
+            handleEditFileName={(file) => file}
             handleFileClick={(id) => id}
             files={fileDB}
-            handleDelete={(id) => {
-              onRightClose()
-            }}
+            handleDeleteFile={(id) => id}
             handleUpload={() => {}}
             loading={false}
             panelSize="md"

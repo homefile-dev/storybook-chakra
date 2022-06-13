@@ -74,6 +74,7 @@ export const DetailsTab = ({
           py="base"
           pl="2"
           align="center"
+          gap="base"
         >
           <Text variant="info" flex="0.2">
             {t('folderSharing.details.description')}

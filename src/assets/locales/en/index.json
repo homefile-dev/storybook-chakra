@@ -66,7 +66,7 @@
       "errorType": "File type must be .jpeg, .jpg, .pdf, .txt, .doc or .docx"
     },
     "menu": {
-      "delete": "Delete",
+      "delete": "Delete File",
       "details": "View Details",
       "download": "Download",
       "share": "Share"
@@ -195,6 +195,25 @@
     "resetBt": "Reset Password",
     "signinBt": "Log in",
     "title": "Reset your Password"
+  },
+  "rooms": {
+    "bathroom": "Bathroom",
+    "bedroom": "Bedroom",
+    "closet": "Closet",
+    "dining": "Dining Room",
+    "entryway": "Entryway",
+    "garage": "Garage",
+    "guestBedroom": "Guest Bedroom",
+    "hallway": "Hallway",
+    "kitchen": "Kitchen",
+    "laundry": "Laundry",
+    "living": "Living Room",
+    "masterBedroom": "Master Bedroom",
+    "mudroom": "Mudroom",
+    "office": "Office",
+    "patio": "Patio",
+    "structure": "Structure",
+    "theatre": "Theatre"
   },
   "sendCommunication": {
     "btLabel": "Document",

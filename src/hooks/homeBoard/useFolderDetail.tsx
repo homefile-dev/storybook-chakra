@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { formatDate } from '../../helpers/Formaters'
 import { FolderFileI, MapFileI } from '../../interfaces/homeBoard/FolderDetail.interface'
+import { fileDetailProxy } from '../../proxies/fileDetail.proxy';
 
 export const useFolderDetail = () => {
   const [hasError, setHasError] = useState(false)
@@ -22,7 +23,6 @@ export const useFolderDetail = () => {
         imageUrl: isLocal ? URL.createObjectURL(file) : file.Location,
         title: isLocal ? file.name : file.title,
         type: isLocal ? file.name.split('.').pop() : file.type,
-        recipients: isLocal ? [] : file.recipients,
         updatedAt: isLocal
           ? formatDate(file.lastModified)
           : formatDate(file.updatedAt),
@@ -58,8 +58,21 @@ export const useFolderDetail = () => {
     )
   }
 
-  const removeFile = (value: string) => {
-    totalFiles.splice(findIndex(value), 1)
+  const getFile = (id: string) => {
+    return totalFiles.find((file: FolderFileI) => file._id === id)
+  }
+
+  const handleFileUpdate = (id: string): FolderFileI => {
+    const fileChanged = getFile(id) as FolderFileI
+    return {
+      ...fileChanged,
+      title: fileDetailProxy.name,
+      description: fileDetailProxy.description,
+    }
+  }
+
+  const removeFile = (id: string) => {
+    totalFiles.splice(findIndex(id), 1)
     setTotalFiles([...totalFiles])
   }
 
@@ -77,8 +90,10 @@ export const useFolderDetail = () => {
     errorMessage,
     getRootProps,
     getInputProps,
+    handleFileUpdate,
     handleMapFile,
     hasError,
+    removeFile,
     setAcceptedFiles,
     setTotalFiles,
     setIsUploading,

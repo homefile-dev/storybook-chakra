@@ -58,7 +58,7 @@
     "json-loader": "^0.5.7",
     "miragejs": "^0.1.43",
     "rimraf": "^3.0.2",
-    "semantic-release": "^19.0.2",
+    "semantic-release": "^19.0.3",
     "storybook-axios": "^1.0.1",
     "storybook-react-i18next": "^1.0.18",
     "typescript": "^4.6.3",

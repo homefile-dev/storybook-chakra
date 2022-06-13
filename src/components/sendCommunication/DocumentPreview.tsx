@@ -38,7 +38,6 @@ export const DocumentPreview = ({
   loading = false,
   userInfo,
 }: DocumentPreviewI) => {
-  const imageSize = ['120px', '90px']
   const ButtonsFooter = {
     send: {
       buttonStyle: 'primaryFooter',

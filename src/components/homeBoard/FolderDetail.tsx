@@ -32,7 +32,7 @@ export const FolderDetail = ({
   handleEditDescription,
   handleEditFileName,
   handleAddRecipient,
-  handleDelete,
+  handleDeleteFile,
   handleDeleteRecipient,
   handleFileClick,
   handleUpload = () => {},
@@ -46,8 +46,10 @@ export const FolderDetail = ({
     errorMessage,
     getRootProps,
     getInputProps,
+    handleFileUpdate,
     handleMapFile,
     hasError,
+    removeFile,
     setAcceptedFiles,
     setTotalFiles,
     setIsUploading,
@@ -103,9 +105,19 @@ export const FolderDetail = ({
               <Files
                 files={totalFiles}
                 handleAddRecipient={handleAddRecipient}
+                handleDeleteFile={(id) => {
+                  handleDeleteFile(id)
+                  removeFile(id)
+                }}
                 handleDeleteRecipient={handleDeleteRecipient}
-                handleEditDescription={handleEditDescription}
-                handleEditFileName={handleEditFileName}
+                handleEditDescription={(id) => {
+                  const file = handleFileUpdate(id)
+                  file && handleEditDescription(file)
+                }}
+                handleEditFileName={(id) => {
+                  const file = handleFileUpdate(id)
+                  file && handleEditFileName(file)
+                }}
                 handleFileClick={handleFileClick}
                 panelSize={panelSize}
                 uploading={uploading}
@@ -122,7 +134,9 @@ export const FolderDetail = ({
               button3={{
                 buttonStyle: 'secondaryFooter',
                 label: t('folderSharing.details.delete'),
-                onClick: () => handleDelete(folder.type),
+                onClick: () => {
+                  //TODO: implement folder delete
+                },
               }}
             />
           }

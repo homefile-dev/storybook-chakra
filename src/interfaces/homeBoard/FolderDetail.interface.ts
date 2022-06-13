@@ -8,10 +8,10 @@ export interface FolderDetailI {
   folder: FolderI
   handleAddRecipient: (email: string) => void
   handleClose: () => void
-  handleDelete: (id: string) => void
+  handleDeleteFile: (id: string) => void
   handleDeleteRecipient: (email: string) => void
-  handleEditDescription: (id: string) => void
-  handleEditFileName: (id: string) => void
+  handleEditDescription: (file: FolderFileI) => void
+  handleEditFileName: (file: FolderFileI) => void
   handleFileClick: (id: string) => void
   handleUpload: (files: FolderFileI[]) => void
   loading?: boolean
