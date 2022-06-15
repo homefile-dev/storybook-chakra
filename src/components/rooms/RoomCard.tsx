@@ -1,35 +1,43 @@
-import { Box, Flex, IconButton, Image, Text } from '@chakra-ui/react'
-import { HiOutlinePlus } from 'react-icons/hi';
-import { CustomIcon } from '../icons/CustomIcon';
+import { Box, Flex, Image, Text, Center } from '@chakra-ui/react'
+import { HiOutlinePlus } from 'react-icons/hi'
+import { FiMenu } from 'react-icons/fi'
+import { CustomIcon } from '../icons/CustomIcon'
 
 interface RoomCardI {
-  hasTopBorder?: boolean
+  handleDragDrop?: (e: React.DragEvent<HTMLDivElement>) => void
   icon: string
   label: string
 }
-export const RoomCard = ({ hasTopBorder, icon, label }: RoomCardI) => {
+export const RoomCard = ({ icon, label }: RoomCardI) => {
   return (
-    <Box
-      as="button"
-      py="1.25rem"
-      px="base"
-      borderColor="input.border"
-      borderTop={hasTopBorder ? '1px solid' : ''}
-      borderBottom="1px solid"
-      _active={{ backgroundColor: 'button.tertiaryHover' }}
-      _hover={{ backgroundColor: 'button.secondaryHover' }}
-      _disabled={{
-        filter: 'grayscale(100%)',
-        pointerEvents: 'none',
-      }}
-    >
-      <Flex justify="space-between" alignItems="center">
-        <Flex gap="4" w="full">
-          {icon && <Image src={icon} alt={label} w="24px" h="auto" />}
-          <Text>{label}</Text>
+    <Box draggable overflow="hidden">
+      <Box
+        w="full"
+        as="button"
+        h="3.2rem"
+        bg="white"
+        transition="all 0.2s ease-in-out"
+        _active={{ backgroundColor: 'button.tertiaryHover' }}
+        _hover={{ backgroundColor: 'button.roomHover' }}
+        _disabled={{
+          filter: 'grayscale(100%)',
+          pointerEvents: 'none',
+        }}
+      >
+        <Flex justify="start" alignItems="center">
+          <Center minW="container.roomIcon">
+            {icon && <Image src={icon} alt={label} w="24px" h="auto" />}
+          </Center>
+          <Box flex="1">
+            <Text textAlign="left" variant="caption">
+              {label}
+            </Text>
+          </Box>
+          <Center w="container.roomIcon">
+            <CustomIcon type={FiMenu} color="button.icon" />
+          </Center>
         </Flex>
-        <CustomIcon type={HiOutlinePlus} size="6" />
-      </Flex>
+      </Box>
     </Box>
   )
 }

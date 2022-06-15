@@ -9,6 +9,7 @@ export interface FolderDetailI {
   handleAddRecipient: (email: string) => void
   handleClose: () => void
   handleDeleteFile: (id: string) => void
+  handleDeleteFolder: (id: string) => void
   handleDeleteRecipient: (email: string) => void
   handleEditDescription: (file: FolderFileI) => void
   handleEditFileName: (file: FolderFileI) => void

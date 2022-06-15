@@ -19,73 +19,107 @@ import {
   Theatre,
 } from '../../assets/images/rooms'
 
-export const RoomsList = {
-  bathroom: {
-    label: t('rooms.bathroom'),
+export const RoomsList = [
+  {
     icon: Bathroom,
+    id: 'bathroom',
+    index: 0,
+    label: t('rooms.bathroom'),
   },
-  bedroom: {
-    label: t('rooms.bedroom'),
+  {
     icon: Bedroom,
+    id: 'bedroom',
+    index: 1,
+    label: t('rooms.bedroom'),
   },
-  closet: {
-    label: t('rooms.closet'),
+  {
     icon: Closet,
+    id: 'closet',
+    index: 2,
+    label: t('rooms.closet'),
   },
-  diningRoom: {
-    label: t('rooms.dining'),
+  {
     icon: DiningRoom,
+    id: 'dining-room',
+    index: 3,
+    label: t('rooms.dining'),
   },
-  entryway: {
-    label: t('rooms.entryway'),
+  {
     icon: Entryway,
+    id: 'entryway',
+    index: 4,
+    label: t('rooms.entryway'),
   },
-  garage: {
-    label: t('rooms.garage'),
+  {
     icon: Garage,
+    id: 'garage',
+    index: 5,
+    label: t('rooms.garage'),
   },
-  guestBedroom: {
-    label: t('rooms.guestBedroom'),
+  {
     icon: GuestBedroom,
+    id: 'guest-bedroom',
+    index: 6,
+    label: t('rooms.guestBedroom'),
   },
-  hallway: {
-    label: t('rooms.hallway'),
+  {
     icon: Hallway,
+    id: 'hallway',
+    index: 7,
+    label: t('rooms.hallway'),
   },
-  kitchen: {
-    label: t('rooms.kitchen'),
+  {
     icon: Kitchen,
+    id: 'kitchen',
+    index: 8,
+    label: t('rooms.kitchen'),
   },
-  laundry: {
-    label: t('rooms.laundry'),
+  {
     icon: Laundry,
+    id: 'laundry',
+    index: 9,
+    label: t('rooms.laundry'),
   },
-  livingRoom: {
-    label: t('rooms.living'),
+  {
     icon: LivingRoom,
+    id: 'living-room',
+    index: 10,
+    label: t('rooms.living'),
   },
-  masterBedroom: {
-    label: t('rooms.masterBedroom'),
+  {
     icon: MasterBedroom,
+    id: 'master-bedroom',
+    index: 11,
+    label: t('rooms.masterBedroom'),
   },
-  mudroom: {
-    label: t('rooms.mudroom'),
+  {
     icon: Mudroom,
+    id: 'mudroom',
+    index: 12,
+    label: t('rooms.mudroom'),
   },
-  office: {
-    label: t('rooms.office'),
+  {
     icon: Office,
+    id: 'office',
+    index: 13,
+    label: t('rooms.office'),
   },
-  patio: {
-    label: t('rooms.patio'),
+  {
     icon: Patio,
+    id: 'patio',
+    index: 14,
+    label: t('rooms.patio'),
   },
-  structure: {
-    label: t('rooms.structure'),
+  {
     icon: Structure,
+    id: 'structure',
+    index: 15,
+    label: t('rooms.structure'),
   },
-  theatre: {
-    label: t('rooms.theatre'),
+  {
     icon: Theatre,
+    id: 'theatre',
+    index: 16,
+    label: t('rooms.theatre'),
   },
-}
+]

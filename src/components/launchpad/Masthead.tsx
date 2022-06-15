@@ -13,7 +13,12 @@ export const Masthead = ({ avatarUrl = '', handleClick, menuItems, userName }: M
   const isSmallMobile = width < 400
   return (
     <Container minW="container.full">
-      <Flex p="1rem" justify="space-between" alignItems="center">
+      <Flex
+        px="1rem"
+        h="container.masthead"
+        justify="space-between"
+        alignItems="center"
+      >
         <Button variant="menuIcon" maxW="fit-content" onClick={handleClick}>
           <Image
             src={isSmallMobile ? LogoSmall : Logo}

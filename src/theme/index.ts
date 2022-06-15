@@ -53,6 +53,7 @@ const theme = extendTheme({
       tertiaryHover: '#CAE1EF',
       icon: '#BCD1D8',
       menuIcon: '#464646',
+      roomHover: '#E8F8E1',
     },
     container: {
       primary: '#DCE8EC',
@@ -143,6 +144,8 @@ const theme = extendTheme({
       full: '100%',
     },
     container: {
+      roomIcon: '3.8rem', 
+      masthead: '4rem',
       xxs: '6rem',
       xs: '10rem',
       sm: '20rem',

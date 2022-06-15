@@ -33,6 +33,7 @@ export const FolderDetail = ({
   handleEditFileName,
   handleAddRecipient,
   handleDeleteFile,
+  handleDeleteFolder,
   handleDeleteRecipient,
   handleFileClick,
   handleUpload = () => {},
@@ -135,7 +136,8 @@ export const FolderDetail = ({
                 buttonStyle: 'secondaryFooter',
                 label: t('folderSharing.details.delete'),
                 onClick: () => {
-                  //TODO: implement folder delete
+                  handleDeleteFolder(folder.type)
+                  handleClose()
                 },
               }}
             />
