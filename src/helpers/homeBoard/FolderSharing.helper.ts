@@ -71,6 +71,19 @@ export const selectOptions: SelectItemI[] = [
 export const fileDB: FolderFileI[] = [
   {
     description: 'Construction pdf',
+    file: {
+      _id: '62aa4c6db225dd3957d09b24',
+      fileName: 'test-plans.jpeg-37f8c3',
+      extension: 'jpeg',
+      originalName: 'test-plans.jpeg',
+      bucketName: 'homefile-images',
+      description: '',
+      collectionName: 'homes',
+      docId: '62a20af1cc6d1000ef17c7d0',
+      createdAt: '2022-06-15T21:17:33.166Z',
+      updatedAt: '2022-06-15T21:17:33.166Z',
+      __v: 0,
+    },
     _id: '1',
     isNew: true,
     isShared: true,

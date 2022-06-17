@@ -21,9 +21,23 @@ export interface FolderDetailI {
   uploading: boolean
 }
 
+interface FileDBI {
+  _id: string
+  fileName: string
+  extension: string
+  originalName: string
+  bucketName: string
+  description: string
+  collectionName: string
+  docId: string
+  createdAt: string
+  updatedAt: string
+  __v: number
+}
+
 export interface FolderFileI {
   description?: string
-  file?: File
+  file?: File | FileDBI
   _id: string
   isNew?: boolean
   isShared?: boolean
@@ -35,18 +49,22 @@ export interface FolderFileI {
 }
 
 interface ReportsI {
-  createdAt: string
-  home: string
-  images: ImageDBI[]
-  needsReview: boolean
-  project: string
-  reviewed: boolean
-  status: string
-  subType: string
-  title: string
-  type: string
-  updatedAt: string
   _id: string
+  user: string
+  home: string
+  title: string
+  report: string[]
+  type: string
+  subType: string
+  needsReview: boolean
+  reviewed: boolean
+  images: ImageDBI[]
+  status: string
+  deleted: boolean
+  createdAt: string
+  updatedAt: string
+  __v: number
+  file?: FileDBI
 }
 
 export interface MapFileI {

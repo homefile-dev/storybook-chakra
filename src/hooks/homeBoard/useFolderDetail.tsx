@@ -11,16 +11,19 @@ export const useFolderDetail = () => {
   const [acceptedFiles, setAcceptedFiles] = useState<FolderFileI[]>([])
   const [totalFiles, setTotalFiles] = useState<FolderFileI[]>([])
   const [isUploading, setIsUploading] = useState(false)
+  const { REACT_APP_STORAGE_URL: storageUrl } = process.env
 
   const handleMapFile = ({ files, isLocal = true }: MapFileI) => {
     const newFiles = files.map((file: any) => {
       return {
         description: isLocal ? '' : file.description,
-        file: isLocal ? file : undefined,
+        file: isLocal ? file : file.file,
         _id: isLocal ? file.name : file._id,
         isNew: isLocal ? true : file.isNew || false,
         isShare: isLocal ? false : file.isShared,
-        imageUrl: isLocal ? URL.createObjectURL(file) : file.Location,
+        imageUrl: isLocal
+          ? URL.createObjectURL(file)
+          : `${storageUrl}/${file.file.bucketName}/${file.file.fileName}.${file.file.extension}`,
         title: isLocal ? file.name : file.title,
         type: isLocal ? file.name.split('.').pop() : file.type,
         updatedAt: isLocal
