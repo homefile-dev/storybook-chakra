@@ -1,4 +1,4 @@
-import { FolderFileI } from '../../interfaces/homeBoard/FolderDetail.interface'
+import { ReportsI } from '../../interfaces/homeBoard/FolderDetail.interface'
 import { FolderI } from '../../interfaces/homeBoard/FolderSharing.interface'
 import { SelectItemI } from '../../interfaces/inputs/Select.interface'
 
@@ -68,9 +68,23 @@ export const selectOptions: SelectItemI[] = [
   },
 ]
 
-export const fileDB: FolderFileI[] = [
+export const fileDB: ReportsI[] = [
   {
-    description: 'Construction pdf',
+    _id: '62aa4c6db225dd3957d09b26',
+    user: '62388ab2a1a4a98e69942bb5',
+    home: '62a20af1cc6d1000ef17c7d0',
+    title: 'test-plans.jpeg',
+    report: [],
+    type: 'File',
+    subType: 'image',
+    needsReview: false,
+    reviewed: false,
+    images: [],
+    status: 'completed',
+    deleted: false,
+    createdAt: '2022-06-15T21:17:33.246Z',
+    updatedAt: '2022-06-15T21:17:33.246Z',
+    __v: 0,
     file: {
       _id: '62aa4c6db225dd3957d09b24',
       fileName: 'test-plans.jpeg-37f8c3',
@@ -84,12 +98,5 @@ export const fileDB: FolderFileI[] = [
       updatedAt: '2022-06-15T21:17:33.166Z',
       __v: 0,
     },
-    _id: '1',
-    isNew: true,
-    isShared: true,
-    imageUrl: '',
-    title: 'V28',
-    type: 'pdf',
-    updatedAt: '2022-06-03T18:55:56.793Z',
   },
 ]

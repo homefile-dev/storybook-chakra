@@ -1,4 +1,4 @@
-import { Box, Button, Text, Flex, Center } from '@chakra-ui/react'
+import { Box, Text, Flex, Center } from '@chakra-ui/react'
 import { HiOutlinePlus } from 'react-icons/hi'
 import { CustomIcon } from '../icons/CustomIcon'
 import { RoomCard } from './RoomCard'

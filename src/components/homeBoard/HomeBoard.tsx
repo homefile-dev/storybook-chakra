@@ -49,6 +49,7 @@ export const HomeBoard = () => {
             handleEditDescription={(file) => file}
             handleEditFileName={(file) => file}
             handleFileClick={(id) => id}
+            handleOpenFile={(file) => file}
             files={fileDB}
             handleUpload={() => {}}
             loading={false}

@@ -2,8 +2,11 @@ import { t } from 'i18next'
 import { useEffect, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { formatDate } from '../../helpers/Formaters'
-import { FolderFileI, MapFileI } from '../../interfaces/homeBoard/FolderDetail.interface'
-import { fileDetailProxy } from '../../proxies/fileDetail.proxy';
+import {
+  FolderFileI,
+  MapFileI,
+} from '../../interfaces/homeBoard/FolderDetail.interface'
+import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
 
 export const useFolderDetail = () => {
   const [hasError, setHasError] = useState(false)
@@ -19,13 +22,15 @@ export const useFolderDetail = () => {
         description: isLocal ? '' : file.description,
         file: isLocal ? file : file.file,
         _id: isLocal ? file.name : file._id,
-        isNew: isLocal ? true : file.isNew || false,
-        isShare: isLocal ? false : file.isShared,
+        isNew: isLocal ? true : false,
+        isShare: isLocal ? false : false,
         imageUrl: isLocal
           ? URL.createObjectURL(file)
-          : `${storageUrl}/${file.file.bucketName}/${file.file.fileName}.${file.file.extension}`,
-        title: isLocal ? file.name : file.title,
-        type: isLocal ? file.name.split('.').pop() : file.type,
+          : `${storageUrl}/${file?.file?.bucketName}/${file?.file?.fileName}.${file?.file?.extension}`,
+        title: isLocal ? file?.file?.originalName : file.title,
+        type: isLocal
+          ? file.name.split('.').pop()
+          : file?.file?.extension || file?.file?.originalName.split('.').pop(),
         updatedAt: isLocal
           ? formatDate(file.lastModified)
           : formatDate(file.updatedAt),

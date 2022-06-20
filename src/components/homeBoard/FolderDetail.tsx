@@ -36,6 +36,7 @@ export const FolderDetail = ({
   handleDeleteFolder,
   handleDeleteRecipient,
   handleFileClick,
+  handleOpenFile,
   handleUpload = () => {},
   loading,
   panelSize = 'md',
@@ -65,7 +66,7 @@ export const FolderDetail = ({
   }, [files])
 
   useEffect(() => {
-    setTotalFiles([...dbFiles, ...acceptedFiles])
+    setTotalFiles([...dbFiles])
   }, [acceptedFiles, dbFiles])
 
   useEffect(() => {
@@ -120,6 +121,10 @@ export const FolderDetail = ({
                   file && handleEditFileName(file)
                 }}
                 handleFileClick={handleFileClick}
+                handleOpenFile={(id) => {
+                  const file = handleFileUpdate(id)
+                  file && handleOpenFile(file)
+                }}
                 panelSize={panelSize}
                 uploading={uploading}
               />

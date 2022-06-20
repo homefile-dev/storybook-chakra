@@ -14,6 +14,7 @@ export interface FolderDetailI {
   handleEditDescription: (file: FolderFileI) => void
   handleEditFileName: (file: FolderFileI) => void
   handleFileClick: (id: string) => void
+  handleOpenFile: (file: FolderFileI) => void
   handleUpload: (files: FolderFileI[]) => void
   loading?: boolean
   panelSize?: string
@@ -41,19 +42,19 @@ export interface FolderFileI {
   _id: string
   isNew?: boolean
   isShared?: boolean
-  imageUrl: string
+  imageUrl?: string
   title: string
   type: string
   uploaded?: boolean
   updatedAt: string
 }
 
-interface ReportsI {
+export interface ReportsI {
   _id: string
   user: string
   home: string
   title: string
-  report: string[]
+  report: any[]
   type: string
   subType: string
   needsReview: boolean
