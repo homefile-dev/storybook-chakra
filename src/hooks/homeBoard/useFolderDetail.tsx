@@ -20,7 +20,7 @@ export const useFolderDetail = () => {
     const newFiles = files.map((file: any) => {
       return {
         description: isLocal ? '' : file.description,
-        file: isLocal ? file : file.file,
+        file: isLocal ? file : file?.file,
         _id: isLocal ? file.name : file._id,
         isNew: isLocal ? true : false,
         isShare: isLocal ? false : false,
