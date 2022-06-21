@@ -40,6 +40,7 @@ export const HomeBoard = () => {
       <RightPanel
         children={
           <FolderDetail
+            addedBy="First name and last name"
             folder={selectedFolder}
             handleAddRecipient={(email) => email}
             handleClose={onRightClose}

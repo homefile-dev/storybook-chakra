@@ -11,7 +11,7 @@ interface FileDetailI {
 
 export const fileDetailProxy = proxy<FileDetailI>({
   addedAt: '',
-  addedBy: 'AR Lucas',
+  addedBy: '',
   description: '',
   _id: '',
   icon: '',

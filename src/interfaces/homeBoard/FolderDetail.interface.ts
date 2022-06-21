@@ -4,6 +4,7 @@ import { RecipientI } from '../sendCommunication/AddRecipient.interface'
 import { ImageDBI } from '../sendCommunication/AddMedia.interface'
 
 export interface FolderDetailI {
+  addedBy: string
   files: FolderFileI[]
   folder: FolderI
   handleAddRecipient: (email: string) => void

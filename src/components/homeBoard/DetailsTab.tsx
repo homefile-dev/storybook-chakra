@@ -47,14 +47,16 @@ export const DetailsTab = ({
         </Button>
       </Flex>
       <Box>
-        <Flex borderY="1px solid" borderColor="input.border" py="base" px="2">
-          <Text variant="info" flex="0.2">
-            {t('folderSharing.details.added')}
-          </Text>
-          <Text variant="info" flex="0.8">
-            {addedAt}
-          </Text>
-        </Flex>
+        {addedAt && (
+          <Flex borderY="1px solid" borderColor="input.border" py="base" px="2">
+            <Text variant="info" flex="0.2">
+              {t('folderSharing.details.added')}
+            </Text>
+            <Text variant="info" flex="0.8">
+              {addedAt}
+            </Text>
+          </Flex>
+        )}
         <Flex
           borderBottom="1px solid"
           borderColor="input.border"

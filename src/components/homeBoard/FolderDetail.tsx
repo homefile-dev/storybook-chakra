@@ -24,8 +24,10 @@ import { useState, useMemo, useEffect } from 'react'
 import { SortHeader } from './SortHeader'
 import { Files } from './Files'
 import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy'
+import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
 
 export const FolderDetail = ({
+  addedBy,
   files,
   folder,
   handleClose,
@@ -60,6 +62,7 @@ export const FolderDetail = ({
 
   const [dbFiles, setDbFiles] = useState<FolderFileI[]>([])
   fileRecipientProxy.recipients = recipients
+  fileDetailProxy.addedBy = addedBy
 
   useMemo(() => {
     setDbFiles(handleMapFile({ files, isLocal: false }))
