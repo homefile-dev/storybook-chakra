@@ -75,6 +75,7 @@ export const fileDB: ReportsI[] = [
     home: '62a20af1cc6d1000ef17c7d0',
     title: 'test-plans.jpeg',
     report: [],
+    description: 'This is the file description',
     type: 'File',
     subType: 'image',
     needsReview: false,

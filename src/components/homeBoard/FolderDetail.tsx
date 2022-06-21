@@ -120,7 +120,10 @@ export const FolderDetail = ({
                   const file = handleFileUpdate(id)
                   file && handleEditFileName(file)
                 }}
-                handleFileClick={handleFileClick}
+                handleFileClick={(id) => {
+                  const file = handleFileUpdate(id)
+                  file && handleFileClick(file)
+                }}
                 handleOpenFile={(id) => {
                   const file = handleFileUpdate(id)
                   file && handleOpenFile(file)

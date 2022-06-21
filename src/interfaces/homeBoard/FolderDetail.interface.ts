@@ -1,7 +1,7 @@
 import { FileI } from './File.interface'
 import { FolderI } from './FolderSharing.interface'
-import { RecipientI } from '../sendCommunication/AddRecipient.interface';
-import { ImageDBI } from '../sendCommunication/AddMedia.interface';
+import { RecipientI } from '../sendCommunication/AddRecipient.interface'
+import { ImageDBI } from '../sendCommunication/AddMedia.interface'
 
 export interface FolderDetailI {
   files: FolderFileI[]
@@ -13,7 +13,7 @@ export interface FolderDetailI {
   handleDeleteRecipient: (email: string) => void
   handleEditDescription: (file: FolderFileI) => void
   handleEditFileName: (file: FolderFileI) => void
-  handleFileClick: (id: string) => void
+  handleFileClick: (file: FolderFileI) => void
   handleOpenFile: (file: FolderFileI) => void
   handleUpload: (files: FolderFileI[]) => void
   loading?: boolean
@@ -51,6 +51,7 @@ export interface FolderFileI {
 
 export interface ReportsI {
   _id: string
+  description: string
   user: string
   home: string
   title: string
@@ -72,6 +73,3 @@ export interface MapFileI {
   files: FolderFileI[] | File[] | FileI[] | ReportsI[]
   isLocal?: boolean
 }
-
-
-

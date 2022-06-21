@@ -27,14 +27,15 @@ export const useFolderDetail = () => {
         imageUrl: isLocal
           ? URL.createObjectURL(file)
           : `${storageUrl}/${file?.file?.bucketName}/${file?.file?.fileName}.${file?.file?.extension}`,
-        title: isLocal ? file?.file?.originalName : file.title,
+        title: isLocal ? file?.name : file.title,
         type: isLocal
           ? file.name.split('.').pop()
-          : file?.file?.extension || file?.file?.originalName.split('.').pop(),
+          : file?.file?.extension || file?.title.split('.').pop(),
         updatedAt: isLocal
           ? formatDate(file.lastModified)
           : formatDate(file.updatedAt),
         uploaded: isLocal ? false : true,
+        user: isLocal ? '' : file?.user,
       }
     })
     return newFiles
