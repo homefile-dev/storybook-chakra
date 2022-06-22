@@ -27,10 +27,11 @@ export const useFolderDetail = () => {
         imageUrl: isLocal
           ? URL.createObjectURL(file)
           : `${storageUrl}/${file?.file?.bucketName}/${file?.file?.fileName}.${file?.file?.extension}`,
+        project: isLocal ? '' : file.project,
+        report: isLocal ? [] : file.report,
+        subType: isLocal ? '' : file.subType,
         title: isLocal ? file?.name : file.title,
-        type: isLocal
-          ? file.name.split('.').pop()
-          : file?.file?.extension || file?.title.split('.').pop(),
+        type: isLocal ? '' : file?.type,
         updatedAt: isLocal
           ? formatDate(file.lastModified)
           : formatDate(file.updatedAt),

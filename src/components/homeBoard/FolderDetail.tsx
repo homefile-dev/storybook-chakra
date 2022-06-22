@@ -135,7 +135,7 @@ export const FolderDetail = ({
                 uploading={uploading}
               />
             }
-            isLoading={loading}
+            isLoading={loading || uploading}
           />
         </Stack>
       </DrawerBody>
