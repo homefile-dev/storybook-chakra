@@ -16,7 +16,7 @@ const { REACT_APP_STORAGE_URL: storageUrl } = process.env
 
 export const HomeCard = ({
   city,
-  edit,
+  edit = true,
   handleClick,
   handleEditClick,
   imageUrl: image,
