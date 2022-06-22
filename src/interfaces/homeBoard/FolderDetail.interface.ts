@@ -5,6 +5,7 @@ import { ImageDBI } from '../sendCommunication/AddMedia.interface'
 
 export interface FolderDetailI {
   addedBy: string
+  children?: JSX.Element[] | JSX.Element | Element | Element[]
   files: FolderFileI[]
   folder: FolderI
   handleAddRecipient: (email: string) => void

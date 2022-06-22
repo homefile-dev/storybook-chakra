@@ -28,6 +28,7 @@ import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
 
 export const FolderDetail = ({
   addedBy,
+  children,
   files,
   folder,
   handleClose,
@@ -156,6 +157,7 @@ export const FolderDetail = ({
           isOpen
         />
       </DrawerFooter>
+      {children}
     </DrawerContent>
   )
 }

@@ -1,4 +1,4 @@
-import { Box, Flex, Stack, useDisclosure } from '@chakra-ui/react'
+import { Box, Flex, Slide, Stack, useDisclosure } from '@chakra-ui/react'
 import { UserMenuItems } from '../../helpers/launchpad/MenuItems.helper'
 import { HomeCards } from '../../helpers/myHomes'
 import { SendCommunication } from '../sendCommunication/SendCommunication'
@@ -41,6 +41,7 @@ export const HomeBoard = () => {
         children={
           <FolderDetail
             addedBy="First name and last name"
+            children={<h1>Hello World</h1>}
             folder={selectedFolder}
             handleAddRecipient={(email) => email}
             handleClose={onRightClose}
