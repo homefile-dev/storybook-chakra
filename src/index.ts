@@ -29,6 +29,7 @@ export {
 export { FooterButtons, FooterDrawer } from './components/footers'
 export {
   HomeHeader,
+  HomeCard,
   HomeCardWithRecipent,
   FolderSharing,
   FolderDetail,
