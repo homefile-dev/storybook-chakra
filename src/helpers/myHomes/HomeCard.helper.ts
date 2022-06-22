@@ -13,7 +13,7 @@ export const HomeCards = [
     address: {
       city: 'San Francisco',
       state: 'CA',
-      street: '123 Main St',
+      street: '123 Main St 123 Main St 123 Main St',
       zip: '94101',
     },
     _id: '1',

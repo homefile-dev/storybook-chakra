@@ -34,7 +34,14 @@ export const MyHomes = ({
       <Wrap spacing="base" px="base" alignItems="start">
         {cardList &&
           cardList?.map(({ address, active, _id, image, name }) => (
-            <Container key={_id} w="179px">
+            <Container
+              key={_id}
+              w="179px"
+              transition="all 0.3s ease-in-out"
+              _hover={{
+                boxShadow: 'xl',
+              }}
+            >
               <ContainerHeader
                 menuItems={cardMenuItems}
                 itemForm={{ _id, name }}
@@ -46,13 +53,7 @@ export const MyHomes = ({
                 as="button"
                 w="179px"
                 textAlign="left"
-                transition="all 0.3s ease-in-out"
-                onClick={() => {
-                  handleCardClick({ _id, name })
-                }}
-                _hover={{
-                  boxShadow: 'xl',
-                }}
+                onClick={() => handleCardClick({ _id, name })}
               >
                 <HomeCard
                   address={address}
