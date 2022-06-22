@@ -57,6 +57,11 @@ export const HomeCard = ({
           <Text variant="info" mt="-1.5">
             {`${city} ${state} ${zip}`}
           </Text>
+          {phone && (
+            <Text variant="info" mt="-1.5">
+              {phone}
+            </Text>
+          )}
         </Box>
       </Stack>
     </Container>
