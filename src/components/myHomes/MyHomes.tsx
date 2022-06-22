@@ -1,4 +1,4 @@
-import { Box, Container, SimpleGrid } from '@chakra-ui/react'
+import { Box, Container, SimpleGrid, Wrap } from '@chakra-ui/react'
 import { t } from 'i18next'
 import { FiMoreHorizontal } from 'react-icons/fi'
 import { CustomIcon } from '../icons/CustomIcon'
@@ -31,15 +31,10 @@ export const MyHomes = ({
         cardFilters={cardFilters}
         handleNewHomeClick={handleNewHomeClick}
       />
-      <SimpleGrid
-        columns={[isSmallMobile ? 1 : 2, 2, 2, 4, 5]}
-        spacing="base"
-        px="base"
-        alignItems="start"
-      >
+      <Wrap spacing="base" px="base" alignItems="start">
         {cardList &&
           cardList?.map(({ address, active, _id, image, name }) => (
-            <Container key={_id} maxW="fit-content">
+            <Container key={_id} w="179px">
               <ContainerHeader
                 menuItems={cardMenuItems}
                 itemForm={{ _id, name }}
@@ -49,6 +44,7 @@ export const MyHomes = ({
               <Box
                 key={_id}
                 as="button"
+                w="179px"
                 textAlign="left"
                 transition="all 0.3s ease-in-out"
                 onClick={() => {
@@ -68,7 +64,7 @@ export const MyHomes = ({
               </Box>
             </Container>
           ))}
-      </SimpleGrid>
+      </Wrap>
     </Container>
   )
 }
