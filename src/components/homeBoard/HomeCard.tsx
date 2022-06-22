@@ -49,7 +49,7 @@ export const HomeCard = ({
               aria-label={''}
               p="1"
               icon={<CustomIcon type={FiEdit2} size="5" />}
-              onClick={() => handleEditClick}
+              onClick={handleEditClick}
             />
           )}
         </Flex>

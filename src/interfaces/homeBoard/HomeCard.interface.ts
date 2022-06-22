@@ -4,7 +4,7 @@ export interface HomeCardI {
   city: string
   edit?: boolean
   handleClick?: () => void
-  handleEditClick?: (id: string) => void
+  handleEditClick?: () => void
   imageUrl?: ImageI | null
   mail?: string
   maxW?: string

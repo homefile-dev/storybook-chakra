@@ -24,9 +24,7 @@ export const HomeCardWithRecipent = ({
         streetAddress={street}
         state={state}
         zip={zip}
-        handleEditClick={() => {
-          handleEdit(_id)
-        }}
+        handleEditClick={() => handleEdit(_id)}
       />
 
       <Stack p="base" spacing="1">
